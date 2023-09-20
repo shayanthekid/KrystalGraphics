@@ -15,8 +15,12 @@
         </div>
     </div>
 
+    <!-- Overlay Background -->
+    <div x-show="isOpen" @click="isOpen = !isOpen" class="fixed inset-0 bg-gray-700 opacity-0 transition-opacity duration-300 pointer-events-none z-40"></div>
+
     <!-- Mobile Navigation Drawer -->
-    <div x-show="isOpen" class="fixed inset-y-0 left-0 bg-white w-1/2 h-full transform -translate-x-full ease-in-out transition-transform duration-300 shadow-lg">
+    <div :class="{'translate-x-0': isOpen, '-translate-x-full': !isOpen}"
+         class="fixed inset-y-0 left-0 bg-white w-1/2 h-full transform ease-in-out transition-transform duration-300 shadow-lg">
         <!-- Close Icon -->
         <div class="absolute top-4 right-4">
             <button @click="isOpen = false" class="text-black">
@@ -38,9 +42,21 @@
         <div class="mt-6 mx-4">
             <h3 class="text-lg font-semibold">Services</h3>
             <ul class="mt-2 space-y-2">
-                <li>
-                    <a href="#" class="text-blue-500">Silk Screen Printing</a>
-                    <ul class="ml-4 mt-2 space-y-1">
+                <li x-data="{ isOpen: false }">
+                    <!-- Header of the accordion -->
+                    <div class="flex items-center">
+                        <a @click="isOpen = !isOpen" class="text-blue-500 cursor-pointer">
+                            Silk Screen Printing
+                        </a>
+                        <svg x-bind:class="{ 'transform rotate-180': isOpen, 'transform rotate-0': !isOpen }"
+                             xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" class="ml-2">
+                            <path fill="none" d="M0 0h24v24H0z"/>
+                            <path d="M7 10l5 5 5-5z"/>
+                        </svg>
+                    </div>
+
+                    <!-- Sub-menu items -->
+                    <ul x-show="isOpen" class="ml-4 mt-2 space-y-1">
                         <li><a href="#">T-Shirts</a></li>
                         <li><a href="#">Hoodies</a></li>
                         <li><a href="#">Safety Vests</a></li>
