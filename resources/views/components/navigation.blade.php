@@ -1,6 +1,6 @@
-<div x-data="{ isOpen: false }">
+<div x-data="{ isOpen: false }" class="z-50 ">
     <!-- Mobile Navigation Bar (Row) -->
-    <div class="fixed top-4 left-4 w-full">
+    <div class=" top-4 left-4 w-full h-auto ">
         <!-- Hamburger Menu Icon (left-aligned) -->
         <button @click="isOpen = !isOpen" class="text-white">
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">

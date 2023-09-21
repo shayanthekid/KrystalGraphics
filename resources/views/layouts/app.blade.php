@@ -12,16 +12,20 @@
      <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
 </head>
 <body>
-    <header>
-        <div class="lg:hidden"> <!-- Show on small screens only -->
-            <x-navigation />
-        </div>
-    </header>
 
-    <main class="bg-slate-300">
-        @yield('content')
-    </main>
+        <header class=" top-0 left-0 w-full">
+            <div class="lg:hidden">
+                <x-navigation />
+            </div>
+        </header>
 
+        <main class="bg-slate-300 "> <!-- Add padding to the top -->
+            @yield('content')
+        
+
+            
+        </main>
+    
     <footer>
         <!-- Your footer content goes here -->
     </footer>
