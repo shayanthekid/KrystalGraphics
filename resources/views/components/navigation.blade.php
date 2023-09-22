@@ -2,7 +2,7 @@
     <!-- Mobile Navigation Bar (Row) -->
     <div class=" top-4 left-4 w-full h-auto ">
         <!-- Hamburger Menu Icon (left-aligned) -->
-        <button @click="isOpen = !isOpen" class="text-white">
+        <button @click="isOpen = !isOpen" class="text-white p-4">
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
                 <path fill="none" d="M0 0h24v24H0z"/>
                 <path d="M4 6h16v2H4zm0 5h16v2H4zm0 5h16v2H4z"/>
@@ -11,7 +11,7 @@
 
         <!-- Logo (Centered) -->
         <div class="text-center">
-            <img src="your-logo.png" alt="Your Logo" class="h-10 w-auto mx-auto" />
+<img src="{{ asset('images/logos/krystallogo.png') }}" alt="Your Logo" class="h-10 w-auto mx-auto -mt-10" />
         </div>
     </div>
 
