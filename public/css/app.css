@@ -527,6 +527,9 @@ video {
 .absolute {
   position: absolute;
 }
+.relative {
+  position: relative;
+}
 .inset-0 {
   inset: 0px;
 }
@@ -549,6 +552,9 @@ video {
 .top-4 {
   top: 1rem;
 }
+.bottom-4 {
+  bottom: 1rem;
+}
 .z-40 {
   z-index: 40;
 }
@@ -562,6 +568,9 @@ video {
 .mx-auto {
   margin-left: auto;
   margin-right: auto;
+}
+.-mt-10 {
+  margin-top: -2.5rem;
 }
 .ml-2 {
   margin-left: 0.5rem;
@@ -584,20 +593,23 @@ video {
 .mt-8 {
   margin-top: 2rem;
 }
-.-mt-10 {
-  margin-top: -2.5rem;
+.mb-4 {
+  margin-bottom: 1rem;
 }
-.-mt-5 {
-  margin-top: -1.25rem;
+.mb-8 {
+  margin-bottom: 2rem;
 }
-.-mt-8 {
-  margin-top: -2rem;
+.mr-4 {
+  margin-right: 1rem;
 }
 .inline-block {
   display: inline-block;
 }
 .flex {
   display: flex;
+}
+.grid {
+  display: grid;
 }
 .h-10 {
   height: 2.5rem;
@@ -608,6 +620,27 @@ video {
 .h-full {
   height: 100%;
 }
+.h-20 {
+  height: 5rem;
+}
+.h-60 {
+  height: 15rem;
+}
+.h-40 {
+  height: 10rem;
+}
+.h-48 {
+  height: 12rem;
+}
+.h-36 {
+  height: 9rem;
+}
+.h-28 {
+  height: 7rem;
+}
+.h-72 {
+  height: 18rem;
+}
 .w-1\/2 {
   width: 50%;
 }
@@ -616,6 +649,24 @@ video {
 }
 .w-full {
   width: 100%;
+}
+.w-60 {
+  width: 15rem;
+}
+.w-20 {
+  width: 5rem;
+}
+.w-10 {
+  width: 2.5rem;
+}
+.w-36 {
+  width: 9rem;
+}
+.w-80 {
+  width: 20rem;
+}
+.max-w-full {
+  max-width: 100%;
 }
 .-translate-x-full {
   --tw-translate-x: -100%;
@@ -639,11 +690,26 @@ video {
 .cursor-pointer {
   cursor: pointer;
 }
+.grid-cols-5 {
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+}
+.flex-col {
+  flex-direction: column;
+}
+.items-end {
+  align-items: flex-end;
+}
 .items-center {
   align-items: center;
 }
 .justify-center {
   justify-content: center;
+}
+.justify-between {
+  justify-content: space-between;
+}
+.gap-4 {
+  gap: 1rem;
 }
 .space-y-1 > :not([hidden]) ~ :not([hidden]) {
   --tw-space-y-reverse: 0;
@@ -654,6 +720,17 @@ video {
   --tw-space-y-reverse: 0;
   margin-top: calc(0.5rem * calc(1 - var(--tw-space-y-reverse)));
   margin-bottom: calc(0.5rem * var(--tw-space-y-reverse));
+}
+.space-x-4 > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-x-reverse: 0;
+  margin-right: calc(1rem * var(--tw-space-x-reverse));
+  margin-left: calc(1rem * calc(1 - var(--tw-space-x-reverse)));
+}
+.self-end {
+  align-self: flex-end;
+}
+.overflow-x-auto {
+  overflow-x: auto;
 }
 .rounded-lg {
   border-radius: 0.5rem;
@@ -673,6 +750,30 @@ video {
 .bg-white {
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+}
+.bg-gray-100 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(243 244 246 / var(--tw-bg-opacity));
+}
+.bg-gray-300 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(209 213 219 / var(--tw-bg-opacity));
+}
+.bg-gray-200 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(229 231 235 / var(--tw-bg-opacity));
+}
+.object-contain {
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+.object-cover {
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.object-center {
+  -o-object-position: center;
+     object-position: center;
 }
 .p-4 {
   padding: 1rem;
@@ -703,6 +804,26 @@ video {
   font-size: 1.125rem;
   line-height: 1.75rem;
 }
+.text-2xl {
+  font-size: 1.5rem;
+  line-height: 2rem;
+}
+.text-base {
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
+.text-sm {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+}
+.text-xl {
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+}
+.text-3xl {
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+}
 .font-light {
   font-weight: 300;
 }
@@ -720,6 +841,10 @@ video {
 .text-white {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+.text-red-500 {
+  --tw-text-opacity: 1;
+  color: rgb(239 68 68 / var(--tw-text-opacity));
 }
 .opacity-0 {
   opacity: 0;
@@ -756,6 +881,20 @@ video {
   --tw-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
   --tw-shadow-colored: 0 20px 25px -5px var(--tw-shadow-color), 0 8px 10px -6px var(--tw-shadow-color);
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+@media (min-width: 640px) {
+
+  .sm\:h-auto {
+    height: auto;
+  }
+
+  .sm\:max-h-48 {
+    max-height: 12rem;
+  }
+
+  .sm\:w-auto {
+    width: auto;
+  }
 }
 @media (min-width: 1024px) {
 
