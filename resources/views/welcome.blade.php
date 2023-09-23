@@ -1,7 +1,9 @@
 @extends('layouts.app')
 
 @section('content')
-
+@php
+use App\View\Components\ProductCarousel;
+@endphp
     <!-- Hero Section -->
    
 <div class="bg-[#94A2CE] py-16">
@@ -14,57 +16,21 @@
     </div>
 </div>
 
-<div class="py-16 bg-white">
-    <div class="container mx-auto">
-       <h2 class="text-2xl font-semibold mb-8 ml-2">Top Picks, <span class="text-red-500">Irresistible</span> Prices</h2>
+<x-product-carousel :title="'Top Picks, Irresistible Prices'" :products='json_encode([
+    ["title" => "Embroidery", "image" => "images/homepage/cap.png"],
+    ["title" => "Mylar Bags", "image" => "images/homepage/weed.png"],
+    ["title" => "Packaging", "image" => "images/homepage/pomade.png"],
+    ["title" => "Product 4", "image" => "your-image4.jpg"],
+    ["title" => "Product 5", "image" => "your-image5.jpg"]
+])'/>
 
-<!-- Carousel of Cards -->
-<div class="flex space-x-4 overflow-x-auto">
-    <!-- Card 1 -->
-    <div class="w-60">
-        <div class="bg-gray-100 rounded-lg shadow-lg w-60 h-72 flex justify-center items-center">
-            <img src="{{ asset('images/homepage/cap.png') }}" alt="Product 1" class="w-36 h-36 object-contain object-center" />
-        </div>
-        <h3 class="text-xl font-semibold mt-4">Embroidery</h3>
-    </div>
-
-    <!-- Card 2 -->
-    <div class="w-60">
-        <div class="bg-gray-100 rounded-lg shadow-lg w-60 h-72 flex justify-center items-center">
-            <img src="{{ asset('images/homepage/weed.png') }}" alt="Product 2" class="w-36 h-36 object-contain object-center" />
-        </div>
-        <h3 class="text-xl font-semibold mt-4">Mylar Bags</h3>
-    </div>
-
-    <!-- Card 3 -->
-    <div class="w-60">
-        <div class="bg-gray-100 rounded-lg shadow-lg w-60 h-72 flex justify-center items-center">
-            <img src="{{ asset('images/homepage/pomade.png') }}" alt="Product 3" class="w-36 h-36 object-contain object-center" />
-        </div>
-        <h3 class="text-xl font-semibold mt-4">Packaging</h3>
-    </div>
-
-    <!-- Card 4 -->
-    <div class="w-60">
-        <div class="bg-gray-100 rounded-lg shadow-lg w-60 h-72 flex justify-center items-center">
-            <img src="your-image4.jpg" alt="Product 4" class="w-36 h-36 object-contain object-center" />
-        </div>
-        <h3 class="text-xl font-semibold mt-4">Product 4</h3>
-    </div>
-
-    <!-- Card 5 -->
-    <div class="w-60">
-        <div class="bg-gray-100 rounded-lg shadow-lg w-60 h-72 flex justify-center items-center">
-            <img src="your-image5.jpg" alt="Product 5" class="w-36 h-36 object-contain object-center" />
-        </div>
-        <h3 class="text-xl font-semibold mt-4">Product 5</h3>
-    </div>
-</div>
-
-
-    </div>
-</div>
-
+<x-product-carousel :title="'Create Brands with us'" :products='json_encode([
+    ["title" => "Embroidery", "image" => "images/homepage/cap.png"],
+    ["title" => "Mylar Bags", "image" => "images/homepage/weed.png"],
+    ["title" => "Packaging", "image" => "images/homepage/pomade.png"],
+    ["title" => "Product 4", "image" => "your-image4.jpg"],
+    ["title" => "Product 5", "image" => "your-image5.jpg"]
+])'/>
 
 
 @endsection
