@@ -17,6 +17,14 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/silk-screen-printing', function () {
-    return view('services.silk-screen-printing');
+Route::prefix('/silk-screen-printing')->group(function () {
+    Route::get('/', function () {
+        return view('services.silk-screen-printing');
+    });
+
+    Route::get('/hoodies', function () {
+        return view('services.silkscreenproducts.hoodies');
+    });
+
+    // Add more routes related to silk screen printing here...
 });

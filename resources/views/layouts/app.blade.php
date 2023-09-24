@@ -21,7 +21,7 @@
             </div>
         </header>
 
-        <main class="bg-slate-300 "> <!-- Add padding to the top -->
+        <main class=""> <!-- Add padding to the top -->
             @yield('content')
         
 
