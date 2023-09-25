@@ -11,7 +11,7 @@
 
         <!-- Logo (Centered) -->
         <div class="text-center">
-<img src="{{ asset('images/logos/krystallogo.png') }}" alt="Your Logo" class="h-10 w-auto mx-auto -mt-10" />
+<img src="{{ asset('images/logos/krystallogo.png') }}" alt="Your Logo" class="h-16 w-auto mx-auto -mt-10" />
         </div>
     </div>
 
