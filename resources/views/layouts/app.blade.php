@@ -15,12 +15,16 @@
 </head>
 <body>
 <!-- dfdf-->
-        <header class=" top-0 left-0 w-full">
-            <div class="lg:hidden">
-                <x-navigation />
-            </div>
-            <x-desknav />
-        </header>
+       <header class="top-0 left-0 w-full">
+    <div class="lg:hidden">
+        <!-- This navigation will be displayed on smaller screens (mobile view) -->
+        <x-navigation />
+    </div>
+    <div class="hidden lg:block">
+        <!-- This "desknav" will be displayed on larger screens (not mobile view) -->
+        <x-desknav />
+    </div>
+</header>
 
         <main class=""> <!-- Add padding to the top -->
             @yield('content')

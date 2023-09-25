@@ -1,12 +1,12 @@
 <nav class="bg-white py-4 px-8 flex flex-wrap justify-between items-center">
     <!-- Logo -->
     <div class="w-1/3">
-        <img src="{{ asset('images/logos/krystallogo.png') }}" alt="Logo" class="w-60">
+        <img src="{{ asset('images/logos/krystallogo.png') }}" alt="Logo" class="w-40">
     </div>
 
     <!-- Main Navigation Links -->
     <ul class="flex w-1/3 justify-center space-x-6 font-montserrat font-medium">
-        <li><a href="#">Home</a></li>
+        <li><a href="{{ route('home') }}">Home</a></li>
         <li><a href="#">About us</a></li>
         <li><a href="#">Portfolio</a></li>
         <li><a href="#">Equipment</a></li>
@@ -23,7 +23,7 @@
     <li>
       <div x-data="{ isOpen: false }" class="flex flex-col">
     <div class="flex items-center">
-        <a  href="#" class="text-black cursor-pointer hover:text-blue-500 transition-colors">
+        <a  href="{{ route('silk-screen-printing') }}" class="text-black cursor-pointer hover:text-blue-500 transition-colors">
             Silk Screen Printing
         </a>
         <svg @click="isOpen = !isOpen" x-bind:class="{ 'transform rotate-180': isOpen, 'transform rotate-0': !isOpen }"
