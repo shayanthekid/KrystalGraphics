@@ -19,6 +19,7 @@
             <div class="lg:hidden">
                 <x-navigation />
             </div>
+            <x-desknav />
         </header>
 
         <main class=""> <!-- Add padding to the top -->

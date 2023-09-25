@@ -5,7 +5,7 @@
         <h2 class="text-2xl font-semibold mb-8 ml-2">{{ $title }}</h2>
 
         <!-- Carousel of Cards -->
-        <div class="flex space-x-4 overflow-x-auto">
+        <div class="flex space-x-4 lg:space-x-20 overflow-x-auto no-scrollbarr">
             @foreach(json_decode($products) as $product)
             <div class="w-60">
                 <div class="bg-gray-100 rounded-lg shadow-lg w-60 h-72 flex justify-center items-center">
