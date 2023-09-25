@@ -1,4 +1,4 @@
-<div x-data="{ isOpen: false }" class="z-50 ">
+<div x-data="{ isOpen: false }" class="z-100">
     <!-- Mobile Navigation Bar (Row) -->
     <div class=" top-4 left-4 w-full h-auto ">
         <!-- Hamburger Menu Icon (left-aligned) -->
@@ -11,7 +11,7 @@
 
         <!-- Logo (Centered) -->
         <div class="text-center">
-<img src="{{ asset('images/logos/krystallogo.png') }}" alt="Your Logo" class="h-10 w-auto mx-auto -mt-10" />
+<img src="{{ asset('images/logos/krystallogo.png') }}" alt="Your Logo" class="h-20 w-auto mx-auto -mt-10" />
         </div>
     </div>
 
