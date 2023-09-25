@@ -11,7 +11,7 @@
 
         <!-- Logo (Centered) -->
         <div class="text-center">
-<img src="{{ asset('images/logos/krystallogo.png') }}" alt="Your Logo" class="h-20 w-auto mx-auto -mt-10" />
+<img src="{{ asset('images/logos/krystallogo.png') }}" alt="Your Logo" class="h-16 w-auto mx-auto -mt-10" />
         </div>
     </div>
 
@@ -33,7 +33,7 @@
 
         <!-- Navigational Headers -->
         <div class="mt-10 mx-4">
-            <h2 class="text-lg font-semibold">Home</h2>
+            <h2 class="text-lg font-semibold"><a href="{{ route('home') }}">Home </a> </h2>
             <h2 class="text-lg font-semibold mt-4">Contact Us</h2>
             <h2 class="text-lg font-semibold">ADDITIONAL WEBSITE</h2>
         </div>
@@ -45,7 +45,7 @@
                 <li x-data="{ isOpen: false }">
                     <!-- Header of the accordion -->
                     <div class="flex items-center">
-                        <a @click="isOpen = !isOpen" class="text-blue-500 cursor-pointer">
+                        <a @click="isOpen = !isOpen" href="{{ route('silk-screen-printing') }}" class="text-blue-500 cursor-pointer">
                             Silk Screen Printing
                         </a>
                         <svg x-bind:class="{ 'transform rotate-180': isOpen, 'transform rotate-0': !isOpen }"

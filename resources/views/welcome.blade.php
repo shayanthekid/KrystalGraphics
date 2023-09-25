@@ -7,14 +7,23 @@ use App\View\Components\ProductCarousel;
     <!-- Hero Section -->
    
 <div class="bg-[#94A2CE] py-16">
-    <div class="container mx-auto flex justify-center items-center h-full">
-        <div class="text-center text-white">
-            <h1 class="text-4xl font-semibold font-montserrat lg:text-6xl ">Print Perfection</h1>
-            <p class="mt-4 font-montserrat text-lg font-light lg:text-xl p-4">Discover meticulously embroidery, packaging, and more at Kristal Graphics. Where quality printing builds your brand and nurtures lasting bonds.</p>
-            <a href="#" class="mt-8 inline-block px-6 py-3 text-black bg-white rounded-lg shadow-lg hover:shadow-xl transition duration-300">Contact Us</a>
+    <div class="container mx-auto px-4 grid grid-cols-1 gap-4 md:grid-cols-2">
+        <div class="container mx-auto flex justify-center lg:justify-start items-center h-full">
+            <div class="text-center lg:text-left text-white">
+                <h1 class="text-4xl font-semibold font-montserrat lg:text-6xl lg:py-10">Print Perfection</h1>
+                <p class="mt-4 font-montserrat text-lg font-light lg:text-xl p-4 lg:p-0">Discover meticulously embroidery, packaging, and more at Kristal Graphics. Where quality printing builds your brand and nurtures lasting bonds.</p>
+                <a href="#" class="mt-8 inline-block px-6 py-3 text-black bg-white rounded-lg shadow-lg hover:shadow-xl transition duration-300 lg:text-left">Contact Us</a>
+            </div>
+
+          
+        </div>
+
+             <div class="hidden lg:flex lg:w-full lg:items-end justify-end">
+            <img src="{{ asset('images/homepage/heroimage.png') }}" alt="" class="w-full" style="max-width: 100%; height: auto;">
         </div>
     </div>
 </div>
+
 
 <!-- Banner -->
 <div class="bg-yellow-400 h-16">
@@ -24,19 +33,19 @@ use App\View\Components\ProductCarousel;
 
 <!-- Products -->
 <x-product-carousel :title="'Top Picks, Irresistible Prices'" :products='json_encode([
-    ["title" => "Embroidery", "image" => "images/homepage/cap.png"],
-    ["title" => "Mylar Bags", "image" => "images/homepage/weed.png"],
-    ["title" => "Packaging", "image" => "images/homepage/pomade.png"],
-    ["title" => "Product 4", "image" => "your-image4.jpg"],
-    ["title" => "Product 5", "image" => "your-image5.jpg"]
+    ["title" => "Embroidery", "image" => "images/homepage/cap.png", "url" => "/embroidery"],
+    ["title" => "Mylar Bags", "image" => "images/homepage/weed.png", "url" => "/embroidery"],
+    ["title" => "Packaging", "image" => "images/homepage/pomade.png", "url" => "/embroidery"],
+    ["title" => "Product 4", "image" => "images/homepage/cap.png", "url" => "/embroidery"],
+    ["title" => "Product 5", "image" => "images/homepage/weed.png", "url" => "/embroidery"]
 ])'/>
 
 <x-product-carousel :title="'Create Brands with us'" :products='json_encode([
-    ["title" => "Embroidery", "image" => "images/homepage/cap.png"],
-    ["title" => "Mylar Bags", "image" => "images/homepage/weed.png"],
-    ["title" => "Packaging", "image" => "images/homepage/pomade.png"],
-    ["title" => "Product 4", "image" => "your-image4.jpg"],
-    ["title" => "Product 5", "image" => "your-image5.jpg"]
+    ["title" => "Embroidery", "image" => "images/homepage/cap.png", "url" => "/embroidery"],
+    ["title" => "Mylar Bags", "image" => "images/homepage/weed.png", "url" => "/embroidery"],
+    ["title" => "Packaging", "image" => "images/homepage/pomade.png", "url" => "/embroidery"],
+    ["title" => "Product 4", "image" => "images/homepage/cap.png", "url" => "/embroidery"],
+    ["title" => "Product 5", "image" => "images/homepage/weed.png", "url" => "/embroidery"]
 ])'/>
 
 <!-- more services -->
@@ -49,31 +58,31 @@ use App\View\Components\ProductCarousel;
         <div class="flex flex-wrap justify-center items-center lg:justify-center">
            
             <div class="w-60 mb-8 md:mb-0 md:w-1/4">
-                <div class="bg-gray-100 rounded-lg shadow-lg w-60 h-72 flex justify-center items-center">
-                    <img src="" alt="" class="w-36 h-36 object-contain object-center" />
+                <div class=" bg-[#FFC20E] rounded-lg shadow-lg w-60 h-72 flex justify-center items-center">
+                    <img src="{{ asset('images/homepage/loud.png') }}" alt="" class="w-full h-72 object-contain object-center" />
                 </div>
-                <h3 class="text-xl font-semibold mt-4">Something</h3>
+                <h3 class="text-xl font-semibold mt-4">Promotions</h3>
             </div>
 
             <div class="w-60 mb-8 md:mb-0 md:w-1/4">
                 <div class="bg-gray-100 rounded-lg shadow-lg w-60 h-72 flex justify-center items-center">
-                    <img src="" alt="" class="w-36 h-36 object-contain object-center" />
+                    <img src="{{ asset('images/homepage/glass.png') }}" alt="" class="w-36 h-36 object-contain object-center" />
                 </div>
-                <h3 class="text-xl font-semibold mt-4">Something</h3>
+                <h3 class="text-xl font-semibold mt-4">Glass Jars</h3>
+            </div>
+
+             <div class="w-60 mb-8 md:mb-0 md:w-1/4">
+                <div class="bg-gray-100 rounded-lg shadow-lg w-60 h-72 flex justify-center items-center">
+                    <img src="{{ asset('images/homepage/silkt.png') }} " alt="" class="w-36 h-36 object-contain object-center" />
+                </div>
+                <h3 class="text-xl font-semibold mt-4">Silk Screen Printing</h3>
             </div>
 
              <div class="w-60 mb-8 md:mb-0 md:w-1/4">
                 <div class="bg-gray-100 rounded-lg shadow-lg w-60 h-72 flex justify-center items-center">
                     <img src="" alt="" class="w-36 h-36 object-contain object-center" />
                 </div>
-                <h3 class="text-xl font-semibold mt-4">Something</h3>
-            </div>
-
-             <div class="w-60 mb-8 md:mb-0 md:w-1/4">
-                <div class="bg-gray-100 rounded-lg shadow-lg w-60 h-72 flex justify-center items-center">
-                    <img src="" alt="" class="w-36 h-36 object-contain object-center" />
-                </div>
-                <h3 class="text-xl font-semibold mt-4">Something</h3>
+                <h3 class="text-xl font-semibold mt-4">Additional Website</h3>
             </div>
       
         </div>

@@ -15,7 +15,7 @@ use App\View\Components\ProductCarousel;
             </p>
           <div class="grid grid-cols-2 gap-4">
     <a href="#" class="inline-block px-3 py-2 text-black bg-white rounded-lg shadow-lg hover:shadow-xl transition duration-300 mx-2">Tshirts</a>
-    <a href="#" class="inline-block px-3 py-2 text-black bg-white rounded-lg shadow-lg hover:shadow-xl transition duration-300 mx-2">Hoodies</a>
+    <a href="{{ route('silk-screen-printing.hoodies') }}" class="inline-block px-3 py-2 text-black bg-white rounded-lg shadow-lg hover:shadow-xl transition duration-300 mx-2">Hoodies</a>
     <a href="#" class="inline-block px-3 py-2 text-black bg-white rounded-lg shadow-lg hover:shadow-xl transition duration-300 mx-2">Bandanas</a>
     <a href="#" class="inline-block px-3 py-2 text-black bg-white rounded-lg shadow-lg hover:shadow-xl transition duration-300 mx-2">Safety Vest</a>
 </div>
@@ -27,29 +27,29 @@ use App\View\Components\ProductCarousel;
 
 <!-- Products -->
 <x-product-carousel :title="'Our colorful imprints '" :products='json_encode([
-    ["title" => "Embroidery", "image" => "images/homepage/cap.png"],
-    ["title" => "Mylar Bags", "image" => "images/homepage/weed.png"],
-    ["title" => "Packaging", "image" => "images/homepage/pomade.png"],
-    ["title" => "Product 4", "image" => "your-image4.jpg"],
-    ["title" => "Product 5", "image" => "your-image5.jpg"]
+    ["title" => "T-shirts", "image" => "images/services/blackt.png", "url" => "/embroidery"],
+    ["title" => "Hoodie", "image" => "images/services/hoodie.png", "url" => "/embroidery"],
+    ["title" => "Safety", "image" => "images/services/vest.png", "url" => "/embroidery"],
+    ["title" => "T-shirts", "image" => "images/services/blackt.png", "url" => "/embroidery"],
+    ["title" => "Hoodie", "image" => "images/services/hoodie.png", "url" => "/embroidery"]
 ])'/>
 
 <!-- Products -->
 <x-product-carousel :title="'Hoodie Fit check '" :products='json_encode([
-    ["title" => "Embroidery", "image" => "images/homepage/cap.png"],
-    ["title" => "Mylar Bags", "image" => "images/homepage/weed.png"],
-    ["title" => "Packaging", "image" => "images/homepage/pomade.png"],
-    ["title" => "Product 4", "image" => "your-image4.jpg"],
-    ["title" => "Product 5", "image" => "your-image5.jpg"]
+    ["title" => "Hoodie", "image" => "images/services/whitehood.png", "url" => "/silk-screen-printing/hoodies"],
+    ["title" => "Hoodie", "image" => "images/services/bluegood.png", "url" => "/embroidery"],
+    ["title" => "Hoodie", "image" => "images/services/hoodie.png", "url" => "/embroidery"],
+    ["title" => "Hoodie", "image" => "images/services/hoodie.png", "url" => "/embroidery"],
+    ["title" => "Hoodie", "image" => "images/services/hoodie.png", "url" => "/embroidery"]
 ])'/>
 
 <!-- Products -->
 <x-product-carousel :title="'Designs for tees'" :products='json_encode([
-    ["title" => "Embroidery", "image" => "images/homepage/cap.png"],
-    ["title" => "Mylar Bags", "image" => "images/homepage/weed.png"],
-    ["title" => "Packaging", "image" => "images/homepage/pomade.png"],
-    ["title" => "Product 4", "image" => "your-image4.jpg"],
-    ["title" => "Product 5", "image" => "your-image5.jpg"]
+    ["title" => "Lorem", "image" => "images/services/hoodie.png", "url" => "/embroidery"],
+    ["title" => "Lorem", "image" => "images/services/hoodie.png", "url" => "/embroidery"],
+    ["title" => "Loremg", "image" => "images/services/hoodie.png", "url" => "/embroidery"],
+    ["title" => "Lorem", "image" => "images/services/hoodie.png", "url" => "/embroidery"],
+    ["title" => "Lorem", "image" => "images/services/hoodie.png", "url" => "/embroidery"]
 ])'/>
 
 
