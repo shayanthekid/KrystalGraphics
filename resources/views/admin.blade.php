@@ -63,7 +63,7 @@
                 <td class="px-6 py-4 whitespace-nowrap">{{ $banner->title }}</td>
                 <td class="px-6 py-4 whitespace-nowrap">
                   
-                    <img src="{{ asset( $banner->image) }}" alt="{{ $banner->title }}" class="w-16 h-16 object-cover">
+                    <img src="{{ asset( $banner->image_path) }}" alt="{{ $banner->title }}" class="w-16 h-16 object-cover">
                 </td>
                 <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
                     <!-- Add buttons for actions like Edit and Delete -->
