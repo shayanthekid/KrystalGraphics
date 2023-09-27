@@ -29,3 +29,7 @@ Route::prefix('/silk-screen-printing')->group(function () {
 
     // Add more routes related to silk screen printing here...
 });
+
+
+Route::get('/admin', 'App\Http\Controllers\AdminController@index')->name('admin');
+
