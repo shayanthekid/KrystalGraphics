@@ -33,3 +33,7 @@ Route::prefix('/silk-screen-printing')->group(function () {
 
 Route::get('/admin', 'App\Http\Controllers\AdminController@index')->name('admin');
 
+Route::prefix('/admin/banners')->group(function () {
+    Route::post('/create', 'App\Http\Controllers\BannerController@store')->name('admin.banners.store');
+    Route::get('/view', 'App\Http\Controllers\BannerController@index')->name('admin.banners.index');
+});
