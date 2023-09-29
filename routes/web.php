@@ -37,5 +37,6 @@ Route::prefix('/admin/banners')->group(function () {
     Route::post('/create', 'App\Http\Controllers\BannerController@store')->name('admin.banners.store');
     Route::get('/view', 'App\Http\Controllers\BannerController@index')->name('admin.banners.index');
     Route::delete('/{id}', 'App\Http\Controllers\BannerController@destroy')->name('admin.banners.destroy'); // Add this line
+    Route::get('/json', 'App\Http\Controllers\BannerController@getBannersJson')->name('admin.banners.json');
 
 });

@@ -13,7 +13,11 @@ public function index()
     $banners = Banner::all();
     return view('admin', compact('banners'));
 }
-
+public function getBannersJson()
+{
+    $banners = Banner::all();
+    return response()->json(['banners' => $banners]);
+}
 
    public function store(Request $request)
     {

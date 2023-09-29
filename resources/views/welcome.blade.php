@@ -24,7 +24,30 @@ use App\View\Components\ProductCarousel;
     </div>
 </div>
 
-
+<div x-data="carousel" class="relative w-full max-w-screen-lg mx-auto">
+    <div class="relative overflow-hidden rounded-lg">
+        <div x-ref="slider" class="flex transition-transform duration-300 ease-in-out">
+            <!-- Images will be dynamically added here -->
+            <template x-for="(image, index) in images" :key="index">
+                <div class="w-full h-96 flex-shrink-0">
+                    <img :src="image" :alt="'Image ' + (index + 1)" class="w-full h-full object-cover">
+                </div>
+            </template>
+        </div>
+    </div>
+    
+    <!-- Navigation Buttons -->
+    <div class="absolute inset-y-0 left-0 flex items-center">
+        <button @click="prev()" class="px-4 py-2 bg-gray-900 text-white hover:bg-gray-700">
+            Previous
+        </button>
+    </div>
+    <div class="absolute inset-y-0 right-0 flex items-center">
+        <button @click="next()" class="px-4 py-2 bg-gray-900 text-white hover:bg-gray-700">
+            Next
+        </button>
+    </div>
+</div>
 <!-- Banner -->
 <div class="bg-yellow-400 h-16">
     
@@ -119,7 +142,47 @@ use App\View\Components\ProductCarousel;
     </div>
 </div>
 
+<script>
+    function carousel() {
+        return {
+             images: [],
+            currentIndex: 0,
+            slider: null,
 
+            init() {
+                this.slider = this.$refs.slider;
+                this.fetchImages();
+            },
+
+            fetchImages() {
+                fetch('{{ route("admin.banners.json") }}')
+                    .then(response => response.json())
+                    .then(data => {
+                        this.images = data.banners.map(banner => banner.image_path);
+                    })
+                    .catch(error => {
+                        console.error('Failed to fetch images:', error);
+                    });
+            },
+
+
+            next() {
+                this.currentIndex = (this.currentIndex + 1) % this.images.length;
+                this.slideToCurrentIndex();
+            },
+
+            prev() {
+                this.currentIndex = (this.currentIndex - 1 + this.images.length) % this.images.length;
+                this.slideToCurrentIndex();
+            },
+
+            slideToCurrentIndex() {
+                const translateX = -this.currentIndex * 100;
+                this.slider.style.transform = `translateX(${translateX}%)`;
+            }
+        };
+    }
+</script>
 
 
 @endsection
