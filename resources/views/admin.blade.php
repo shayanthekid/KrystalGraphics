@@ -21,20 +21,28 @@
     <h1 class="text-2xl font-semibold mb-4">Create Banner</h1>
 
     <!-- Banner Creation Form -->
-  
-<form action="{{ route('admin.banners.store') }}" method="POST" enctype="multipart/form-data">
+ <form action="{{ route('admin.banners.store') }}" method="POST" enctype="multipart/form-data">
     @csrf
     @method('POST') <!-- Specify the HTTP method -->
     <div class="mb-4">
         <label for="title" class="block text-sm font-medium text-gray-700">Title</label>
         <input type="text" id="title" name="title" class="mt-1 p-2 block w-full rounded-md border-gray-300">
+
+        @error('title')
+        <p class="text-red-500 text-sm">{{ $message }}</p>
+        @enderror
     </div>
     <div class="mb-4">
         <label for="image" class="block text-sm font-medium text-gray-700">Image</label>
         <input type="file" id="image" name="image" class="mt-1 block w-full">
+
+        @error('image')
+        <p class="text-red-500 text-sm">{{ $message }}</p>
+        @enderror
     </div>
     <button type="submit" class="bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600">Create Banner</button>
 </form>
+
 
 
             {{-- View Banner --}}
@@ -67,8 +75,8 @@
                 </td>
                 <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
                     <!-- Add buttons for actions like Edit and Delete -->
-                    <a href="#" class="text-blue-600 hover:underline">Edit</a>
-                    <button class="text-red-600 hover:underline ml-2">Delete</button>
+                 
+<button class="text-red-600 hover:underline ml-2 delete-banner" data-id="{{ $banner->id }}">Delete</button>
                 </td>
             </tr>
             @endforeach
@@ -83,6 +91,34 @@
   
     </footer>
 
-  
+  <script>
+    // Add a click event listener to all elements with the "delete-banner" class
+    document.querySelectorAll('.delete-banner').forEach(function (button) {
+        button.addEventListener('click', function () {
+            const bannerId = this.getAttribute('data-id'); // Get the banner ID from the button's data-id attribute
+
+            // Make an AJAX DELETE request to the delete route with the banner ID
+            fetch(`/admin/banners/${bannerId}`, {
+                method: 'DELETE',
+                headers: {
+                    'X-CSRF-TOKEN': '{{ csrf_token() }}', // Include the CSRF token
+                },
+            })
+            .then(response => {
+                if (response.ok) {
+                    // Banner deleted successfully, you can handle this as needed (e.g., remove the row from the table)
+                    // Reload the page or update the UI to reflect the changes
+                    location.reload();
+                } else {
+                    // Handle the case where the delete request fails (e.g., show an error message)
+                    console.error('Failed to delete banner');
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+        });
+    });
+</script>
 </body>
 </html>

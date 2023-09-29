@@ -35,4 +35,22 @@ Banner::create([
         // Redirect back with a success message or handle the response as needed
         return redirect()->back()->with('success', 'Banner created successfully');
     }
+
+
+
+public function destroy($id)
+{
+    try {
+        $banner = Banner::findOrFail($id);
+        $banner->delete();
+        return response()->json(['message' => 'Banner deleted successfully']);
+    } catch (\Exception $e) {
+        // Log the error for debugging purposes
+        \Log::error('Error deleting banner: ' . $e->getMessage());
+
+        // Return an error response
+        return response()->json(['error' => 'Failed to delete banner'], 500);
+    }
+}
+
 }
