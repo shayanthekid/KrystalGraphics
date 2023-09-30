@@ -24,7 +24,8 @@ use App\View\Components\ProductCarousel;
     </div>
 </div>
 
-<div x-data="carousel" class="relative w-full max-w-screen-lg mx-auto">
+{{-- Banner --}}
+<div x-data="carousel" class="relative w-full max-w-screen-lg mx-auto p-3">
     <div class="relative overflow-hidden rounded-lg">
         <div x-ref="slider" class="flex transition-transform duration-300 ease-in-out">
             <!-- Images will be dynamically added here -->
@@ -39,19 +40,16 @@ use App\View\Components\ProductCarousel;
     <!-- Navigation Buttons -->
     <div class="absolute inset-y-0 left-0 flex items-center">
         <button @click="prev()" class="px-4 py-2 bg-gray-900 text-white hover:bg-gray-700">
-            Previous
+            <
         </button>
     </div>
     <div class="absolute inset-y-0 right-0 flex items-center">
         <button @click="next()" class="px-4 py-2 bg-gray-900 text-white hover:bg-gray-700">
-            Next
+            >
         </button>
     </div>
 </div>
-<!-- Banner -->
-<div class="bg-yellow-400 h-16">
-    
-</div>
+
 
 
 <!-- Products -->
@@ -60,7 +58,8 @@ use App\View\Components\ProductCarousel;
     ["title" => "Mylar Bags", "image" => "images/homepage/weed.png", "url" => "/embroidery"],
     ["title" => "Packaging", "image" => "images/homepage/pomade.png", "url" => "/embroidery"],
     ["title" => "Product 4", "image" => "images/homepage/cap.png", "url" => "/embroidery"],
-    ["title" => "Product 5", "image" => "images/homepage/weed.png", "url" => "/embroidery"]
+    ["title" => "Product 5", "image" => "images/homepage/weed.png", "url" => "/embroidery"],
+     ["title" => "Product 6", "image" => "images/homepage/weed.png", "url" => "/embroidery"]
 ])'/>
 
 <x-product-carousel :title="'Create Brands with us'" :products='json_encode([
