@@ -2,7 +2,7 @@
 
 @section('content')
 <!-- About us -->
-<div class="py-16 bg-[#E4E4E4]">
+<div class="py-16 ">
     <div class="container mx-auto px-4 grid grid-cols-1 gap-4 md:grid-cols-2">
         <!-- First Column -->
         <div>

@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
- <div class="container grid grid-cols-1 md:grid-cols-2">
+ <div class="container grid grid-cols-1 md:grid-cols-2 mt-10">
 
     <!-- first column-->
 {{-- <div x-data="carousel()" class="bg-[#D9D9D9] relative -z-10">

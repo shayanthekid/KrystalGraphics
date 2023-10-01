@@ -16,44 +16,7 @@
     </div>
     @endif
 
-<!-- Centered Grid for Contact Information -->
-    <div class="md:flex md:justify-center md:space-x-4">
-        <!-- Office -->
-        <div class="mb-4 md:w-1/3">
-            <h2 class="text-lg font-semibold text-gray-700 mb-2">Office</h2>
-            <p class="text-gray-600">
-                7801 Canoga Ave<br>
-                Unit 14<br>
-                Canoga Park, CA 91303<br>
-                USA
-            </p>
-            <p class="text-gray-600 mt-2">
-                Phone: 818-342-7822<br>
-                Fax: 818-884-7046
-            </p>
-        </div>
-
-        <!-- Production -->
-        <div class="mb-4 md:w-1/3">
-            <h2 class="text-lg font-semibold text-gray-700 mb-2">Production</h2>
-            <p class="text-gray-600">
-                9400 Oso Ave<br>
-                Chatsworth, CA 91311
-            </p>
-        </div>
-
-        <!-- Warehouse -->
-        <div class="mb-4 md:w-1/3">
-            <h2 class="text-lg font-semibold text-gray-700 mb-2">Warehouse</h2>
-            <p class="text-gray-600">
-                9177 Kelvin Ave<br>
-                Chatsworth, CA 91311
-            </p>
-        </div>
-    </div>
-
-
-    <form action="{{ route('contact.send') }}" method="post" class="max-w-lg mx-auto">
+<form action="{{ route('contact.send') }}" method="post" class="max-w-lg mx-auto p-5">
         @csrf
         <div class="mb-4">
             <label for="name" class="block text-gray-700 font-semibold mb-2">Name</label>
@@ -72,5 +35,45 @@
 
         <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition duration-300 focus:outline-none focus:ring focus:ring-blue-200">Send Message</button>
     </form>
+
+<!-- Centered Grid for Contact Information -->
+    <div class="md:flex md:justify-center md:space-x-4 mt-20">
+    <!-- Office -->
+    <div class="mb-4 md:w-1/3 text-center">
+        <h2 class="text-lg font-semibold text-gray-700 mb-2">Office</h2>
+        <p class="text-gray-600">
+            7801 Canoga Ave<br>
+            Unit 14<br>
+            Canoga Park, CA 91303<br>
+            USA
+        </p>
+        <p class="text-gray-600 mt-2">
+            Phone: 818-342-7822<br>
+            Fax: 818-884-7046
+        </p>
+    </div>
+
+    <!-- Production -->
+    <div class="mb-4 md:w-1/3 text-center">
+        <h2 class="text-lg font-semibold text-gray-700 mb-2">Production</h2>
+        <p class="text-gray-600">
+            9400 Oso Ave<br>
+            Chatsworth, CA 91311
+        </p>
+    </div>
+
+    <!-- Warehouse -->
+    <div class="mb-4 md:w-1/3 text-center">
+        <h2 class="text-lg font-semibold text-gray-700 mb-2">Warehouse</h2>
+        <p class="text-gray-600">
+            9177 Kelvin Ave<br>
+            Chatsworth, CA 91311
+        </p>
+    </div>
+</div>
+
+
+
+    
 </div>
 @endsection
