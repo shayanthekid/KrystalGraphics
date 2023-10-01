@@ -25,9 +25,9 @@
 }
 
 .scrollbar-red::-webkit-scrollbar-thumb {
-    background-color: rgba(0, 0, 0, 0.2);
+    background-color: #F5F5F5;
     border-radius: 10px;
- 
+ height: 2px;
 }
 
 /* .scrollbar-red::-webkit-scrollbar-track {
