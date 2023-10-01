@@ -21,6 +21,9 @@ Route::get('/equipment', function () {
 })->name('equipment');
 
 
+Route::get('/contact', 'App\Http\Controllers\ContactUsController@index');
+Route::post('/contact', 'App\Http\Controllers\ContactUsController@sendEmail')->name('contact.send');
+
 
 Route::prefix('/silk-screen-printing')->group(function () {
     Route::get('/', function () {
