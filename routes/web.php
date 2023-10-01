@@ -19,6 +19,12 @@ Route::get('/', function () {
 Route::get('/equipment', function () {
     return view('equipment');
 })->name('equipment');
+Route::get('/portfolio', function () {
+    return view('portfolio');
+})->name('portfolio');
+Route::get('/about', function () {
+    return view('about');
+})->name('about');
 
 
 Route::get('/contact', 'App\Http\Controllers\ContactUsController@index');
