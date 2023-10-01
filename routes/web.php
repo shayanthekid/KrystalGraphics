@@ -16,6 +16,10 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 })->name('home');
+Route::get('/equipment', function () {
+    return view('equipment');
+})->name('equipment');
+
 
 
 Route::prefix('/silk-screen-printing')->group(function () {
