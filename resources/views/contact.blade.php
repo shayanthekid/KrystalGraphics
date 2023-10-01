@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
+
 <div class="container mx-auto py-12">
     <h1 class="text-2xl font-semibold text-center mb-6">Contact Us</h1>
 
@@ -14,6 +15,43 @@
         </span>
     </div>
     @endif
+
+<!-- Centered Grid for Contact Information -->
+    <div class="md:flex md:justify-center md:space-x-4">
+        <!-- Office -->
+        <div class="mb-4 md:w-1/3">
+            <h2 class="text-lg font-semibold text-gray-700 mb-2">Office</h2>
+            <p class="text-gray-600">
+                7801 Canoga Ave<br>
+                Unit 14<br>
+                Canoga Park, CA 91303<br>
+                USA
+            </p>
+            <p class="text-gray-600 mt-2">
+                Phone: 818-342-7822<br>
+                Fax: 818-884-7046
+            </p>
+        </div>
+
+        <!-- Production -->
+        <div class="mb-4 md:w-1/3">
+            <h2 class="text-lg font-semibold text-gray-700 mb-2">Production</h2>
+            <p class="text-gray-600">
+                9400 Oso Ave<br>
+                Chatsworth, CA 91311
+            </p>
+        </div>
+
+        <!-- Warehouse -->
+        <div class="mb-4 md:w-1/3">
+            <h2 class="text-lg font-semibold text-gray-700 mb-2">Warehouse</h2>
+            <p class="text-gray-600">
+                9177 Kelvin Ave<br>
+                Chatsworth, CA 91311
+            </p>
+        </div>
+    </div>
+
 
     <form action="{{ route('contact.send') }}" method="post" class="max-w-lg mx-auto">
         @csrf

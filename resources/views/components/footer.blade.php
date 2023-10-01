@@ -6,7 +6,17 @@
                 <li><a href="#" class="hover:text-gray-500 text-lg font-semibold mb-2">Home</a></li>
                 <li><a href="#" class="hover:text-gray-500">Portfolio</a></li>
                 <li><a href="#" class="hover:text-gray-500">Contact Us</a></li>
-                <li><a href="#" class="hover:text-gray-500">Address: Type address here</a></li>
+              <!-- Contact Information -->
+                <li class="text-gray-600 mt-2 text-white">
+                    7801 Canoga Ave<br>
+                    Unit 14<br>
+                    Canoga Park, CA 91303<br>
+                    USA
+                </li>
+                <li class="text-gray-600 mt-2 text-white">
+                    Phone: 818-342-7822<br>
+                    Fax: 818-884-7046
+                </li>
             </ul>
         </div>
         <div class="w-full md:w-1/2 lg:w-1/4 pl-4 md:pl-0">
@@ -35,7 +45,7 @@
             </div>
         </div>
         <div class="w-full md:w-1/2 lg:w-1/4 pl-4 md:pl-0 flex items-center justify-center">
-            <p class="text-sm">&copy; 2023 Your Company Name</p>
+            <p class="text-sm bottom-0 relative">&copy; 2023 Krystal Graphics</p>
         </div>
     </div>
 </footer>

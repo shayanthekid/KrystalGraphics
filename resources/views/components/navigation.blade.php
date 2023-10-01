@@ -31,8 +31,12 @@
         <!-- Navigational Headers -->
         <div class="mt-10 mx-4">
             <h2 class="text-lg font-semibold"><a href="{{ route('home') }}">Home </a></h2>
-            <h2 class="text-lg font-semibold ">Contact Us</h2>
-            <h2 class="text-lg font-semibold">ADDITIONAL WEBSITE</h2>
+            <h2 class="text-lg font-semibold ">About us</h2>
+            <h2 class="text-lg font-semibold ">Portfolio</h2>
+             <h2 class="text-lg font-semibold ">Contact Us</h2>
+
+            
+            
         </div>
 
         <hr class="mt-4 h-0.5 bg-gray-300">
@@ -40,33 +44,15 @@
         <div class="mt-6 mx-4">
             <h3 class="text-lg font-semibold">Services</h3>
             <ul class="mt-2 space-y-2">
-                <li x-data="{ isOpen: false }">
-                    <!-- Header of the accordion -->
-                    <div class="flex items-center">
-                        <a @click="isOpen = !isOpen" href="{{ route('silk-screen-printing') }}" class="text-blue-500 cursor-pointer">
-                            Silk Screen Printing
-                        </a>
-                        <svg x-bind:class="{ 'transform rotate-180': isOpen, 'transform rotate-0': !isOpen }"
-                             xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" class="ml-2">
-                            <path fill="none" d="M0 0h24v24H0z"/>
-                            <path d="M7 10l5 5 5-5z"/>
-                        </svg>
-                    </div>
-
-                    <!-- Sub-menu items -->
-                    <ul x-show="isOpen" class="ml-4 mt-2 space-y-1">
-                        <li><a href="#">T-Shirts</a></li>
-                        <li><a href="#">Hoodies</a></li>
-                        <li><a href="#">Safety Vests</a></li>
-                        <li><a href="#">Bandanas</a></li>
-                    </ul>
-                </li>
-                <li><a href="#" class="text-blue-500">Promotional Items</a></li>
-                <li><a href="#" class="text-blue-500">Embroidery</a></li>
-                <li><a href="#" class="text-blue-500">Packaging</a></li>
-                <li><a href="#" class="text-blue-500">Mylar Bags</a></li>
-                <li><a href="#" class="text-blue-500">Glass Jars</a></li>
-                <li><a href="#" class="text-blue-500">Labels/ Stickers</a></li>
+             
+        <li><a href="{{ route('silk-screen-printing') }}">Silk Screen Printing</a></li>
+        <li><a href="#">Embroidery</a></li>
+        <li><a href="">Packaging</a></li>          
+        <li><a href="#">Mylar Bags</a></li>
+        <li><a href="#">Glass Jars</a></li>
+         <li><a href="#">Labels/ Stickers</a></li>
+        <li><a href="https://www.promoplace.com/33620/ ">Promotional Items</a></li>
+        <h2 class=""><a href="https://bullseyeb2b.com/ ">Mailing Services</a></h2>
             </ul>
         </div>
     </div>

@@ -10,8 +10,14 @@ use App\View\Components\ProductCarousel;
     <div class="container mx-auto px-4 grid grid-cols-1 gap-4 md:grid-cols-2">
         <div class="container mx-auto flex justify-center lg:justify-start items-center h-full">
             <div class="text-center lg:text-left text-white">
-                <h1 class="text-4xl font-semibold font-montserrat lg:text-6xl lg:py-10">Print Perfection</h1>
-                <p class="mt-4 font-montserrat text-lg font-light lg:text-xl p-4 lg:p-0">Discover meticulously embroidery, packaging, and more at Kristal Graphics. Where quality printing builds your brand and nurtures lasting bonds.</p>
+                <h1 class="text-4xl font-semibold font-montserrat lg:text-6xl lg:py-10">
+Empowering imagination, one print at a time
+</h1>
+                <p class="mt-4 font-montserrat text-lg font-light lg:text-xl p-4 lg:p-0">
+                    Unlocking Creativity, One Print at a Time!
+Your source for Printing, Packaging, Promotional Items, and More 
+
+                </p>
                 <a href="#" class="mt-8 inline-block px-6 py-3 text-black bg-white rounded-lg shadow-lg hover:shadow-xl transition duration-300 lg:text-left">Contact Us</a>
             </div>
 
@@ -25,13 +31,15 @@ use App\View\Components\ProductCarousel;
 </div>
 
 {{-- Banner --}}
+
+
 <div x-data="carousel" class="relative w-full max-w-screen-lg mx-auto p-3">
     <div class="relative overflow-hidden rounded-lg">
         <div x-ref="slider" class="flex transition-transform duration-300 ease-in-out">
             <!-- Images will be dynamically added here -->
             <template x-for="(image, index) in images" :key="index">
                 <div class="w-full h-96 flex-shrink-0">
-                    <img :src="image" :alt="'Image ' + (index + 1)" class="w-full h-full object-cover">
+                    <img :src="image" :alt="'Image ' + (index + 1)" class="w-full h-full object-contain md:object-fit">
                 </div>
             </template>
         </div>
@@ -53,7 +61,7 @@ use App\View\Components\ProductCarousel;
 
 
 <!-- Products -->
-<x-product-carousel :title="'Top Picks, Irresistible Prices'" :products='json_encode([
+<x-product-carousel :title="'Top Picks'" :products='json_encode([
     ["title" => "Embroidery", "image" => "images/homepage/cap.png", "url" => "/embroidery"],
     ["title" => "Mylar Bags", "image" => "images/homepage/weed.png", "url" => "/embroidery"],
     ["title" => "Packaging", "image" => "images/homepage/pomade.png", "url" => "/embroidery"],
