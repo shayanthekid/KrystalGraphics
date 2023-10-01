@@ -31,9 +31,14 @@ Your source for Printing, Packaging, Promotional Items, and More
 </div>
 
 {{-- Banner --}}
+     <div class="text-center lg:text-left text-black">
+                <h1 class="text-4xl p-5  font-semibold font-montserrat lg:text-3xl lg:py-10 text-center">
+Check Out Our <span style="color: #ED1F24;">Monthly Promotions </span>
+</h1>
+              
+            </div>
 
-
-<div x-data="carousel" class="relative w-full max-w-screen-lg mx-auto p-3">
+<div x-data="carousel" class="relative w-full max-w-screen-lg mx-auto p-3 -mt-20 md:mt-5 ">
     <div class="relative overflow-hidden rounded-lg">
         <div x-ref="slider" class="flex transition-transform duration-300 ease-in-out">
             <!-- Images will be dynamically added here -->
