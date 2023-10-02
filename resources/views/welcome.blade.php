@@ -11,7 +11,7 @@ use App\View\Components\ProductCarousel;
         <div class="container mx-auto flex justify-center lg:justify-start items-center h-full">
             <div class="text-center lg:text-left text-white">
                 <h1 class="text-4xl font-semibold font-montserrat lg:text-6xl lg:py-10">
-Empowering imagination, one print at a time
+Print Perfection
 </h1>
                 <p class="mt-4 font-montserrat text-lg font-light lg:text-xl p-4 lg:p-0">
                     Unlocking Creativity, One Print at a Time!
@@ -64,23 +64,223 @@ Check Out Our <span style="color: #ED1F24;">Monthly Promotions </span>
 </div>
 
 
+{{-- Top pics --}}
+ <div class="lg:hidden">
+        <!-- This will be displayed on smaller screens (mobile view) -->
+    
+<div class="py-16 bg-white">
+    <div class="container mx-auto">
+        <h2 class="text-2xl font-semibold mb-8 ml-2">Top Picks</h2>
+
+        <!-- Carousel of Cards -->
+        <div class="flex space-x-4 lg:space-x-20 overflow-x-scroll scrollbar-red">
+           
+            <!-- Card 1 -->
+            <div class="w-60">
+                <a href="/embroidery">
+                    <div class="bg-gray-100 rounded-lg shadow-lg w-60 h-72 flex justify-center items-center">
+                        <img src="images/homepage/label.png" alt="Labels" class="w-36 h-36 object-contain object-center" />
+                    </div>
+                    <h3 class="text-xl font-semibold mt-4 pb-8">Labels</h3>
+                </a>
+            </div>
+            
+            <!-- Card 2 -->
+            <div class="w-60">
+                <a href="/embroidery">
+                    <div class="bg-gray-100 rounded-lg shadow-lg w-60 h-72 flex justify-center items-center">
+                        <img src="images/homepage/jars.png" alt="Jars" class="w-36 h-36 object-contain object-center" />
+                    </div>
+                    <h3 class="text-xl font-semibold mt-4 pb-8">Jars</h3>
+                </a>
+            </div>
+            
+            <!-- Card 3 -->
+            <div class="w-60">
+                <a href="/embroidery">
+                    <div class="bg-gray-100 rounded-lg shadow-lg w-60 h-72 flex justify-center items-center">
+                        <img src="images/homepage/postcard2.png" alt="Postcards" class="w-36 h-36 object-contain object-center" />
+                    </div>
+                    <h3 class="text-xl font-semibold mt-4 pb-8">Postcards</h3>
+                </a>
+            </div>
+            
+            <!-- Card 4 -->
+            <div class="w-60">
+                <a href="/embroidery">
+                    <div class="bg-gray-100 rounded-lg shadow-lg w-60 h-72 flex justify-center items-center">
+                        <img src="images/homepage/silkbag.png" alt="Silkscreen" class="w-36 h-36 object-contain object-center" />
+                    </div>
+                    <h3 class="text-xl font-semibold mt-4 pb-8">Silkscreen</h3>
+                </a>
+            </div>
+            
+            <!-- Card 5 -->
+            <div class="w-60">
+                <a href="/embroidery">
+                    <div class="bg-gray-100 rounded-lg shadow-lg w-60 h-72 flex justify-center items-center">
+                        <img src="images/homepage/business.png" alt="Business Cards" class="w-36 h-36 object-contain object-center" />
+                    </div>
+                    <h3 class="text-xl font-semibold mt-4 pb-8">Business Cards</h3>
+                </a>
+            </div>
+            
+            <!-- Card 6 -->
+            <div class="w-60">
+                <a href="/embroidery">
+                    <div class="bg-gray-100 rounded-lg shadow-lg w-60 h-72 flex justify-center items-center">
+                        <img src="images/homepage/flyer.png" alt="Flyers" class="w-36 h-36 object-contain object-center" />
+                    </div>
+                    <h3 class="text-xl font-semibold mt-4 pb-8">Flyers</h3>
+                </a>
+            </div>
+            
+        </div>
+    </div>
+</div>
+
+
+    </div>
+    <div class="hidden lg:block">
+        <!-- This will be displayed on larger screens (not mobile view) -->
+
+
+
+<div class="py-16 bg-white">
+    <div class="container mx-auto">
+        <h2 class="text-2xl font-semibold mb-8 ml-2">Top Picks</h2>
+
+        <!-- Carousel of Cards -->
+        <div class="flex items-center justify-center w-full h-full py-24 sm:py-8 px-4">
+            <div class="w-full relative flex items-center justify-center">
+                <button aria-label="slide backward" class="absolute z-30 left-0 ml-10 focus:outline-none focus:bg-gray-400 focus:ring-2 focus:ring-offset-2 focus:ring-gray-400 cursor-pointer" id="prev2">
+                    <div class="w-10 h-10 flex items-center justify-center rounded-full bg-white">
+                        <svg class="dark:text-gray-900" width="8" height="14" viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M7 1L1 7L7 13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </div>
+                </button>
+
+                <div class="w-full h-full mx-auto overflow-x-hidden overflow-y-hidden">
+                    <div id="slider2" class="h-full flex lg:gap-8 md:gap-6 gap-14 items-center justify-start transition ease-out duration-700">
+                        <!-- Card 1 -->
+                        <div class="flex flex-shrink-0 relative w-full sm:w-auto no-scrollbar">
+                            <div class="flex space-x-4 lg:space-x-20 overflow-x-scroll no-scrollbar">
+                                <div class="w-60">
+                                    <a href="/embroidery">
+                                        <div class="bg-gray-100 rounded-lg shadow-lg w-60 h-72 flex justify-center items-center">
+                                            <img src="images/homepage/label.png" alt="Labels" class="w-36 h-36 object-contain object-center" />
+                                        </div>
+                                        <h3 class="text-xl font-semibold mt-4 pb-8">Labels</h3>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Card 2 -->
+                        <div class="flex flex-shrink-0 relative w-full sm:w-auto no-scrollbar">
+                            <div class="flex space-x-4 lg:space-x-20 overflow-x-scroll no-scrollbar">
+                                <div class="w-60">
+                                    <a href="/embroidery">
+                                        <div class="bg-gray-100 rounded-lg shadow-lg w-60 h-72 flex justify-center items-center">
+                                            <img src="images/homepage/jars.png" alt="Jars" class="w-36 h-36 object-contain object-center" />
+                                        </div>
+                                        <h3 class="text-xl font-semibold mt-4 pb-8">Jars</h3>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Card 3 -->
+                        <div class="flex flex-shrink-0 relative w-full sm:w-auto no-scrollbar">
+                            <div class="flex space-x-4 lg:space-x-20 overflow-x-scroll no-scrollbar">
+                                <div class="w-60">
+                                    <a href="/embroidery">
+                                        <div class="bg-gray-100 rounded-lg shadow-lg w-60 h-72 flex justify-center items-center">
+                                            <img src="images/homepage/postcard2.png" alt="Postcards" class="w-36 h-36 object-contain object-center" />
+                                        </div>
+                                        <h3 class="text-xl font-semibold mt-4 pb-8">Postcards</h3>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Card 4 -->
+                        <div class="flex flex-shrink-0 relative w-full sm:w-auto no-scrollbar">
+                            <div class="flex space-x-4 lg:space-x-20 overflow-x-scroll no-scrollbar">
+                                <div class="w-60">
+                                    <a href="/embroidery">
+                                        <div class="bg-gray-100 rounded-lg shadow-lg w-60 h-72 flex justify-center items-center">
+                                            <img src="images/homepage/silkbag.png" alt="Silkscreen" class="w-36 h-36 object-contain object-center" />
+                                        </div>
+                                        <h3 class="text-xl font-semibold mt-4 pb-8">Silkscreen</h3>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Card 5 -->
+                        <div class="flex flex-shrink-0 relative w-full sm:w-auto no-scrollbar">
+                            <div class="flex space-x-4 lg:space-x-20 overflow-x-scroll no-scrollbar">
+                                <div class="w-60">
+                                    <a href="/embroidery">
+                                        <div class="bg-gray-100 rounded-lg shadow-lg w-60 h-72 flex justify-center items-center">
+                                            <img src="images/homepage/business.png" alt="Business Cards" class="w-36 h-36 object-contain object-center" />
+                                        </div>
+                                        <h3 class="text-xl font-semibold mt-4 pb-8">Business Cards</h3>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Card 6 -->
+                        <div class="flex flex-shrink-0 relative w-full sm:w-auto no-scrollbar">
+                            <div class="flex space-x-4 lg:space-x-20 overflow-x-scroll no-scrollbar">
+                                <div class="w-60">
+                                    <a href="/embroidery">
+                                        <div class="bg-gray-100 rounded-lg shadow-lg w-60 h-72 flex justify-center items-center">
+                                            <img src="images/homepage/flyer.png" alt="Flyers" class="w-36 h-36 object-contain object-center" />
+                                        </div>
+                                        <h3 class="text-xl font-semibold mt-4 pb-8">Flyers</h3>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button aria-label="slide forward" class="absolute z-30 right-0 mr-10 focus:outline-none focus:bg-gray-400 focus:ring-2 focus:ring-offset-2 focus:ring-gray-400 cursor-pointer" id="next2">
+                    <div class="w-10 h-10 flex items-center justify-center rounded-full bg-white">
+                        <svg class="dark:text-gray-900" width="8" height="14" viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M1 1L7 7L1 13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </div>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+    </div> 
+
+
 
 <!-- Products -->
-<x-product-carousel :title="'Top Picks'" :products='json_encode([
-    ["title" => "Embroidery", "image" => "images/homepage/cap.png", "url" => "/embroidery"],
-    ["title" => "Mylar Bags", "image" => "images/homepage/weed.png", "url" => "/embroidery"],
-    ["title" => "Packaging", "image" => "images/homepage/pomade.png", "url" => "/embroidery"],
-    ["title" => "Product 4", "image" => "images/homepage/cap.png", "url" => "/embroidery"],
-    ["title" => "Product 5", "image" => "images/homepage/weed.png", "url" => "/embroidery"],
-     ["title" => "Product 6", "image" => "images/homepage/weed.png", "url" => "/embroidery"]
-])'/>
 
 <x-product-carousel :title="'Create Brands with us'" :products='json_encode([
-    ["title" => "Embroidery", "image" => "images/homepage/cap.png", "url" => "/embroidery"],
-    ["title" => "Mylar Bags", "image" => "images/homepage/weed.png", "url" => "/embroidery"],
-    ["title" => "Packaging", "image" => "images/homepage/pomade.png", "url" => "/embroidery"],
-    ["title" => "Product 4", "image" => "images/homepage/cap.png", "url" => "/embroidery"],
-    ["title" => "Product 5", "image" => "images/homepage/weed.png", "url" => "/embroidery"]
+    ["title" => "Ember Valley", "image" => "images/homepage/ember.png", "url" => ""],
+    ["title" => "DC Collectives", "image" => "images/homepage/dccollective.png", "url" => ""],
+    ["title" => "Traditional", "image" => "images/homepage/traditional.png", "url" => ""],
+    ["title" => "Wafers", "image" => "images/homepage/wafers.png", "url" => ""],
+    ["title" => "Coast to Coast", "image" => "images/homepage/coast.png", "url" => ""],
+    ["title" => "Herbarium", "image" => "images/homepage/weed.png", "url" => ""],
+    ["title" => "Maven", "image" => "images/homepage/weed.png", "url" => ""],
+    ["title" => "VBX", "image" => "images/homepage/weed.png", "url" => ""],
+    ["title" => "Chyll", "image" => "images/homepage/weed.png", "url" => ""],
 ])'/>
 
 <!-- more services -->
@@ -167,6 +367,28 @@ Check Out Our <span style="color: #ED1F24;">Monthly Promotions </span>
         };
     }
 </script>
+<script>
+    let defaultTransform2 = 0;
 
+    function goNext2() {
+        defaultTransform2 = defaultTransform2 - 398;
+        var slider2 = document.getElementById("slider2");
+        if (Math.abs(defaultTransform2) >= slider2.scrollWidth / 1.7) defaultTransform2 = 0;
+        slider2.style.transform = "translateX(" + defaultTransform2 + "px)";
+    }
+
+    const next2 = document.getElementById("next2"); // Make sure to add a unique ID to the button in the second carousel.
+    next2.addEventListener("click", goNext2);
+
+    function goPrev2() {
+        var slider2 = document.getElementById("slider2");
+        if (Math.abs(defaultTransform2) === 0) defaultTransform2 = 0;
+        else defaultTransform2 = defaultTransform2 + 398;
+        slider2.style.transform = "translateX(" + defaultTransform2 + "px)";
+    }
+
+    const prev2 = document.getElementById("prev2"); // Make sure to add a unique ID to the button in the second carousel.
+    prev2.addEventListener("click", goPrev2);
+</script>
 
 @endsection

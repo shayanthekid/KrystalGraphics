@@ -84,6 +84,23 @@
     }
 </style>
 
+<style>
+ .scrollbar-red::-webkit-scrollbar {
+       display: none;
+}
+
+.scrollbar-red::-webkit-scrollbar-thumb {
+     display: none;
+}
+
+/* .scrollbar-red::-webkit-scrollbar-track {
+    background-color: rgba(0, 0, 0, 0.05);
+} */
+
+/* Push the scrollbar down */
+
+</style>
+
 <script>
     let defaultTransform = 0;
 
