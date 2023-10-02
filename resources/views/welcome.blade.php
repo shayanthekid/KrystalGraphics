@@ -70,7 +70,7 @@ Check Out Our <span style="color: #ED1F24;">Monthly Promotions </span>
     
 <div class="py-16 bg-white">
     <div class="container mx-auto">
-        <h2 class="text-2xl font-semibold mb-8 ml-2">Top Picks</h2>
+        <h2 class="text-2xl font-semibold mb-8 ml-2">Fastest Selling Items</h2>
 
         <!-- Carousel of Cards -->
         <div class="flex space-x-4 lg:space-x-20 overflow-x-scroll scrollbar-red">
@@ -79,7 +79,7 @@ Check Out Our <span style="color: #ED1F24;">Monthly Promotions </span>
             <div class="w-60">
                 <a href="/embroidery">
                     <div class="bg-gray-100 rounded-lg shadow-lg w-60 h-72 flex justify-center items-center">
-                        <img src="images/homepage/label.png" alt="Labels" class="w-36 h-36 object-contain object-center" />
+                        <img src="images/homepage/label.png" alt="Labels" class="w-66 h-66 object-contain object-center" />
                     </div>
                     <h3 class="text-xl font-semibold mt-4 pb-8">Labels</h3>
                 </a>
@@ -89,7 +89,7 @@ Check Out Our <span style="color: #ED1F24;">Monthly Promotions </span>
             <div class="w-60">
                 <a href="/embroidery">
                     <div class="bg-gray-100 rounded-lg shadow-lg w-60 h-72 flex justify-center items-center">
-                        <img src="images/homepage/jars.png" alt="Jars" class="w-36 h-36 object-contain object-center" />
+                        <img src="images/homepage/jars.png" alt="Jars" class="w-66 h-66 object-contain object-center" />
                     </div>
                     <h3 class="text-xl font-semibold mt-4 pb-8">Jars</h3>
                 </a>
@@ -99,7 +99,7 @@ Check Out Our <span style="color: #ED1F24;">Monthly Promotions </span>
             <div class="w-60">
                 <a href="/embroidery">
                     <div class="bg-gray-100 rounded-lg shadow-lg w-60 h-72 flex justify-center items-center">
-                        <img src="images/homepage/postcard2.png" alt="Postcards" class="w-36 h-36 object-contain object-center" />
+                        <img src="images/homepage/postcard2.png" alt="Postcards" class="w-66 h-66 object-contain object-center" />
                     </div>
                     <h3 class="text-xl font-semibold mt-4 pb-8">Postcards</h3>
                 </a>
@@ -109,7 +109,7 @@ Check Out Our <span style="color: #ED1F24;">Monthly Promotions </span>
             <div class="w-60">
                 <a href="/embroidery">
                     <div class="bg-gray-100 rounded-lg shadow-lg w-60 h-72 flex justify-center items-center">
-                        <img src="images/homepage/silkbag.png" alt="Silkscreen" class="w-36 h-36 object-contain object-center" />
+                        <img src="images/homepage/silkbag.png" alt="Silkscreen" class="w-56 h-56 object-contain object-center" />
                     </div>
                     <h3 class="text-xl font-semibold mt-4 pb-8">Silkscreen</h3>
                 </a>
@@ -119,7 +119,7 @@ Check Out Our <span style="color: #ED1F24;">Monthly Promotions </span>
             <div class="w-60">
                 <a href="/embroidery">
                     <div class="bg-gray-100 rounded-lg shadow-lg w-60 h-72 flex justify-center items-center">
-                        <img src="images/homepage/business.png" alt="Business Cards" class="w-36 h-36 object-contain object-center" />
+                        <img src="images/homepage/business.png" alt="Business Cards" class="w-66 h-66 object-contain object-center" />
                     </div>
                     <h3 class="text-xl font-semibold mt-4 pb-8">Business Cards</h3>
                 </a>
@@ -129,7 +129,7 @@ Check Out Our <span style="color: #ED1F24;">Monthly Promotions </span>
             <div class="w-60">
                 <a href="/embroidery">
                     <div class="bg-gray-100 rounded-lg shadow-lg w-60 h-72 flex justify-center items-center">
-                        <img src="images/homepage/flyer.png" alt="Flyers" class="w-36 h-36 object-contain object-center" />
+                        <img src="images/homepage/flyer.png" alt="Flyers" class="w-66 h-66 object-contain object-center" />
                     </div>
                     <h3 class="text-xl font-semibold mt-4 pb-8">Flyers</h3>
                 </a>
@@ -148,7 +148,7 @@ Check Out Our <span style="color: #ED1F24;">Monthly Promotions </span>
 
 <div class="py-16 bg-white">
     <div class="container mx-auto">
-        <h2 class="text-2xl font-semibold mb-8 ml-2">Top Picks</h2>
+        <h2 class="text-2xl font-semibold mb-8 ml-2">Fastest Selling Items</h2>
 
         <!-- Carousel of Cards -->
         <div class="flex items-center justify-center w-full h-full py-24 sm:py-8 px-4">
@@ -169,7 +169,7 @@ Check Out Our <span style="color: #ED1F24;">Monthly Promotions </span>
                                 <div class="w-60">
                                     <a href="/embroidery">
                                         <div class="bg-gray-100 rounded-lg shadow-lg w-60 h-72 flex justify-center items-center">
-                                            <img src="images/homepage/label.png" alt="Labels" class="w-36 h-36 object-contain object-center" />
+                                            <img src="images/homepage/label.png" alt="Labels" class="w-66 h-66 object-contain object-center" />
                                         </div>
                                         <h3 class="text-xl font-semibold mt-4 pb-8">Labels</h3>
                                     </a>
@@ -183,7 +183,7 @@ Check Out Our <span style="color: #ED1F24;">Monthly Promotions </span>
                                 <div class="w-60">
                                     <a href="/embroidery">
                                         <div class="bg-gray-100 rounded-lg shadow-lg w-60 h-72 flex justify-center items-center">
-                                            <img src="images/homepage/jars.png" alt="Jars" class="w-36 h-36 object-contain object-center" />
+                                            <img src="images/homepage/jars.png" alt="Jars" class="w-66 h-66 object-contain object-center" />
                                         </div>
                                         <h3 class="text-xl font-semibold mt-4 pb-8">Jars</h3>
                                     </a>
@@ -197,7 +197,7 @@ Check Out Our <span style="color: #ED1F24;">Monthly Promotions </span>
                                 <div class="w-60">
                                     <a href="/embroidery">
                                         <div class="bg-gray-100 rounded-lg shadow-lg w-60 h-72 flex justify-center items-center">
-                                            <img src="images/homepage/postcard2.png" alt="Postcards" class="w-36 h-36 object-contain object-center" />
+                                            <img src="images/homepage/postcard2.png" alt="Postcards" class="w-66 h-66 object-contain object-center" />
                                         </div>
                                         <h3 class="text-xl font-semibold mt-4 pb-8">Postcards</h3>
                                     </a>
@@ -211,7 +211,7 @@ Check Out Our <span style="color: #ED1F24;">Monthly Promotions </span>
                                 <div class="w-60">
                                     <a href="/embroidery">
                                         <div class="bg-gray-100 rounded-lg shadow-lg w-60 h-72 flex justify-center items-center">
-                                            <img src="images/homepage/silkbag.png" alt="Silkscreen" class="w-36 h-36 object-contain object-center" />
+                                            <img src="images/homepage/silkbag.png" alt="Silkscreen" class="w-56 h-56 object-contain object-center" />
                                         </div>
                                         <h3 class="text-xl font-semibold mt-4 pb-8">Silkscreen</h3>
                                     </a>
@@ -225,7 +225,7 @@ Check Out Our <span style="color: #ED1F24;">Monthly Promotions </span>
                                 <div class="w-60">
                                     <a href="/embroidery">
                                         <div class="bg-gray-100 rounded-lg shadow-lg w-60 h-72 flex justify-center items-center">
-                                            <img src="images/homepage/business.png" alt="Business Cards" class="w-36 h-36 object-contain object-center" />
+                                            <img src="images/homepage/business.png" alt="Business Cards" class="w-66 h-66 object-contain object-center" />
                                         </div>
                                         <h3 class="text-xl font-semibold mt-4 pb-8">Business Cards</h3>
                                     </a>
@@ -239,7 +239,7 @@ Check Out Our <span style="color: #ED1F24;">Monthly Promotions </span>
                                 <div class="w-60">
                                     <a href="/embroidery">
                                         <div class="bg-gray-100 rounded-lg shadow-lg w-60 h-72 flex justify-center items-center">
-                                            <img src="images/homepage/flyer.png" alt="Flyers" class="w-36 h-36 object-contain object-center" />
+                                            <img src="images/homepage/flyer.png" alt="Flyers" class="w-66 h-66 object-contain object-center" />
                                         </div>
                                         <h3 class="text-xl font-semibold mt-4 pb-8">Flyers</h3>
                                     </a>
@@ -277,47 +277,47 @@ Check Out Our <span style="color: #ED1F24;">Monthly Promotions </span>
     ["title" => "Traditional", "image" => "images/homepage/traditional.png", "url" => ""],
     ["title" => "Wafers", "image" => "images/homepage/wafers.png", "url" => ""],
     ["title" => "Coast to Coast", "image" => "images/homepage/coast.png", "url" => ""],
-    ["title" => "Herbarium", "image" => "images/homepage/weed.png", "url" => ""],
-    ["title" => "Maven", "image" => "images/homepage/weed.png", "url" => ""],
-    ["title" => "VBX", "image" => "images/homepage/weed.png", "url" => ""],
-    ["title" => "Chyll", "image" => "images/homepage/weed.png", "url" => ""],
+    ["title" => "Herbarium", "image" => "images/homepage/Herbarium.png", "url" => ""],
+    ["title" => "Maven", "image" => "images/homepage/Maven.png", "url" => ""],
+    ["title" => "VBX", "image" => "images/homepage/VBX.png", "url" => ""],
+    ["title" => "Chyll", "image" => "images/homepage/Chyll.png", "url" => ""],
 ])'/>
 
 <!-- more services -->
 
 <div class="py-16 bg-white">
     <div class="container mx-auto">
-        <h2 class="text-2xl font-semibold mb-8 ml-2">More Services</h2>
+        <h2 class="text-2xl font-semibold mb-8 ml-2">Other Services</h2>
 
         <!-- Cards Section -->
         <div class="flex flex-wrap justify-center items-center lg:justify-center">
            
             <div class="w-60 mb-8 md:mb-0 md:w-1/4">
-                <div class=" bg-[#FFC20E] rounded-lg shadow-lg w-60 h-72 flex justify-center items-center">
+                <div class=" bg-gray-100 rounded-lg shadow-lg w-60 h-72 flex justify-center items-center">
                     <img src="{{ asset('images/homepage/loud.png') }}" alt="" class="w-full h-72 object-contain object-center" />
                 </div>
-                <h3 class="text-xl font-semibold mt-4">Promotions</h3>
+                <h3 class="text-xl font-semibold mt-4">Cad Cut </h3>
             </div>
 
             <div class="w-60 mb-8 md:mb-0 md:w-1/4">
                 <div class="bg-gray-100 rounded-lg shadow-lg w-60 h-72 flex justify-center items-center">
                     <img src="{{ asset('images/homepage/glass.png') }}" alt="" class="w-36 h-36 object-contain object-center" />
                 </div>
-                <h3 class="text-xl font-semibold mt-4">Glass Jars</h3>
+                <h3 class="text-xl font-semibold mt-4">Label Application</h3>
             </div>
 
              <div class="w-60 mb-8 md:mb-0 md:w-1/4">
                 <div class="bg-gray-100 rounded-lg shadow-lg w-60 h-72 flex justify-center items-center">
                     <img src="{{ asset('images/homepage/silkt.png') }} " alt="" class="w-36 h-36 object-contain object-center" />
                 </div>
-                <h3 class="text-xl font-semibold mt-4">Silk Screen Printing</h3>
+                <h3 class="text-xl font-semibold mt-4">Fufillment </h3>
             </div>
 
              <div class="w-60 mb-8 md:mb-0 md:w-1/4">
                 <div class="bg-gray-100 rounded-lg shadow-lg w-60 h-72 flex justify-center items-center">
                     <img src="" alt="" class="w-36 h-36 object-contain object-center" />
                 </div>
-                <h3 class="text-xl font-semibold mt-4">Additional Website</h3>
+                <h3 class="text-xl font-semibold mt-4">Delivery Service  </h3>
             </div>
       
         </div>
