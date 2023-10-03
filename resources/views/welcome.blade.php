@@ -274,13 +274,25 @@ Check Out Our <span style="color: #ED1F24;">Monthly Promotions </span>
 <x-product-carousel :title="'Create Brands with us'" :products='json_encode([
     ["title" => "Ember Valley", "image" => "images/homepage/ember.png", "url" => ""],
     ["title" => "DC Collectives", "image" => "images/homepage/dccollective.png", "url" => ""],
-    ["title" => "Traditional", "image" => "images/homepage/traditional.png", "url" => ""],
     ["title" => "Wafers", "image" => "images/homepage/wafers.png", "url" => ""],
     ["title" => "Coast to Coast", "image" => "images/homepage/coast.png", "url" => ""],
     ["title" => "Herbarium", "image" => "images/homepage/Herbarium.png", "url" => ""],
     ["title" => "Maven", "image" => "images/homepage/Maven.png", "url" => ""],
-    ["title" => "VBX", "image" => "images/homepage/VBX.png", "url" => ""],
-    ["title" => "Chyll", "image" => "images/homepage/Chyll.png", "url" => ""],
+    ["title" => "APC", "image" => "images/homepage/logos/44.png", "url" => ""],
+    ["title" => "770", "image" => "images/homepage/logos/77.png", "url" => ""],
+    ["title" => "ATSEI", "image" => "images/homepage/logos/78.png", "url" => ""],
+    ["title" => "AFSCME", "image" => "images/homepage/logos/afscme.png", "url" => ""],
+    ["title" => "Aava", "image" => "images/homepage/logos/ava.png", "url" => ""],
+    ["title" => "UFCW", "image" => "images/homepage/logos/cannabis.png", "url" => ""],
+    ["title" => "Cintas", "image" => "images/homepage/logos/Cintas.png", "url" => ""],
+    ["title" => "Ethix", "image" => "images/homepage/logos/ethix.png", "url" => ""],
+    ["title" => "DGA", "image" => "images/homepage/logos/guild.png", "url" => ""],
+    ["title" => "HANZDEFuko", "image" => "images/homepage/logos/HanzDeFuko.jpg", "url" => ""],
+    ["title" => "HJM", "image" => "images/homepage/logos/holy.png", "url" => ""],
+    ["title" => "Omni", "image" => "images/homepage/logos/omni.png", "url" => ""],
+    ["title" => "Voyant", "image" => "images/homepage/logos/voyant.png", "url" => ""],
+
+   
 ])'/>
 
 <!-- more services -->
