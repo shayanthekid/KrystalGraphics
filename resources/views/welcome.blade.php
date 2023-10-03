@@ -77,7 +77,7 @@ Check Out Our <span style="color: #ED1F24;">Monthly Promotions </span>
            
             <!-- Card 1 -->
             <div class="w-60">
-                <a href="/embroidery">
+                <a href="/labels">
                     <div class="bg-gray-100 rounded-lg shadow-lg w-60 h-72 flex justify-center items-center">
                         <img src="images/homepage/label.png" alt="Labels" class="w-66 h-66 object-contain object-center" />
                     </div>
@@ -87,7 +87,7 @@ Check Out Our <span style="color: #ED1F24;">Monthly Promotions </span>
             
             <!-- Card 2 -->
             <div class="w-60">
-                <a href="/embroidery">
+                <a href="/glass">
                     <div class="bg-gray-100 rounded-lg shadow-lg w-60 h-72 flex justify-center items-center">
                         <img src="images/homepage/jars.png" alt="Jars" class="w-66 h-66 object-contain object-center" />
                     </div>
@@ -97,7 +97,7 @@ Check Out Our <span style="color: #ED1F24;">Monthly Promotions </span>
             
             <!-- Card 3 -->
             <div class="w-60">
-                <a href="/embroidery">
+                <a href="/">
                     <div class="bg-gray-100 rounded-lg shadow-lg w-60 h-72 flex justify-center items-center">
                         <img src="images/homepage/postcard2.png" alt="Postcards" class="w-66 h-66 object-contain object-center" />
                     </div>
@@ -107,7 +107,7 @@ Check Out Our <span style="color: #ED1F24;">Monthly Promotions </span>
             
             <!-- Card 4 -->
             <div class="w-60">
-                <a href="/embroidery">
+                <a href="/silk-screen-printing">
                     <div class="bg-gray-100 rounded-lg shadow-lg w-60 h-72 flex justify-center items-center">
                         <img src="images/homepage/silkbag.png" alt="Silkscreen" class="w-56 h-56 object-contain object-center" />
                     </div>
@@ -117,7 +117,7 @@ Check Out Our <span style="color: #ED1F24;">Monthly Promotions </span>
             
             <!-- Card 5 -->
             <div class="w-60">
-                <a href="/embroidery">
+                <a href="/">
                     <div class="bg-gray-100 rounded-lg shadow-lg w-60 h-72 flex justify-center items-center">
                         <img src="images/homepage/business.png" alt="Business Cards" class="w-66 h-66 object-contain object-center" />
                     </div>
@@ -127,7 +127,7 @@ Check Out Our <span style="color: #ED1F24;">Monthly Promotions </span>
             
             <!-- Card 6 -->
             <div class="w-60">
-                <a href="/embroidery">
+                <a href="/">
                     <div class="bg-gray-100 rounded-lg shadow-lg w-60 h-72 flex justify-center items-center">
                         <img src="images/homepage/flyer.png" alt="Flyers" class="w-66 h-66 object-contain object-center" />
                     </div>
@@ -167,7 +167,7 @@ Check Out Our <span style="color: #ED1F24;">Monthly Promotions </span>
                         <div class="flex flex-shrink-0 relative w-full sm:w-auto no-scrollbar">
                             <div class="flex space-x-4 lg:space-x-20 overflow-x-scroll no-scrollbar">
                                 <div class="w-60">
-                                    <a href="/embroidery">
+                                    <a href="/labels">
                                         <div class="bg-gray-100 rounded-lg shadow-lg w-60 h-72 flex justify-center items-center">
                                             <img src="images/homepage/label.png" alt="Labels" class="w-66 h-66 object-contain object-center" />
                                         </div>
@@ -181,7 +181,7 @@ Check Out Our <span style="color: #ED1F24;">Monthly Promotions </span>
                         <div class="flex flex-shrink-0 relative w-full sm:w-auto no-scrollbar">
                             <div class="flex space-x-4 lg:space-x-20 overflow-x-scroll no-scrollbar">
                                 <div class="w-60">
-                                    <a href="/embroidery">
+                                    <a href="/glass">
                                         <div class="bg-gray-100 rounded-lg shadow-lg w-60 h-72 flex justify-center items-center">
                                             <img src="images/homepage/jars.png" alt="Jars" class="w-66 h-66 object-contain object-center" />
                                         </div>
@@ -195,7 +195,7 @@ Check Out Our <span style="color: #ED1F24;">Monthly Promotions </span>
                         <div class="flex flex-shrink-0 relative w-full sm:w-auto no-scrollbar">
                             <div class="flex space-x-4 lg:space-x-20 overflow-x-scroll no-scrollbar">
                                 <div class="w-60">
-                                    <a href="/embroidery">
+                                    <a href="/">
                                         <div class="bg-gray-100 rounded-lg shadow-lg w-60 h-72 flex justify-center items-center">
                                             <img src="images/homepage/postcard2.png" alt="Postcards" class="w-66 h-66 object-contain object-center" />
                                         </div>
@@ -209,7 +209,7 @@ Check Out Our <span style="color: #ED1F24;">Monthly Promotions </span>
                         <div class="flex flex-shrink-0 relative w-full sm:w-auto no-scrollbar">
                             <div class="flex space-x-4 lg:space-x-20 overflow-x-scroll no-scrollbar">
                                 <div class="w-60">
-                                    <a href="/embroidery">
+                                    <a href="/silk-screen-printing">
                                         <div class="bg-gray-100 rounded-lg shadow-lg w-60 h-72 flex justify-center items-center">
                                             <img src="images/homepage/silkbag.png" alt="Silkscreen" class="w-56 h-56 object-contain object-center" />
                                         </div>
@@ -223,7 +223,7 @@ Check Out Our <span style="color: #ED1F24;">Monthly Promotions </span>
                         <div class="flex flex-shrink-0 relative w-full sm:w-auto no-scrollbar">
                             <div class="flex space-x-4 lg:space-x-20 overflow-x-scroll no-scrollbar">
                                 <div class="w-60">
-                                    <a href="/embroidery">
+                                    <a href="/">
                                         <div class="bg-gray-100 rounded-lg shadow-lg w-60 h-72 flex justify-center items-center">
                                             <img src="images/homepage/business.png" alt="Business Cards" class="w-66 h-66 object-contain object-center" />
                                         </div>
@@ -237,7 +237,7 @@ Check Out Our <span style="color: #ED1F24;">Monthly Promotions </span>
                         <div class="flex flex-shrink-0 relative w-full sm:w-auto no-scrollbar">
                             <div class="flex space-x-4 lg:space-x-20 overflow-x-scroll no-scrollbar">
                                 <div class="w-60">
-                                    <a href="/embroidery">
+                                    <a href="/">
                                         <div class="bg-gray-100 rounded-lg shadow-lg w-60 h-72 flex justify-center items-center">
                                             <img src="images/homepage/flyer.png" alt="Flyers" class="w-66 h-66 object-contain object-center" />
                                         </div>
@@ -301,21 +301,21 @@ Check Out Our <span style="color: #ED1F24;">Monthly Promotions </span>
 
             <div class="w-60 mb-8 md:mb-0 md:w-1/4">
                 <div class="bg-gray-100 rounded-lg shadow-lg w-60 h-72 flex justify-center items-center">
-                    <img src="{{ asset('images/homepage/glass.png') }}" alt="" class="w-36 h-36 object-contain object-center" />
+                    <img src="{{ asset('images/homepage/labelapp.jpg') }}" alt="" class="w-46 h-36 object-contain object-center" />
                 </div>
                 <h3 class="text-xl font-semibold mt-4">Label Application</h3>
             </div>
 
              <div class="w-60 mb-8 md:mb-0 md:w-1/4">
                 <div class="bg-gray-100 rounded-lg shadow-lg w-60 h-72 flex justify-center items-center">
-                    <img src="{{ asset('images/homepage/silkt.png') }} " alt="" class="w-36 h-36 object-contain object-center" />
+                    <img src="{{ asset('images/homepage/Fullfillment.jpg') }} " alt="" class="w-46 h-46 object-contain object-center" />
                 </div>
                 <h3 class="text-xl font-semibold mt-4">Fufillment </h3>
             </div>
 
              <div class="w-60 mb-8 md:mb-0 md:w-1/4">
                 <div class="bg-gray-100 rounded-lg shadow-lg w-60 h-72 flex justify-center items-center">
-                    <img src="" alt="" class="w-36 h-36 object-contain object-center" />
+                    <img src="{{ asset('images/homepage/delivery.jpg') }} " alt="" class="w-46 h-46 object-cover object-fit" />
                 </div>
                 <h3 class="text-xl font-semibold mt-4">Delivery Service  </h3>
             </div>

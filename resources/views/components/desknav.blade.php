@@ -1,7 +1,7 @@
 <nav class="bg-white py-4 px-8 flex flex-wrap justify-between items-center">
     <!-- Logo -->
     <div class="w-1/3">
-        <img src="{{ asset('images/logos/krystallogo.png') }}" alt="Logo" class="w-40">
+        <img src="{{ asset('images/logos/logo2.png') }}" alt="Logo" class="w-24">
     </div>
 
     <!-- Main Navigation Links -->
