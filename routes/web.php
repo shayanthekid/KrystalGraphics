@@ -105,6 +105,21 @@ Route::get('/bag', function () {
 });
 
 
+
+Route::prefix('/mylar')->group(function () {
+    Route::get('/', function () {
+        return view('services.mylar');
+    })->name('mylar');
+
+Route::get('/standard', function () {
+        return view('services.mylarproducts.standard');
+    })->name('mylarproducts.standard');
+
+
+
+});
+
+
 Route::get('/admin', 'App\Http\Controllers\AdminController@index')->name('admin');
 
 Route::prefix('/admin/banners')->group(function () {
