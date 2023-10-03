@@ -57,6 +57,36 @@ Route::prefix('/silk-screen-printing')->group(function () {
 });
 
 
+Route::prefix('/embroidery')->group(function () {
+    Route::get('/', function () {
+        return view('services.embroidery');
+    })->name('embroidery');
+
+Route::get('/bag', function () {
+        return view('services.embroideryproducts.bag');
+    })->name('embroidery.bag');
+
+Route::get('/beanies', function () {
+        return view('services.embroideryproducts.beanies');
+    })->name('embroidery.beanies');
+  
+Route::get('/caps', function () {
+        return view('services.embroideryproducts.caps');
+    })->name('embroidery.caps');
+  
+      
+Route::get('/hoodies', function () {
+        return view('services.embroideryproducts.hoodies');
+    })->name('embroidery.hoodies');
+  
+    Route::get('/polo', function () {
+        return view('services.embroideryproducts.polo');
+    })->name('embroidery.polo');
+  
+
+
+});
+
 Route::get('/admin', 'App\Http\Controllers\AdminController@index')->name('admin');
 
 Route::prefix('/admin/banners')->group(function () {

@@ -10,7 +10,7 @@
             <div class="w-60">
                 <a href="{{ $product->url }}">
                     <div class="bg-gray-100 rounded-lg shadow-lg w-60 h-72 flex justify-center items-center">
-                        <img src="{{ asset($product->image) }}" alt="{{ $product->title }}" class="w-36 h-36 object-contain object-center" />
+                        <img src="{{ asset($product->image) }}" alt="{{ $product->title }}" class="w-66 h-66 object-contain object-center" />
                     </div>
                     <h3 class="text-xl font-semibold mt-4 pb-8">{{ $product->title }}</h3>
                 </a>

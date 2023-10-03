@@ -47,7 +47,7 @@
             <ul class="mt-2 space-y-2">
              
         <li><a href="{{ route('silk-screen-printing') }}">Silk Screen Printing</a></li>
-        <li><a href="#">Embroidery</a></li>
+        <li><a href="{{ route('embroidery') }}">Embroidery</a></li>
         <li><a href="">Packaging</a></li>          
         <li><a href="#">Mylar Bags</a></li>
         <li><a href="#">Glass Jars</a></li>
