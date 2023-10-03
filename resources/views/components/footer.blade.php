@@ -3,9 +3,9 @@
         <div class="w-full md:w-1/2 lg:w-1/4 pl-4 md:pl-0">
         
             <ul class="list-none pl-0">
-                <li><a href="#" class="hover:text-gray-500 text-lg font-semibold mb-2">Home</a></li>
-                <li><a href="#" class="hover:text-gray-500">Portfolio</a></li>
-                <li><a href="#" class="hover:text-gray-500">Contact Us</a></li>
+                <li><a href="{{ route('home') }}" class="hover:text-gray-500 text-lg font-semibold mb-2">Home</a></li>
+                <li><a href="{{ route('portfolio') }}" class="hover:text-gray-500">Portfolio</a></li>
+                <li><a href="{{ route('contact') }}" class="hover:text-gray-500">Contact Us</a></li>
               <!-- Contact Information -->
                 <li class="text-gray-600 mt-2 text-white">
                     7801 Canoga Ave<br>
@@ -22,14 +22,14 @@
         <div class="w-full md:w-1/2 lg:w-1/4 pl-4 md:pl-0">
             <h3 class="text-lg font-semibold mb-2">Services</h3>
             <ul class="list-none pl-0">
-                <li><a href="#" class="hover:text-gray-500">Silk Screen Printing</a></li>
-                <li><a href="#" class="hover:text-gray-500">Embroidery</a></li>
-                <li><a href="#" class="hover:text-gray-500">Mylar Bags</a></li>
-                <li><a href="#" class="hover:text-gray-500">Glass Jars</a></li>
-                <li><a href="#" class="hover:text-gray-500">Labels/Stickers</a></li>
-                <li><a href="#" class="hover:text-gray-500">Packaging</a></li>
-                <li><a href="#" class="hover:text-gray-500">Promotion Items</a></li>
-                <li><a href="#" class="hover:text-gray-500">Sister Site</a></li>
+                <li><a href="{{ route('silk-screen-printing') }}" class="hover:text-gray-500">Silk Screen Printing</a></li>
+                <li><a href="{{ route('embroidery') }}" class="hover:text-gray-500">Embroidery</a></li>
+                <li><a href="{{ route('mylar') }}" class="hover:text-gray-500">Mylar Bags</a></li>
+                <li><a href="{{ route('glass') }}" class="hover:text-gray-500">Glass Jars</a></li>
+                <li><a href="{{ route('labels') }}" class="hover:text-gray-500">Labels/Stickers</a></li>
+                <li><a href="{{ route('packaging') }}" class="hover:text-gray-500">Packaging</a></li>
+                <li><a href="https://www.promoplace.com/33620/" class="hover:text-gray-500">Promotion Items</a></li>
+                <li><a href="https://bullseyeb2b.com/" class="hover:text-gray-500">Mailing Services</a></li>
             </ul>
         </div>
         <div class="w-full md:w-1/2 lg:w-1/4 pl-4 md:pl-0">
