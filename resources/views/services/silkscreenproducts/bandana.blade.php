@@ -64,13 +64,11 @@
 <div class="bg-[#FCFCFC]">
 <!-- Additional Content -->
  <div class="col-span-2 md:col-span-1  px-4 py-16 md:w-full">
-        <h2 class="text-2xl font-semibold text-left mb-2 py-4">Hoodie Printing</h2>
+        <h2 class="text-2xl font-semibold text-left mb-2 py-4">Bandana</h2>
         <p class="text-gray-700 leading-relaxed mb-4 py-4">
             
-      Silk screen printing on hoodies is a popular customization method that delivers striking and enduring designs on these comfortable and stylish garments. This technique involves transferring ink through a finely meshed screen onto the hoodie fabric, resulting in vibrant and long-lasting prints. Whether you're looking to create custom hoodies for your brand, sports team, or special event, silk screen printing offers a cost-effective and visually impressive solution. With a wide range of ink colors and design possibilities, silk screen printing enables you to showcase your unique style and message while ensuring the durability of your customized hoodies.
-        
-        
-        
+      Silk screen printing on bandanas is a versatile and eye-catching way to customize this timeless accessory. This process involves transferring ink through a fine mesh screen onto the fabric, resulting in vivid and long-lasting designs on bandanas. Whether for fashion, branding, events, or promotional purposes, silk screen printing offers a cost-effective method to create unique and stylish bandanas. With a wide range of color options and design flexibility, you can make a bold statement or add a touch of personal flair to these versatile and timeless pieces, making them ideal for individuals and businesses alike
+
         
         </p>
         <div class="flex space-x-4 py-4">
@@ -109,9 +107,8 @@ function carousel() {
     function carousel() {
         return {
              images: [
-           '{{ asset('images/services/hoodies/hoodie.png') }}',
-            '{{ asset('images/services/hoodies/hoodie2.png') }}',
-            '{{ asset('images/services/hoodies/hoodies3.png') }}'
+           '{{ asset('images/services/bandana/bandana2.png') }}',
+        
              ],
             currentIndex: 0,
             slider: null,

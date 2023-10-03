@@ -7,14 +7,14 @@
     <!-- Main Navigation Links -->
     <ul class="flex w-1/3 justify-center space-x-6 font-montserrat font-medium">
         <li><a href="{{ route('home') }}">Home</a></li>
-        <li><a href="#">About us</a></li>
-        <li><a href="#">Portfolio</a></li>
-        <li><a href="#">Equipment</a></li>
+        <li><a href="{{ route('about') }}">About us</a></li>  
+        <li><a href="{{ route('portfolio') }}">Portfolio</a></li>
+        <li><a href="{{ route('equipment') }}">Equipment</a></li>
     </ul>
 
     <!-- Contact Links -->
     <div class="w-1/3 flex justify-end space-x-4 font-montserrat font-medium">
-        <a href="#">Contact Us</a>
+        <a href="{{ route('contact') }}">Contact Us</a>
         
     </div>
 

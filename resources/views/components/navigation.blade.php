@@ -31,9 +31,10 @@
         <!-- Navigational Headers -->
         <div class="mt-10 mx-4">
             <h2 class="text-lg font-semibold"><a href="{{ route('home') }}">Home </a></h2>
-            <h2 class="text-lg font-semibold ">About us</h2>
-            <h2 class="text-lg font-semibold ">Portfolio</h2>
-             <h2 class="text-lg font-semibold ">Contact Us</h2>
+            <h2 class="text-lg font-semibold ">  <a href="{{ route('about') }}">About us </a> </h2>
+            <h2 class="text-lg font-semibold "><a href="{{ route('portfolio') }}">Portfolio </a> </h2>
+            <h2 class="text-lg font-semibold "><a href="{{ route('equipment') }}">Equipment </a> </h2>
+            <h2 class="text-lg font-semibold "><a href="{{ route('contact') }}">Contact Us </a></h2>
 
             
             

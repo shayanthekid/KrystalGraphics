@@ -18,7 +18,7 @@ Print Perfection
 Your source for Printing, Packaging, Promotional Items, and More 
 
                 </p>
-                <a href="#" class="mt-8 inline-block px-6 py-3 text-black bg-white rounded-lg shadow-lg hover:shadow-xl transition duration-300 lg:text-left">Contact Us</a>
+                <a href="{{ route('contact') }}" class="mt-8 inline-block px-6 py-3 text-black bg-white rounded-lg shadow-lg hover:shadow-xl transition duration-300 lg:text-left">Contact Us</a>
             </div>
 
           

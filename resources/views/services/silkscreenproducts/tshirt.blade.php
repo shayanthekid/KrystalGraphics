@@ -64,11 +64,11 @@
 <div class="bg-[#FCFCFC]">
 <!-- Additional Content -->
  <div class="col-span-2 md:col-span-1  px-4 py-16 md:w-full">
-        <h2 class="text-2xl font-semibold text-left mb-2 py-4">Hoodie Printing</h2>
+        <h2 class="text-2xl font-semibold text-left mb-2 py-4">Tshirt</h2>
         <p class="text-gray-700 leading-relaxed mb-4 py-4">
             
-      Silk screen printing on hoodies is a popular customization method that delivers striking and enduring designs on these comfortable and stylish garments. This technique involves transferring ink through a finely meshed screen onto the hoodie fabric, resulting in vibrant and long-lasting prints. Whether you're looking to create custom hoodies for your brand, sports team, or special event, silk screen printing offers a cost-effective and visually impressive solution. With a wide range of ink colors and design possibilities, silk screen printing enables you to showcase your unique style and message while ensuring the durability of your customized hoodies.
-        
+     Silk screen printing, also known as screen printing, is a highly versatile and popular method for customizing T-shirts and other fabrics. It involves transferring ink through a fine mesh screen onto the fabric to create vibrant and long-lasting designs. This process allows for a wide range of color options and produces high-quality results, making it ideal for businesses, events, sports teams, and individuals looking to personalize their apparel. Whether you're interested in bulk orders or individual customization, silk screen printing offers a cost-effective and durable solution for creating unique and eye-catching T-shirts.
+
         
         
         
@@ -109,9 +109,9 @@ function carousel() {
     function carousel() {
         return {
              images: [
-           '{{ asset('images/services/hoodies/hoodie.png') }}',
-            '{{ asset('images/services/hoodies/hoodie2.png') }}',
-            '{{ asset('images/services/hoodies/hoodies3.png') }}'
+           '{{ asset('images/services/tshirt/shirt.png') }}',
+            '{{ asset('images/services/tshirt/shirt2.png') }}',
+            '{{ asset('images/services/tshirt/shirt3.png') }}'
              ],
             currentIndex: 0,
             slider: null,

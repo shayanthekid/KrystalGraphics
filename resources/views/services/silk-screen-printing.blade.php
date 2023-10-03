@@ -23,30 +23,14 @@ use App\View\Components\ProductCarousel;
 
 <!-- Products -->
 <x-product-carousel :title="'Our colorful imprints '" :products='json_encode([
-    ["title" => "T-shirts", "image" => "images/services/blackt.png", "url" => "/embroidery"],
-    ["title" => "Hoodie", "image" => "images/services/hoodie.png", "url" => "/embroidery"],
-    ["title" => "Safety", "image" => "images/services/vest.png", "url" => "/embroidery"],
-    ["title" => "T-shirts", "image" => "images/services/blackt.png", "url" => "/embroidery"],
-    ["title" => "Hoodie", "image" => "images/services/hoodie.png", "url" => "/embroidery"]
+    ["title" => "T-shirts", "image" => "images/services/shirt.png", "url" => "silk-screen-printing/tshirt"],
+    ["title" => "Hoodies", "image" => "images/services/hoodie2.png", "url" => "silk-screen-printing/hoodies"],
+    ["title" => "Safety Vest", "image" => "images/services/vest.jpg", "url" => "silk-screen-printing/vest"],
+    ["title" => "Bandana Bags ", "image" => "images/services/bandana2.png", "url" => "silk-screen-printing/bandana"],
+    ["title" => "Pants", "image" => "images/services/hoodie.png", "url" => "#"],
+    ["title" => "Jackets", "image" => "images/services/hoodie.png", "url" => "#"],
 ])'/>
 
-<!-- Products -->
-<x-product-carousel :title="'Hoodie Fit check '" :products='json_encode([
-    ["title" => "Hoodie", "image" => "images/services/whitehood.png", "url" => "/silk-screen-printing/hoodies"],
-    ["title" => "Hoodie", "image" => "images/services/bluegood.png", "url" => "/embroidery"],
-    ["title" => "Hoodie", "image" => "images/services/hoodie.png", "url" => "/embroidery"],
-    ["title" => "Hoodie", "image" => "images/services/hoodie.png", "url" => "/embroidery"],
-    ["title" => "Hoodie", "image" => "images/services/hoodie.png", "url" => "/embroidery"]
-])'/>
-
-<!-- Products -->
-<x-product-carousel :title="'Designs for tees'" :products='json_encode([
-    ["title" => "Lorem", "image" => "images/services/hoodie.png", "url" => "/embroidery"],
-    ["title" => "Lorem", "image" => "images/services/hoodie.png", "url" => "/embroidery"],
-    ["title" => "Loremg", "image" => "images/services/hoodie.png", "url" => "/embroidery"],
-    ["title" => "Lorem", "image" => "images/services/hoodie.png", "url" => "/embroidery"],
-    ["title" => "Lorem", "image" => "images/services/hoodie.png", "url" => "/embroidery"]
-])'/>
 
 
 

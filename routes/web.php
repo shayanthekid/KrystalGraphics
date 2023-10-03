@@ -27,7 +27,7 @@ Route::get('/about', function () {
 })->name('about');
 
 
-Route::get('/contact', 'App\Http\Controllers\ContactUsController@index');
+Route::get('/contact', 'App\Http\Controllers\ContactUsController@index')->name('contact');;
 Route::post('/contact', 'App\Http\Controllers\ContactUsController@sendEmail')->name('contact.send');
 
 
@@ -39,6 +39,19 @@ Route::prefix('/silk-screen-printing')->group(function () {
     Route::get('/hoodies', function () {
         return view('services.silkscreenproducts.hoodies');
     })->name('silk-screen-printing.hoodies');
+
+
+       Route::get('/tshirt', function () {
+        return view('services.silkscreenproducts.tshirt');
+    })->name('silk-screen-printing.tshirt');
+
+  Route::get('/vest', function () {
+        return view('services.silkscreenproducts.vest');
+    })->name('silk-screen-printing.vest');
+
+ Route::get('/bandana', function () {
+        return view('services.silkscreenproducts.bandana');
+    })->name('silk-screen-printing.bandana');
 
     // Add more routes related to silk screen printing here...
 });
