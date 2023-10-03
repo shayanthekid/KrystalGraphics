@@ -29,7 +29,7 @@
         <li><a href="{{ route('glass') }}">Glass Jars</a></li>
          <li><a href="{{ route('labels') }}">Labels/ Stickers</a></li>
         <li><a href="https://www.promoplace.com/33620/ ">Promotional Items</a></li>
-        <a href="https://bullseyeb2b.com/ ">Mailing Services</a>
+        <a href="https://bullseyeb2b.com/">Mailing Services</a>
         
         <li>
     
