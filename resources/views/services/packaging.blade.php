@@ -21,7 +21,7 @@ We offer packaging services for your printed materials, including custom packagi
 
 
 <!-- Products -->
-<x-product-carousel :title="'Our colorful imprints '" :products='json_encode([
+<x-product-carousel :title="'Products'" :products='json_encode([
     ["title" => "Boxes", "image" => "images/services/packaging/pomade.png", "url" => "packaging/box"],
     ["title" => "Bags", "image" => "images/services/packaging/bag.png", "url" => "packaging/bag"],
 
