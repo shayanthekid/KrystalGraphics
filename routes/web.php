@@ -115,9 +115,37 @@ Route::get('/standard', function () {
         return view('services.mylarproducts.standard');
     })->name('mylarproducts.standard');
 
+});
+
+Route::prefix('/glass')->group(function () {
+    Route::get('/', function () {
+        return view('services.glass');
+    })->name('glass');
+
+Route::get('/tubes', function () {
+        return view('services.glassproducts.tubes');
+    })->name('glassproducts.tubes');
+
+Route::get('/jars', function () {
+        return view('services.glassproducts.jars');
+    })->name('glassproducts.jars');
 
 
 });
+
+
+Route::prefix('/labels')->group(function () {
+    Route::get('/', function () {
+        return view('services.labels');
+    })->name('labels');
+
+Route::get('/stickers', function () {
+        return view('services.labelsproducts.stickers');
+    })->name('labelssproducts.stickers');
+
+
+});
+
 
 
 Route::get('/admin', 'App\Http\Controllers\AdminController@index')->name('admin');

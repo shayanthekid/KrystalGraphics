@@ -41,7 +41,7 @@
             <!-- Images will be dynamically added here -->
             <template x-for="(image, index) in images" :key="index">
                 <div class="w-full h-96 flex-shrink-0">
-                    <img :src="image" :alt="'Image ' + (index + 1)"  class="object-contain object-center w-full h-full">
+                    <img :src="image" :alt="'Image ' + (index + 1)"  class="object-fit object-center  w-full h-full">
                 </div>
             </template>
         </div>

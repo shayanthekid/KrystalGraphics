@@ -25,9 +25,9 @@
         <li><a href="{{ route('silk-screen-printing') }}">Silk Screen Printing</a></li>
         <li><a href="{{ route('embroidery') }}">Embroidery</a></li>
         <li><a href="{{ route('packaging') }}">Packaging</a></li>          
-        <li><a href="#">Mylar Bags</a></li>
-        <li><a href="#">Glass Jars</a></li>
-         <li><a href="#">Labels/ Stickers</a></li>
+        <li><a href="{{ route('mylar') }}">Mylar Bags</a></li>
+        <li><a href="{{ route('glass') }}">Glass Jars</a></li>
+         <li><a href="{{ route('labels') }}">Labels/ Stickers</a></li>
         <li><a href="https://www.promoplace.com/33620/ ">Promotional Items</a></li>
         <a href="https://bullseyeb2b.com/ ">Mailing Services</a>
         

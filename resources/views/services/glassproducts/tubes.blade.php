@@ -41,7 +41,7 @@
             <!-- Images will be dynamically added here -->
             <template x-for="(image, index) in images" :key="index">
                 <div class="w-full h-96 flex-shrink-0">
-                    <img :src="image" :alt="'Image ' + (index + 1)"  class="object-fit object-center w-full h-full">
+                    <img :src="image" :alt="'Image ' + (index + 1)"  class="object-contain object-center w-full h-full">
                 </div>
             </template>
         </div>
@@ -64,12 +64,10 @@
 <div class="bg-[#FCFCFC]">
 <!-- Additional Content -->
  <div class="col-span-2 md:col-span-1  px-4 py-16 md:w-full">
-        <h2 class="text-2xl font-semibold text-left mb-2 py-4">Boxes</h2>
+        <h2 class="text-2xl font-semibold text-left mb-2 py-4">Tubes</h2>
         <p class="text-gray-700 leading-relaxed mb-4 py-4">
             
-Printing packaging boxes is an essential part of brand identity and product presentation. Our printing services offer high-quality and customizable packaging solutions that make your products shine. We utilize advanced printing techniques and a wide array of materials to create packaging boxes that align with your brand's aesthetics and values. Whether it's for retail, e-commerce, or promotional purposes, our expert team ensures your packaging not only protects but also enhances the appeal of your products. Elevate your packaging game with our precision printing, turning every unboxing into a memorable experience that resonates with your customers and strengthens your brand presence.
-
-        
+Elevate your product packaging with our exclusive glass tube jar printing services. At Kristal Graphics, we specialize in transforming glass tube jars into captivating showcases for your brand or products. Our printing options are available in two convenient sizes, 2oz and 3oz, offering versatility and elegance. Whether you're in the cosmetics, gourmet, or promotional industry, our state-of-the-art printing technology ensures your labels, branding, or custom designs are impeccably transferred onto these glass surfaces, creating a sophisticated and memorable presentation. Make a lasting impression with your packaging; choose us for precision printing that sets your products apart.Elevate your packaging and make your glass jars truly stand out with our precision printing services.
         </p>
         <div class="flex space-x-4 py-4">
             <a href="#" class="inline-block px-6 py-3 text-white bg-black rounded-full shadow-md hover:bg-opacity-80 transition duration-300">Download Brochure</a>
@@ -107,11 +105,9 @@ function carousel() {
     function carousel() {
         return {
              images: [
-                  '{{ asset('images/services/packaging/pomade.png') }}',
-                         '{{ asset('images/services/packaging/boxes/box1.png') }}',
-            '{{ asset('images/services/packaging/boxes/box2.png') }}',
-    
-         
+           '{{ asset('images/services/glass/jars.png') }}',
+           '{{ asset('images/services/glass/tubes/tube.jpg') }}',
+   
         
              ],
             currentIndex: 0,

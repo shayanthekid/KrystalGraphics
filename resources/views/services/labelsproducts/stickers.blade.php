@@ -41,7 +41,7 @@
             <!-- Images will be dynamically added here -->
             <template x-for="(image, index) in images" :key="index">
                 <div class="w-full h-96 flex-shrink-0">
-                    <img :src="image" :alt="'Image ' + (index + 1)"  class="object-fit object-center w-full h-full">
+                    <img :src="image" :alt="'Image ' + (index + 1)"  class="object-fit object-center  w-full h-full">
                 </div>
             </template>
         </div>
@@ -64,11 +64,12 @@
 <div class="bg-[#FCFCFC]">
 <!-- Additional Content -->
  <div class="col-span-2 md:col-span-1  px-4 py-16 md:w-full">
-        <h2 class="text-2xl font-semibold text-left mb-2 py-4">Boxes</h2>
+        <h2 class="text-2xl font-semibold text-left mb-2 py-4">Stickers </h2>
         <p class="text-gray-700 leading-relaxed mb-4 py-4">
             
-Printing packaging boxes is an essential part of brand identity and product presentation. Our printing services offer high-quality and customizable packaging solutions that make your products shine. We utilize advanced printing techniques and a wide array of materials to create packaging boxes that align with your brand's aesthetics and values. Whether it's for retail, e-commerce, or promotional purposes, our expert team ensures your packaging not only protects but also enhances the appeal of your products. Elevate your packaging game with our precision printing, turning every unboxing into a memorable experience that resonates with your customers and strengthens your brand presence.
-
+ Revolutionize your sticker game with our cutting-edge printing services. At Kristal Graphics, we go beyond the ordinary to offer a range of distinctive sticker options, including holographic, silver, white BOPP, clear, and special die-cut shapes. Whether you're looking to add a touch of magic with holographic stickers or sleek elegance with silver, our precise printing technology brings your designs to life in exquisite detail. Stand out from the crowd and let your creativity shine with stickers that make a statement, whether for branding, events, or personal expression. Choose us to elevate your sticker experience, and let your imagination run wild with our premium printing solutions.
+  
+        
         
         </p>
         <div class="flex space-x-4 py-4">
@@ -107,12 +108,11 @@ function carousel() {
     function carousel() {
         return {
              images: [
-                  '{{ asset('images/services/packaging/pomade.png') }}',
-                         '{{ asset('images/services/packaging/boxes/box1.png') }}',
-            '{{ asset('images/services/packaging/boxes/box2.png') }}',
-    
+           '{{ asset('images/services/labels/sticker1.jpg') }}',
+           '{{ asset('images/services/labels/sticker2.jpg') }}',
+           '{{ asset('images/services/labels/sticker3.jpg') }}',
          
-        
+    
              ],
             currentIndex: 0,
             slider: null,

@@ -9,7 +9,7 @@ use App\View\Components\ProductCarousel;
 <div class="bg-[#ED1F24] py-16">
     <div class="container mx-auto flex justify-center items-center h-full">
         <div class="text-center text-white">
-            <h1 class="text-4xl font-semibold font-montserrat lg:text-6xl">Mylar Bags</h1>
+            <h1 class="text-4xl font-semibold font-montserrat lg:text-6xl">Glass jars</h1>
            
    
 
@@ -20,7 +20,8 @@ use App\View\Components\ProductCarousel;
 
 <!-- Products -->
 <x-product-carousel :title="'Our colorful imprints '" :products='json_encode([
-    ["title" => "Standard & Custom", "image" => "images/services/mylar/weed.png", "url" => "mylar/standard"],
+    ["title" => "Tubes", "image" => "images/services/glass/jars.png", "url" => "glass/tubes"],
+    ["title" => "Jetter Jars", "image" => "images/services/glass/glass.png", "url" => "glass/jars"],
   
 
 ])'/>
