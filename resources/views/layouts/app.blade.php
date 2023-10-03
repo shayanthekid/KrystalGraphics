@@ -33,9 +33,7 @@
             
         </main>
     
-    <footer>
-        <!-- Your footer content goes here -->
-    </footer>
+    <x-footer />
 
   <script>
     document.addEventListener('alpine:init', () => {
