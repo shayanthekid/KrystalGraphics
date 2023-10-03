@@ -87,6 +87,24 @@ Route::get('/hoodies', function () {
 
 });
 
+
+Route::prefix('/packaging')->group(function () {
+    Route::get('/', function () {
+        return view('services.packaging');
+    })->name('packaging');
+
+Route::get('/box', function () {
+        return view('services.packagingproducts.box');
+    })->name('packaging.box');
+
+Route::get('/bag', function () {
+        return view('services.packagingproducts.bag');
+    })->name('packaging.bag');
+
+
+});
+
+
 Route::get('/admin', 'App\Http\Controllers\AdminController@index')->name('admin');
 
 Route::prefix('/admin/banners')->group(function () {

@@ -24,7 +24,7 @@
     <!-- Add more service links here -->
         <li><a href="{{ route('silk-screen-printing') }}">Silk Screen Printing</a></li>
         <li><a href="{{ route('embroidery') }}">Embroidery</a></li>
-        <li><a href="">Packaging</a></li>          
+        <li><a href="{{ route('packaging') }}">Packaging</a></li>          
         <li><a href="#">Mylar Bags</a></li>
         <li><a href="#">Glass Jars</a></li>
          <li><a href="#">Labels/ Stickers</a></li>
