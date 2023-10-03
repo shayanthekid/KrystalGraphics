@@ -73,7 +73,7 @@ Check Out Our <span style="color: #ED1F24;">Monthly Promotions </span>
         <h2 class="text-2xl font-semibold mb-8 ml-2">Fastest Selling Items</h2>
 
         <!-- Carousel of Cards -->
-        <div class="flex space-x-4 lg:space-x-20 overflow-x-scroll scrollbar-red">
+        <div class="flex space-x-4 lg:space-x-20 overflow-x-scroll scrollbar-red ">
            
             <!-- Card 1 -->
             <div class="w-60">
@@ -153,7 +153,7 @@ Check Out Our <span style="color: #ED1F24;">Monthly Promotions </span>
         <!-- Carousel of Cards -->
         <div class="flex items-center justify-center w-full h-full py-24 sm:py-8 px-4">
             <div class="w-full relative flex items-center justify-center">
-                <button aria-label="slide backward" class="absolute z-30 left-0 ml-10 focus:outline-none focus:bg-gray-400 focus:ring-2 focus:ring-offset-2 focus:ring-gray-400 cursor-pointer" id="prev2">
+                <button aria-label="slide backward" class="absolute z-30 left-0  focus:outline-none focus:bg-gray-400 focus:ring-2 focus:ring-offset-2 focus:ring-gray-400 cursor-pointer" id="prev2">
                     <div class="w-10 h-10 flex items-center justify-center rounded-full bg-white">
                         <svg class="dark:text-gray-900" width="8" height="14" viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M7 1L1 7L7 13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
@@ -161,7 +161,7 @@ Check Out Our <span style="color: #ED1F24;">Monthly Promotions </span>
                     </div>
                 </button>
 
-                <div class="w-full h-full mx-auto overflow-x-hidden overflow-y-hidden">
+                <div class="w-full h-full mx-auto overflow-x-hidden overflow-y-hidden px-4">
                     <div id="slider2" class="h-full flex lg:gap-8 md:gap-6 gap-14 items-center justify-start transition ease-out duration-700">
                         <!-- Card 1 -->
                         <div class="flex flex-shrink-0 relative w-full sm:w-auto no-scrollbar">
@@ -248,7 +248,7 @@ Check Out Our <span style="color: #ED1F24;">Monthly Promotions </span>
                         </div>
                     </div>
                 </div>
-                <button aria-label="slide forward" class="absolute z-30 right-0 mr-10 focus:outline-none focus:bg-gray-400 focus:ring-2 focus:ring-offset-2 focus:ring-gray-400 cursor-pointer" id="next2">
+                <button aria-label="slide forward" class="absolute z-30 right-0  focus:outline-none focus:bg-gray-400 focus:ring-2 focus:ring-offset-2 focus:ring-gray-400 cursor-pointer" id="next2">
                     <div class="w-10 h-10 flex items-center justify-center rounded-full bg-white">
                         <svg class="dark:text-gray-900" width="8" height="14" viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M1 1L7 7L1 13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
@@ -297,12 +297,12 @@ Check Out Our <span style="color: #ED1F24;">Monthly Promotions </span>
 
 <!-- more services -->
 
-<div class="py-16 bg-white">
+<div class="py-16 bg-white justify-center">
     <div class="container mx-auto">
         <h2 class="text-2xl font-semibold mb-8 ml-2">Other Services</h2>
 
         <!-- Cards Section -->
-        <div class="flex flex-wrap justify-center items-center lg:justify-center">
+        <div class="flex flex-wrap justify-center items-center lg:justify-center px-10">
            
             <div class="w-60 mb-8 md:mb-0 md:w-1/4">
                 <div class=" bg-gray-100 rounded-lg shadow-lg w-60 h-72 flex justify-center items-center">
@@ -337,8 +337,40 @@ Check Out Our <span style="color: #ED1F24;">Monthly Promotions </span>
 </div>
 
 
-
 <script>
+    function carousel() {
+        return {
+             images: [
+            '{{ asset('images/bannertemp/banner.png') }}',
+           '{{ asset('images/bannertemp/banner2.png') }}'
+             ],
+            currentIndex: 0,
+            slider: null,
+
+            init() {
+                this.slider = this.$refs.slider;
+              
+            },
+
+
+            next() {
+                this.currentIndex = (this.currentIndex + 1) % this.images.length;
+                this.slideToCurrentIndex();
+            },
+
+            prev() {
+                this.currentIndex = (this.currentIndex - 1 + this.images.length) % this.images.length;
+                this.slideToCurrentIndex();
+            },
+
+            slideToCurrentIndex() {
+                const translateX = -this.currentIndex * 100;
+                this.slider.style.transform = `translateX(${translateX}%)`;
+            }
+        };
+    }
+</script>
+{{-- <script>
     function carousel() {
         return {
              images: [],
@@ -378,7 +410,7 @@ Check Out Our <span style="color: #ED1F24;">Monthly Promotions </span>
             }
         };
     }
-</script>
+</script> --}}
 <script>
     let defaultTransform2 = 0;
 

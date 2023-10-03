@@ -9,7 +9,7 @@ use App\View\Components\ProductCarousel;
 <div class="bg-[#ED1F24] py-16">
     <div class="container mx-auto flex justify-center items-center h-full">
         <div class="text-center text-white">
-            <h1 class="text-4xl font-semibold font-montserrat lg:text-6xl">Stickers/labels</h1>
+            <h1 class="text-4xl font-semibold font-montserrat lg:text-6xl">Stickers</h1>
            
    
 
@@ -19,7 +19,7 @@ use App\View\Components\ProductCarousel;
 
 
 <!-- Products -->
-<x-product-carousel :title="'Our colorful imprints '" :products='json_encode([
+<x-product-carousel :title="'Products'" :products='json_encode([
     ["title" => "Stickers", "image" => "images/services/labels/label.png", "url" => "labels/stickers"],
     
 

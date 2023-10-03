@@ -19,7 +19,7 @@ use App\View\Components\ProductCarousel;
 
 
 <!-- Products -->
-<x-product-carousel :title="'Our colorful imprints '" :products='json_encode([
+<x-product-carousel :title="'Products'" :products='json_encode([
     ["title" => "Standard & Custom", "image" => "images/services/mylar/weed.png", "url" => "mylar/standard"],
   
 

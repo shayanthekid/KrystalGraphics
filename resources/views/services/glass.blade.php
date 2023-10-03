@@ -19,7 +19,7 @@ use App\View\Components\ProductCarousel;
 
 
 <!-- Products -->
-<x-product-carousel :title="'Our colorful imprints '" :products='json_encode([
+<x-product-carousel :title="'Products'" :products='json_encode([
     ["title" => "Tubes", "image" => "images/services/glass/jars.png", "url" => "glass/tubes"],
     ["title" => "Jetter Jars", "image" => "images/services/glass/glass.png", "url" => "glass/jars"],
   
