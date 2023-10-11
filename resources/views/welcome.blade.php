@@ -6,34 +6,32 @@ use App\View\Components\ProductCarousel;
 @endphp
     <!-- Hero Section -->
    
-<div class="bg-[#94A2CE] py-16">
-    <div class="container mx-auto px-4 grid grid-cols-1 gap-4 md:grid-cols-2">
+<div class="bg-[#DCDCDC] py-16 lg:py-3">
+    <div class="container mx-auto grid grid-cols-1 md:grid-cols-3">
         <div class="container mx-auto flex justify-center lg:justify-start items-center h-full">
-            <div class="text-center lg:text-left text-white">
+            <div class="text-center lg:text-left text-black">
                 <h1 class="text-4xl font-semibold font-montserrat lg:text-6xl lg:py-10">
-Print Perfection
-</h1>
+                    Print Perfection
+                </h1>
                 <p class="mt-4 font-montserrat text-lg font-light lg:text-xl p-4 lg:p-0">
                     Unlocking Creativity, One Print at a Time!
-Your source for Printing, Packaging, Promotional Items, and More 
-
+                    Your source for Printing, Packaging, Promotional Items, and More
                 </p>
                 <a href="{{ route('contact') }}" class="mt-8 inline-block px-6 py-3 text-black bg-white rounded-lg shadow-lg hover:shadow-xl transition duration-300 lg:text-left">Contact Us</a>
             </div>
-
-          
         </div>
 
-             <div class="hidden lg:flex lg:w-full lg:items-end justify-end">
-            <img src="{{ asset('images/homepage/heroimage.png') }}" alt="" class="w-full" style="max-width: 100%; height: auto;">
+        <div class="hidden lg:flex lg:w-full lg:items-end justify-end col-span-2">
+            <img src="{{ asset('images/homepage/Heroimg.png') }}" alt="" class="w-full" style="max-width: 100%; height: auto;">
         </div>
     </div>
 </div>
 
+
 {{-- Banner --}}
-     <div class="text-center lg:text-left text-black">
+     <div class="text-center lg:text-left text-black bg-[#FFC414]">
                 <h1 class="text-4xl p-5  font-semibold font-montserrat lg:text-3xl lg:py-10 text-center">
-Check Out Our <span style="color: #ED1F24;">Monthly Promotions </span>
+Check Out Our <span style="color: #ffff;">Monthly Promotions </span>
 </h1>
               
             </div>
@@ -271,7 +269,7 @@ Check Out Our <span style="color: #ED1F24;">Monthly Promotions </span>
 
 <!-- Products -->
 
-<x-product-carousel :title="'Create Brands with us'" :products='json_encode([
+{{-- <x-product-carousel :title="'Create Brands with us'" :products='json_encode([
     ["title" => "Ember Valley", "image" => "images/homepage/ember.png", "url" => ""],
     ["title" => "DC Collectives", "image" => "images/homepage/dccollective.png", "url" => ""],
     ["title" => "Wafers", "image" => "images/homepage/wafers.png", "url" => ""],
@@ -291,6 +289,16 @@ Check Out Our <span style="color: #ED1F24;">Monthly Promotions </span>
     ["title" => "HJM", "image" => "images/homepage/logos/holy.png", "url" => ""],
     ["title" => "Omni", "image" => "images/homepage/logos/omni.png", "url" => ""],
     ["title" => "Voyant", "image" => "images/homepage/logos/voyant.png", "url" => ""],
+
+   
+])'/> --}}
+<x-product-carousel :title="'Top Picks'" :products='json_encode([
+    ["title" => "Labels", "image" => "images/homepage/logos/newlabel.jpg", "url" => ""],
+    ["title" => "Jars", "image" => "images/homepage/logos/weed2.png", "url" => ""],
+    ["title" => "Postcards", "image" => "images/homepage/logos/postcard.png", "url" => ""],
+    ["title" => "SilkScreen", "image" => "images/homepage/logos/silk.png", "url" => ""],
+    ["title" => "Business Cards", "image" => "images/homepage/logos/cards.png", "url" => ""],
+ 
 
    
 ])'/>
