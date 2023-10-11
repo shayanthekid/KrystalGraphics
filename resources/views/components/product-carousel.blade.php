@@ -23,13 +23,20 @@
     <div class="hidden lg:block">
         <!-- This will be displayed on larger screens (not mobile view) -->
         
-
 <div class="py-16 bg-white">
     <div class="container mx-auto">
         <h2 class="text-2xl font-semibold mb-8 ml-2">{{ $title }}</h2>
 
         <!-- Grid of Centered Cards -->
-        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-x-4 gap-y-8">
+        @php
+        $numProducts = count(json_decode($products));
+        $numColumns = 1;
+        if ($numProducts > 1) {
+            $numColumns = $numProducts >= 5 ? 5 : ($numProducts >= 4 ? 4 : 1);
+        }
+        @endphp
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-{{ $numColumns }} justify-center gap-x-4 gap-y-8">
             @foreach(json_decode($products) as $product)
             <div class="w-full flex items-center justify-center">
                 <a href="{{ $product->url }}">
@@ -43,6 +50,7 @@
         </div>
     </div>
 </div>
+
 
 
 
