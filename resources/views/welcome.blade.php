@@ -6,7 +6,7 @@ use App\View\Components\ProductCarousel;
 @endphp
     <!-- Hero Section -->
    
-<div class="bg-[#DCDCDC] py-16 lg:py-3">
+<div class="bg-[#DCDCDC] py-16 lg:py-0 overflow-hidden">
     <div class="container mx-auto grid grid-cols-1 md:grid-cols-3">
         <div class="container mx-auto flex justify-center lg:justify-start items-center h-full">
             <div class="text-center lg:text-left text-black">
@@ -21,7 +21,7 @@ use App\View\Components\ProductCarousel;
             </div>
         </div>
 
-        <div class="hidden lg:flex lg:w-full lg:items-end justify-end col-span-2">
+        <div class="hidden lg:flex lg:w-full lg:items-end lg:justify-end col-span-2 ml-5 ">
             <img src="{{ asset('images/homepage/Heroimg.png') }}" alt="" class="w-full" style="max-width: 100%; height: auto;">
         </div>
     </div>

@@ -28,36 +28,24 @@
     <div class="container mx-auto">
         <h2 class="text-2xl font-semibold mb-8 ml-2">{{ $title }}</h2>
 
-        <!-- Carousel of Cards -->
-        <div class="flex items-center justify-center w-full h-full py-24 sm:py-8 px-4">
-            <div class="w-full relative flex items-center justify-center">
-     
-
-                <div class="w-full h-full mx-auto overflow-x-hidden overflow-y-hidden justify-center">
-                    <div id="slider" class="h-full flex lg:gap-32 md:gap-6 gap-14 items-center justify-start transition ease-out duration-700 ml-10">
-                        @foreach(json_decode($products) as $product)
-                        <div class="flex flex-shrink-0 relative w-full sm:w-auto no-scrollbar px-4">
-                            <div class="flex space-x-4 lg:space-x-20 overflow-x-scroll no-scrollbar">
-                            <div class="w-50">
-    <a href="{{ $product->url }}">
-        <div class="bg-gray-100 rounded-lg shadow-lg w-50 h-64 flex justify-center items-center">
-            <img src="{{ asset($product->image) }}" alt="{{ $product->title }}" class="w-full h-full object-cover rounded-lg" />
-        </div>
-        <h3 class="text-xl font-semibold mt-4 pb-8">{{ $product->title }}</h3>
-    </a>
-</div>
-
-                            </div>
-                        </div>
-                        @endforeach
+        <!-- Grid of Centered Cards -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-x-4 gap-y-8">
+            @foreach(json_decode($products) as $product)
+            <div class="w-full flex items-center justify-center">
+                <a href="{{ $product->url }}">
+                    <div class="bg-gray-100 rounded-lg shadow-lg w-44 h-48 flex justify-center items-center">
+                        <img src="{{ asset($product->image) }}" alt="{{ $product->title }}" class="w-full h-full object-cover rounded-lg" />
                     </div>
-                </div>
-     
-
+                    <h3 class="text-lg font-semibold mt-4">{{ $product->title }}</h3>
+                </a>
             </div>
+            @endforeach
         </div>
     </div>
 </div>
+
+
+
     </div>
 
 
