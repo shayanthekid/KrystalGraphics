@@ -6,23 +6,23 @@ use App\View\Components\ProductCarousel;
 @endphp
     <!-- Hero Section -->
    
-<div class="bg-[#DCDCDC] py-16 lg:py-0 overflow-hidden">
+<div class="bg-[#DCDCDC] py-16 md:py-0 lg:py-0 overflow-hidden">
     <div class="container mx-auto grid grid-cols-1 md:grid-cols-3">
         <div class="container mx-auto flex justify-center lg:justify-start items-center h-full">
-            <div class="text-center lg:text-left text-black">
-                <h1 class="text-4xl font-semibold font-montserrat lg:text-6xl lg:py-10">
-                    Print Perfection
-                </h1>
-                <p class="mt-4 font-montserrat text-lg font-light lg:text-xl p-4 lg:p-0">
+            <div class="text-center lg:text-left text-black lg:-mt-32">
+                <h1 class="text-4xl font-semibold font-montserrat lg:text-5xl lg:py-10 hero-text" style="opacity: 0;">
+    Print Perfection
+</h1>
+                <p class="mt-4 font-montserrat text-lg font-light lg:text-lg p-4 lg:p-0 ">
                     Unlocking Creativity, One Print at a Time!
                     Your source for Printing, Packaging, Promotional Items, and More
                 </p>
-                <a href="{{ route('contact') }}" class="mt-8 inline-block px-6 py-3 text-black bg-white rounded-lg shadow-lg hover:shadow-xl transition duration-300 lg:text-left">Contact Us</a>
+                <a href="{{ route('contact') }}" class="mt-14 inline-block px-6 py-3 text-black bg-white rounded-lg shadow-lg hover:shadow-xl transition duration-300 lg:text-left font-roboto">Contact Us</a>
             </div>
         </div>
 
-        <div class="hidden lg:flex lg:w-full lg:items-end lg:justify-end col-span-2 ml-5 ">
-            <img src="{{ asset('images/homepage/Heroimg.png') }}" alt="" class="w-full" style="max-width: 100%; height: auto;">
+        <div class="hidden lg:flex lg:w-full lg:items-end lg:justify-end col-span-2 ml-20 ">
+            <img src="{{ asset('images/homepage/HEROIMG2.png') }}" alt="" class="w-full" style="max-width: 100%; height: auto;">
         </div>
     </div>
 </div>
@@ -72,8 +72,116 @@ Check Out Our <span style="color: #ffff;">Monthly Promotions </span>
  
 
    
-])'/>
+])' :columns="5"/>
    
+<div class="py-16 bg-white">
+    <div class="container mx-auto">
+        <h2 class="text-2xl font-semibold mb-8 ml-2">Create Brands with us</h2>
+
+        <!-- Grid of Logos -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-auto gap-x-4 gap-y-8 justify-center">
+            <!-- Logo 1 -->
+            <div class="w-full flex items-center justify-center">
+                <img src="images/homepage/ember.png" alt="Ember Valley" class="w-36 h-auto" />
+            </div>
+
+            <!-- Logo 2 -->
+            <div class="w-full flex items-center justify-center">
+            
+                <img src="images/homepage/dccollective.png" alt="DC Collectives" class="w-36 h-auto" />
+            </div>
+
+            <!-- Logo 3 -->
+            <div class="w-full flex items-center justify-center">
+                <img src="images/homepage/wafers.png" alt="Wafers" class="w-36 h-auto" />
+            </div>
+
+            <!-- Logo 4 -->
+            <div class="w-full flex items-center justify-center">
+                <img src="images/homepage/coast.png" alt="Coast to Coast" class="w-36 h-auto" />
+            </div>
+
+            <!-- Logo 5 -->
+            <div class="w-full flex items-center justify-center">
+                <img src="images/homepage/Herbarium.png" alt="Herbarium" class="w-36 h-auto" />
+            </div>
+
+            <!-- Logo 6 -->
+            <div class="w-full flex items-center justify-center">
+                <img src="images/homepage/Maven.png" alt="Maven" class="w-36 h-auto" />
+            </div>
+
+            <!-- Logo 7 -->
+            <div class="w-full flex items-center justify-center">
+                <img src="images/homepage/logos/44.png" alt="APC" class="w-36 h-auto" />
+            </div>
+
+            <!-- Logo 8 -->
+            <div class="w-full flex items-center justify-center">
+                <img src="images/homepage/logos/77.png" alt="770" class="w-36 h-auto" />
+            </div>
+
+            <!-- Logo 9 -->
+            <div class="w-full flex items-center justify-center">
+                <img src="images/homepage/logos/78.png" alt="ATSEI" class="w-36 h-auto" />
+            </div>
+
+            <!-- Logo 10 -->
+            <div class="w-full flex items-center justify-center">
+                <img src="images/homepage/logos/afscme.png" alt="AFSCME" class="w-36 h-auto" />
+            </div>
+
+            <!-- Logo 11 -->
+            <div class="w-full flex items-center justify-center">
+                <img src="images/homepage/logos/ava.png" alt="Aava" class="w-36 h-auto" />
+            </div>
+
+            <!-- Logo 12 -->
+            <div class="w-full flex items-center justify-center">
+                <img src="images/homepage/logos/cannabis.png" alt="UFCW" class="w-36 h-auto" />
+            </div>
+
+            <!-- Logo 13 -->
+            <div class="w-full flex items-center justify-center">
+                <img src="images/homepage/logos/Cintas.png" alt="Cintas" class="w-36 h-auto" />
+            </div>
+
+            <!-- Logo 14 -->
+            <div class="w-full flex items-center justify-center">
+                <img src="images/homepage/logos/ethix.png" alt="Ethix" class="w-36 h-auto" />
+            </div>
+
+            <!-- Logo 15 -->
+            <div class="w-full flex items-center justify-center">
+                <img src="images/homepage/logos/guild.png" alt="DGA" class="w-36 h-auto" />
+            </div>
+
+            <!-- Logo 16 -->
+            <div class="w-full flex items-center justify-center">
+                <img src="images/homepage/logos/HanzDeFuko.jpg" alt="HANZDEFuko" class="w-36 h-auto" />
+            </div>
+
+            <!-- Logo 17 -->
+            <div class="w-full flex items-center justify-center">
+                <img src="images/homepage/logos/holy.png" alt="HJM" class="w-36 h-auto" />
+            </div>
+
+            <!-- Logo 18 -->
+            <div class="w-full flex items-center justify-center">
+                <img src="images/homepage/logos/omni.png" alt="Omni" class="w-36 h-auto" />
+            </div>
+
+            <!-- Logo 19 -->
+            <div class="w-full flex items-center justify-center">
+                <img src="images/homepage/logos/voyant.png" alt="Voyant" class="w-36 h-auto" />
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
 <!-- Products, wil become a image -->
 
 {{-- <x-product-carousel :title="'Create Brands with us'" :products='json_encode([
@@ -108,9 +216,7 @@ Check Out Our <span style="color: #ffff;">Monthly Promotions </span>
     ["title" => "Fulfillment", "image" => "images/homepage/Fullfillment.jpg", "url" => ""],
     ["title" => "Delivery Service", "image" => "images/homepage/delivery.jpg", "url" => ""]
  
-
-   
-])'/>
+])' :columns="4"/>
 
 
 <script>
@@ -209,6 +315,68 @@ Check Out Our <span style="color: #ffff;">Monthly Promotions </span>
 
     const prev2 = document.getElementById("prev2"); // Make sure to add a unique ID to the button in the second carousel.
     prev2.addEventListener("click", goPrev2);
+</script>
+
+
+<script>
+  // Wait for the document to be ready
+  document.addEventListener("DOMContentLoaded", function () {
+    // Define the animation
+    gsap.to(".hero-text", {
+      opacity: 1, // Fade in to full opacity
+      y: 35, // Move in the Y direction (0 means no movement)
+      duration: 0.85, // Animation duration in seconds
+      ease: "power3.out", // Easing function
+    });
+  });
+
+ gsap.to(".hero-text + p", { // Select the <p> element following the <h1> using the adjacent sibling combinator
+      opacity: 1, // Fade in to full opacity
+      y: 15, // No vertical movement
+      duration: 0.85, // Animation duration in seconds
+      ease: "power4.out", // Easing function
+    });
+
+     gsap.to(".hero-text + p + a", {
+      backgroundColor: "#FFC414", // Change background color to yellow
+      color: "white", // Change text color to white
+      delay: 1,
+      duration: 0.4, // Animation duration in seconds
+      ease: "power4.out", // Easing function
+    });
+// gsap.to(".hero-text + p + a", { // Select the <a> element following the <p> using the adjacent sibling combinator
+//       opacity: 1, // Fade in to full opacity
+//       y: 15, // No vertical movement
+//       duration: 0.2, // Animation duration in seconds
+//       ease: "power4.out", // Easing function
+//     });
+
+</script>
+
+<script>
+ Observer.create({
+  target: window,            // The target element (e.g., the window)
+  type: "wheel,touch",       // Types of events to listen to (e.g., wheel and touch)
+  onUp: () => {
+    // Animation logic for upward motion
+    gsap.to(".animate-section", {
+      opacity: 0,      // End with opacity 1 (fully visible)
+      y: 10,           // Move back to the original position
+      duration: 1,     // Animation duration in seconds
+      ease: "power4.out", // Easing function
+    });
+  },
+  onDown: () => {
+    // Animation logic for downward motion
+    gsap.to(".animate-section", {
+      opacity: 1,      // Start with opacity 0 (hidden)
+      y: 0,           // Move down (or any desired animation)
+      duration: 1,     // Animation duration in seconds
+      ease: "power4.out", // Easing function
+    });
+  },
+});
+
 </script>
 
 @endsection

@@ -23,27 +23,19 @@
     <div class="hidden lg:block">
         <!-- This will be displayed on larger screens (not mobile view) -->
         
-<div class="py-16 bg-white">
+<div class="py-16 bg-white ">
     <div class="container mx-auto">
         <h2 class="text-2xl font-semibold mb-8 ml-2">{{ $title }}</h2>
 
-        <!-- Grid of Centered Cards -->
-        @php
-        $numProducts = count(json_decode($products));
-        $numColumns = 1;
-        if ($numProducts > 1) {
-            $numColumns = $numProducts >= 5 ? 5 : ($numProducts >= 4 ? 4 : 1);
-        }
-        @endphp
-
-        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-{{ $numColumns }} justify-center gap-x-4 gap-y-8">
+     
+<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-{{ $columns }} lg:grid-cols-{{ $columns }} justify-center gap-x-4 gap-y-8 animate-section">
             @foreach(json_decode($products) as $product)
             <div class="w-full flex items-center justify-center">
                 <a href="{{ $product->url }}">
                     <div class="bg-gray-100 rounded-lg shadow-lg w-44 h-48 flex justify-center items-center">
                         <img src="{{ asset($product->image) }}" alt="{{ $product->title }}" class="w-full h-full object-cover rounded-lg" />
                     </div>
-                    <h3 class="text-lg font-semibold mt-4">{{ $product->title }}</h3>
+                    <h3 class="text-lg font-semibold mt-4 text-center">{{ $product->title }}</h3>
                 </a>
             </div>
             @endforeach
