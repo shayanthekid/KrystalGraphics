@@ -14,8 +14,7 @@ use App\View\Components\ProductCarousel;
     Print Perfection
 </h1>
                 <p class="mt-4 font-montserrat text-lg font-light lg:text-lg p-4 lg:p-0 ">
-                    Unlocking Creativity, One Print at a Time!
-                    Your source for Printing, Packaging, Promotional Items, and More
+                    Unlocking Creativity, One Print at a Time! Your Source for Printing, Packaging, Promotional Items and More… 
                 </p>
                 <a href="{{ route('contact') }}" class="mt-14 inline-block px-6 py-3 text-black bg-white rounded-lg shadow-lg hover:shadow-xl transition duration-300 lg:text-left font-roboto">Contact Us</a>
             </div>
@@ -74,12 +73,19 @@ Check Out Our <span style="color: #ffff;">Monthly Promotions </span>
    
 ])' :columns="5"/>
    
+
+
+
+
 <div class="py-16 bg-white">
     <div class="container mx-auto">
         <h2 class="text-2xl font-semibold mb-8 ml-2">Create Brands with us</h2>
 
-        <!-- Grid of Logos -->
-        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-auto gap-x-4 gap-y-8 justify-center">
+
+<div class="lg:hidden">
+        <!-- This will be displayed on smaller screens (mobile view) -->
+    <!-- Grid of Logos -->
+         <div class="grid grid-cols-5  gap-x-11 gap-y-8 justify-center">
             <!-- Logo 1 -->
             <div class="w-full flex items-center justify-center">
                 <img src="images/homepage/ember.png" alt="Ember Valley" class="w-36 h-auto" />
@@ -175,7 +181,82 @@ Check Out Our <span style="color: #ffff;">Monthly Promotions </span>
             <div class="w-full flex items-center justify-center">
                 <img src="images/homepage/logos/voyant.png" alt="Voyant" class="w-36 h-auto" />
             </div>
-        </div>
+        </div> 
+    </div>
+    <div class="hidden lg:block">
+        <!-- This will be displayed on larger screens (not mobile view) -->
+ 
+<div class="wrapper overflow-hidden">
+  <div class="imageContainer flex flex-row gap-6 md:gap-25 w-full h-32 md:w-full" id="imageContainer">
+    <!-- Add your logo images using the provided paths -->
+    <div class="image h-64 md:h-96 w-full md:w-1/2 bg-cover bg-center">
+      <img src="images/homepage/ember.png" alt="Ember Valley" class="w-32 md:w-auto h-auto">
+    </div>
+    <div class="image h-64 md:h-96 w-full md:w-1/2 bg-cover bg-center">
+      <img src="images/homepage/dccollective.png" alt="DC Collectives" class="w-32 md:w-auto h-auto">
+    </div>
+    <div class="image h-64 md:h-96 w-full md:w-1/2 bg-cover bg-center">
+      <img src="images/homepage/wafers.png" alt="Wafers" class="w-32 md:w-auto h-auto">
+    </div>
+    <div class="image h-64 md:h-96 w-full md:w-1/2 bg-cover bg-center">
+      <img src="images/homepage/coast.png" alt="Coast to Coast" class="w-32 md:w-auto h-auto">
+    </div>
+    <div class="image h-64 md:h-96 w-full md:w-1/2 bg-cover bg-center">
+      <img src="images/homepage/Herbarium.png" alt="Herbarium" class="w-32 md:w-auto h-auto">
+    </div>
+    <div class="image h-64 md:h-96 w-full md:w-1/2 bg-cover bg-center">
+      <img src="images/homepage/Maven.png" alt="Maven" class="w-32 md:w-auto h-auto">
+    </div>
+    <div class="image h-64 md:h-96 w-full md:w-1/2 bg-cover bg-center">
+      <img src="images/homepage/logos/44.png" alt="APC" class="w-32 md:w-auto h-auto">
+    </div>
+    <div class="image h-64 md:h-96 w-full md:w-1/2 bg-cover bg-center">
+      <img src="images/homepage/logos/77.png" alt="770" class="w-32 md:w-auto h-auto">
+    </div>
+    <div class="image h-64 md:h-96 w-full md:w-1/2 bg-cover bg-center">
+      <img src="images/homepage/logos/78.png" alt="ATSEI" class="w-32 md:w-auto h-auto">
+    </div>
+    <div class= "image h-64 md:h-96 w-full md:w-1/2 bg-cover bg-center">
+      <img src="images/homepage/logos/afscme.png" alt="AFSCME" class="w-32 md:w-auto h-auto">
+    </div>
+    <div class="image h-64 md:h-96 w-full md:w-1/2 bg-cover bg-center">
+      <img src="images/homepage/logos/ava.png" alt="Aava" class="w-32 md:w-auto h-auto">
+    </div>
+    <div class="image h-64 md:h-96 w-full md:w-1/2 bg-cover bg-center">
+      <img src="images/homepage/logos/cannabis.png" alt="UFCW" class="w-32 md:w-auto h-auto">
+    </div>
+    <div class="image h-64 md:h-96 w-full md:w-1/2 bg-cover bg-center">
+      <img src="images/homepage/logos/Cintas.png" alt="Cintas" class="w-32 md:w-auto h-auto">
+    </div>
+    <div class="image h-64 md:h-96 w-full md:w-1/2 bg-cover bg-center">
+      <img src="images/homepage/logos/ethix.png" alt="Ethix" class="w-32 md:w-auto h-auto">
+    </div>
+    <div class="image h-64 md:h-96 w-full md:w-1/2 bg-cover bg-center">
+      <img src="images/homepage/logos/guild.png" alt="DGA" class="w-32 md:w-auto h-auto">
+    </div>
+    <div class="image h-64 md:h-96 w-full md:w-1/2 bg-cover bg-center">
+      <img src="images/homepage/logos/HanzDeFuko.jpg" alt="HANZDEFuko" class="w-32 md:w-auto h-auto">
+    </div>
+    <div class="image h-64 md:h-96 w-full md:w-1/2 bg-cover bg-center">
+      <img src="images/homepage/logos/holy.png" alt="HJM" class="w-32 md:w-auto h-auto">
+    </div>
+    <div class="image h-64 md:h-96 w-full md:w-1/2 bg-cover bg-center">
+      <img src="images/homepage/logos/omni.png" alt="Omni" class="w-32 md:w-auto h-auto">
+    </div>
+    <div class="image h-64 md:h-96 w-full md:w-1/2 bg-cover bg-center">
+      <img src="images/homepage/logos/voyant.png" alt="Voyant" class="w-32 md:w-auto h-auto">
+    </div>
+  </div>
+</div>
+
+
+    </div>
+
+
+
+
+
+     
     </div>
 </div>
 
@@ -332,9 +413,9 @@ Check Out Our <span style="color: #ffff;">Monthly Promotions </span>
 
  gsap.to(".hero-text + p", { // Select the <p> element following the <h1> using the adjacent sibling combinator
       opacity: 1, // Fade in to full opacity
-      y: 15, // No vertical movement
+      y: 20, // No vertical movement
       duration: 0.85, // Animation duration in seconds
-      ease: "power4.out", // Easing function
+      ease: "power3.out", // Easing function
     });
 
      gsap.to(".hero-text + p + a", {
@@ -376,6 +457,101 @@ Check Out Our <span style="color: #ffff;">Monthly Promotions </span>
     });
   },
 });
+
+</script>
+
+
+<script>
+
+let loop = horizontalLoop(".image", {speed: 1, repeat: -1, paddingRight: 25});
+
+function setDirection(value) {
+  if (loop.direction !== value) {
+    gsap.to(loop, {timeScale: value, duration: 0.3, overwrite: true});
+    loop.direction = value;
+  }
+}
+
+Observer.create({
+  target: window,
+  type: "wheel,scroll,touch",
+  onDown: () => setDirection(1),
+  onUp: () => setDirection(-1)
+})
+
+
+
+/*
+This helper function makes a group of elements animate along the x-axis in a seamless, responsive loop.
+
+Features:
+ - Uses xPercent so that even if the widths change (like if the window gets resized), it should still work in most cases.
+ - When each item animates to the left or right enough, it will loop back to the other side
+ - Optionally pass in a config object with values like "speed" (default: 1, which travels at roughly 100 pixels per second), paused (boolean), repeat, reversed, and paddingRight.
+ - The returned timeline will have the following methods added to it:
+   - next() - animates to the next element using a timeline.tweenTo() which it returns. You can pass in a vars object to control duration, easing, etc.
+   - previous() - animates to the previous element using a timeline.tweenTo() which it returns. You can pass in a vars object to control duration, easing, etc.
+   - toIndex() - pass in a zero-based index value of the element that it should animate to, and optionally pass in a vars object to control duration, easing, etc. Always goes in the shortest direction
+   - current() - returns the current index (if an animation is in-progress, it reflects the final index)
+   - times - an Array of the times on the timeline where each element hits the "starting" spot. There's also a label added accordingly, so "label1" is when the 2nd element reaches the start.
+ */
+function horizontalLoop(items, config) {
+  items = gsap.utils.toArray(items);
+  config = config || {};
+  let tl = gsap.timeline({repeat: config.repeat, paused: config.paused, defaults: {ease: "none"}, onReverseComplete: () => tl.totalTime(tl.rawTime() + tl.duration() * 100)}),
+    length = items.length,
+    startX = items[0].offsetLeft,
+    times = [],
+    widths = [],
+    xPercents = [],
+    curIndex = 0,
+    pixelsPerSecond = (config.speed || 1) * 100,
+    snap = config.snap === false ? v => v : gsap.utils.snap(config.snap || 1), // some browsers shift by a pixel to accommodate flex layouts, so for example if width is 20% the first element's width might be 242px, and the next 243px, alternating back and forth. So we snap to 5 percentage points to make things look more natural
+    totalWidth, curX, distanceToStart, distanceToLoop, item, i;
+  gsap.set(items, { // convert "x" to "xPercent" to make things responsive, and populate the widths/xPercents Arrays to make lookups faster.
+    xPercent: (i, el) => {
+      let w = widths[i] = parseFloat(gsap.getProperty(el, "width", "px"));
+      xPercents[i] = snap(parseFloat(gsap.getProperty(el, "x", "px")) / w * 100 + gsap.getProperty(el, "xPercent"));
+      return xPercents[i];
+    }
+  });
+  gsap.set(items, {x: 0});
+  totalWidth = items[length-1].offsetLeft + xPercents[length-1] / 100 * widths[length-1] - startX + items[length-1].offsetWidth * gsap.getProperty(items[length-1], "scaleX") + (parseFloat(config.paddingRight) || 0);
+  for (i = 0; i < length; i++) {
+    item = items[i];
+    curX = xPercents[i] / 100 * widths[i];
+    distanceToStart = item.offsetLeft + curX - startX;
+    distanceToLoop = distanceToStart + widths[i] * gsap.getProperty(item, "scaleX");
+    tl.to(item, {xPercent: snap((curX - distanceToLoop) / widths[i] * 100), duration: distanceToLoop / pixelsPerSecond}, 0)
+      .fromTo(item, {xPercent: snap((curX - distanceToLoop + totalWidth) / widths[i] * 100)}, {xPercent: xPercents[i], duration: (curX - distanceToLoop + totalWidth - curX) / pixelsPerSecond, immediateRender: false}, distanceToLoop / pixelsPerSecond)
+      .add("label" + i, distanceToStart / pixelsPerSecond);
+    times[i] = distanceToStart / pixelsPerSecond;
+  }
+  function toIndex(index, vars) {
+    vars = vars || {};
+    (Math.abs(index - curIndex) > length / 2) && (index += index > curIndex ? -length : length); // always go in the shortest direction
+    let newIndex = gsap.utils.wrap(0, length, index),
+      time = times[newIndex];
+    if (time > tl.time() !== index > curIndex) { // if we're wrapping the timeline's playhead, make the proper adjustments
+      vars.modifiers = {time: gsap.utils.wrap(0, tl.duration())};
+      time += tl.duration() * (index > curIndex ? 1 : -1);
+    }
+    curIndex = newIndex;
+    vars.overwrite = true;
+    return tl.tweenTo(time, vars);
+  }
+  tl.next = vars => toIndex(curIndex+1, vars);
+  tl.previous = vars => toIndex(curIndex-1, vars);
+  tl.current = () => curIndex;
+  tl.toIndex = (index, vars) => toIndex(index, vars);
+  tl.times = times;
+  tl.progress(1, true).progress(0, true); // pre-render for performance
+  if (config.reversed) {
+    tl.vars.onReverseComplete();
+    tl.reverse();
+  }
+  return tl;
+}
 
 </script>
 

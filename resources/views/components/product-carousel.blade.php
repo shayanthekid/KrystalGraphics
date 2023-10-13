@@ -28,7 +28,7 @@
         <h2 class="text-2xl font-semibold mb-8 ml-2">{{ $title }}</h2>
 
      
-<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-{{ $columns }} lg:grid-cols-{{ $columns }} justify-center gap-x-4 gap-y-8 animate-section">
+<div class="grid grid-cols-5 md:grid-cols-{{ $columns }} lg:grid-cols-{{ $columns }} justify-center gap-x-4 gap-y-8 animate-section">
             @foreach(json_decode($products) as $product)
             <div class="w-full flex items-center justify-center">
                 <a href="{{ $product->url }}">
