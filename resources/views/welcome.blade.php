@@ -76,110 +76,80 @@ Check Out Our <span style="color: #ffff;">Monthly Promotions </span>
 
 
 
-
 <div class="py-16 bg-white">
     <div class="container mx-auto">
         <h2 class="text-2xl font-semibold mb-8 ml-2 text-center">Create Brands with us</h2>
 
         <!-- This will be displayed on smaller screens (mobile view) -->
-    <!-- Grid of Logos -->
-         <div class="grid grid-cols-5  gap-x-11 gap-y-8 justify-center">
-            <!-- Logo 1 -->
-            <div class="w-full flex items-center justify-center">
-                <img src="images/homepage/ember.png" alt="Ember Valley" class="w-36 h-auto" />
-            </div>
-
-            <!-- Logo 2 -->
-            <div class="w-full flex items-center justify-center">
-            
-                <img src="images/homepage/dccollective.png" alt="DC Collectives" class="w-36 h-auto" />
-            </div>
-
-            <!-- Logo 3 -->
-            <div class="w-full flex items-center justify-center">
-                <img src="images/homepage/wafers.png" alt="Wafers" class="w-36 h-auto" />
-            </div>
-
-            <!-- Logo 4 -->
-            <div class="w-full flex items-center justify-center">
-                <img src="images/homepage/coast.png" alt="Coast to Coast" class="w-36 h-auto" />
-            </div>
-
-            <!-- Logo 5 -->
-            <div class="w-full flex items-center justify-center">
-                <img src="images/homepage/Herbarium.png" alt="Herbarium" class="w-36 h-auto" />
-            </div>
-
-            <!-- Logo 6 -->
-            <div class="w-full flex items-center justify-center">
-                <img src="images/homepage/Maven.png" alt="Maven" class="w-36 h-auto" />
-            </div>
-
-            <!-- Logo 7 -->
-            <div class="w-full flex items-center justify-center">
-                <img src="images/homepage/logos/44.png" alt="APC" class="w-36 h-auto" />
-            </div>
-
-            <!-- Logo 8 -->
-            <div class="w-full flex items-center justify-center">
-                <img src="images/homepage/logos/77.png" alt="770" class="w-36 h-auto" />
-            </div>
-
-            <!-- Logo 9 -->
-            <div class="w-full flex items-center justify-center">
-                <img src="images/homepage/logos/78.png" alt="ATSEI" class="w-36 h-auto" />
-            </div>
-
-            <!-- Logo 10 -->
-            <div class="w-full flex items-center justify-center">
-                <img src="images/homepage/logos/afscme.png" alt="AFSCME" class="w-36 h-auto" />
-            </div>
-
-            <!-- Logo 11 -->
-            <div class="w-full flex items-center justify-center">
-                <img src="images/homepage/logos/ava.png" alt="Aava" class="w-36 h-auto" />
-            </div>
-
-            <!-- Logo 12 -->
-            <div class="w-full flex items-center justify-center">
-                <img src="images/homepage/logos/cannabis.png" alt="UFCW" class="w-36 h-auto" />
-            </div>
-
-            <!-- Logo 13 -->
-            <div class="w-full flex items-center justify-center">
-                <img src="images/homepage/logos/Cintas.png" alt="Cintas" class="w-36 h-auto" />
-            </div>
-
-            <!-- Logo 14 -->
-            <div class="w-full flex items-center justify-center">
-                <img src="images/homepage/logos/ethix.png" alt="Ethix" class="w-36 h-auto" />
-            </div>
-
-            <!-- Logo 15 -->
-            <div class="w-full flex items-center justify-center">
-                <img src="images/homepage/logos/guild.png" alt="DGA" class="w-36 h-auto" />
-            </div>
-
-            <!-- Logo 16 -->
-            <div class="w-full flex items-center justify-center">
-                <img src="images/homepage/logos/HanzDeFuko.jpg" alt="HANZDEFuko" class="w-36 h-auto" />
-            </div>
-
-            <!-- Logo 17 -->
-            <div class="w-full flex items-center justify-center">
-                <img src="images/homepage/logos/holy.png" alt="HJM" class="w-36 h-auto" />
-            </div>
-
-            <!-- Logo 18 -->
-            <div class="w-full flex items-center justify-center">
-                <img src="images/homepage/logos/omni.png" alt="Omni" class="w-36 h-auto" />
-            </div>
-
-            <!-- Logo 19 -->
-            <div class="w-full flex items-center justify-center">
-                <img src="images/homepage/logos/voyant.png" alt="Voyant" class="w-36 h-auto" />
-            </div>
-        </div> 
+   <div
+    x-data="{}"
+    x-init="$nextTick(() => {
+        let ul = $refs.logos;
+        ul.insertAdjacentHTML('afterend', ul.outerHTML);
+        ul.nextSibling.setAttribute('aria-hidden', 'true');
+    })"
+    class="w-full inline-flex flex-nowrap overflow-hidden [mask-image:_linear-gradient(to_right,transparent_0,_black_128px,_black_calc(100%-128px),transparent_100%)]"
+>
+    <ul x-ref="logos" class="flex items-center justify-center md:justify-start [&_li]:mx-8 [&_img]:max-w-none animate-infinite-scroll">
+        <li class="w-auto h-auto p-2">
+            <img src="images/homepage/ember.png" alt="Ember Valley" class="max-w-full max-h-20" />
+        </li>
+        <li class="w-auto h-auto p-2">
+            <img src="images/homepage/dccollective.png" alt="DC Collectives" class="max-w-full max-h-20" />
+        </li>
+        <li class="w-auto h-auto p-2">
+            <img src="images/homepage/wafers.png" alt="Wafers" class="max-w-full max-h-20" />
+        </li>
+        <li class="w-auto h-auto p-2">
+            <img src="images/homepage/coast.png" alt="Coast to Coast" class="max-w-full max-h-20" />
+        </li>
+        <li class="w-auto h-auto p-2">
+            <img src="images/homepage/Herbarium.png" alt="Herbarium" class="max-w-full max-h-20" />
+        </li>
+        <li class="w-auto h-auto p-2">
+            <img src="images/homepage/Maven.png" alt="Maven" class="max-w-full max-h-20" />
+        </li>
+        <li class="w-auto h-auto p-2">
+            <img src="images/homepage/logos/44.png" alt="APC" class="max-w-full max-h-20" />
+        </li>
+        <li class="w-auto h-auto p-2">
+            <img src="images/homepage/logos/77.png" alt="770" class="max-w-full max-h-20" />
+        </li>
+        <li class="w-auto h-auto p-2">
+            <img src="images/homepage/logos/78.png" alt="ATSEI" class="max-w-full max-h-20" />
+        </li>
+        <li class="w-auto h-auto p-2">
+            <img src="images/homepage/logos/afscme.png" alt="AFSCME" class="max-w-full max-h-20" />
+        </li>
+        <li class="w-auto h-auto p-2">
+            <img src="images/homepage/logos/ava.png" alt="Aava" class="max-w-full max-h-20" />
+        </li>
+        <li class="w-auto h-auto p-2">
+            <img src="images/homepage/logos/cannabis.png" alt="UFCW" class="max-w-full max-h-20" />
+        </li>
+        <li class="w-auto h-auto p-2">
+            <img src="images/homepage/logos/Cintas.png" alt="Cintas" class="max-w-full max-h-20" />
+        </li>
+        <li class="w-auto h-auto p-2">
+            <img src="images/homepage/logos/ethix.png" alt="Ethix" class="max-w-full max-h-20" />
+        </li>
+        <li class="w-auto h-auto p-2">
+            <img src="images/homepage/logos/guild.png" alt="DGA" class="max-w-full max-h-20" />
+        </li>
+        <li class="w-auto h-auto p-2">
+            <img src="images/homepage/logos/HanzDeFuko.jpg" alt="HANZDEFuko" class="max-w-full max-h-20" />
+        </li>
+        <li class="w-auto h-auto p-2">
+            <img src="images/homepage/logos/holy.png" alt="HJM" class="max-w-full max-h-20" />
+        </li>
+        <li class="w-auto h-auto p-2">
+            <img src="images/homepage/logos/omni.png" alt="Omni" class="max-w-full max-h-20" />
+        </li>
+        <li class="w-auto h-auto p-2">
+            <img src="images/homepage/logos/voyant.png" alt="Voyant" class="max-w-full max-h-20" />
+        </li>
+    </ul>                
+</div>
     </div>
       
     </div>
@@ -229,7 +199,7 @@ Check Out Our <span style="color: #ffff;">Monthly Promotions </span>
     function carousel() {
         return {
              images: [
-            '{{ asset('images/bannertemp/banner.png') }}',
+            '{{ asset('images/bannertemp/banner2.png') }}',
            '{{ asset('images/bannertemp/banner2.png') }}'
              ],
             currentIndex: 0,
