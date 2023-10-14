@@ -23,52 +23,30 @@
     <div class="hidden lg:block">
         <!-- This will be displayed on larger screens (not mobile view) -->
         
-
-<div class="py-16 bg-white">
+<div class="py-16 bg-white ">
     <div class="container mx-auto">
-        <h2 class="text-2xl font-semibold mb-8 ml-2">{{ $title }}</h2>
+        <h2 class="text-2xl font-semibold mb-8 ml-2 text-center">{{ $title }}</h2>
 
-        <!-- Carousel of Cards -->
-        <div class="flex items-center justify-center w-full h-full py-24 sm:py-8 px-4">
-            <div class="w-full relative flex items-center justify-center">
-            <button aria-label="slide backward" class="absolute z-30 left-0  focus:outline-none focus:bg-gray-400 focus:ring-2 focus:ring-offset-2 focus:ring-gray-400 cursor-pointer" id="prev">
-    <div class="w-10 h-10 flex items-center justify-center rounded-full bg-white">
-        <svg class="dark:text-gray-900" width="8" height="14" viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M7 1L1 7L7 13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-        </svg>
-    </div>
-</button>
-
-                <div class="w-full h-full mx-auto overflow-x-hidden overflow-y-hidden justify-center">
-                    <div id="slider" class="h-full flex lg:gap-8 md:gap-6 gap-14 items-center justify-start transition ease-out duration-700">
-                        @foreach(json_decode($products) as $product)
-                        <div class="flex flex-shrink-0 relative w-full sm:w-auto no-scrollbar px-4">
-                            <div class="flex space-x-4 lg:space-x-20 overflow-x-scroll no-scrollbar">
-                                <div class="w-60">
-                                    <a href="{{ $product->url }}">
-                                        <div class="bg-gray-100 rounded-lg shadow-lg w-60 h-72 flex justify-center items-center">
-                                            <img src="{{ asset($product->image) }}" alt="{{ $product->title }}" class="w-36 h-36 object-contain object-center" />
-                                        </div>
-                                        <h3 class="text-xl font-semibold mt-4 pb-8">{{ $product->title }}</h3>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        @endforeach
+     
+{{-- <div class="grid grid-cols-{{ $columns }} md:grid-cols-{{ $columns }} lg:grid-cols-{{ $columns }} justify-center gap-x-4 gap-y-8 animate-section-{{ $columns }}"> --}}
+<div class="grid grid-cols-{{ $columns }} justify-center gap-x-4 gap-y-8 animate-section-{{ $columns }}">
+            @foreach(json_decode($products) as $product)
+            <div class="w-full flex items-center justify-center">
+                <a href="{{ $product->url }}">
+                    <div class="bg-gray-100 rounded-lg shadow-lg w-44 h-48 flex justify-center items-center">
+                        <img src="{{ asset($product->image) }}" alt="{{ $product->title }}" class="w-full h-full object-cover rounded-lg" />
                     </div>
-                </div>
-               <button aria-label="slide forward" class="absolute z-30 right-0  focus:outline-none focus:bg-gray-400 focus:ring-2 focus:ring-offset-2 focus:ring-gray-400 cursor-pointer" id="next">
-    <div class="w-10 h-10 flex items-center justify-center rounded-full bg-white">
-        <svg class="dark:text-gray-900" width="8" height="14" viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M1 1L7 7L1 13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-        </svg>
-    </div>
-</button>
-
+                    <h3 class="text-lg font-semibold mt-4 text-center">{{ $product->title }}</h3>
+                </a>
             </div>
+            @endforeach
         </div>
     </div>
 </div>
+
+
+
+
     </div>
 
 
