@@ -30,11 +30,11 @@
 
         <!-- Navigational Headers -->
         <div class="mt-10 mx-4">
-            <h2 class="text-lg font-semibold"><a href="{{ route('home') }}">Home </a></h2>
-            <h2 class="text-lg font-semibold ">  <a href="{{ route('about') }}">About us </a> </h2>
-            <h2 class="text-lg font-semibold "><a href="{{ route('portfolio') }}">Portfolio </a> </h2>
-            <h2 class="text-lg font-semibold "><a href="{{ route('equipment') }}">Equipment </a> </h2>
-            <h2 class="text-lg font-semibold "><a href="{{ route('contact') }}">Contact Us </a></h2>
+            <h2 class="text-lg font-semibold font-montserrat"><a href="{{ route('home') }}">Home </a></h2>
+            <h2 class="text-lg font-semibold font-montserrat">  <a href="{{ route('about') }}">About us </a> </h2>
+            <h2 class="text-lg font-semibold font-montserrat"><a href="{{ route('portfolio') }}">Portfolio </a> </h2>
+            <h2 class="text-lg font-semibold font-montserrat"><a href="{{ route('equipment') }}">Equipment </a> </h2>
+            <h2 class="text-lg font-semibold font-montserrat"><a href="{{ route('contact') }}">Contact Us </a></h2>
 
             
             
@@ -42,19 +42,156 @@
 
         <hr class="mt-4 h-0.5 bg-gray-300">
         <!-- Navigational Menu (Services) -->
+      
         <div class="mt-6 mx-4">
-            <h3 class="text-lg font-semibold">Services</h3>
-            <ul class="mt-2 space-y-2">
-             
-        <li><a href="{{ route('silk-screen-printing') }}">Silk Screen Printing</a></li>
-        <li><a href="{{ route('embroidery') }}">Embroidery</a></li>
-        <li><a href="{{ route('packaging') }}">Packaging</a></li>          
-        <li><a href="{{ route('mylar') }}">Mylar Bags</a></li>
-        <li><a href="{{ route('glass') }}">Glass Jars</a></li>
-         <li><a href="{{ route('labels') }}">Labels/ Stickers</a></li>
-        <li><a href="https://www.promoplace.com/33620/ ">Promotional Items</a></li>
-        <h2 class=""><a href="https://bullseyeb2b.com/ ">Mailing Services</a></h2>
-            </ul>
-        </div>
+    <h3 class="text-lg font-semibold font-montserrat">Services</h3>
+    <ul class="mt-2 space-y-2">
+        <li>
+            <div class="flex justify-between items-center">
+                <a href="{{ route('silk-screen-printing') }}" class=" font-roboto">Silk Screen Printing</a>
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    fill="currentColor"
+                    class="bi bi-arrow-right"
+                    viewBox="0 0 16 16"
+                >
+                    <path
+                        fill-rule="evenodd"
+                        d="M11.293 7.293a1 1 0 0 0 0-1.414l-4-4a1 1 0 0 0-1.414 1.414L9.586 8l-3.707 3.707a1 1 0 1 0 1.414 1.414l4-4a1 1 0 0 0 0-1.414z"
+                    />
+                </svg>
+            </div>
+        </li>
+        <li>
+            <div class="flex justify-between items-center">
+                <a href="{{ route('embroidery') }}" class=" font-roboto">Embroidery</a>
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    fill="currentColor"
+                    class="bi bi-arrow-right"
+                    viewBox="0 0 16 16"
+                >
+                    <path
+                        fill-rule="evenodd"
+                        d="M11.293 7.293a1 1 0 0 0 0-1.414l-4-4a1 1 0 0 0-1.414 1.414L9.586 8l-3.707 3.707a1 1 0 1 0 1.414 1.414l4-4a1 1 0 0 0 0-1.414z"
+                    />
+                </svg>
+            </div>
+        </li>
+        <li>
+            <div class="flex justify-between items-center">
+                <a href="{{ route('packaging') }}" class=" font-roboto">Packaging</a>
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    fill="currentColor"
+                    class="bi bi-arrow-right"
+                    viewBox="0 0 16 16"
+                >
+                    <path
+                        fill-rule="evenodd"
+                        d="M11.293 7.293a1 1 0 0 0 0-1.414l-4-4a1 1 0 0 0-1.414 1.414L9.586 8l-3.707 3.707a1 1 0 1 0 1.414 1.414l4-4a1 1 0 0 0 0-1.414z"
+                    />
+                </svg>
+            </div>
+        </li>
+        <li>
+            <div class="flex justify-between items-center">
+                <a href="{{ route('mylar') }}" class=" font-roboto">Mylar Bags</a>
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    fill="currentColor"
+                    class="bi bi-arrow-right"
+                    viewBox="0 0 16 16"
+                >
+                    <path
+                        fill-rule="evenodd"
+                        d="M11.293 7.293a1 1 0 0 0 0-1.414l-4-4a1 1 0 0 0-1.414 1.414L9.586 8l-3.707 3.707a1 1 0 1 0 1.414 1.414l4-4a1 1 0 0 0 0-1.414z"
+                    />
+                </svg>
+            </div>
+        </li>
+        <li>
+            <div class="flex justify-between items-center">
+                <a href="{{ route('glass') }}" class=" font-roboto">Glass Jars</a>
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    fill="currentColor"
+                    class="bi bi-arrow-right"
+                    viewBox="0 0 16 16"
+                >
+                    <path
+                        fill-rule="evenodd"
+                        d="M11.293 7.293a1 1 0 0 0 0-1.414l-4-4a1 1 0 0 0-1.414 1.414L9.586 8l-3.707 3.707a1 1 0 1 0 1.414 1.414l4-4a1 1 0 0 0 0-1.414z"
+                    />
+                </svg>
+            </div>
+        </li>
+        <li>
+            <div class="flex justify-between items-center">
+                <a href="{{ route('labels') }}" class=" font-roboto">Labels/ Stickers</a>
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    fill="currentColor"
+                    class="bi bi-arrow-right"
+                    viewBox="0 0 16 16"
+                >
+                    <path
+                        fill-rule="evenodd"
+                        d="M11.293 7.293a1 1 0 0 0 0-1.414l-4-4a1 1 0 0 0-1.414 1.414L9.586 8l-3.707 3.707a1 1 0 1 0 1.414 1.414l4-4a1 1 0 0 0 0-1.414z"
+                    />
+                </svg>
+            </div>
+        </li>
+        <li>
+            <div class="flex justify-between items-center">
+                <a href="https://www.promoplace.com/33620/"class=" font-roboto">Promotional Items</a>
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    fill="currentColor"
+                    class="bi bi-arrow-right"
+                    viewBox="0 0 16 16"
+                >
+                    <path
+                        fill-rule="evenodd"
+                        d="M11.293 7.293a1 1 0 0 0 0-1.414l-4-4a1 1 0 0 0-1.414 1.414L9.586 8l-3.707 3.707a1 1 0 1 0 1.414 1.414l4-4a1 1 0 0 0 0-1.414z"
+                    />
+                </svg>
+            </div>
+        </li>
+        <li>
+            <div class="flex justify-between items-center">
+                <a href="https://bullseyeb2b.com/" class=" font-roboto">Mailing Services</a>
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    fill="currentColor"
+                    class="bi bi-arrow-right"
+                    viewBox="0 0 16 16"
+                >
+                    <path
+                        fill-rule="evenodd"
+                        d="M11.293 7.293a1 1 0 0 0 0-1.414l-4-4a1 1 0 0 0-1.414 1.414L9.586 8l-3.707 3.707a1 1 0 1 0 1.414 1.414l4-4a1 1 0 0 0 0-1.414z"
+                    />
+                </svg>
+            </div>
+        </li>
+    </ul>
+</div>
+
     </div>
 </div>

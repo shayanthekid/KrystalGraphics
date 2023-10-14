@@ -6,7 +6,7 @@ use App\View\Components\ProductCarousel;
 @endphp
     <!-- Hero Section -->
    
-<div class="bg-[#DCDCDC] py-16 md:py-0 lg:py-0 overflow-hidden">
+<div class="bg-[#DCDCDC] py-16 md:py-0 md:px-16 lg:py-0 overflow-hidden">
     <div class="container mx-auto grid grid-cols-1 md:grid-cols-3">
         <div class="container mx-auto flex justify-center lg:justify-start items-center h-full">
             <div class="text-center lg:text-left text-black lg:-mt-32">
@@ -21,7 +21,7 @@ use App\View\Components\ProductCarousel;
         </div>
 
         <div class="hidden lg:flex lg:w-full lg:items-end lg:justify-end col-span-2 ml-20 ">
-            <img src="{{ asset('images/homepage/HEROIMG2.png') }}" alt="" class="w-full" style="max-width: 100%; height: auto; hero-image">
+            <img src="{{ asset('images/homepage/HEROIMG2.png') }}" alt="" class="w-full hero-image" style="max-width: 100%; height: auto; ">
         </div>
     </div>
 </div>
@@ -76,7 +76,7 @@ Check Out Our <span style="color: #ffff;">Monthly Promotions </span>
 
 
 
-<div class="py-16 bg-white">
+<div class="py-16 bg-[#DCDCDC]">
     <div class="container mx-auto">
         <h2 class="text-2xl font-semibold mb-8 ml-2 text-center">Create Brands with us</h2>
 
@@ -321,10 +321,18 @@ Check Out Our <span style="color: #ffff;">Monthly Promotions </span>
       ease: "power4.out", // Easing function
     });
 
+    gsap.from(".hero-image", {
+        x:50,
+        opacity: 0,
+        duration: 1.5,
+    });
    
 
 
+
 </script>
+
+
 <script>
 let t1 = gsap.timeline({
 
