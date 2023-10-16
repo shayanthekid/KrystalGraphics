@@ -146,7 +146,8 @@ tl4.to('.anim-button',
              images: [
           
             '{{ asset('images/services/tshirt/shirt2.png') }}',
-            '{{ asset('images/services/tshirt/shirt3.png') }}'
+            '{{ asset('images/services/tshirt/shirt5.png') }}',
+            '{{ asset('images/services/tshirt/shirt4.png') }}'
              ],
             currentIndex: 0,
             slider: null,

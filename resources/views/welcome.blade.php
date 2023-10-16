@@ -64,10 +64,10 @@ Check Out Our <span style="color: #ffff;">Monthly Promotions </span>
 
 {{-- Top pics --}}
 <x-product-carousel :title="'Top Picks'" :products='json_encode([
-    ["title" => "Labels", "image" => "images/homepage/logos/newlabel.jpg", "url" => ""],
-    ["title" => "Jars", "image" => "images/homepage/logos/weed2.png", "url" => ""],
+    ["title" => "Labels", "image" => "images/homepage/logos/newlabel.jpg", "url" => "/labels"],
+    ["title" => "Jars", "image" => "images/homepage/logos/weed2.png", "url" => "/glass"],
     ["title" => "Postcards", "image" => "images/homepage/logos/postcard.png", "url" => ""],
-    ["title" => "SilkScreen", "image" => "images/homepage/logos/silk.png", "url" => ""],
+    ["title" => "SilkScreen", "image" => "images/services/embroidery/bag.png", "url" => "/silk-screen-printing"],
     ["title" => "Business Cards", "image" => "images/homepage/logos/cards.png", "url" => ""],
 ])' :columns="5"/>
    
