@@ -93,61 +93,61 @@ Check Out Our <span style="color: #ffff;">Monthly Promotions </span>
 >
     <ul x-ref="logos" class="flex items-center justify-center md:justify-start [&_li]:mx-8 [&_img]:max-w-none animate-infinite-scroll">
         <li class="w-auto h-auto p-2">
-            <img src="images/homepage/ember.png" alt="Ember Valley" class="max-w-full max-h-20" />
+            <img src="images/homepage/ember.png" alt="Ember Valley" class="w-20 max-h-20" />
         </li>
         <li class="w-auto h-auto p-2">
-            <img src="images/homepage/dccollective.png" alt="DC Collectives" class="max-w-full max-h-20" />
+            <img src="images/homepage/dccollective.png" alt="DC Collectives" class="w-20 max-h-20" />
         </li>
         <li class="w-auto h-auto p-2">
-            <img src="images/homepage/wafers.png" alt="Wafers" class="max-w-full max-h-20" />
+            <img src="images/homepage/wafers.png" alt="Wafers" class="w-20 max-h-20" />
         </li>
         <li class="w-auto h-auto p-2">
-            <img src="images/homepage/coast.png" alt="Coast to Coast" class="max-w-full max-h-20" />
+            <img src="images/homepage/coast.png" alt="Coast to Coast" class="w-20 max-h-20" />
         </li>
         <li class="w-auto h-auto p-2">
-            <img src="images/homepage/Herbarium.png" alt="Herbarium" class="max-w-full max-h-20" />
+            <img src="images/homepage/Herbarium.png" alt="Herbarium" class="w-20 max-h-20" />
         </li>
         <li class="w-auto h-auto p-2">
-            <img src="images/homepage/Maven.png" alt="Maven" class="max-w-full max-h-20" />
+            <img src="images/homepage/Maven.png" alt="Maven" class="w-20 max-h-20" />
         </li>
         <li class="w-auto h-auto p-2">
-            <img src="images/homepage/logos/44.png" alt="APC" class="max-w-full max-h-20" />
+            <img src="images/homepage/logos/44.png" alt="APC" class="w-20 max-h-20" />
         </li>
         <li class="w-auto h-auto p-2">
-            <img src="images/homepage/logos/77.png" alt="770" class="max-w-full max-h-20" />
+            <img src="images/homepage/logos/77.png" alt="770" class="w-20 max-h-20" />
         </li>
         <li class="w-auto h-auto p-2">
-            <img src="images/homepage/logos/78.png" alt="ATSEI" class="max-w-full max-h-20" />
+            <img src="images/homepage/logos/78.png" alt="ATSEI" class="w-20 max-h-20" />
         </li>
         <li class="w-auto h-auto p-2">
-            <img src="images/homepage/logos/afscme.png" alt="AFSCME" class="max-w-full max-h-20" />
+            <img src="images/homepage/logos/afscme.png" alt="AFSCME" class="w-20 max-h-20" />
         </li>
         <li class="w-auto h-auto p-2">
-            <img src="images/homepage/logos/ava.png" alt="Aava" class="max-w-full max-h-20" />
+            <img src="images/homepage/logos/ava.png" alt="Aava" class="w-20 max-h-20" />
         </li>
         <li class="w-auto h-auto p-2">
-            <img src="images/homepage/logos/cannabis.png" alt="UFCW" class="max-w-full max-h-20" />
+            <img src="images/homepage/logos/cannabis.png" alt="UFCW" class="w-20 max-h-20" />
         </li>
         <li class="w-auto h-auto p-2">
-            <img src="images/homepage/logos/Cintas.png" alt="Cintas" class="max-w-full max-h-20" />
+            <img src="images/homepage/logos/Cintas.png" alt="Cintas" class="w-20 max-h-20" />
         </li>
         <li class="w-auto h-auto p-2">
-            <img src="images/homepage/logos/ethix.png" alt="Ethix" class="max-w-full max-h-20" />
+            <img src="images/homepage/logos/ethix.png" alt="Ethix" class="w-20 max-h-20" />
         </li>
         <li class="w-auto h-auto p-2">
-            <img src="images/homepage/logos/guild.png" alt="DGA" class="max-w-full max-h-20" />
+            <img src="images/homepage/logos/guild.png" alt="DGA" class="w-20 max-h-20" />
         </li>
         <li class="w-auto h-auto p-2">
-            <img src="images/homepage/logos/HanzDeFuko.jpg" alt="HANZDEFuko" class="max-w-full max-h-20" />
+            <img src="images/homepage/logos/HanzDeFuko.jpg" alt="HANZDEFuko" class="w-20 max-h-20" />
         </li>
         <li class="w-auto h-auto p-2">
-            <img src="images/homepage/logos/holy.png" alt="HJM" class="max-w-full max-h-20" />
+            <img src="images/homepage/logos/holy.png" alt="HJM" class="w-20 max-h-20" />
         </li>
         <li class="w-auto h-auto p-2">
-            <img src="images/homepage/logos/omni.png" alt="Omni" class="max-w-full max-h-20" />
+            <img src="images/homepage/logos/omni.png" alt="Omni" class="w-20 max-h-20" />
         </li>
         <li class="w-auto h-auto p-2">
-            <img src="images/homepage/logos/voyant.png" alt="Voyant" class="max-w-full max-h-20" />
+            <img src="images/homepage/logos/voyant.png" alt="Voyant" class="w-20 max-h-20" />
         </li>
     </ul>                
 </div>
@@ -422,7 +422,7 @@ t1.fromTo('.animate-section-5',
     opacity: 1, // Start with opacity 0
     y: 10,     // Start below the viewport
     duration: 0.5, // Animation duration in seconds
-    delay:0.3,
+    delay:0.2,
     ease: 'power4.inOut', // Easing function
   });
 
@@ -443,9 +443,10 @@ t2.fromTo('.animate-section-4',
     opacity: 0,
 },
  {
-  opacity: 1, // Start with opacity 0
+     opacity: 1, // Start with opacity 0
     y: 10,     // Start below the viewport
     duration: 0.5, // Animation duration in seconds
+    delay:0.2,
     ease: 'power4.inOut', // Easing function
   });
 //   // Initialize a variable to keep track of whether the animation has played

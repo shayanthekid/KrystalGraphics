@@ -1,4 +1,4 @@
-<div x-data="{ isOpen: false }" class="z-[100]" style="z-index: 999999">
+<div x-data="{ isOpen: false }" x-init="checkPageLoad" class="z-[100]" style="z-index: 999999">
     <!-- Mobile Navigation Bar (Row) -->
     <div class=" top-4 left-4 w-full h-auto z-[100] ">
         <!-- Hamburger Menu Icon (left-aligned) -->
@@ -195,3 +195,15 @@
 
     </div>
 </div>
+<script>
+    function checkPageLoad() {
+        // Check if the page is being loaded for the first time
+        const isFirstLoad = localStorage.getItem('isFirstLoad') === null;
+
+        // If it's the first load, set isOpen to false
+        if (isFirstLoad) {
+            this.isOpen = false;
+            localStorage.setItem('isFirstLoad', 'false');
+        }
+    }
+</script>

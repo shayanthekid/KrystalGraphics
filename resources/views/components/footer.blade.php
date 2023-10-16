@@ -49,33 +49,46 @@
         </div>
     </div>
 </footer> --}}
-<div class="bg-gray-100">
+<div class="bg-black">
     <div class="max-w-screen-lg px-4 sm:px-6 text-gray-800 sm:grid md:grid-cols-4 sm:grid-cols-2 mx-auto">
         <div class="p-5">
-            <h3 class="font-bold text-xl text-indigo-600">Company Name</h3>
+            <h3 class="font-bold text-xl text-white font-montserrat">Kristal Graphics</h3>
+        </div>
+         <div class="p-5">
+            <div class="text-sm uppercase text-white font-montserrat font-bold">Main</div>
+            <a class="my-3 block text-sm text-white font-roboto" href="{{ route('home') }}">Home <span class="text-teal-600 text-xs p-1"></span></a>
+            <a class="my-3 block text-sm text-white font-roboto" href="{{ route('about') }}">About us <span class="text-teal-600 text-xs p-1"></span></a>
+            <a class="my-3 block text-sm text-white font-roboto" href="{{ route('equipment') }}">Equipment<span class="text-teal-600 text-xs p-1"></span></a>
+            <a class="my-3 block text-sm text-white font-roboto" href="{{ route('portfolio') }}">Portfolio<span class="text-red-500 text-xs p-1">New</span></a>
+            <a class="my-3 block text-sm text-white font-roboto" href="{{ route('contact') }}">Contact Us <span class="text-teal-600 text-xs p-1"></span></a>
+        </div>
+          <div class="p-5">
+            <div class="text-sm uppercase text-white font-montserrat font-bold">Services</div>
+            
+              <a class="my-3 block text-sm text-white font-roboto" href="{{ route('silk-screen-printing') }}" class="hover:text-gray-500">Silk Screen Printing</a>
+               <a class="my-3 block text-sm text-white font-roboto" href="{{ route('embroidery') }}" class="hover:text-gray-500">Embroidery</a>
+                <a class="my-3 block text-sm text-white font-roboto" href="{{ route('mylar') }}" class="hover:text-gray-500">Mylar Bags</a>
+             <a class="my-3 block text-sm text-white font-roboto" href="{{ route('glass') }}" class="hover:text-gray-500">Glass Jars</a>
+               <a class="my-3 block text-sm text-white font-roboto" href="{{ route('labels') }}" class="hover:text-gray-500">Labels/Stickers</a>
+               <a class="my-3 block text-sm text-white font-roboto" href="{{ route('packaging') }}" class="hover:text-gray-500">Packaging</a>
+              <a class="my-3 block text-sm text-white font-roboto" href="https://www.promoplace.com/33620/" class="hover:text-gray-500">Promotion Items</a>
+              <a class="my-3 block text-sm text-white font-roboto" href="https://bullseyeb2b.com/" class="hover:text-gray-500">Mailing Services</a>
+          
         </div>
         <div class="p-5">
-            <div class="text-sm uppercase text-indigo-600 font-bold">Resources</div>
-            <a class="my-3 block" href="/#">Documentation <span class="text-teal-600 text-xs p-1"></span></a><a
-                class="my-3 block" href="/#">Tutorials <span class="text-teal-600 text-xs p-1"></span></a><a
-                class="my-3 block" href="/#">Support <span class="text-teal-600 text-xs p-1">New</span></a>
-        </div>
-        <div class="p-5">
-            <div class="text-sm uppercase text-indigo-600 font-bold">Support</div>
-            <a class="my-3 block" href="/#">Help Center <span class="text-teal-600 text-xs p-1"></span></a><a
-                class="my-3 block" href="/#">Privacy Policy <span class="text-teal-600 text-xs p-1"></span></a><a
-                class="my-3 block" href="/#">Conditions <span class="text-teal-600 text-xs p-1"></span></a>
-        </div>
-        <div class="p-5">
-            <div class="text-sm uppercase text-indigo-600 font-bold">Contact us</div>
-            <a class="my-3 block" href="/#">XXX XXXX, Floor 4 San Francisco, CA
-                <span class="text-teal-600 text-xs p-1"></span></a><a class="my-3 block" href="/#">contact@company.com
-                <span class="text-teal-600 text-xs p-1"></span></a>
+            <div class="text-sm uppercase text-white font-montserrat font-bold">Address</div>
+            <a class="my-3 block text-white text-sm font-light font-roboto" href="/#">7801 Canoga Ave<br>
+                    Unit 14
+                    Canoga Park, CA 91303<br>
+                    USA
+                <span class="text-teal-600 text-xs p-1"></span></a><a class="my-3 block text-white" href="/#">Phone: 818-342-7822
+                   
+                <span class="text-red-500 text-xs p-1">Fax: 818-884-7046</span></a>
         </div>
     </div>
 </div>
 
-<div class="bg-gray-100 pt-2">
+<div class="bg-black pt-2">
     <div class="flex pb-5 px-3 m-auto pt-5 border-t text-gray-800 text-sm flex-col
       max-w-screen-lg items-center">
         <div class="md:flex-auto md:flex-row-reverse mt-2 flex-row flex">
@@ -171,7 +184,7 @@
                 </svg>
             </a>
         </div>
-        <div class="my-5">© Copyright 2020. All Rights Reserved.</div>
+        <div class="my-5 text-white">© Copyright 2020. All Rights Reserved.</div>
     </div>
 </div>
 
