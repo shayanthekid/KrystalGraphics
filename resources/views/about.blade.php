@@ -111,6 +111,48 @@ We understand that every client has unique needs and requirements, and we work c
                 </div>
                 <!-- end team block -->
             </div>
+             <div class="flex-shrink max-w-full px-4 w-2/3 sm:w-1/2 md:w-5/12 lg:w-1/4 xl:px-6">
+                <!-- team block -->
+                <div class="relative overflow-hidden bg-white  mb-12 hover-grayscale-0 wow fadeInUp" data-wow-duration="1s" data-wow-delay=".3s" style="visibility: visible; animation-duration: 1s; animation-delay: 0.3s; animation-name: fadeInUp;">
+                    <div class="relative overflow-hidden px-6">
+                        <img src="https://tailone.tailwindtemplate.net/src/img/dummy/avatar2.png" class="max-w-full h-auto mx-auto rounded-full bg-gray-50 grayscale" alt="title image">
+                    </div>
+                    <div class="pt-6 text-center">
+                        <p class="text-lg leading-normal font-bold mb-1">Juzer </p>
+                       <!-- social icon -->
+                  
+                    </div>
+                </div>
+                <!-- end team block -->
+            </div>
+             <div class="flex-shrink max-w-full px-4 w-2/3 sm:w-1/2 md:w-5/12 lg:w-1/4 xl:px-6">
+                <!-- team block -->
+                <div class="relative overflow-hidden bg-white  mb-12 hover-grayscale-0 wow fadeInUp" data-wow-duration="1s" data-wow-delay=".3s" style="visibility: visible; animation-duration: 1s; animation-delay: 0.3s; animation-name: fadeInUp;">
+                    <div class="relative overflow-hidden px-6">
+                        <img src="https://tailone.tailwindtemplate.net/src/img/dummy/avatar2.png" class="max-w-full h-auto mx-auto rounded-full bg-gray-50 grayscale" alt="title image">
+                    </div>
+                    <div class="pt-6 text-center">
+                        <p class="text-lg leading-normal font-bold mb-1">Munna Mansoor</p>
+                      <!-- social icon -->
+                  
+                    </div>
+                </div>
+                <!-- end team block -->
+            </div>
+                 <div class="flex-shrink max-w-full px-4 w-2/3 sm:w-1/2 md:w-5/12 lg:w-1/4 xl:px-6">
+                <!-- team block -->
+                <div class="relative overflow-hidden bg-white  mb-12 hover-grayscale-0 wow fadeInUp" data-wow-duration="1s" data-wow-delay=".3s" style="visibility: visible; animation-duration: 1s; animation-delay: 0.3s; animation-name: fadeInUp;">
+                    <div class="relative overflow-hidden px-6">
+                        <img src="https://tailone.tailwindtemplate.net/src/img/dummy/avatar3.png" class="max-w-full h-auto mx-auto rounded-full bg-gray-50 grayscale" alt="title image">
+                    </div>
+                    <div class="pt-6 text-center">
+                        <p class="text-lg leading-normal font-bold mb-1">Tasneem Murtaza Mansoor</p>
+                      <!-- social icon -->
+                  
+                    </div>
+                </div>
+                <!-- end team block -->
+            </div>
             <div class="flex-shrink max-w-full px-4 w-2/3 sm:w-1/2 md:w-5/12 lg:w-1/4 xl:px-6">
                 <!-- team block -->
                     <div class="relative overflow-hidden px-6">

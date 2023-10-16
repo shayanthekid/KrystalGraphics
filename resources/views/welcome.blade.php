@@ -63,13 +63,12 @@ Check Out Our <span style="color: #ffff;">Monthly Promotions </span>
 
 
 {{-- Top pics --}}
-<x-product-carousel :title="'Top Picks'" :products='json_encode([
+<x-product-carousel :title="'Fastest Selling Items'" :products='json_encode([
     ["title" => "Labels", "image" => "images/homepage/logos/newlabel.jpg", "url" => "/labels"],
-    ["title" => "Jars", "image" => "images/homepage/logos/weed2.png", "url" => "/glass"],
-    ["title" => "Postcards", "image" => "images/homepage/logos/postcard.png", "url" => ""],
-    ["title" => "SilkScreen", "image" => "images/services/embroidery/bag.png", "url" => "/silk-screen-printing"],
-    ["title" => "Business Cards", "image" => "images/homepage/logos/cards.png", "url" => ""],
-])' :columns="5"/>
+    ["title" => "Screen Printing", "image" => "images/homepage/rowofshrt.jpg", "url" => "/silk-screen-printing"],
+    ["title" => "Promotional Items", "image" => "images/homepage/promotion2.jpg", "url" => "https://www.promoplace.com/33620/glass"],
+    ["title" => "Packaging", "image" => "images/services/packaging/box.png", "url" => "/packaging"],
+])' :columns="4"/>
    
 
 
