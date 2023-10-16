@@ -1,4 +1,4 @@
-  <div class="lg:hidden">
+  {{-- <div class="lg:hidden">
         <!-- This will be displayed on smaller screens (mobile view) -->
      <div class="py-16 bg-white">
     <div class="container mx-auto">
@@ -20,16 +20,16 @@
     </div>
 </div>
     </div>
-    <div class="hidden lg:block">
+   --}}
         <!-- This will be displayed on larger screens (not mobile view) -->
         
 <div class="py-16 bg-white ">
     <div class="container mx-auto">
-        <h2 class="text-2xl font-semibold mb-8 ml-2 text-center">{{ $title }}</h2>
+        <h2 class="text-2xl font-bold mb-8 ml-2 text-center">{{ $title }}</h2>
 
      
 <!-- {{-- <div class="grid grid-cols-{{ $columns }} md:grid-cols-{{ $columns }} lg:grid-cols-{{ $columns }} justify-center gap-x-4 gap-y-8 animate-section-{{ $columns }}"> --}} -->
-<div class="grid grid-cols-{{ $columns }} justify-center gap-x-4 gap-y-8 animate-section-{{ $columns }}">
+<div class="grid  sm:grid-cols-1 md:grid-cols-{{ $columns }}  justify-center gap-x-4 gap-y-8 animate-section-{{ $columns }}">
             @foreach(json_decode($products) as $product)
             <div class="w-full flex items-center justify-center">
                 <a href="{{ $product->url }}">
@@ -47,7 +47,6 @@
 
 
 
-    </div>
 
 
 <style>

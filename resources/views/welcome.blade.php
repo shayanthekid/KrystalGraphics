@@ -6,17 +6,18 @@ use App\View\Components\ProductCarousel;
 @endphp
     <!-- Hero Section -->
    
-<div class="bg-[#DCDCDC] py-16 md:py-0 md:px-16 lg:py-0 overflow-hidden">
+{{-- <div class="bg-[#DCDCDC] py-16 md:py-0 md:px-16 lg:py-0 overflow-hidden"> --}}
+<div class="bg-black py-16 md:py-0 md:px-16 lg:py-0 overflow-hidden hero-bg">
     <div class="container mx-auto grid grid-cols-1 md:grid-cols-3">
         <div class="container mx-auto flex justify-center lg:justify-start items-center h-full">
             <div class="text-center lg:text-left text-black lg:-mt-32">
                 <h1 class="text-4xl font-semibold font-montserrat lg:text-5xl lg:py-10 hero-text" style="opacity: 0;">
     Print Perfection
 </h1>
-                <p class="mt-4 font-montserrat text-lg font-light lg:text-lg p-4 lg:p-0 ">
+                <p class="mt-4 font-montserrat text-lg font-light lg:text-lg p-4 lg:p-0 hero-para ">
                     Unlocking Creativity, One Print at a Time! Your Source for Printing, Packaging, Promotional Items and More… 
                 </p>
-                <a href="{{ route('contact') }}" class="mt-14 inline-block px-6 py-3 text-black bg-white rounded-lg shadow-lg hover:shadow-xl transition duration-300 lg:text-left font-roboto">Contact Us</a>
+                <a href="{{ route('contact') }}" class="mt-14 inline-block px-6 py-3 text-black bg-white rounded-lg shadow-lg hover:shadow-xl transition duration-300 lg:text-left font-roboto hero-button">Contact Us</a>
             </div>
         </div>
 
@@ -29,7 +30,7 @@ use App\View\Components\ProductCarousel;
 
 {{-- Banner --}}
      <div class="text-center lg:text-left text-black bg-[#FFC414]">
-                <h1 class="text-4xl p-5  font-semibold font-montserrat lg:text-3xl lg:py-10 text-center">
+                <h1 class="p-5 sm:text-sm  font-semibold font-montserrat lg:text-3xl lg:py-10 text-center">
 Check Out Our <span style="color: #ffff;">Monthly Promotions </span>
 </h1>
               
@@ -78,7 +79,7 @@ Check Out Our <span style="color: #ffff;">Monthly Promotions </span>
 
 <div class="py-16 bg-[#DCDCDC]">
     <div class="container mx-auto">
-        <h2 class="text-2xl font-semibold mb-8 ml-2 text-center">Create Brands with us</h2>
+        <h2 class="text-2xl font-bold mb-8 ml-2 text-center">Create Brands with us</h2>
 
         <!-- This will be displayed on smaller screens (mobile view) -->
    <div
@@ -295,37 +296,104 @@ Check Out Our <span style="color: #ffff;">Monthly Promotions </span>
 
 
 <script>
+
+    const tl = gsap.timeline();
+   tl.to(".hero-text", 1, {
+    opacity: 1,
+  y: 25,
+  ease: "power4.inOut",
+  stagger: {
+    amount: 0.3
+  }
+})
+
+const tl2 = gsap.timeline();
+tl2.to(".hero-para", {
+ opacity: 0, // Fade in to full opacity
+
+}).from(".hero-para",{
+    opacity:1,
+     y: 15, // No vertical movement
+  duration: 1, // Animation duration in seconds
+  ease: "power3.out", // Easing function
+})
+
+
+const tl3 = gsap.timeline();
+tl3.fromTo(".hero-button", 
+ {
+    opacity: 0,
+  
+ },
+{ 
+   backgroundColor: "#FFC414", // Change background color to yellow
+    color: "white", // Change text color to white
+    opacity: 1, 
+    duration: 0.5,
+    delay: 0.5,
+    ease: "power2.inOut",
+});
+
+const tl4 = gsap.timeline();
+tl4.to(".hero-bg", {
+
+  backgroundColor: "#DCDCDC", // Change background color to yellow
+    delay: 0.2,
+}
+)
+
+const tl5 = gsap.timeline();
+tl5.fromTo(".hero-image", 1, {
+    opacity: 0, 
+    
+},{
+    opacity: 1,
+    duration: 0.5,
+    ease: "power2.inOut",
+})
+
+tl.play();
+tl2.play();
+tl3.play();
+tl4.play();
   // Wait for the document to be ready
-  document.addEventListener("DOMContentLoaded", function () {
-    // Define the animation
-    gsap.to(".hero-text", {
-      opacity: 1, // Fade in to full opacity
-      y: 35, // Move in the Y direction (0 means no movement)
-      duration: 1.4, // Animation duration in seconds
-      ease: "power3.out", // Easing function
-    });
-  });
+//   document.addEventListener("DOMContentLoaded", function () {
+//     // Define the animation
 
- gsap.to(".hero-text + p", { // Select the <p> element following the <h1> using the adjacent sibling combinator
-      opacity: 1, // Fade in to full opacity
-      y: 20, // No vertical movement
-      duration: 1.4, // Animation duration in seconds
-      ease: "power3.out", // Easing function
-    });
+ 
 
-     gsap.to(".hero-text + p + a", {
-      backgroundColor: "#FFC414", // Change background color to yellow
-      color: "white", // Change text color to white
-      delay: 1,
-      duration: 0.4, // Animation duration in seconds
-      ease: "power4.out", // Easing function
-    });
+//     gsap.to(".hero-text", {
+//       opacity: 1, // Fade in to full opacity
+//       y: 35, // Move in the Y direction (0 means no movement)
+//       duration: 1.4, // Animation duration in seconds
+//       ease: "power3.out", // Easing function
+//     });
 
-    gsap.from(".hero-image", {
-        x:50,
-        opacity: 0,
-        duration: 1.5,
-    });
+// gsap.to(".hero-text + p", { // Select the <p> element following the <h1> using the adjacent sibling combinator
+//       opacity: 1, // Fade in to full opacity
+//       y: 20, // No vertical movement
+//       duration: 1.4, // Animation duration in seconds
+//       ease: "power3.out", // Easing function
+//     });
+
+//      gsap.to(".hero-text + p + a", {
+//       backgroundColor: "#FFC414", // Change background color to yellow
+//       color: "white", // Change text color to white
+//       delay: 1,
+//       duration: 0.4, // Animation duration in seconds
+//       ease: "power4.out", // Easing function
+//     });
+
+//     gsap.from(".hero-image", {
+//         x:50,
+//         opacity: 0,
+//         duration: 1.5,
+//     });
+
+
+//   });
+
+ 
    
 
 
@@ -345,11 +413,17 @@ let t1 = gsap.timeline({
     }
 });
 
-t1.from('.animate-section-5', {
-    opacity: 0, // Start with opacity 0
-    y: 100,     // Start below the viewport
+t1.fromTo('.animate-section-5',
+{
+
+    opacity: 0,
+},
+ {
+    opacity: 1, // Start with opacity 0
+    y: 10,     // Start below the viewport
     duration: 0.5, // Animation duration in seconds
-    ease: 'power2.out', // Easing function
+    delay:0.3,
+    ease: 'power4.inOut', // Easing function
   });
 
 let t2 = gsap.timeline({
@@ -363,11 +437,16 @@ let t2 = gsap.timeline({
     }
 });
 
-t2.from('.animate-section-4', {
-    opacity: 0, // Start with opacity 0
-    y: 100,     // Start below the viewport
+t2.fromTo('.animate-section-4',
+{
+ 
+    opacity: 0,
+},
+ {
+  opacity: 1, // Start with opacity 0
+    y: 10,     // Start below the viewport
     duration: 0.5, // Animation duration in seconds
-    ease: 'power2.out', // Easing function
+    ease: 'power4.inOut', // Easing function
   });
 //   // Initialize a variable to keep track of whether the animation has played
 //   let animationPlayed = false;
