@@ -114,7 +114,9 @@ Route::prefix('/mylar')->group(function () {
 Route::get('/standard', function () {
         return view('services.mylarproducts.standard');
     })->name('mylarproducts.standard');
-
+Route::get('/custom', function () {
+        return view('services.mylarproducts.custom');
+    })->name('mylarproducts.custom');
 });
 
 Route::prefix('/glass')->group(function () {

@@ -40,11 +40,11 @@
 
             <div class="md:flex-1 px-4">
                 {{-- Title --}}
-                <h2 class="text-2xl font-bold mb-2 hero-text" style="opacity: 0">Hoodie</h2>
+                <h2 class="text-2xl font-bold mb-2 hero-text" style="opacity: 0">Custom Size</h2>
                 {{-- Description --}}
                 <p class="text-gray-600 text-sm mt-2 hero-para" style="opacity: 0">
              
-Embroidery on hoodies adds a touch of sophistication and personalization to your favorite comfort wear. Our expert embroidery services use high-quality threads and precision stitching to create intricate and durable designs that make your hoodies truly unique. Whether it's for a sports team, corporate event, or personal fashion statement, embroidery offers a wide range of thread colors and customization options, ensuring your hoodies become stylish and enduring showcases for your brand or individual style. Elevate your hoodie game with embroidered designs that stand out and stand the test of time       
+ Custom-sized Mylar bags offer tailored solutions for packaging needs. We specialize in creating high-quality Mylar bags customized to your specific dimensions and design preferences. Whether you need packaging for food, electronics, or other products, our precision printing ensures your branding, labels, or artwork are flawlessly transferred onto these Mylar surfaces. This results in durable and professional packaging that not only protects but also showcases your products effectively.
                     </p>
                 
               
@@ -116,11 +116,13 @@ tl4.to('.anim-button',
     // Pictures
     function carousel() {
         return {
-           images: [
-                '{{ asset('images/services/hoodies/hoodie2.png') }}',
-         '{{ asset('images/services/hoodies/hoodie.png') }}',
-       
-        ],
+               images: [
+           '{{ asset('images/services/mylar/custom/box1.png') }}',
+           '{{ asset('images/services/mylar/custom/box2.png') }}',
+        
+      
+         
+             ],
             currentIndex: 0,
             slider: null,
 
