@@ -10,7 +10,7 @@ use App\View\Components\ProductCarousel;
     <div class="container mx-auto flex justify-center items-center h-full">
         <div class="text-center text-white">
             <h1 class="text-4xl font-semibold font-montserrat lg:text-6xl hero-text">Silk Screen Printing</h1>
-            <p class="mt-4 font-montserrat text-lg font-light lg:text-xl p-4">
+            <p class="mt-4 font-montserrat text-lg font-light lg:text-xl p-4 hero-para">
               Screen printing is a versatile printing technique that can be used for a variety of applications, from t-shirts and apparel to promotional items and signage.
 
             </p>
@@ -55,6 +55,28 @@ use App\View\Components\ProductCarousel;
 
 </script>
 
+<script>
+    const tl = gsap.timeline();
+   tl.to(".hero-text", 1, {
+    opacity: 1,
+  y: 25,
+  ease: "power4.inOut",
+  stagger: {
+    amount: 0.3
+  }
+})
+
+const tl2 = gsap.timeline();
+tl2.to(".hero-para", {
+ opacity: 0, // Fade in to full opacity
+
+}).from(".hero-para",{
+    opacity:1,
+     y: 15, // No vertical movement
+  duration: 1, // Animation duration in seconds
+  ease: "power3.out", // Easing function
+})
+</script>
 
     <script>
 let t1 = gsap.timeline({
@@ -68,11 +90,17 @@ let t1 = gsap.timeline({
     }
 });
 
-t1.from('.animate-section-4', {
-    opacity: 0, // Start with opacity 0
-    y: 100,     // Start below the viewport
+t1.fromTo('.animate-section-4',
+{
+
+    opacity: 0,
+},
+ {
+    opacity: 1, // Start with opacity 0
+    y: 10,     // Start below the viewport
     duration: 0.5, // Animation duration in seconds
-    ease: 'power2.out', // Easing function
+    delay:0.2,
+    ease: 'power4.inOut', // Easing function
   });
 </script>
 

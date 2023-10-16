@@ -17,7 +17,7 @@ use App\View\Components\ProductCarousel;
                 <p class="mt-4 font-montserrat text-lg font-light lg:text-lg p-4 lg:p-0 hero-para ">
                     Unlocking Creativity, One Print at a Time! Your Source for Printing, Packaging, Promotional Items and More… 
                 </p>
-                <a href="{{ route('contact') }}" class="mt-14 inline-block px-6 py-3 text-black bg-white rounded-lg shadow-lg hover:shadow-xl transition duration-300 lg:text-left font-roboto hero-button">Contact Us</a>
+                <a href="{{ route('contact') }}" class="mt-14 inline-block px-6 py-3 text-black bg-white rounded-lg shadow-lg hover:shadow-xl transition duration-300 lg:text-left font-roboto hero-button" style="opacity: 0">Contact Us</a>
             </div>
         </div>
 

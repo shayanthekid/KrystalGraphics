@@ -6,7 +6,7 @@
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex flex-col md:flex-row -mx-4">
             <div class="md:flex-1 px-4 overflow-hidden" >
-                <div x-data="carousel" class="h-[460px] rounded-lg bg-gray-300 mb-4 relative">
+                <div x-data="carousel" class="h-[460px] rounded-lg bg-gray-300 mb-4 relative ">
                     <!-- Image Carousel -->
                     <!-- <div x-ref="slider" class="w-full h-64 relative">
                         <template x-for="(image, index) in images" :key="index">
@@ -15,11 +15,11 @@
                             </div>
                         </template>
                     </div> -->
-                    <div x-ref="slider" class="flex transition-transform duration-300 ease-in-out w-full h-64 relative">
+                    <div x-ref="slider" class="flex transition-transform duration-300 ease-in-out w-full h-64 relative anim-carousel">
             <!-- Images will be dynamically added here -->
             <template x-for="(image, index) in images" :key="index">
                 <div class="w-full h-96 flex-shrink-0">
-                    <img :src="image" :alt="'Image ' + (index + 1)"  class="object-contain object-center w-full h-full">
+                    <img :src="image" :alt="'Image ' + (index + 1)"  class="object-contain object-center w-full h-full ">
                 </div>
             </template>
         </div>
@@ -46,46 +46,19 @@
             </div>
 
             <div class="md:flex-1 px-4">
-                <h2 class="text-2xl font-bold mb-2">Product Name</h2>
-                <p class="text-gray-600 text-sm mb-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sed
-                    ante justo. Integer euismod libero id mauris malesuada tincidunt.</p>
-                <div class="flex mb-4">
-                    <div class="mr-4">
-                        <span class="font-bold text-gray-700">Price:</span>
-                        <span class="text-gray-600">$29.99</span>
-                    </div>
-                    <div>
-                        <span class="font-bold text-gray-700">Availability:</span>
-                        <span class="text-gray-600">In Stock</span>
-                    </div>
-                </div>
-                <div class="mb-4">
-                    <span class="font-bold text-gray-700">Select Color:</span>
-                    <div class="flex items-center mt-2">
-                        <button class="w-6 h-6 rounded-full bg-gray-800 mr-2"></button>
-                        <button class="w-6 h-6 rounded-full bg-red-500 mr-2"></button>
-                        <button class="w-6 h-6 rounded-full bg-blue-500 mr-2"></button>
-                        <button class="w-6 h-6 rounded-full bg-yellow-500 mr-2"></button>
-                    </div>
-                </div>
-                <div class="mb-4">
-                    <span class="font-bold text-gray-700">Select Size:</span>
-                    <div class="flex items-center mt-2">
-                        <button class="bg-gray-300 text-gray-700 py-2 px-4 rounded-full font-bold mr-2 hover:bg-gray-400">S</button>
-                        <button class="bg-gray-300 text-gray-700 py-2 px-4 rounded-full font-bold mr-2 hover:bg-gray-400">M</button>
-                        <button class="bg-gray-300 text-gray-700 py-2 px-4 rounded-full font-bold mr-2 hover:bg-gray-400">L</button>
-                        <button class="bg-gray-300 text-gray-700 py-2 px-4 rounded-full font-bold mr-2 hover:bg-gray-400">XL</button>
-                        <button class="bg-gray-300 text-gray-700 py-2 px-4 rounded-full font-bold mr-2 hover:bg-gray-400">XXL</button>
-                    </div>
-                </div>
-                <div>
-                    <span class="font-bold text-gray-700">Product Description:</span>
-                    <p class="text-gray-600 text-sm mt-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
-                        sed ante justo. Integer euismod libero id mauris malesuada tincidunt. Vivamus commodo nulla ut
-                        lorem rhoncus aliquet. Duis dapibus augue vel ipsum pretium, et venenatis sem blandit. Quisque
-                        ut erat vitae nisi ultrices placerat non eget velit. Integer ornare mi sed ipsum lacinia, non
-                        sagittis mauris blandit. Morbi fermentum libero vel nisl suscipit, nec tincidunt mi consectetur.
+                
+                <h2 class="text-2xl font-bold mb-2 hero-text" style="opacity: 0">T Shirt</h2>
+                <p class="text-gray-600 text-sm mt-2 hero-para" style="opacity: 0">Silk screen printing, also known as screen printing, is a highly versatile and popular method for customizing T-shirts and other fabrics. It involves transferring ink through a fine mesh screen onto the fabric to create vibrant and long-lasting designs. This process allows for a wide range of color options and produces high-quality results, making it ideal for businesses, events, sports teams, and individuals looking to personalize their apparel. Whether you're interested in bulk orders or individual customization, silk screen printing offers a cost-effective and durable solution for creating unique and eye-catching T-shirts.
+
                     </p>
+                
+              
+                <div class="mb-4">
+          
+                    <div class="flex items-center mt-8 gap-5">
+                                 <a href="#" class="inline-block px-6 py-3 text-white bg-black rounded-full shadow-md hover:bg-opacity-80 transition duration-300 anim-button" style="opacity: 0">Download Brochure</a>
+            <a href="{{ route('contact') }}" class="inline-block px-6 py-3 text-black bg-white rounded-full shadow-md hover:bg-gray-200 transition duration-300 anim-button" style="opacity: 0">Contact Us</a>   
+                    </div>
                 </div>
             </div>
         </div>
@@ -113,6 +86,59 @@ function carousel() {
     };
 }
 </script> --}}
+<script>
+
+
+    const tl = gsap.timeline();
+   tl.to(".hero-text", 1, {
+    opacity: 1,
+  y: 25,
+  ease: "power4.inOut",
+  stagger: {
+    amount: 0.3
+  }
+})
+
+const tl2 = gsap.timeline();
+tl2.to(".hero-para", 1, {
+    opacity: 1,
+  y: 25,
+  ease: "power4.inOut",
+  stagger: {
+    amount: 0.3
+  }
+})
+
+
+const tl3 = gsap.timeline();
+
+tl3.fromTo('.anim-carousel',
+{
+ 
+    opacity: 0,
+},
+ {
+     opacity: 1, // Start with opacity 0
+     // Start below the viewport
+    duration: 0.5, // Animation duration in seconds
+    delay:0.2,
+    ease: 'power3.out', // Easing function
+  });
+
+const tl4 = gsap.timeline();
+
+tl4.to('.anim-button',
+
+ {
+     opacity: 1, // Start with opacity 0
+     y:10,
+  ease: "power4.inOut",
+  });
+
+
+
+
+</script>
 
 <script>
     function carousel() {
@@ -148,5 +174,7 @@ function carousel() {
         };
     }
 </script>
+
+
 
 @endsection
