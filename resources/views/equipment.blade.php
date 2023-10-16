@@ -5,8 +5,8 @@
    <div class="bg-[#FCFCFC] py-16">
     <div class="container mx-auto flex justify-center items-center h-full">
         <div class="text-center text-black">
-            <h1 class="text-4xl font-semibold font-montserrat lg:text-6xl">Precision on Every print</h1>
-            <p class="mt-4 font-montserrat text-lg font-light lg:text-xl p-4">
+            <h1 class="text-4xl font-semibold font-montserrat lg:text-6xl hero-text" style="opacity: 0">Precision on Every print</h1>
+            <p class="mt-4 font-montserrat text-lg font-light lg:text-xl p-4 hero-para" style="opacity: 0">
             We use only the highest quality equipment, which is maintained at optimal service levels to complete and deliver your jobs. Our state-of-the-art technology and high-quality materials ensure that your printed materials look their best every time. 
               
             </p>
@@ -20,7 +20,7 @@
     
 {{-- Tabs --}}
 
-<div x-data="tabs()" class="mb-4">
+<div x-data="tabs()" class="mb-4 items">
     
     <div class="overflow-x-auto whitespace-nowrap  e scrollbar-red pb-2">
         <template x-for="(tab, index) in tabsData" :key="index">
@@ -252,9 +252,12 @@
       
        
           <ul class="list-disc list-inside">
-    <li>  Xerox® Iridesse®</li>
-    <li> Komori LS640</li>
-    <li> Jeti Titan (122” x 79”)</li>
+    <li> 6 color Komori LS640 - 28 x 40</li>
+    <li>Hamada 12 x 18</li>
+    <li> AB Dick Mini Press </li>
+    <li>Jeti Titan (122” x 79”) </li>
+
+
 
    
 
@@ -977,7 +980,7 @@
                 { title: 'Digital Printing' },
                 { title: 'Digital Env' },
                 { title: 'Presses' },
-                { title: 'UV Coasters' },
+                { title: 'UV Coaters' },
                 { title: 'Foil Stamping' },
                 { title: 'Die Cutters' },
                 { title: 'Gluers' },
@@ -1056,11 +1059,14 @@
     }
 </script>
 <script>
+    //digital ENV
     function carousel2() {
         return {
              images: [
             '{{ asset('images/equipment/digital/digital.jpg') }}',
-           '{{ asset('images/equipment/screen/screen2.jpg') }}'
+            '{{ asset('images/equipment/digital/digital3.jpg') }}',
+            '{{ asset('images/equipment/digital/digital4.jpg') }}',
+        
              ],
             currentIndex: 0,
             slider: null,
@@ -1089,11 +1095,13 @@
     }
 </script>
 <script>
+    //digital printing
     function carousel3() {
         return {
              images: [
-            '{{ asset('images/equipment/digital/digital.jpg') }}',
-           '{{ asset('images/equipment/screen/screen2.jpg') }}'
+         '{{ asset('images/equipment/digital/digital2.jpg') }}',
+            '{{ asset('images/equipment/digital/digital3.jpg') }}',
+            '{{ asset('images/equipment/digital/digital4.jpg') }}',
              ],
             currentIndex: 0,
             slider: null,
@@ -1122,12 +1130,11 @@
     }
 </script>
 <script>
+    //press
     function carousel4() {
         return {
              images: [
-            '{{ asset('images/equipment/digital/digital.jpg') }}',
-           '{{ asset('images/equipment/screen/screen2.jpg') }}'
-             ],
+     '{{ asset('images/equipment/digital/digital4.jpg') }}',             ],
             currentIndex: 0,
             slider: null,
 
@@ -1319,4 +1326,30 @@
         };
     }
 </script>
+
+<script>
+
+
+    const tl = gsap.timeline();
+   tl.to(".hero-text", 1, {
+    opacity: 1,
+  y: 10,
+  ease: "power4.inOut",
+  stagger: {
+    amount: 0.3
+  }
+})
+
+const tl2 = gsap.timeline();
+tl2.to(".hero-para", 1, {
+    opacity: 1,
+  y: 10,
+  ease: "power4.inOut",
+  stagger: {
+    amount: 0.3
+  }
+})
+
+</script>
+
 @endsection

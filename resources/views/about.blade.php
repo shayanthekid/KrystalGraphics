@@ -3,10 +3,10 @@
 @section('content')
 <!-- About us -->
 <div class="py-16 ">
-    <div class="container mx-auto px-4 grid grid-cols-1 gap-4 md:grid-cols-2">
+    <div class="container mx-auto px-4 grid grid-cols-1 gap-4 md:grid-cols-2 hero-text" style="opacity: 0">
         <!-- First Column -->
         <div>
-            <h2 class="text-3xl font-semibold mb-4 text-left lg:text-4xl lg:w-9/12">  
+            <h2 class="text-3xl font-semibold mb-4 text-left lg:text-4xl lg:w-9/12 hero-para">  
                    Welcome to Kristal Graphics! We are a team of dedicated professionals who are passionate about providing 
                    high-quality printing services to our clients. Our company has been in the industry for over <span class="text-red-600">35</span>  years, 
                    and we have built a reputation for delivering exceptional results
@@ -130,4 +130,31 @@ We understand that every client has unique needs and requirements, and we work c
     </div>
 </div>
 
+
+
+
+<script>
+
+
+    const tl = gsap.timeline();
+   tl.to(".hero-text", 1, {
+    opacity: 1,
+  y: 10,
+  ease: "power4.inOut",
+  stagger: {
+    amount: 0.3
+  }
+})
+
+const tl2 = gsap.timeline();
+tl2.to(".hero-para", 1, {
+    opacity: 1,
+  y: 10,
+  ease: "power4.inOut",
+  stagger: {
+    amount: 0.3
+  }
+})
+
+</script>
 @endsection

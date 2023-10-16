@@ -1,7 +1,11 @@
 @extends('layouts.app')
 
 @section('content')
-
+<div class="flipbook">
+    <div class="page">Page 1 content</div>
+    <div class="page">Page 2 content</div>
+    <!-- Add more pages as needed -->
+</div>
 <!-- component -->
 <div class="container mx-auto p-4">
   <div class="grid grid-cols- md:grid-cols-3 gap-4">
@@ -159,4 +163,8 @@
   </div>
 </div>
 
+
+<script>
+    $(".flipbook").turn();
+</script>
 @endsection
