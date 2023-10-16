@@ -144,7 +144,7 @@ tl4.to('.anim-button',
     function carousel() {
         return {
              images: [
-           '{{ asset('images/services/tshirt/shirt2.jpg') }}',
+          
             '{{ asset('images/services/tshirt/shirt2.png') }}',
             '{{ asset('images/services/tshirt/shirt3.png') }}'
              ],

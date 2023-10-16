@@ -69,9 +69,6 @@ Check Out Our <span style="color: #ffff;">Monthly Promotions </span>
     ["title" => "Postcards", "image" => "images/homepage/logos/postcard.png", "url" => ""],
     ["title" => "SilkScreen", "image" => "images/homepage/logos/silk.png", "url" => ""],
     ["title" => "Business Cards", "image" => "images/homepage/logos/cards.png", "url" => ""],
- 
-
-   
 ])' :columns="5"/>
    
 
@@ -443,7 +440,7 @@ t2.fromTo('.animate-section-4',
     opacity: 0,
 },
  {
-     opacity: 1, // Start with opacity 0
+    opacity: 1, // Start with opacity 0
     y: 10,     // Start below the viewport
     duration: 0.5, // Animation duration in seconds
     delay:0.2,
