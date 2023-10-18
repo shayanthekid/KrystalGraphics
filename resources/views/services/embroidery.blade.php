@@ -24,7 +24,7 @@ use App\View\Components\ProductCarousel;
     ["title" => "Bags", "image" => "images/services/embroidery/bag.png", "url" => "embroidery/bag"],
     ["title" => "Beanies", "image" => "images/services/embroidery/beanie.png", "url" => "embroidery/beanies"],
     ["title" => "Caps", "image" => "images/services/embroidery/caps/cap1.png", "url" => "embroidery/caps"],
-    ["title" => "Hoodies", "image" => "images/services/embroidery/hoodie2.png", "url" => "embroidery/hoodies"],
+    {{-- ["title" => "Hoodies", "image" => "images/services/embroidery/hoodie2.png", "url" => "embroidery/hoodies"], --}}
     ["title" => "Polo Tshirts", "image" => "images/services/embroidery/polo.png", "url" => "embroidery/polo"],
 
 ])' :columns="4"/>

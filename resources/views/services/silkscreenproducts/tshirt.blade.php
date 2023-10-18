@@ -6,7 +6,7 @@
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex flex-col md:flex-row -mx-4">
             <div class="md:flex-1 px-4 overflow-hidden" >
-                <div x-data="carousel" class="h-[460px] rounded-lg bg-gray-300 mb-4 relative ">
+                <div x-data="carousel" class="h-[460px] rounded-lg  mb-4 relative ">
                     <!-- Image Carousel -->
                     <!-- <div x-ref="slider" class="w-full h-64 relative">
                         <template x-for="(image, index) in images" :key="index">
@@ -145,7 +145,7 @@ tl4.to('.anim-button',
         return {
              images: [
           
-            '{{ asset('images/services/tshirt/shirt2.png') }}',
+            '{{ asset('images/services/tshirt/tshirt1.jpg') }}',
             '{{ asset('images/services/tshirt/shirt5.png') }}',
             '{{ asset('images/services/tshirt/shirt4.png') }}'
              ],

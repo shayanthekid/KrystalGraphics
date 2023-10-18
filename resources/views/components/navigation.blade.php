@@ -48,146 +48,95 @@
     <ul class="mt-2 space-y-2">
         <li>
             <div class="flex justify-between items-center">
-                <a href="{{ route('silk-screen-printing') }}" class=" font-roboto">Silk Screen Printing</a>
-                <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="16"
-                    height="16"
-                    fill="currentColor"
-                    class="bi bi-arrow-right"
-                    viewBox="0 0 16 16"
-                >
-                    <path
-                        fill-rule="evenodd"
-                        d="M11.293 7.293a1 1 0 0 0 0-1.414l-4-4a1 1 0 0 0-1.414 1.414L9.586 8l-3.707 3.707a1 1 0 1 0 1.414 1.414l4-4a1 1 0 0 0 0-1.414z"
-                    />
-                </svg>
+               <a href="{{ route('silk-screen-printing') }}" class="font-roboto flex items-center no-underline">
+    <span class="mr-2">Silk Screen Printing</span>
+    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
+        <path fill-rule="evenodd" d="M11.293 7.293a1 1 0 0 0 0-1.414l-4-4a1 1 0 0 0-1.414 1.414L9.586 8l-3.707 3.707a1 1 0 1 0 1.414 1.414l4-4a1 1 0 0 0 0-1.414z"></path>
+    </svg>
+</a>
             </div>
         </li>
         <li>
             <div class="flex justify-between items-center">
-                <a href="{{ route('embroidery') }}" class=" font-roboto">Embroidery</a>
-                <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="16"
-                    height="16"
-                    fill="currentColor"
-                    class="bi bi-arrow-right"
-                    viewBox="0 0 16 16"
-                >
-                    <path
-                        fill-rule="evenodd"
-                        d="M11.293 7.293a1 1 0 0 0 0-1.414l-4-4a1 1 0 0 0-1.414 1.414L9.586 8l-3.707 3.707a1 1 0 1 0 1.414 1.414l4-4a1 1 0 0 0 0-1.414z"
-                    />
-                </svg>
+               <a href="{{ route('embroidery') }}" class="font-roboto flex items-center no-underline">
+    <span class="mr-2">Embroidery</span>
+    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
+        <path fill-rule="evenodd" d="M11.293 7.293a1 1 0 0 0 0-1.414l-4-4a1 1 0 0 0-1.414 1.414L9.586 8l-3.707 3.707a1 1 0 1 0 1.414 1.414l4-4a1 1 0 0 0 0-1.414z"></path>
+    </svg>
+</a>
+
             </div>
         </li>
         <li>
             <div class="flex justify-between items-center">
-                <a href="{{ route('packaging') }}" class=" font-roboto">Packaging</a>
-                <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="16"
-                    height="16"
-                    fill="currentColor"
-                    class="bi bi-arrow-right"
-                    viewBox="0 0 16 16"
-                >
-                    <path
-                        fill-rule="evenodd"
-                        d="M11.293 7.293a1 1 0 0 0 0-1.414l-4-4a1 1 0 0 0-1.414 1.414L9.586 8l-3.707 3.707a1 1 0 1 0 1.414 1.414l4-4a1 1 0 0 0 0-1.414z"
-                    />
-                </svg>
+                <a href="{{ route('packaging') }}" class=" font-roboto flex items-center no-underline">
+                   
+                <span class="mr-2">Packaging</span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
+        <path fill-rule="evenodd" d="M11.293 7.293a1 1 0 0 0 0-1.414l-4-4a1 1 0 0 0-1.414 1.414L9.586 8l-3.707 3.707a1 1 0 1 0 1.414 1.414l4-4a1 1 0 0 0 0-1.414z"></path>
+    </svg>
+                </a>
+            
             </div>
         </li>
         <li>
             <div class="flex justify-between items-center">
-                <a href="{{ route('mylar') }}" class=" font-roboto">Mylar Bags</a>
-                <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="16"
-                    height="16"
-                    fill="currentColor"
-                    class="bi bi-arrow-right"
-                    viewBox="0 0 16 16"
-                >
-                    <path
-                        fill-rule="evenodd"
-                        d="M11.293 7.293a1 1 0 0 0 0-1.414l-4-4a1 1 0 0 0-1.414 1.414L9.586 8l-3.707 3.707a1 1 0 1 0 1.414 1.414l4-4a1 1 0 0 0 0-1.414z"
-                    />
-                </svg>
+                <a href="{{ route('mylar') }}" class=" font-roboto flex items-center no-underline">
+                    
+                 <span class="mr-2">Mylar Bags</span>
+                       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
+        <path fill-rule="evenodd" d="M11.293 7.293a1 1 0 0 0 0-1.414l-4-4a1 1 0 0 0-1.414 1.414L9.586 8l-3.707 3.707a1 1 0 1 0 1.414 1.414l4-4a1 1 0 0 0 0-1.414z"></path>
+    </svg>
+                </a>
+             
             </div>
         </li>
         <li>
             <div class="flex justify-between items-center">
-                <a href="{{ route('glass') }}" class=" font-roboto">Glass Jars</a>
-                <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="16"
-                    height="16"
-                    fill="currentColor"
-                    class="bi bi-arrow-right"
-                    viewBox="0 0 16 16"
-                >
-                    <path
-                        fill-rule="evenodd"
-                        d="M11.293 7.293a1 1 0 0 0 0-1.414l-4-4a1 1 0 0 0-1.414 1.414L9.586 8l-3.707 3.707a1 1 0 1 0 1.414 1.414l4-4a1 1 0 0 0 0-1.414z"
-                    />
-                </svg>
+                <a href="{{ route('glass') }}" class=" font-roboto flex items-center no-underline">
+             
+                <span class="mr-2">Glass Jars</span>
+                              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
+        <path fill-rule="evenodd" d="M11.293 7.293a1 1 0 0 0 0-1.414l-4-4a1 1 0 0 0-1.414 1.414L9.586 8l-3.707 3.707a1 1 0 1 0 1.414 1.414l4-4a1 1 0 0 0 0-1.414z"></path>
+    </svg>
+                </a>
+             
             </div>
         </li>
         <li>
             <div class="flex justify-between items-center">
-                <a href="{{ route('labels') }}" class=" font-roboto">Labels/ Stickers</a>
-                <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="16"
-                    height="16"
-                    fill="currentColor"
-                    class="bi bi-arrow-right"
-                    viewBox="0 0 16 16"
-                >
-                    <path
-                        fill-rule="evenodd"
-                        d="M11.293 7.293a1 1 0 0 0 0-1.414l-4-4a1 1 0 0 0-1.414 1.414L9.586 8l-3.707 3.707a1 1 0 1 0 1.414 1.414l4-4a1 1 0 0 0 0-1.414z"
-                    />
-                </svg>
+                <a href="{{ route('labels') }}" class=" font-roboto flex items-center no-underline">
+                  
+                <span class="mr-2">Labels/ Stickers</span>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
+        <path fill-rule="evenodd" d="M11.293 7.293a1 1 0 0 0 0-1.414l-4-4a1 1 0 0 0-1.414 1.414L9.586 8l-3.707 3.707a1 1 0 1 0 1.414 1.414l4-4a1 1 0 0 0 0-1.414z"></path>
+    </svg>
+                </a>
+           
             </div>
         </li>
         <li>
             <div class="flex justify-between items-center">
-                <a href="https://www.promoplace.com/33620/"class=" font-roboto">Promotional Items</a>
-                <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="16"
-                    height="16"
-                    fill="currentColor"
-                    class="bi bi-arrow-right"
-                    viewBox="0 0 16 16"
-                >
-                    <path
-                        fill-rule="evenodd"
-                        d="M11.293 7.293a1 1 0 0 0 0-1.414l-4-4a1 1 0 0 0-1.414 1.414L9.586 8l-3.707 3.707a1 1 0 1 0 1.414 1.414l4-4a1 1 0 0 0 0-1.414z"
-                    />
-                </svg>
+                <a href="https://www.promoplace.com/33620/"class=" font-roboto flex items-center no-underline">
+                 
+                 <span class="mr-2">Promotional Items</span>
+                                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
+        <path fill-rule="evenodd" d="M11.293 7.293a1 1 0 0 0 0-1.414l-4-4a1 1 0 0 0-1.414 1.414L9.586 8l-3.707 3.707a1 1 0 1 0 1.414 1.414l4-4a1 1 0 0 0 0-1.414z"></path>
+    </svg>
+                </a>
+             
             </div>
         </li>
         <li>
             <div class="flex justify-between items-center">
-                <a href="https://bullseyeb2b.com/" class=" font-roboto">Mailing Services</a>
-                <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="16"
-                    height="16"
-                    fill="currentColor"
-                    class="bi bi-arrow-right"
-                    viewBox="0 0 16 16"
-                >
-                    <path
-                        fill-rule="evenodd"
-                        d="M11.293 7.293a1 1 0 0 0 0-1.414l-4-4a1 1 0 0 0-1.414 1.414L9.586 8l-3.707 3.707a1 1 0 1 0 1.414 1.414l4-4a1 1 0 0 0 0-1.414z"
-                    />
-                </svg>
+                <a href="https://bullseyeb2b.com/" class=" font-roboto flex items-center no-underline">
+                 
+                  <span class="mr-2">Mailing Services</span>
+             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
+        <path fill-rule="evenodd" d="M11.293 7.293a1 1 0 0 0 0-1.414l-4-4a1 1 0 0 0-1.414 1.414L9.586 8l-3.707 3.707a1 1 0 1 0 1.414 1.414l4-4a1 1 0 0 0 0-1.414z"></path>
+    </svg>
+                </a>
+
             </div>
         </li>
     </ul>
