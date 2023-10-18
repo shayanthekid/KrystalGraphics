@@ -133,6 +133,14 @@ Route::get('/jars', function () {
         return view('services.glassproducts.jars');
     })->name('glassproducts.jars');
 
+    Route::get('/2oz', function () {
+        return view('services.glassproducts.2oz');
+    })->name('glassproducts.2oz');
+
+       Route::get('/3oz', function () {
+        return view('services.glassproducts.3oz');
+    })->name('glassproducts.3oz');
+
 
 });
 

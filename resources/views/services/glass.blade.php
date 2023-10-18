@@ -22,11 +22,13 @@ Elevate glass jar packaging with our premium printing services. We specialize in
 
 <!-- Products -->
 <x-product-carousel :title="'Products'" :products='json_encode([
-    ["title" => "Tubes", "image" => "images/services/glass/jars.png", "url" => "glass/tubes"],
+    ["title" => "Tubes ", "image" => "images/services/glass/jars.png", "url" => "glass/tubes"],
     ["title" => "Jetter Jars", "image" => "images/services/glass/glass.png", "url" => "glass/jars"],
+    ["title" => "2oz", "image" => "images/services/glass/2oz.png", "url" => "glass/2oz"],
+    ["title" => "3oz", "image" => "images/services/glass/3oz.png", "url" => "glass/3oz"],
   
 
-])' :columns="2"/>
+])' :columns="4"/>
 
 
 <script>
@@ -78,7 +80,7 @@ tl2.to(".hero-para", {
 let t1 = gsap.timeline({
 
     scrollTrigger: {
-        trigger: '.animate-section-2',
+        trigger: '.animate-section-4',
         start: 'top center',
         end: '80% center',
         scrub: false,
@@ -86,7 +88,7 @@ let t1 = gsap.timeline({
     }
 });
 
-t1.fromTo('.animate-section-2',
+t1.fromTo('.animate-section-4',
 {
 
     opacity: 0,
