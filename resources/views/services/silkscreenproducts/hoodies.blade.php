@@ -6,7 +6,7 @@
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex flex-col md:flex-row -mx-4">
             <div class="md:flex-1 px-4 overflow-hidden" >
-                <div x-data="carousel" class="h-[460px] rounded-lg bg-gray-300 mb-4 relative ">
+                <div x-data="carousel" class="h-[460px] rounded-lg  mb-4 relative ">
                 
                     <div x-ref="slider" class="flex transition-transform duration-300 ease-in-out w-full h-64 relative anim-carousel">
             <!-- Images will be dynamically added here -->

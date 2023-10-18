@@ -21,11 +21,14 @@ use App\View\Components\ProductCarousel;
 
 
 <x-product-carousel :title="'Products'" :products='json_encode([
-  ["title" => "Stickers", "image" => "images/services/labels/label.png", "url" => "labels/stickers"],
- 
-  
+  ["title" => "Holographic", "image" => "images/services/labels/label.png", "url" => "labels/stickers"],
+  ["title" => "Silver ", "image" => "images/services/labels/label.png", "url" => "labels/stickers"],
+  ["title" => "White Bopp", "image" => "images/services/labels/label.png", "url" => "labels/stickers"],
+  ["title" => "Clear ", "image" => "images/services/labels/label.png", "url" => "labels/stickers"],
+  ["title" => "Special Die Cut Shapes  ", "image" => "images/services/labels/label.png", "url" => "labels/stickers"],
 
-])' :columns="1"/>
+
+])' :columns="4"/>
 
 
 
@@ -79,7 +82,7 @@ tl2.to(".hero-para", {
 let t1 = gsap.timeline({
 
     scrollTrigger: {
-        trigger: '.animate-section-1',
+        trigger: '.animate-section-4',
         start: 'top center',
         end: '80% center',
         scrub: false,
@@ -87,7 +90,7 @@ let t1 = gsap.timeline({
     }
 });
 
-t1.fromTo('.animate-section-1',
+t1.fromTo('.animate-section-4',
 {
 
     opacity: 0,

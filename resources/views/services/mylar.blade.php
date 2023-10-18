@@ -21,8 +21,8 @@ Mylar bags, crafted from a durable polyester film, offer exceptional protection 
 
 <!-- Products -->
 <x-product-carousel :title="'Products'" :products='json_encode([
-    ["title" => "Custom Size", "image" => "images/services/mylar/weed4.png", "url" => "mylar/custom"],
-    ["title" => "Standard Size", "image" => "images/services/mylar/standard.png", "url" => "mylar/standard"],
+    ["title" => "Custom Size", "image" => "images/services/mylar/weed3-min.jpg", "url" => "mylar/custom"],
+    ["title" => "Standard Size", "image" => "images/services/mylar/weed-min.png", "url" => "mylar/standard"],
   
 
 ])' :columns="2"/>
