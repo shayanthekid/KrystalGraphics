@@ -22,7 +22,7 @@ use App\View\Components\ProductCarousel;
         </div>
 
         <div class="hidden lg:flex lg:w-full lg:items-end lg:justify-end col-span-2 ml-20 ">
-            <img src="{{ asset('images/homepage/HEROIMG2.png') }}" alt="" class="w-full hero-image" style="max-width: 100%; height: auto; ">
+            <img src="{{ asset('images/homepage/Heroimg-min.png') }}" alt="" class="w-full hero-image" style="max-width: 100%; height: auto; ">
         </div>
     </div>
 </div>
@@ -64,10 +64,10 @@ Check Out Our <span style="color: #ffff;">Monthly Promotions </span>
 
 {{-- Top pics --}}
 <x-product-carousel :title="'Fastest Selling Items'" :products='json_encode([
-    ["title" => "Labels", "image" => "images/homepage/logos/newlabel.jpg", "url" => "/labels"],
-    ["title" => "Screen Printing", "image" => "images/homepage/rowofshrt.jpg", "url" => "/silk-screen-printing"],
-    ["title" => "Promotional Items", "image" => "images/homepage/promotion2.jpg", "url" => "https://www.promoplace.com/33620/glass"],
-    ["title" => "Packaging", "image" => "images/services/packaging/box.png", "url" => "/packaging"],
+    ["title" => "Labels", "image" => "images/homepage/labelapp-min.jpg", "url" => "/labels"],
+    ["title" => "Screen Printing", "image" => "images/homepage/rowofshrt-min.png", "url" => "/silk-screen-printing"],
+    ["title" => "Promotional Items", "image" => "images/homepage/promotion2-min.png", "url" => "https://www.promoplace.com/33620/glass"],
+    ["title" => "Packaging", "image" => "images/homepage/test2.png", "url" => "/packaging"],
 ])' :columns="4"/>
    
 
@@ -89,61 +89,61 @@ Check Out Our <span style="color: #ffff;">Monthly Promotions </span>
 >
     <ul x-ref="logos" class="flex items-center justify-center md:justify-start [&_li]:mx-8 [&_img]:max-w-none animate-infinite-scroll">
         <li class="w-auto h-auto p-2">
-            <img src="images/homepage/ember.png" alt="Ember Valley" class="w-20 max-h-20" />
+            <img src="images/homepage/ember-min.png" alt="Ember Valley" class="w-20 max-h-20" />
         </li>
         <li class="w-auto h-auto p-2">
-            <img src="images/homepage/dccollective.png" alt="DC Collectives" class="w-20 max-h-20" />
+            <img src="images/homepage/logos/dccollective-min.png" alt="DC Collectives" class="w-20 max-h-20" />
         </li>
         <li class="w-auto h-auto p-2">
-            <img src="images/homepage/wafers.png" alt="Wafers" class="w-20 max-h-20" />
+            <img src="images/homepage/logos/wafers-min.png" alt="Wafers" class="w-20 max-h-20" />
         </li>
         <li class="w-auto h-auto p-2">
-            <img src="images/homepage/coast.png" alt="Coast to Coast" class="w-20 max-h-20" />
+            <img src="images/homepage/logos/coast-min.png" alt="Coast to Coast" class="w-20 max-h-20" />
         </li>
         <li class="w-auto h-auto p-2">
-            <img src="images/homepage/Herbarium.png" alt="Herbarium" class="w-20 max-h-20" />
+            <img src="images/homepage/logos/Herbarium-min.png" alt="Herbarium" class="w-20 max-h-20" />
         </li>
         <li class="w-auto h-auto p-2">
-            <img src="images/homepage/Maven.png" alt="Maven" class="w-20 max-h-20" />
+            <img src="images/homepage/logos/Maven-min.png" alt="Maven" class="w-20 max-h-20" />
         </li>
         <li class="w-auto h-auto p-2">
-            <img src="images/homepage/logos/44.png" alt="APC" class="w-20 max-h-20" />
+            <img src="images/homepage/logos/44-min.png" alt="APC" class="w-20 max-h-20" />
         </li>
         <li class="w-auto h-auto p-2">
-            <img src="images/homepage/logos/77.png" alt="770" class="w-20 max-h-20" />
+            <img src="images/homepage/logos/77-min.png" alt="770" class="w-20 max-h-20" />
         </li>
         <li class="w-auto h-auto p-2">
-            <img src="images/homepage/logos/78.png" alt="ATSEI" class="w-20 max-h-20" />
+            <img src="images/homepage/logos/78-min.png" alt="ATSEI" class="w-20 max-h-20" />
         </li>
         <li class="w-auto h-auto p-2">
-            <img src="images/homepage/logos/afscme.png" alt="AFSCME" class="w-20 max-h-20" />
+            <img src="images/homepage/logos/afscme-min.png" alt="AFSCME" class="w-20 max-h-20" />
         </li>
         <li class="w-auto h-auto p-2">
-            <img src="images/homepage/logos/ava.png" alt="Aava" class="w-20 max-h-20" />
+            <img src="images/homepage/logos/ava-min.png" alt="Aava" class="w-20 max-h-20" />
         </li>
         <li class="w-auto h-auto p-2">
-            <img src="images/homepage/logos/cannabis.png" alt="UFCW" class="w-20 max-h-20" />
+            <img src="images/homepage/logos/cannabis-min.png" alt="UFCW" class="w-20 max-h-20" />
         </li>
         <li class="w-auto h-auto p-2">
-            <img src="images/homepage/logos/Cintas.png" alt="Cintas" class="w-20 max-h-20" />
+            <img src="images/homepage/logos/Cintas-min.png" alt="Cintas" class="w-20 max-h-20" />
         </li>
         <li class="w-auto h-auto p-2">
-            <img src="images/homepage/logos/ethix.png" alt="Ethix" class="w-20 max-h-20" />
+            <img src="images/homepage/logos/ethix-min.png" alt="Ethix" class="w-20 max-h-20" />
         </li>
         <li class="w-auto h-auto p-2">
-            <img src="images/homepage/logos/guild.png" alt="DGA" class="w-20 max-h-20" />
+            <img src="images/homepage/logos/guild-min.png" alt="DGA" class="w-20 max-h-20" />
         </li>
         <li class="w-auto h-auto p-2">
-            <img src="images/homepage/logos/HanzDeFuko.jpg" alt="HANZDEFuko" class="w-20 max-h-20" />
+            <img src="images/homepage/logos/HanzDeFuko-min.jpg" alt="HANZDEFuko" class="w-20 max-h-20" />
         </li>
         <li class="w-auto h-auto p-2">
-            <img src="images/homepage/logos/holy.png" alt="HJM" class="w-20 max-h-20" />
+            <img src="images/homepage/logos/holy-min.png" alt="HJM" class="w-20 max-h-20" />
         </li>
         <li class="w-auto h-auto p-2">
-            <img src="images/homepage/logos/omni.png" alt="Omni" class="w-20 max-h-20" />
+            <img src="images/homepage/logos/omni-min.png" alt="Omni" class="w-20 max-h-20" />
         </li>
         <li class="w-auto h-auto p-2">
-            <img src="images/homepage/logos/voyant.png" alt="Voyant" class="w-20 max-h-20" />
+            <img src="images/homepage/logos/voyant-min.png" alt="Voyant" class="w-20 max-h-20" />
         </li>
     </ul>                
 </div>
@@ -183,13 +183,76 @@ Check Out Our <span style="color: #ffff;">Monthly Promotions </span>
 
 
 <!-- more services -->
-<x-product-carousel :title="'More Services'" :products='json_encode([
-     ["title" => "Cad Cut", "image" => "images/homepage/loud.png", "url" => ""],
-    ["title" => "Label Application", "image" => "images/homepage/labelapp.jpg", "url" => ""],
-    ["title" => "Fulfillment", "image" => "images/homepage/Fullfillment.jpg", "url" => ""],
-    ["title" => "Delivery Service", "image" => "images/homepage/delivery.jpg", "url" => ""]
+{{-- <x-product-carousel :title="'More Services'" :products='json_encode([
+     ["title" => "Cad Cut", "image" => "images/homepage/cad-min.png", "url" => ""],
+    ["title" => "Label Application", "image" => "images/homepage/label-min.png", "url" => ""],
+    ["title" => "Fulfillment", "image" => "images/homepage/fullfill-min.png", "url" => ""],
+    ["title" => "Delivery Service", "image" => "images/homepage/delivery-min.png", "url" => ""]
  
-])' :columns="4"/>
+])' :columns="4"/> --}}
+<div id="services" class="section relative pt-20 pb-8 md:pt-16 md:pb-0 bg-white">
+    <div class="container xl:max-w-6xl mx-auto px-4">
+        <!-- Heading start -->
+        <header class="text-center mx-auto mb-12 lg:px-20">
+            <h2 class="text-2xl leading-normal mb-2 font-bold text-black text-center">More Services</h2>
+            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 100 60" style="margin: 0 auto;height: 35px;" xml:space="preserve">
+                <circle cx="50.1" cy="30.4" r="5" class="stroke-primary" style="fill: transparent;stroke-width: 2;stroke-miterlimit: 10;"></circle>
+                <line x1="55.1" y1="30.4" x2="100" y2="30.4" class="stroke-primary" style="stroke-width: 2;stroke-miterlimit: 10;"></line>
+                <line x1="45.1" y1="30.4" x2="0" y2="30.4" class="stroke-primary" style="stroke-width: 2;stroke-miterlimit: 10;"></line>
+            </svg>
+        </header>
+        <!-- End heading -->
+        <!-- row -->
+        <div class="flex flex-wrap flex-row -mx-4 text-center">
+            <div class="flex-shrink px-4 max-w-full w-full sm:w-1/2 lg:w-1/3 lg:px-6 wow fadeInUp service" data-wow-duration="1s" style="visibility: visible; animation-duration: 1s; animation-name: fadeInUp;">
+                <!-- service block -->
+                <div class="py-8 px-12 mb-12 bg-gray-50 border-b border-gray-100 transform transition duration-300 ease-in-out hover:-translate-y-2">
+                    <div class="inline-block text-gray-900 mb-4">
+                        <!-- icon -->
+                        <img src="images/homepage/cad-min.png"class="w-[3rem] h-[2rem] bg-cover bg-center" alt="" srcset="">
+                    </div>
+                    <h3 class="text-lg leading-normal mb-2 font-semibold text-black">Cad Cut</h3>
+                </div>
+                <!-- end service block -->
+            </div>
+            <div class="flex-shrink px-4 max-w-full w-full sm:w-1/2 lg:w-1/3 lg:px-6 wow fadeInUp service" data-wow-duration="1s" data-wow-delay=".1s" style="visibility: visible; animation-duration: 1s; animation-delay: 0.1s; animation-name: fadeInUp;">
+                <!-- service block -->
+                <div class="py-8 px-12 mb-12 bg-gray-50 border-b border-gray-100 transform transition duration-300 ease-in-out hover:-translate-y-2">
+                    <div class="inline-block text-gray-900 mb-4">
+                        <!-- icon -->
+                      <img src="images/homepage/label-min.png" class="w-[2rem] h-[2rem] bg-cover bg-center" alt="" srcset="">
+                    </div>
+                    <h3 class="text-lg leading-normal mb-2 font-semibold text-black">Label Application</h3>
+               </div>
+                <!-- end service block -->
+            </div>
+            <!-- New service block -->
+            <div class="flex-shrink center-box px-4 max-w-full w-full sm:w-1/2 lg:w-1/3 lg:px-6 wow fadeInUp service" data-wow-duration="1s" data-wow-delay=".3s" style="visibility: visible; animation-duration: 1s; animation-delay: 0.3s; animation-name: fadeInUp;">
+                <div class="py-8 px-12 mb-12 bg-gray-50 border-b border-gray-100 transform transition duration-300 ease-in-out hover:-translate-y-2">
+                    <div class="inline-block text-gray-900 mb-4">
+                         <img src="images/homepage/fullfill-min.png" class="w-[4rem] h-[2rem] bg-cover bg-center" alt="" srcset="">
+
+                    </div>
+                    <h3 class="text-lg leading-normal mb-2 font-semibold text-black">Fulfillment </h3>
+                    {{-- <p class="text-gray-500">Fullfillment</p> --}}
+                </div>
+            </div>
+            <div class="flex-shrink grow justify-center items-center px-4 max-w-full w-full sm:w-1/2 lg:w-1/3 lg:px-6 wow fadeInUp service" data-wow-duration="1s" data-wow-delay=".3s" style="visibility: visible; animation-duration: 1s; animation-delay: 0.3s; animation-name: fadeInUp;">
+    <div class="py-8 px-12 mb-12 bg-gray-50 border-b border-gray-100 transform transition duration-300 ease-in-out hover:-translate-y-2">
+        <div class="inline-block text-gray-900 mb-4">
+          <img src="images/homepage/delivery-min.png" class="w-[4rem] h-[2rem] bg-cover bg-center" alt="" srcset="">
+
+        </div>
+        <h3 class="text-lg leading-normal mb-2 font-semibold text-black">Delivery Services</h3>
+        <p class="text-gray-500">Depending on location</p>
+    </div>
+</div>
+            <!-- End new service block -->
+        </div>
+        <!-- end row -->
+    </div>
+</div>
+
 
 
 <script>
@@ -348,10 +411,13 @@ tl5.fromTo(".hero-image", 1, {
     ease: "power2.inOut",
 })
 
+
+
 tl.play();
 tl2.play();
 tl3.play();
 tl4.play();
+
   // Wait for the document to be ready
 //   document.addEventListener("DOMContentLoaded", function () {
 //     // Define the animation
@@ -401,7 +467,7 @@ tl4.play();
 let t1 = gsap.timeline({
 
     scrollTrigger: {
-        trigger: '.animate-section-4',
+        trigger: '.animate-section-5',
         start: 'top center',
         end: '80% center',
         scrub: false,
@@ -409,7 +475,7 @@ let t1 = gsap.timeline({
     }
 });
 
-t1.fromTo('.animate-section-4',
+t1.fromTo('.animate-section-5',
 {
 
     opacity: 0,
@@ -425,7 +491,7 @@ t1.fromTo('.animate-section-4',
 let t2 = gsap.timeline({
 
     scrollTrigger: {
-        trigger: '#anim',
+        trigger: '.animate-section-4',
         start: 'top center',
         end: '80% center',
         scrub: false,
@@ -433,7 +499,7 @@ let t2 = gsap.timeline({
     }
 });
 
-t2.fromTo('#anim',
+t2.fromTo('.animate-section-4',
 {
  
     opacity: 0,
@@ -445,6 +511,31 @@ t2.fromTo('#anim',
     delay:0.2,
     ease: 'power4.inOut', // Easing function
   });
+
+
+  const services = gsap.timeline({
+    scrollTrigger: {
+        trigger: '.service',
+        start: 'top center',
+        end: '80% center',
+        scrub: false,
+        markers: false,
+    }
+});
+
+
+    services.fromTo(".service",{
+        opacity: 0,
+    }, {
+      duration: 0.5, 
+      opacity: 1, 
+      y: 20, 
+      stagger: 0.1,
+      ease: "back.in"
+    });
+ 
+
+
 //   // Initialize a variable to keep track of whether the animation has played
 //   let animationPlayed = false;
 

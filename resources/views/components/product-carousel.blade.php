@@ -29,7 +29,7 @@
 
      
 <!-- {{-- <div class="grid grid-cols-{{ $columns }} md:grid-cols-{{ $columns }} lg:grid-cols-{{ $columns }} justify-center gap-x-4 gap-y-8 animate-section-{{ $columns }}"> --}} -->
-<div class="grid  sm:grid-cols-1 md:grid-cols-{{ $columns }}  justify-center gap-x-4 gap-y-8 animate-section-{{ $columns }}" id="anim">
+<div class="grid  sm:grid-cols-1 md:grid-cols-{{ $columns }}  justify-center gap-x-4 gap-y-8 animate-section-{{ $columns }}">
             @foreach(json_decode($products) as $product)
             <div class="w-full flex items-center justify-center">
                 <a href="{{ $product->url }}">
