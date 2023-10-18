@@ -401,7 +401,7 @@ tl4.play();
 let t1 = gsap.timeline({
 
     scrollTrigger: {
-        trigger: '.animate-section-5',
+        trigger: '.animate-section-4',
         start: 'top center',
         end: '80% center',
         scrub: false,
@@ -409,7 +409,7 @@ let t1 = gsap.timeline({
     }
 });
 
-t1.fromTo('.animate-section-5',
+t1.fromTo('.animate-section-4',
 {
 
     opacity: 0,
@@ -425,7 +425,7 @@ t1.fromTo('.animate-section-5',
 let t2 = gsap.timeline({
 
     scrollTrigger: {
-        trigger: '.animate-section-4',
+        trigger: '#anim',
         start: 'top center',
         end: '80% center',
         scrub: false,
@@ -433,7 +433,7 @@ let t2 = gsap.timeline({
     }
 });
 
-t2.fromTo('.animate-section-4',
+t2.fromTo('#anim',
 {
  
     opacity: 0,

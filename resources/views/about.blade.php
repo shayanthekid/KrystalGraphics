@@ -50,7 +50,7 @@ We understand that every client has unique needs and requirements, and we work c
 
 {{-- Our Team --}}
 
-<div id="team" class="section relative pt-20 pb-8 md:pt-16 bg-white">
+<div id="team" class="section relative pt-20 pb-8 md:pt-16 bg-white ">
     <div class="container xl:max-w-6xl mx-auto px-4">
         <!-- section header -->
         <header class="text-center mx-auto mb-12">
@@ -67,10 +67,10 @@ We understand that every client has unique needs and requirements, and we work c
         <!-- row -->
         <div class="flex flex-wrap flex-row -mx-4 justify-center">
             <div class="flex-shrink max-w-full px-4 w-2/3 sm:w-1/2 md:w-5/12 lg:w-1/4 xl:px-6">
-                <div class="relative overflow-hidden bg-white  hover-grayscale-0 wow fadeInUp" data-wow-duration="1s" style="visibility: visible; animation-duration: 1s; animation-name: fadeInUp;">
+                <div class="relative overflow-hidden bg-white  hover-grayscale-0 wow fadeInUp team-anim" data-wow-duration="1s" style="visibility: visible; animation-duration: 1s; animation-name: fadeInUp;">
                     <!-- team block -->
                     <div class="relative overflow-hidden px-6">
-                        <img src="https://tailone.tailwindtemplate.net/src/img/dummy/avatar3.png" class="max-w-full h-auto mx-auto rounded-full bg-gray-50 grayscale" alt="title image">
+                        <img src="https://tailone.tailwindtemplate.net/src/img/dummy/avatar3.png" class="max-w-full h-auto mx-auto rounded-full bg-gray-50 grayscale hover:grayscale-0" alt="title image">
                     </div>
                     <div class="pt-6 text-center">
                         <p class="text-lg leading-normal font-bold mb-1">Page Anderson</p>
@@ -83,9 +83,9 @@ We understand that every client has unique needs and requirements, and we work c
             </div>
             <div class="flex-shrink max-w-full px-4 w-2/3 sm:w-1/2 md:w-5/12 lg:w-1/4 xl:px-6">
                 <!-- team block -->
-                <div class="relative overflow-hidden bg-white  mb-12 hover-grayscale-0 wow fadeInUp" data-wow-duration="1s" data-wow-delay=".1s" style="visibility: visible; animation-duration: 1s; animation-delay: 0.1s; animation-name: fadeInUp;">
+                <div class="relative overflow-hidden bg-white  mb-12 hover-grayscale-0 wow fadeInUp team-anim" data-wow-duration="1s" data-wow-delay=".1s" style="visibility: visible; animation-duration: 1s; animation-delay: 0.1s; animation-name: fadeInUp;">
                     <div class="relative overflow-hidden px-6">
-                        <img src="https://tailone.tailwindtemplate.net/src/img/dummy/avatar3.png" class="max-w-full h-auto mx-auto rounded-full bg-gray-50 grayscale" alt="title image">
+                        <img src="images/about/girl2.png" class="w-32 h-auto mx-auto rounded-full bg-gray-50 grayscale hover:grayscale-0 " alt="title image">
                     </div>
                     <div class="pt-6 text-center">
                         <p class="text-lg leading-normal font-bold mb-1">Courtney Meherin</p>
@@ -98,9 +98,9 @@ We understand that every client has unique needs and requirements, and we work c
             </div>
             <div class="flex-shrink max-w-full px-4 w-2/3 sm:w-1/2 md:w-5/12 lg:w-1/4 xl:px-6">
                 <!-- team block -->
-                <div class="relative overflow-hidden bg-white  mb-12 hover-grayscale-0 wow fadeInUp" data-wow-duration="1s" data-wow-delay=".3s" style="visibility: visible; animation-duration: 1s; animation-delay: 0.3s; animation-name: fadeInUp;">
+                <div class="relative overflow-hidden bg-white  mb-12 hover-grayscale-0 wow fadeInUp team-anim" data-wow-duration="1s" data-wow-delay=".3s" style="visibility: visible; animation-duration: 1s; animation-delay: 0.3s; animation-name: fadeInUp;">
                     <div class="relative overflow-hidden px-6">
-                        <img src="https://tailone.tailwindtemplate.net/src/img/dummy/avatar2.png" class="max-w-full h-auto mx-auto rounded-full bg-gray-50 grayscale" alt="title image">
+                        <img src="https://tailone.tailwindtemplate.net/src/img/dummy/avatar2.png" class="max-w-full h-auto mx-auto rounded-full bg-gray-50 grayscale hover:grayscale-0" alt="title image">
                     </div>
                     <div class="pt-6 text-center">
                         <p class="text-lg leading-normal font-bold mb-1">Darwin DeVitis</p>
@@ -113,9 +113,9 @@ We understand that every client has unique needs and requirements, and we work c
             </div>
              <div class="flex-shrink max-w-full px-4 w-2/3 sm:w-1/2 md:w-5/12 lg:w-1/4 xl:px-6">
                 <!-- team block -->
-                <div class="relative overflow-hidden bg-white  mb-12 hover-grayscale-0 wow fadeInUp" data-wow-duration="1s" data-wow-delay=".3s" style="visibility: visible; animation-duration: 1s; animation-delay: 0.3s; animation-name: fadeInUp;">
+                <div class="relative overflow-hidden bg-white  mb-12 hover-grayscale-0 wow fadeInUp team-anim" data-wow-duration="1s" data-wow-delay=".3s" style="visibility: visible; animation-duration: 1s; animation-delay: 0.3s; animation-name: fadeInUp;">
                     <div class="relative overflow-hidden px-6">
-                        <img src="https://tailone.tailwindtemplate.net/src/img/dummy/avatar2.png" class="max-w-full h-auto mx-auto rounded-full bg-gray-50 grayscale" alt="title image">
+                        <img src="images/about/guy2.png" class="w-36 h-auto mx-auto rounded-full bg-gray-50 grayscale hover:grayscale-0" alt="title image">
                     </div>
                     <div class="pt-6 text-center">
                         <p class="text-lg leading-normal font-bold mb-1">Juzer </p>
@@ -127,9 +127,9 @@ We understand that every client has unique needs and requirements, and we work c
             </div>
              <div class="flex-shrink max-w-full px-4 w-2/3 sm:w-1/2 md:w-5/12 lg:w-1/4 xl:px-6">
                 <!-- team block -->
-                <div class="relative overflow-hidden bg-white  mb-12 hover-grayscale-0 wow fadeInUp" data-wow-duration="1s" data-wow-delay=".3s" style="visibility: visible; animation-duration: 1s; animation-delay: 0.3s; animation-name: fadeInUp;">
+                <div class="relative overflow-hidden bg-white  mb-12 hover-grayscale-0 wow fadeInUp team-anim" data-wow-duration="1s" data-wow-delay=".3s" style="visibility: visible; animation-duration: 1s; animation-delay: 0.3s; animation-name: fadeInUp;">
                     <div class="relative overflow-hidden px-6">
-                        <img src="https://tailone.tailwindtemplate.net/src/img/dummy/avatar2.png" class="max-w-full h-auto mx-auto rounded-full bg-gray-50 grayscale" alt="title image">
+                        <img src="images/about/guy1.png" class="w-36 h-auto mx-auto rounded-full bg-gray-50 grayscale hover:grayscale-0" alt="title image">
                     </div>
                     <div class="pt-6 text-center">
                         <p class="text-lg leading-normal font-bold mb-1">Munna Mansoor</p>
@@ -141,9 +141,9 @@ We understand that every client has unique needs and requirements, and we work c
             </div>
                  <div class="flex-shrink max-w-full px-4 w-2/3 sm:w-1/2 md:w-5/12 lg:w-1/4 xl:px-6">
                 <!-- team block -->
-                <div class="relative overflow-hidden bg-white  mb-12 hover-grayscale-0 wow fadeInUp" data-wow-duration="1s" data-wow-delay=".3s" style="visibility: visible; animation-duration: 1s; animation-delay: 0.3s; animation-name: fadeInUp;">
+                <div class="relative overflow-hidden bg-white  mb-12 hover-grayscale-0 wow fadeInUp team-anim" data-wow-duration="1s" data-wow-delay=".3s" style="visibility: visible; animation-duration: 1s; animation-delay: 0.3s; animation-name: fadeInUp;">
                     <div class="relative overflow-hidden px-6">
-                        <img src="https://tailone.tailwindtemplate.net/src/img/dummy/avatar3.png" class="max-w-full h-auto mx-auto rounded-full bg-gray-50 grayscale" alt="title image">
+                        <img src="images/about/girl1.png" class="w-40 h-auto mx-auto rounded-full bg-gray-50 grayscale hover:grayscale-0" alt="title image">
                     </div>
                     <div class="pt-6 text-center">
                         <p class="text-lg leading-normal font-bold mb-1">Tasneem Murtaza Mansoor</p>
@@ -153,10 +153,10 @@ We understand that every client has unique needs and requirements, and we work c
                 </div>
                 <!-- end team block -->
             </div>
-            <div class="flex-shrink max-w-full px-4 w-2/3 sm:w-1/2 md:w-5/12 lg:w-1/4 xl:px-6">
+            <div class="flex-shrink max-w-full px-4 w-2/3 sm:w-1/2 md:w-5/12 lg:w-1/4 xl:px-6 team-anim">
                 <!-- team block -->
-                    <div class="relative overflow-hidden px-6">
-                        <img src="https://tailone.tailwindtemplate.net/src/img/dummy/avatar4.png" class="max-w-full h-auto mx-auto rounded-full bg-gray-50 grayscale" alt="title image">
+                    <div class="relative overflow-hidden px-6 ">
+                        <img src="https://tailone.tailwindtemplate.net/src/img/dummy/avatar4.png" class="max-w-full h-auto mx-auto rounded-full bg-gray-50 grayscale hover:grayscale-0" alt="title image">
                     </div>
                     <div class="pt-6 text-center">
                         <p class="text-lg leading-normal font-bold mb-1">Bryan Ortega</p>
@@ -197,6 +197,32 @@ tl2.to(".hero-para", 1, {
     amount: 0.3
   }
 })
+
+
+const tl3 = gsap.timeline({
+    scrollTrigger: {
+        trigger: '.team-anim',
+        start: 'top center',
+        end: '80% center',
+        scrub: false,
+        markers: false,
+    }
+});
+
+
+    tl3.fromTo(".team-anim",{
+        opacity: 0,
+    }, {
+      duration: 0.5, 
+      opacity: 1, 
+      y: 20, 
+      stagger: 0.1,
+      ease: "back.in"
+    });
+ 
+
+
+
 
 </script>
 @endsection

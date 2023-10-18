@@ -27,6 +27,7 @@ Route::get('/about', function () {
 })->name('about');
 
 
+
 Route::get('/contact', 'App\Http\Controllers\ContactUsController@index')->name('contact');;
 Route::post('/contact', 'App\Http\Controllers\ContactUsController@sendEmail')->name('contact.send');
 
@@ -159,3 +160,16 @@ Route::prefix('/admin/banners')->group(function () {
     Route::get('/json', 'App\Http\Controllers\BannerController@getBannersJson')->name('admin.banners.json');
 
 });
+
+Route::resource('/flipbook','rudrarajiv\flipbooklaravel\FlipBookController');
+
+Route::get('/index', function () {
+    return view('rudrarajiv.flipbooklaravel.bookindex');
+})->name('rudra.flipbook.index');
+Route::get('/create-book', function () {
+    return view('rudrarajiv.flipbooklaravel.bookcreater');
+})->name('rudra.flipbook.create.book');
+
+Route::get('/show-book', function () {
+    return view('rudrarajiv.flipbooklaravel.showbook');
+})->name('rudra.flipbook.show.book');
