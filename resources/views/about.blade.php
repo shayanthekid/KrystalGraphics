@@ -165,6 +165,43 @@ We understand that every client has unique needs and requirements, and we work c
                 
                     </div>
                 </div>
+                 <div class="flex-shrink max-w-full px-4 w-2/3 sm:w-1/2 md:w-5/12 lg:w-1/4 xl:px-6 team-anim">
+                <!-- team block -->
+                    <div class="relative overflow-hidden px-6 ">
+                        <img src="images/about/girl3.png" class="w-40  h-auto mx-auto rounded-full bg-gray-50 grayscale hover:grayscale-0" alt="title image">
+                    </div>
+                    <div class="pt-6 text-center">
+                        <p class="text-lg leading-normal font-bold mb-1">Ana</p>
+                        
+                        <!-- social icon -->
+                
+                    </div>
+                </div>
+                 <div class="flex-shrink max-w-full px-4 w-2/3 sm:w-1/2 md:w-5/12 lg:w-1/4 xl:px-6 team-anim">
+                <!-- team block -->
+                    <div class="relative overflow-hidden px-6 ">
+                        <img src="images/about/girl4.png" class="w-40 h-auto mx-auto rounded-full bg-gray-50 grayscale hover:grayscale-0" alt="title image">
+                    </div>
+                    <div class="pt-6 text-center">
+                        <p class="text-lg leading-normal font-bold mb-1">Bianca Uriarte</p>
+                        <p class="text-gray-500 leading-relaxed font-light">Labels Specialist</p>
+                        <!-- social icon -->
+                
+                    </div>
+                </div>
+                 <div class="flex-shrink max-w-full px-4 w-2/3 sm:w-1/2 md:w-5/12 lg:w-1/4 xl:px-6 team-anim">
+                <!-- team block -->
+                    <div class="relative overflow-hidden px-6 ">
+                        <img src="images/about/guy3.png" class="w-40  h-auto mx-auto rounded-full bg-gray-50 grayscale hover:grayscale-0" alt="title image">
+                    </div>
+                    <div class="pt-6 text-center">
+                        <p class="text-lg leading-normal font-bold mb-1">Enrique Guerrero </p>
+                        <p class="text-gray-500 leading-relaxed font-light">Graphic Designer / Customer Service
+</p>
+                        <!-- social icon -->
+                
+                    </div>
+                </div>
                 <!-- end team block -->
             </div>
         </div>
