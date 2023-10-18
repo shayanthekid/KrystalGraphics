@@ -671,6 +671,156 @@
 
 </div>
             </div>
+
+  <div x-show="activeTab === 9" class="mt-4">
+                <!-- Content for Cutter -->
+                     <!-- Content for Die Cutters -->
+          <div class="container grid grid-cols-1 md:grid-cols-2 scrollbar-hide">
+    <!-- First Column -->
+    
+    
+    <div class="bg-[#FCFCFC] col-span-2 md:col-span-1 px-4 py-16 md:w-full">
+       
+      
+       
+          <ul class="list-disc list-inside">
+    <li> Potdevin</li>
+    <li> DuraPro Multi 540A</li>
+  
+
+
+
+
+
+
+
+</ul>
+        
+     
+
+
+
+    
+    </div>
+
+    <!-- Second Column -->
+    
+    <div class="col-span-2 md:col-span-1 ">
+       
+        <div x-data="carousel9" class="relative bg-[#FCFCFC] w-full max-w-screen-lg mx-auto">
+           
+            <div class="relative overflow-hidden rounded-lg">
+               
+                <div x-ref="slider" class="flex transition-transform duration-300 ease-in-out">
+                    <!-- Images will be dynamically added here -->
+                   
+                    <template x-for="(image, index) in images" :key="index">
+                        <div class="w-full h-96 flex-shrink-0">
+                            <img :src="image" :alt="'Image ' + (index + 1)" class="object-contain object-center w-full h-full">
+                        </div>
+                   
+                    </template>
+                
+                </div>
+            
+            </div>
+
+            <!-- Navigation Buttons -->
+          
+            <div class="absolute inset-y-0 left-0 flex items-center">
+                <button @click="prev()" class="px-4 py-2 bg-gray-900 text-white hover:bg-gray-700 transform -translate-y-1/2 bg-black rounded-full w-8 h-8 flex items-center justify-center cursor-pointer z-5">
+                    &lt;
+                </button>
+            
+            </div>
+            
+            <div class="absolute inset-y-0 right-0 flex items-center">
+                <button @click="next()" class="px-4 py-2 bg-gray-900 text-white hover:bg-gray-700 transform -translate-y-1/2 bg-black rounded-full w-8 h-8 flex items-center justify-center cursor-pointer z-5">
+                    &gt;
+                </button>
+           
+            </div>
+        </div>
+    </div>
+
+</div>
+            </div>
+           
+          
+            
+  <div x-show="activeTab === 10" class="mt-4">
+                <!-- Content for Cutter -->
+                     <!-- Content for Die Cutters -->
+          <div class="container grid grid-cols-1 md:grid-cols-2 scrollbar-hide">
+    <!-- First Column -->
+    
+    
+    <div class="bg-[#FCFCFC] col-span-2 md:col-span-1 px-4 py-16 md:w-full">
+       
+      
+       
+          <ul class="list-disc list-inside">
+    <li> Kongsberg CAD (119” x 65”)</li>
+
+  
+
+
+
+
+
+
+
+</ul>
+        
+     
+
+
+
+    
+    </div>
+
+    <!-- Second Column -->
+    
+    <div class="col-span-2 md:col-span-1 ">
+       
+        <div x-data="carousel9" class="relative bg-[#FCFCFC] w-full max-w-screen-lg mx-auto">
+           
+            <div class="relative overflow-hidden rounded-lg">
+               
+                <div x-ref="slider" class="flex transition-transform duration-300 ease-in-out">
+                    <!-- Images will be dynamically added here -->
+                   
+                    <template x-for="(image, index) in images" :key="index">
+                        <div class="w-full h-96 flex-shrink-0">
+                            <img :src="image" :alt="'Image ' + (index + 1)" class="object-contain object-center w-full h-full">
+                        </div>
+                   
+                    </template>
+                
+                </div>
+            
+            </div>
+
+            <!-- Navigation Buttons -->
+          
+            <div class="absolute inset-y-0 left-0 flex items-center">
+                <button @click="prev()" class="px-4 py-2 bg-gray-900 text-white hover:bg-gray-700 transform -translate-y-1/2 bg-black rounded-full w-8 h-8 flex items-center justify-center cursor-pointer z-5">
+                    &lt;
+                </button>
+            
+            </div>
+            
+            <div class="absolute inset-y-0 right-0 flex items-center">
+                <button @click="next()" class="px-4 py-2 bg-gray-900 text-white hover:bg-gray-700 transform -translate-y-1/2 bg-black rounded-full w-8 h-8 flex items-center justify-center cursor-pointer z-5">
+                    &gt;
+                </button>
+           
+            </div>
+        </div>
+    </div>
+
+</div>
+            </div>
     
     </div>
 
@@ -985,6 +1135,8 @@
                 { title: 'Die Cutters' },
                 { title: 'Gluers' },
                 { title: 'Cutter' },
+                { title: 'Laminators' },
+                { title: 'Design' },
             ],
             activeTab: 0,
 
