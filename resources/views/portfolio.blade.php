@@ -1,170 +1,233 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="flipbook">
-    <div class="page">Page 1 content</div>
-    <div class="page">Page 2 content</div>
-    <!-- Add more pages as needed -->
+
+<style>
+  .wrapper {
+  align-items: center;
+  display: flex;
+  height: 90%;
+  justify-content: center;
+  margin: 5%;
+  width: 90%;
+}
+.aspect {
+  padding-bottom: 70%;
+  position: relative;
+  width: 100%;
+}
+.aspect-inner {
+  bottom: 0;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+
+.flipbook {
+  height: 100%;
+  transition: margin-left 0.25s ease-out;
+  width: 100%;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  
+}
+.flipbook .page {
+  height: 100%;
+  width: 100%;
+}
+.flipbook .page img {
+  max-width: 100%;
+  height: 100%;
+}
+
+  .no-scrollbar::-webkit-scrollbar {
+        display: none;
+    }
+
+    /* Hide scrollbar for IE, Edge and Firefox */
+    .no-scrollbar {
+        -ms-overflow-style: none; /* IE and Edge */
+        scrollbar-width: none; /* Firefox */
+    }
+</style>
+
+  <div class="bg-[#FCFCFC] py-16">
+    <div class="container mx-auto flex justify-center items-center h-full">
+        <div class="text-center text-black">
+            <h1 class="text-4xl font-semibold font-montserrat lg:text-6xl hero-text" style="opacity: 0">Portfolio</h1>
+            <p class="mt-4 font-montserrat text-lg font-light lg:text-xl p-4 hero-para" style="opacity: 0">
+Flip through some of our work! (Copy NA)              
+            </p>
+   
+
+        </div>
+    </div>
 </div>
-<!-- component -->
-<div class="container mx-auto p-4">
-  <div class="grid grid-cols- md:grid-cols-3 gap-4">
-    <div class="grid gap-4">
-      <div>
-        <img
-          class="h-auto max-w-full rounded-lg"
-          src="{{ asset('images/portfolio/1.jpg') }}"
-          alt=""
-        />
-      </div>
-      <div>
-        <img
-          class="h-auto max-w-full rounded-lg"
-          src="{{ asset('images/portfolio/2.jpg') }}"
-          alt=""
-        />
-      </div>
-      <div>
-        <img
-          class="h-auto max-w-full rounded-lg"
-          src="{{ asset('images/portfolio/3.jpg') }}"
-          alt=""
-        />
-      </div>
-      <!-- Add more images here -->
-      <div>
-        <img
-          class="h-auto max-w-full rounded-lg"
-          src="{{ asset('images/portfolio/4.jpg') }}"
-          alt=""
-        />
-      </div>
-      <div>
-        <img
-          class="h-auto max-w-full rounded-lg"
-          src="{{ asset('images/portfolio/5.jpg') }}"
-          alt=""
-        />
-      </div>
-      <div>
-        <img
-          class="h-auto max-w-full rounded-lg"
-          src="{{ asset('images/portfolio/6.jpg') }}"
-          alt=""
-        />
-      </div>
-    </div>
-    <div class="grid gap-4">
-      <!-- Add more images here -->
-      <div>
-        <img
-          class="h-auto max-w-full rounded-lg"
-          src="{{ asset('images/portfolio/7.jpg') }}"
-          alt=""
-        />
-      </div>
-      <div>
-        <img
-          class="h-auto max-w-full rounded-lg"
-          src="{{ asset('images/portfolio/8.jpg') }}"
-          alt=""
-        />
-      </div>
-      <div>
-        <img
-          class="h-auto max-w-full rounded-lg"
-          src="{{ asset('images/portfolio/9.jpg') }}"
-          alt=""
-        />
-      </div>
-      <div>
-        <img
-          class="h-auto max-w-full rounded-lg"
-          src="{{ asset('images/portfolio/10.jpg') }}"
-          alt=""
-        />
-      </div>
-      <div>
-        <img
-          class="h-auto max-w-full rounded-lg"
-          src="{{ asset('images/portfolio/11.jpg') }}"
-          alt=""
-        />
-      </div>
-      <!-- Add more images here -->
-      <div>
-        <img
-          class="h-auto max-w-full rounded-lg"
-          src="{{ asset('images/portfolio/12.jpg') }}"
-          alt=""
-        />
-      </div>
-      <div>
-        <img
-          class="h-auto max-w-full rounded-lg"
-          src="{{ asset('images/portfolio/13.jpg') }}"
-          alt=""
-        />
-      </div>
-      <div>
-        <img
-          class="h-auto max-w-full rounded-lg"
-          src="{{ asset('images/portfolio/14.jpg') }}"
-          alt=""
-        />
-      </div>
-    </div>
-    <div class="grid gap-4">
-      <!-- Add more images here -->
-      <div>
-        <img
-          class="h-auto max-w-full rounded-lg"
-          src="{{ asset('images/portfolio/15.jpg') }}"
-          alt=""
-        />
-      </div>
-      <div>
-        <img
-          class="h-auto max-w-full rounded-lg"
-          src="{{ asset('images/portfolio/16.jpg') }}"
-          alt=""
-        />
-      </div>
-      <div>
-        <img
-          class="h-auto max-w-full rounded-lg"
-          src="{{ asset('images/portfolio/17.jpg') }}"
-          alt=""
-        />
-      </div>
-      <div>
-        <img
-          class="h-auto max-w-full rounded-lg"
-          src="{{ asset('images/portfolio/18.jpg') }}"
-          alt=""
-        />
-      </div>
-      <div>
-        <img
-          class="h-auto max-w-full rounded-lg"
-          src="{{ asset('images/portfolio/19.jpg') }}"
-          alt=""
-        />
-      </div>
-      <!-- Add more images here -->
-      <div>
-        <img
-          class="h-auto max-w-full rounded-lg"
-          src="{{ asset('images/portfolio/20.jpg') }}"
-          alt=""
-        />
-      </div>
+
+<div class="wrapper no-scrollbar overflow-hidden ">
+  <div class="aspect no-scrollbar">
+    <div class="aspect-inner no-scrollbar ">
+      <div class="flipbook no-scrollbar shadow-lg" id="flipbook">
+        <div class="page"><img src="{{ asset('images/portfolio/KGPCover.png') }}" draggable="false" alt="" /></div>
+        <div class="page"><img src="{{ asset('images/portfolio/1.jpg') }}" draggable="false" alt="" /></div>
+        <div class="page"><img src="{{ asset('images/portfolio/2.jpg') }}" draggable="false" alt="" /></div>
+        <div class="page"><img src="{{ asset('images/portfolio/3.jpg') }}" draggable="false" alt="" /></div>
+        <div class="page"><img src="{{ asset('images/portfolio/4.jpg') }}" draggable="false" alt="" /></div>
+        <div class="page"><img src="{{ asset('images/portfolio/5.jpg') }}" draggable="false" alt="" /></div>
+        <div class="page"><img src="{{ asset('images/portfolio/7.jpg') }}" draggable="false" alt="" /></div>
+        <div class="page"><img src="{{ asset('images/portfolio/8.jpg') }}" draggable="false" alt="" /></div>
+      
+        <div class="page"><img src="{{ asset('images/portfolio/12.jpg') }}" draggable="false" alt="" /></div>
+        <div class="page"><img src="{{ asset('images/portfolio/13.jpg') }}" draggable="false" alt="" /></div>
+        <div class="page"><img src="{{ asset('images/portfolio/16.jpg') }}" draggable="false" alt="" /></div>
+        <div class="page"><img src="{{ asset('images/portfolio/18.jpg') }}" draggable="false" alt="" /></div>
+
+
+     </div>
     </div>
   </div>
 </div>
 
 
+{{-- 
+
+    <img
+      class="h-auto max-w-full rounded-lg"
+      src="{{ asset('images/portfolio/4.jpg') }}"
+      alt=""
+    />
+    <img
+      class="h-auto max-w-full rounded-lg"
+      src="{{ asset('images/portfolio/5.jpg') }}"
+      alt=""
+    />
+    <img
+      class="h-auto max-w-full rounded-lg"
+      src="{{ asset('images/portfolio/6.jpg') }}"
+      alt=""
+    />
+    <img
+      class="h-auto max-w-full rounded-lg"
+      src="{{ asset('images/portfolio/7.jpg') }}"
+      alt=""
+    />
+    <img
+      class="h-auto max-w-full rounded-lg"
+      src="{{ asset('images/portfolio/8.jpg') }}"
+      alt=""
+    />
+    <img
+      class="h-auto max-w-full rounded-lg"
+      src="{{ asset('images/portfolio/9.jpg') }}"
+      alt=""
+    />
+    <img
+      class="h-auto max-w-full rounded-lg"
+      src="{{ asset('images/portfolio/10.jpg') }}"
+      alt=""
+    />
+    <img
+      class="h-auto max-w-full rounded-lg"
+      src="{{ asset('images/portfolio/11.jpg') }}"
+      alt=""
+    />
+    <img
+      class="h-auto max-w-full rounded-lg"
+      src="{{ asset('images/portfolio/12.jpg') }}"
+      alt=""
+    />
+    <img
+      class="h-auto max-w-full rounded-lg"
+      src="{{ asset('images/portfolio/13.jpg') }}"
+      alt=""
+    />
+    <img
+      class="h-auto max-w-full rounded-lg"
+      src="{{ asset('images/portfolio/14.jpg') }}"
+      alt=""
+    />
+    <img
+      class="h-auto max-w-full rounded-lg"
+      src="{{ asset('images/portfolio/15.jpg') }}"
+      alt=""
+    />
+    <img
+      class="h-auto max-w-full rounded-lg"
+      src="{{ asset('images/portfolio/16.jpg') }}"
+      alt=""
+    />
+    <img
+      class="h-auto max-w-full rounded-lg"
+      src="{{ asset('images/portfolio/17.jpg') }}"
+      alt=""
+    />
+    <img
+      class="h-auto max-w-full rounded-lg"
+      src="{{ asset('images/portfolio/18.jpg') }}"
+      alt=""
+    />
+    <img
+      class="h-auto max-w-full rounded-lg"
+      src="{{ asset('images/portfolio/19.jpg') }}"
+      alt=""
+    />
+    <img
+      class="h-auto max-w-full rounded-lg"
+      src="{{ asset('images/portfolio/20.jpg') }}"
+      alt=""
+    />
+  </div>
+    </div>
+  </div>
+</div> --}}
+<!-- component -->
+<
+
 <script>
-    $(".flipbook").turn();
+
+  var flipbookEL = document.getElementById('flipbook');
+window.addEventListener('resize', function (e) {
+  flipbookEL.style.width = '';
+  flipbookEL.style.height = '';
+  $(flipbookEL).turn('size', flipbookEL.clientWidth, flipbookEL.clientHeight);
+});
+$(flipbookEL).turn({
+    autoCenter: true
+});
+
 </script>
+
+
+
+<script>
+
+
+    const tl = gsap.timeline();
+   tl.to(".hero-text", 1, {
+    opacity: 1,
+  y: 10,
+  ease: "power4.inOut",
+  stagger: {
+    amount: 0.3
+  }
+})
+
+const tl2 = gsap.timeline();
+tl2.to(".hero-para", 1, {
+    opacity: 1,
+  y: 10,
+  ease: "power4.inOut",
+  stagger: {
+    amount: 0.3
+  }
+})
+
+</script>
+
 @endsection
