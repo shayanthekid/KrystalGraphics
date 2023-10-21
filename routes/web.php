@@ -168,6 +168,12 @@ Route::prefix('/admin/banners')->group(function () {
     Route::get('/json', 'App\Http\Controllers\BannerController@getBannersJson')->name('admin.banners.json');
 
 });
+Route::prefix('/admin/products')->group(function () {
+ Route::post('/addProduct', 'App\Http\Controllers\ProductController@addProduct')->name('admin.products.uploadproduct');
+
+});
+
+
 
 Route::resource('/flipbook','rudrarajiv\flipbooklaravel\FlipBookController');
 

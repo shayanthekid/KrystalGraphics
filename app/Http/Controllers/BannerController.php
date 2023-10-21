@@ -29,7 +29,7 @@ public function getBannersJson()
 
         // Store the uploaded image
       $imagePath = 'storage/banners/' . $request->file('image')->hashName();
-$request->file('image')->store('public/banners'); // This stores the file in the public disk under the "banners" directory
+    $request->file('image')->store('public/banners'); // This stores the file in the public disk under the "banners" directory
 
 Banner::create([
     'title' => $request->input('title'),
