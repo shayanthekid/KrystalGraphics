@@ -86,28 +86,27 @@
 
             
         </main>
-
 <form method="POST" action="{{ route('admin.products.uploadproduct') }}" enctype="multipart/form-data" class="p-4 border border-gray-200 rounded-md">
     {{ csrf_field() }}
     <div class="mb-4">
         <label for="name" class="block text-gray-700 text-sm font-bold mb-2">Name</label>
-        <input type="text" id="name" name="name" class="w-full py-2 px-3 border border-gray-300 rounded-md" placeholder="Enter Product Name">
+        <input type="text" id="name" name="name" class="w-full py-2 px-3 border border-gray-300 rounded-md" placeholder="Enter Product Name" required>
     </div>
     <div class="mb-4">
         <label for="description" class="block text-gray-700 text-sm font-bold mb-2">Description</label>
-        <textarea id="description" name="description" rows="4" class="w-full py-2 px-3 border border-gray-300 rounded-md" placeholder="Enter Product Description"></textarea>
+        <textarea id="description" name="description" rows="4" class="w-full py-2 px-3 border border-gray-300 rounded-md" placeholder="Enter Product Description" required></textarea>
     </div>
     <div class="mb-4">
         <label for="subcategory_id" class="block text-gray-700 text-sm font-bold mb-2">Subcategory ID</label>
-        <input type="number" id="subcategory_id" name="subcategory_id" class="w-full py-2 px-3 border border-gray-300 rounded-md" placeholder="Enter Subcategory ID">
+        <input type="number" id="subcategory_id" name="subcategory_id" class="w-full py-2 px-3 border border-gray-300 rounded-md" placeholder="Enter Subcategory ID" required>
     </div>
     <div class="mb-4">
         <label for="images" class="block text-gray-700 text-sm font-bold mb-2">Choose Images</label>
-        <input type="file" id="images" name="files[]" accept="image/*" multiple class="w-full py-2 px-3 border border-gray-300 rounded-md">
+        <input type="file" id="images" name="files[]" accept="image/*" multiple class="w-full py-2 px-3 border border-gray-300 rounded-md" required>
     </div>
     <div class="mb-4">
         <label for="videos" class="block text-gray-700 text-sm font-bold mb-2">Choose Videos</label>
-        <input type="file" id="videos" name="files[]" accept="video/*" multiple class="w-full py-2 px-3 border border-gray-300 rounded-md">
+        <input type="file" id="videos" name="files[]" accept="video/*" multiple class="w-full py-2 px-3 border border-gray-300 rounded-md" >
     </div>
     <div id="media-preview" class="mt-4 grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4"></div>
     <div id="progress-container" class="mt-4 bg-gray-100 h-2 rounded-md">
@@ -115,6 +114,7 @@
     </div>
     <hr class="my-4 border-t border-gray-200">
     <button type="submit" class="bg-blue-500 text-white py-2 px-4 rounded-md hover-bg-blue-700">Submit</button>
+    <div id="status-message" class="text-green-600 mt-2"></div>
 </form>
     
     <footer>
@@ -125,6 +125,7 @@
     const imagePreview = document.getElementById('image-preview');
     const progressBar = document.getElementById('progress-bar');
     const progressContainer = document.getElementById('progress-container');
+    const maxFileSize = 40 * 1024 * 1024; // 40MB in bytes
 
     const fileInput = document.querySelector('input[type="file"]');
 
@@ -135,6 +136,13 @@
 
         for (let i = 0; i < files.length; i++) {
             const file = files[i];
+
+            if (file.size > maxFileSize) {
+                alert('File size exceeds the maximum limit (40MB).');
+                fileInput.value = ''; // Clear the file input
+                return;
+            }
+
             const reader = new FileReader();
 
             reader.onload = (e) => {
@@ -153,6 +161,20 @@
 
         const formData = new FormData(this);
 
+        let isFileTooLarge = false;
+
+        // Check file sizes
+        formData.getAll('files[]').forEach(function (file) {
+            if (file.size > maxFileSize) {
+                isFileTooLarge = true;
+            }
+        });
+
+        if (isFileTooLarge) {
+            alert('File size exceeds the maximum limit (40MB).');
+            return;
+        }
+
         $.ajax({
             url: this.action,
             type: 'POST',
@@ -170,8 +192,13 @@
                 return xhr;
             },
             success: function (response) {
-                console.log(response);
-            }
+                // Display a success message to the user
+                $("#status-message").text("Product added successfully").removeClass('text-red-600').addClass('text-green-600');
+            },
+            error: function (xhr, status, error) {
+                // Display an error message to the user
+                $("#status-message").text("Error: " + error).removeClass('text-green-600').addClass('text-red-600');
+            },
         });
     });
 </script>
