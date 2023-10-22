@@ -103,16 +103,19 @@
     </div>
     <div class="mb-4">
         <label for="images" class="block text-gray-700 text-sm font-bold mb-2">Choose Images</label>
-        <input type="file" id="images" name="images[]" multiple class="w-full py-2 px-3 border border-gray-300 rounded-md">
+        <input type="file" id="images" name="files[]" accept="image/*" multiple class="w-full py-2 px-3 border border-gray-300 rounded-md">
     </div>
-    <div id="image-preview" class="mt-4 grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4"></div>
+    <div class="mb-4">
+        <label for="videos" class="block text-gray-700 text-sm font-bold mb-2">Choose Videos</label>
+        <input type="file" id="videos" name="files[]" accept="video/*" multiple class="w-full py-2 px-3 border border-gray-300 rounded-md">
+    </div>
+    <div id="media-preview" class="mt-4 grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4"></div>
     <div id="progress-container" class="mt-4 bg-gray-100 h-2 rounded-md">
         <div id="progress-bar" class="w-0 h-2 bg-blue-500 rounded-md"></div>
     </div>
     <hr class="my-4 border-t border-gray-200">
-    <button type="submit" class="bg-blue-500 text-white py-2 px-4 rounded-md hover:bg-blue-700">Submit</button>
+    <button type="submit" class="bg-blue-500 text-white py-2 px-4 rounded-md hover-bg-blue-700">Submit</button>
 </form>
-
     
     <footer>
   

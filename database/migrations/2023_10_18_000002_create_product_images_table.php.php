@@ -17,6 +17,7 @@ class CreateProductImagesTable extends Migration
             $table->id();
             $table->unsignedBigInteger('product_id'); // Foreign key to associate with the products table
             $table->string('filename'); // To store the image file name or path
+            $table->string('type'); // Add the 'type' column to store 'image' or 'video'
             $table->timestamps();
 
             // Define a foreign key constraint to associate the image with a product
