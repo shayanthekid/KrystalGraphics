@@ -3,6 +3,8 @@
 namespace App\View\Components;
 
 use Illuminate\View\Component;
+use App\Http\Controllers\ProductController; // Import the ProductController
+
 
 class ProductCarousel extends Component
 {
@@ -15,12 +17,13 @@ class ProductCarousel extends Component
     {
         $this->title = $title;
         $this->products = $products;
-            $this->columns = $columns; // Set the columns property
+        $this->columns = $columns; // Set the columns property
 
     }
 
     public function render()
     {
+        
         return view('components.product-carousel');
     }
 }

@@ -112,7 +112,7 @@ Copy (NA)                </p>
     <div class="wrapper no-scrollbar overflow-hidden">
       <div class="aspect no-scrollbar">
         <div class="aspect-inner no-scrollbar justify-center">
-          <div class="flipbook no-scrollbar" id="flipbook">
+          <div class="flipbook no-scrollbar drop-shadow-md" id="flipbook">
             <div class="page"><img src="{{ asset('images/portfolio/KGPCover.png') }}" draggable="false" alt="" /></div>
             <div class="page "><img src="{{ asset('images/portfolio/1.jpg') }}" draggable="false" alt="" /></div>
             <div class="page"><img src="{{ asset('images/portfolio/2.jpg') }}" draggable="false" alt="" /></div>

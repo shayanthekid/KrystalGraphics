@@ -170,6 +170,7 @@ Route::prefix('/admin/banners')->group(function () {
 });
 Route::prefix('/admin/products')->group(function () {
  Route::post('/addProduct', 'App\Http\Controllers\ProductController@addProduct')->name('admin.products.uploadproduct');
+ Route::get('/getproductscat/{subcategoryId}', 'App\Http\Controllers\ProductController@getProductsBySubcategory')->name('admin.products.getProductsBySubcategory');
 
 });
 

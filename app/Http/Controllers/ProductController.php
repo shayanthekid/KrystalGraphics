@@ -49,7 +49,8 @@ public function getAllProducts()
 
 public function getProductsBySubcategory($subcategoryId)
 {
-    $products = Product::where('subcategory_id', $subcategoryId)->get();
+   $products = Product::with('images')->where('subcategory_id', $subcategoryId)->get();
+
     return response()->json($products);
 }
 
