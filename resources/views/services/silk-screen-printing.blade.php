@@ -34,7 +34,6 @@ use App\View\Components\ProductCarousel;
 </div>
 
 
-
 <!-- Products -->
 {{-- <x-product-carousel :title="'Our colorful imprints '" :products='json_encode([
     ["title" => "T-shirts", "image" => "images/services/shirt.png", "url" => "silk-screen-printing/tshirt"],

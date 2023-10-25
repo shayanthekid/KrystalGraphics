@@ -54,6 +54,20 @@ public function getProductsBySubcategory($subcategoryId)
     return response()->json($products);
 }
 
+public function getProduct($productId)
+{
+    // Retrieve the product by its ID
+    $product = Product::with('images')->find($productId);
+
+    if (!$product) {
+        // You can handle the case where the product is not found, for example, return a 404 error.
+        return response()->json(['message' => 'Product not found'], 404);
+    }
+
+    // Return a view with the product data
+    return view('components.product', ['product' => $product]);
+}
+
 
 }
 

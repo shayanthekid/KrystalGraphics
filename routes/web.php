@@ -174,7 +174,7 @@ Route::prefix('/admin/products')->group(function () {
 
 });
 
-
+Route::get('/products/{id}', 'App\Http\Controllers\ProductController@getProduct')->name('product.show');
 
 Route::resource('/flipbook','rudrarajiv\flipbooklaravel\FlipBookController');
 
