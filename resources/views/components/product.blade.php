@@ -11,11 +11,18 @@
                 
                     <div x-ref="slider" class="flex transition-transform duration-300 ease-in-out w-full h-64 relative anim-carousel">
             <!-- Images will be dynamically added here -->
-            <template x-for="(image, index) in images" :key="index">
-                <div class="w-full h-96 flex-shrink-0">
-                    <img :src="image" :alt="'Image ' + (index + 1)"  class="object-contain object-center w-full h-full ">
-                </div>
-            </template>
+  <template x-for="(media, index) in mediaItems" :key="index">
+    
+    <div class="w-full h-96 flex-shrink-0" x-show="media.type == 'image'">
+        <img :src="media.url" :alt="media.title" class="object-contain object-center w-full h-full">
+    </div>
+    <div class="w-full h-96 flex-shrink-0" x-show="media.type == 'video'">
+        <video controls="" :src="media.url" class="object-contain object-center w-full h-full"></video>
+    </div>
+      
+
+</template>
+
         </div>
 
                     <!-- Navigation Buttons -->
@@ -121,14 +128,34 @@ tl4.to('.anim-button',
             @endforeach --}}
 <script>
 
-    const productImages = @json($product->images->pluck('filename'));
-    const storageImages = productImages.map(image => image.replace('public', 'storage'));
-    const absoluteImages = storageImages.map(image => '{{ asset('') }}' + image);
+  const productImages = @json($product->images);
+
+    // Function to determine media type based on the URL
+    function getMediaType(url) {
+        if (url.includes('/image/')) {
+            return 'image';
+        } else if (url.includes('/video/')) {
+            return 'video';
+        }
+        // Add more cases if needed
+        return 'unknown'; // Default to 'unknown' if the URL doesn't match image or video patterns
+    }
+
+    const mediaItems = productImages.map(image => {
+        const type = getMediaType(image.filename);
+        const url = '{{ asset('') }}' + image.filename.replace('public/', 'storage/');
+
+        return {
+            type,
+            url,
+            title: image.title,
+        };
+    });
 
     // Pictures
     function carousel() {
         return {
-            images: absoluteImages,
+            images: mediaItems,
             currentIndex: 0,
             slider: null,
 

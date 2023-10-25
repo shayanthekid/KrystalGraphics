@@ -152,7 +152,7 @@ t1.fromTo('.animate-section-4',
 
                 // Create a link for the product
                 const productLink = document.createElement('a');
-                productLink.href = product.url;
+                productLink.href = `/products/${product.id}`; // Use product.id
 
                 // Create the product image
                 const productImage = document.createElement('div');
