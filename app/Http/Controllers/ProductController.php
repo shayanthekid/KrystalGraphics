@@ -100,24 +100,44 @@ public function updateProduct(Request $request, $productId)
 
 public function deleteProduct($productId)
 {
+    // Log a message when entering the function for debugging purposes
+    Log::debug("Entering deleteProduct for Product ID: $productId");
+
     $product = Product::find($productId);
 
     if (!$product) {
-        return response()->json(['message' => 'Product not found'], 404);
+        // Log a message for product not found
+        Log::debug("Product not found for ID: $productId");
+        return response()->json(['error' => 'Product not found'], 404);
     }
 
     // Delete associated media files from storage
     foreach ($product->images as $image) {
         if (Storage::exists($image->filename)) {
-            Storage::delete($image->filename);
+            // Log a message before deleting the image
+            Log::debug("Deleting image: $image->filename");
+            if (Storage::delete($image->filename)) {
+                // Log a message for successful image deletion
+                Log::info("Image deleted: $image->filename");
+            } else {
+                // Log an error message if image deletion fails
+                Log::error("Failed to delete image: $image->filename");
+            }
         }
     }
 
-    // Delete the product
-    $product->delete();
-
-    return response()->json(['message' => 'Product and associated media files deleted successfully']);
+    // Attempt to delete the product
+    if ($product->delete()) {
+        // Log a message for successful deletion
+        Log::info("Product deleted successfully for Product ID: $productId");
+        return response()->json(['message' => 'Product and associated media files deleted successfully']);
+    } else {
+        // Log an error message if product deletion fails
+        Log::error("Failed to delete product for Product ID: $productId");
+        return response()->json(['error' => 'Failed to delete product'], 500);
+    }
 }
+
 
 }
 

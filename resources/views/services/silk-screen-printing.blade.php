@@ -175,6 +175,7 @@ t1.fromTo('.animate-section-4',
 
                 // Append the product card to the product carousel
                 productCarousel.appendChild(productCard);
+                console.log(productCarousel);
             });
         })
         .catch(error => {

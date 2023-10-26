@@ -73,3 +73,33 @@
   
     </footer>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script>
+    // Add a click event listener to all elements with the "delete-product" class
+    document.querySelectorAll('.delete-product').forEach(function (button) {
+        button.addEventListener('click', function () {
+            const productId = this.getAttribute('data-id'); // Get the product ID from the button's data-id attribute
+
+            // Make an AJAX DELETE request to the delete route with the product ID
+        fetch(`/admin/products/deleteProduct/${productId}`, {
+                method: 'DELETE',
+                headers: {
+                    'X-CSRF-TOKEN': '{{ csrf_token() }}', // Include the CSRF token
+                },
+            })
+            .then(response => {
+                if (response.ok) {
+                    // Product deleted successfully, you can handle this as needed (e.g., remove the row from the table)
+                    // Reload the page or update the UI to reflect the changes
+                    location.reload();
+                } else {
+                    // Handle the case where the delete request fails (e.g., show an error message)
+                    console.error('Failed to delete product');
+                
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+        });
+    });
+</script>

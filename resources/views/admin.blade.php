@@ -97,9 +97,18 @@
         <textarea id="description" name="description" rows="4" class="w-full py-2 px-3 border border-gray-300 rounded-md" placeholder="Enter Product Description" required></textarea>
     </div>
     <div class="mb-4">
-        <label for="subcategory_id" class="block text-gray-700 text-sm font-bold mb-2">Subcategory ID</label>
-        <input type="number" id="subcategory_id" name="subcategory_id" class="w-full py-2 px-3 border border-gray-300 rounded-md" placeholder="Enter Subcategory ID" required>
-    </div>
+    <label for="subcategory_id" class="block text-gray-700 text-sm font-bold mb-2">Subcategory</label>
+    <select id="subcategory_id" name="subcategory_id" class="w-full py-2 px-3 border border-gray-300 rounded-md" required>
+        <option value="1">Silk Screen Printing</option>
+        <option value="2">Option 2</option>
+        <option value="3">Option 3</option>
+        <option value="4">Option 4</option>
+        <option value="5">Option 5</option>
+        <option value="6">Option 6</option>
+        <option value="7">Option 7</option>
+        <option value="8">Option 8</option>
+    </select>
+</div>
     <div class="mb-4">
         <label for="images" class="block text-gray-700 text-sm font-bold mb-2">Choose Images</label>
         <input type="file" id="images" name="files[]" accept="image/*" multiple class="w-full py-2 px-3 border border-gray-300 rounded-md" required>

@@ -14,6 +14,9 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
+    return view('maintenance');
+})->name('maintenance');
+Route::get('/home', function () {
     return view('welcome');
 })->name('home');
 Route::get('/equipment', function () {
@@ -180,22 +183,9 @@ Route::prefix('/admin/products')->group(function () {
         ->name('admin.products.updateProduct');
 
     // Add a route for deleting a product
-    Route::delete('/deleteProduct/{productId}', 'App\Http\Controllers\ProductController@deleteProduct')
-        ->name('admin.products.deleteProduct');
-
+Route::delete('/deleteProduct/{productId}', 'App\Http\Controllers\ProductController@deleteProduct')
+    ->name('admin.products.deleteProduct');
 });
 
 Route::get('/products/{id}', 'App\Http\Controllers\ProductController@getProduct')->name('product.show');
 
-Route::resource('/flipbook','rudrarajiv\flipbooklaravel\FlipBookController');
-
-Route::get('/index', function () {
-    return view('rudrarajiv.flipbooklaravel.bookindex');
-})->name('rudra.flipbook.index');
-Route::get('/create-book', function () {
-    return view('rudrarajiv.flipbooklaravel.bookcreater');
-})->name('rudra.flipbook.create.book');
-
-Route::get('/show-book', function () {
-    return view('rudrarajiv.flipbooklaravel.showbook');
-})->name('rudra.flipbook.show.book');
