@@ -47,6 +47,14 @@ public function getAllProducts()
     return response()->json($products);
 }
 
+public function getAllProductsWithImages()
+{
+    // Get all products with their associated images
+    $products = Product::with('images')->get();
+
+    return view('adminprod', ['products' => $products]);
+}
+
 public function getProductsBySubcategory($subcategoryId)
 {
    $products = Product::with('images')->where('subcategory_id', $subcategoryId)->get();
@@ -68,6 +76,48 @@ public function getProduct($productId)
     return view('components.product', ['product' => $product]);
 }
 
+public function updateProduct(Request $request, $productId)
+{
+    $product = Product::find($productId);
+
+    if (!$product) {
+        return response()->json(['message' => 'Product not found'], 404);
+    }
+
+    $this->validate($request, [
+        'name' => 'required|string|max:255',
+        'description' => 'required|string|max:855',
+        'subcategory_id' => 'required|exists:subcategories,id',
+    ]);
+
+    $product->title = $request->name;
+    $product->description = $request->description;
+    $product->subcategory_id = $request->subcategory_id;
+    $product->save();
+
+    return response()->json(['message' => 'Product updated successfully']);
+}
+
+public function deleteProduct($productId)
+{
+    $product = Product::find($productId);
+
+    if (!$product) {
+        return response()->json(['message' => 'Product not found'], 404);
+    }
+
+    // Delete associated media files from storage
+    foreach ($product->images as $image) {
+        if (Storage::exists($image->filename)) {
+            Storage::delete($image->filename);
+        }
+    }
+
+    // Delete the product
+    $product->delete();
+
+    return response()->json(['message' => 'Product and associated media files deleted successfully']);
+}
 
 }
 

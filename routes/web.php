@@ -160,6 +160,7 @@ Route::get('/stickers', function () {
 
 
 Route::get('/admin', 'App\Http\Controllers\AdminController@index')->name('admin');
+Route::get('/admin/getallproducts', 'App\Http\Controllers\AdminController@getallproducts')->name('adminproducts');
 
 Route::prefix('/admin/banners')->group(function () {
     Route::post('/create', 'App\Http\Controllers\BannerController@store')->name('admin.banners.store');
@@ -169,8 +170,18 @@ Route::prefix('/admin/banners')->group(function () {
 
 });
 Route::prefix('/admin/products')->group(function () {
+
  Route::post('/addProduct', 'App\Http\Controllers\ProductController@addProduct')->name('admin.products.uploadproduct');
  Route::get('/getproductscat/{subcategoryId}', 'App\Http\Controllers\ProductController@getProductsBySubcategory')->name('admin.products.getProductsBySubcategory');
+//  Route::get('/products/allWithImages', 'App\Http\Controllers\ProductController@getAllProductsWithImages')
+//     ->name('adminprod.getallprod');
+ // Add a route for updating a product
+    Route::put('/updateProduct/{productId}', 'App\Http\Controllers\ProductController@updateProduct')
+        ->name('admin.products.updateProduct');
+
+    // Add a route for deleting a product
+    Route::delete('/deleteProduct/{productId}', 'App\Http\Controllers\ProductController@deleteProduct')
+        ->name('admin.products.deleteProduct');
 
 });
 
