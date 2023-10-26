@@ -1286,7 +1286,8 @@
     function carousel4() {
         return {
              images: [
-     '{{ asset('images/equipment/digital/digital4.jpg') }}',             ],
+     '{{ asset('images/equipment/press/komori.jpg') }}',  
+    '{{ asset('images/equipment/digital/digital4.jpg') }}'           ],
             currentIndex: 0,
             slider: null,
 
@@ -1317,8 +1318,8 @@
     function carousel5() {
         return {
              images: [
-            '{{ asset('images/equipment/digital/digital.jpg') }}',
-           '{{ asset('images/equipment/screen/screen2.jpg') }}'
+            '{{ asset('images/equipment/uv/uv.jpg') }}',
+           '{{ asset('images/equipment/uv/uv2.jpg') }}'
              ],
             currentIndex: 0,
             slider: null,
@@ -1383,8 +1384,10 @@
     function carousel7() {
         return {
              images: [
-            '{{ asset('images/equipment/cutter/cutter.jpg') }}',
-           '{{ asset('images/equipment/screen/screen2.jpg') }}'
+            '{{ asset('images/equipment/diecutter/diecutter.jpg') }}',
+            '{{ asset('images/equipment/diecutter/diecutter2.jpg') }}',
+            '{{ asset('images/equipment/diecutter/diecutter3.jpg') }}',
+        
              ],
             currentIndex: 0,
             slider: null,
@@ -1416,8 +1419,8 @@
     function carousel8() {
         return {
              images: [
-            '{{ asset('images/equipment/cutter/cutter.jpg') }}',
-           '{{ asset('images/equipment/screen/screen2.jpg') }}'
+            '{{ asset('images/equipment/gluer/gluer.jpg') }}',
+           '{{ asset('images/equipment/gluer/gluer2.jpg') }}'
              ],
             currentIndex: 0,
             slider: null,

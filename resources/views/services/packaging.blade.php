@@ -24,7 +24,7 @@ We offer packaging services for your printed materials, including custom packagi
 <x-product-carousel :title="'Products'" :products='json_encode([
     ["title" => "Paper Boxes", "image" => "images/services/packaging/rigidbox.png", "url" => "packaging/box"],
     ["title" => "Rigid Boxes", "image" => "images/services/packaging/box.png", "url" => "packaging/bag"],
-    ["title" => "Euro Totes", "image" => "images/services/packaging/rigidbox.png", "url" => ""],
+    ["title" => "Euro Totes", "image" => "images/services/packaging/tote.jpg", "url" => ""],
     ["title" => "Music Boxes", "image" => "images/services/packaging/box.png", "url" => ""],
 
 ])' :columns="4"/>
