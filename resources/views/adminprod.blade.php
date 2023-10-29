@@ -15,14 +15,13 @@
 </head>
 <body>
 
-        <main class=""> 
+<main class="container mx-auto bg-white rounded-lg p-6 shadow-md mt-8">
 
        
 <div class="container mx-auto mt-8">
-        <h1 class="text-2xl font-semibold mb-4">View Products</h1>
- <div x-data="{ subcategoryId: '' }">
-
-        <label for="subcategoryFilter" class="block text-sm font-medium text-gray-700">Filter by Subcategory:</label>
+    <h1 class="text-3xl font-semibold mb-6 border-b pb-2">View Products</h1>
+   <div x-data="{ subcategoryId: '' }" class="mb-4">
+        <label for="subcategoryFilter" class="block text-sm font-medium text-gray-700 mb-2">Filter by Subcategory:</label>
         <select id="subcategoryFilter" x-on:change="subcategoryId = $event.target.value" class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
             <option value="">All Subcategories</option>
         <option value="1">Silk Screen Printing</option>
@@ -36,7 +35,7 @@
     </select>
 
 
-    <table class="min-w-full divide-y divide-gray-200">
+    <table class="min-w-full divide-y divide-gray-200 mb-8">
     <thead>
         <tr>
             <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">

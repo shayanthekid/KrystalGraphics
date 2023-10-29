@@ -14,118 +14,128 @@
 </head>
 <body>
 
-        <main class=""> 
+<main class="bg-gray-100 font-sans leading-normal tracking-normal p-8">
 
-        {{-- Create Banner --}}
-<div class="container mx-auto mt-8">
-    <h1 class="text-2xl font-semibold mb-4">Create Banner</h1>
+    <!-- Create Banner Section -->
+    <div class="container mx-auto bg-white rounded-lg p-6 shadow-md mb-8">
+        <h1 class="text-3xl font-semibold mb-6 border-b pb-2">Create Banner</h1>
 
-    <!-- Banner Creation Form -->
- <form action="{{ route('admin.banners.store') }}" method="POST" enctype="multipart/form-data">
-    @csrf
-    @method('POST') <!-- Specify the HTTP method -->
-    <div class="mb-4">
-        <label for="title" class="block text-sm font-medium text-gray-700">Title</label>
-        <input type="text" id="title" name="title" class="mt-1 p-2 block w-full rounded-md border-gray-300">
+        <!-- Banner Creation Form -->
+        <form action="{{ route('admin.banners.store') }}" method="POST" enctype="multipart/form-data">
+            @csrf
+            @method('POST')
 
-        @error('title')
-        <p class="text-red-500 text-sm">{{ $message }}</p>
-        @enderror
+            <div class="mb-4">
+                <label for="title" class="block text-sm font-medium text-gray-700 mb-2">Title:</label>
+                <input type="text" id="title" name="title" class="mt-1 p-2 w-full border rounded-md focus:outline-none focus:shadow-outline-blue focus:border-blue-300">
+                @error('title')
+                    <p class="text-red-500 text-xs italic mt-2">{{ $message }}</p>
+                @enderror
+            </div>
+
+            <div class="mb-4">
+                <label for="image" class="block text-sm font-medium text-gray-700 mb-2">Image:</label>
+                <input type="file" id="image" name="image" class="mt-1 w-full p-2 border rounded-md focus:outline-none focus:shadow-outline-blue focus:border-blue-300">
+                @error('image')
+                    <p class="text-red-500 text-xs italic mt-2">{{ $message }}</p>
+                @enderror
+            </div>
+
+            <button type="submit" class="bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600 focus:outline-none focus:border-blue-700 focus:shadow-outline-blue active:bg-blue-800">Create Banner</button>
+        </form>
     </div>
-    <div class="mb-4">
-        <label for="image" class="block text-sm font-medium text-gray-700">Image</label>
-        <input type="file" id="image" name="image" class="mt-1 block w-full">
 
-        @error('image')
-        <p class="text-red-500 text-sm">{{ $message }}</p>
-        @enderror
+    <!-- View Banners Section -->
+    <div class="container mx-auto bg-white rounded-lg p-6 shadow-md">
+        <h1 class="text-3xl font-semibold mb-6 border-b pb-2">Banners</h1>
+
+        <!-- Table to Display Banners -->
+        <table class="min-w-full bg-white divide-y divide-gray-200 mt-4 rounded-lg shadow-sm">
+            <thead>
+                <tr>
+                    <th class="px-6 py-3 text-left text-xs font-medium text-gray-600 uppercase tracking-wider">Title</th>
+                    <th class="px-6 py-3 text-left text-xs font-medium text-gray-600 uppercase tracking-wider">Image</th>
+                    <th class="px-6 py-3 text-left text-xs font-medium text-gray-600 uppercase tracking-wider">Actions</th>
+                </tr>
+            </thead>
+            <tbody class="bg-white divide-y divide-gray-200">
+                @foreach ($banners as $banner)
+                    <tr>
+                        <td class="px-6 py-4 whitespace-nowrap">{{ $banner->title }}</td>
+                        <td class="px-6 py-4 whitespace-nowrap">
+                            <img src="{{ asset($banner->image_path) }}" alt="{{ $banner->title }}" class="w-16 h-16 object-cover">
+                        </td>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
+                            <button class="text-red-600 hover:underline delete-banner" data-id="{{ $banner->id }}">Delete</button>
+                        </td>
+                    </tr>
+                @endforeach
+            </tbody>
+        </table>
     </div>
-    <button type="submit" class="bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600">Create Banner</button>
-</form>
+</main>
 
+<div class="container mx-auto bg-white rounded-lg p-6 shadow-md mb-8">
+    <h1 class="text-3xl font-semibold mb-6 border-b pb-2">Upload Product</h1>
 
+    <form method="POST" action="{{ route('admin.products.uploadproduct') }}" enctype="multipart/form-data">
+        {{ csrf_field() }}
 
-            {{-- View Banner --}}
-   <div class="container mx-auto mt-8">
-    <h1 class="text-2xl font-semibold mb-4">Banners</h1>
+        <!-- Name Field -->
+        <div class="mb-4">
+            <label for="name" class="block text-sm font-medium text-gray-700 mb-2">Name:</label>
+            <input type="text" id="name" name="name" class="mt-1 p-2 w-full border rounded-md focus:outline-none focus:shadow-outline-blue focus:border-blue-300" placeholder="Enter Product Name" required>
+        </div>
 
-    <!-- Table to Display Banners -->
-    <table class="min-w-full divide-y divide-gray-200">
-        <thead>
-            <tr>
-                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                    Title
-                </th>
-                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                    Image
-                </th>
-                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                    Actions
-                </th>
-            </tr>
-        </thead>
-        <tbody>
-            <!-- Loop through banners and display each row -->
-            @foreach ($banners as $banner)
-            <tr>
-                <td class="px-6 py-4 whitespace-nowrap">{{ $banner->title }}</td>
-                <td class="px-6 py-4 whitespace-nowrap">
-                  
-                    <img src="{{ asset( $banner->image_path) }}" alt="{{ $banner->title }}" class="w-16 h-16 object-cover">
-                </td>
-                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
-                    <!-- Add buttons for actions like Edit and Delete -->
-                 
-<button class="text-red-600 hover:underline ml-2 delete-banner" data-id="{{ $banner->id }}">Delete</button>
-                </td>
-            </tr>
-            @endforeach
-        </tbody>
-    </table>
+        <!-- Description Field -->
+        <div class="mb-4">
+            <label for="description" class="block text-sm font-medium text-gray-700 mb-2">Description:</label>
+            <textarea id="description" name="description" rows="4" class="mt-1 p-2 w-full border rounded-md focus:outline-none focus:shadow-outline-blue focus:border-blue-300" placeholder="Enter Product Description" required></textarea>
+        </div>
+
+        <!-- Subcategory Field -->
+        <div class="mb-4">
+            <label for="subcategory_id" class="block text-sm font-medium text-gray-700 mb-2">Subcategory:</label>
+            <select id="subcategory_id" name="subcategory_id" class="mt-1 p-2 w-full border rounded-md focus:outline-none focus:shadow-outline-blue focus:border-blue-300">
+                <option value="1">Silk Screen Printing</option>
+                <option value="2">Embroidery</option>      
+                <option value="3">Packaging</option>
+                <option value="4">Mylar Bags</option>
+                <option value="5">Glass Jars</option>
+                <option value="6">Labels/Stickers</option>
+                <option value="7">Equipment</option>
+                <option value="8">Portfolio</option>
+                <!-- ...other options... -->
+            </select>
+        </div>
+
+        <!-- Images Field -->
+        <div class="mb-4">
+            <label for="images" class="block text-sm font-medium text-gray-700 mb-2">Choose Images:</label>
+            <input type="file" id="images" name="files[]" accept="image/*" multiple class="mt-1 p-2 w-full border rounded-md focus:outline-none focus:shadow-outline-blue focus:border-blue-300">
+        </div>
+
+        <!-- Videos Field -->
+        <div class="mb-4">
+            <label for="videos" class="block text-sm font-medium text-gray-700 mb-2">Choose Videos:</label>
+            <input type="file" id="videos" name="files[]" accept="video/*" multiple class="mt-1 p-2 w-full border rounded-md focus:outline-none focus:shadow-outline-blue focus:border-blue-300">
+        </div>
+
+        <div id="media-preview" class="mt-4 grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4"></div>
+
+        <!-- Progress Bar -->
+        <div id="progress-container" class="mt-4 bg-gray-100 h-2 rounded-md">
+            <div id="progress-bar" class="w-0 h-2 bg-blue-500 rounded-md"></div>
+        </div>
+
+        <!-- Submit Button -->
+        <div class="mt-6">
+            <button type="submit" class="bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600 focus:outline-none focus:border-blue-700 focus:shadow-outline-blue active:bg-blue-800">Submit</button>
+            <div id="status-message" class="text-green-600 mt-2"></div>
+        </div>
+    </form>
 </div>
 
-            
-        </main>
-<form method="POST" action="{{ route('admin.products.uploadproduct') }}" enctype="multipart/form-data" class="p-4 border border-gray-200 rounded-md">
-    {{ csrf_field() }}
-    <div class="mb-4">
-        <label for="name" class="block text-gray-700 text-sm font-bold mb-2">Name</label>
-        <input type="text" id="name" name="name" class="w-full py-2 px-3 border border-gray-300 rounded-md" placeholder="Enter Product Name" required>
-    </div>
-    <div class="mb-4">
-        <label for="description" class="block text-gray-700 text-sm font-bold mb-2">Description</label>
-        <textarea id="description" name="description" rows="4" class="w-full py-2 px-3 border border-gray-300 rounded-md" placeholder="Enter Product Description" required></textarea>
-    </div>
-    <div class="mb-4">
-    <label for="subcategory_id" class="block text-gray-700 text-sm font-bold mb-2">Subcategory</label>
-    <select id="subcategory_id" name="subcategory_id" class="w-full py-2 px-3 border border-gray-300 rounded-md" required>
-        <option value="1">Silk Screen Printing</option>
-        <option value="2">Embroidery</option>
-        <option value="3">Packaging</option>
-        <option value="4">Mylar Bags</option>
-        <option value="5">Glass Jars</option>
-        <option value="6">Labels/Stickers</option>
-        <option value="7">Equipment</option>
-        <option value="8">Portfolio</option>
-    </select>
-</div>
-    <div class="mb-4">
-        <label for="images" class="block text-gray-700 text-sm font-bold mb-2">Choose Images</label>
-        <input type="file" id="images" name="files[]" accept="image/*" multiple class="w-full py-2 px-3 border border-gray-300 rounded-md" required>
-    </div>
-    <div class="mb-4">
-        <label for="videos" class="block text-gray-700 text-sm font-bold mb-2">Choose Videos</label>
-        <input type="file" id="videos" name="files[]" accept="video/*" multiple class="w-full py-2 px-3 border border-gray-300 rounded-md" >
-    </div>
-    <div id="media-preview" class="mt-4 grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4"></div>
-    <div id="progress-container" class="mt-4 bg-gray-100 h-2 rounded-md">
-        <div id="progress-bar" class="w-0 h-2 bg-blue-500 rounded-md"></div>
-    </div>
-    <hr class="my-4 border-t border-gray-200">
-    <button type="submit" class="bg-blue-500 text-white py-2 px-4 rounded-md hover-bg-blue-700">Submit</button>
-    <div id="status-message" class="text-green-600 mt-2"></div>
-</form>
-    
 
 
     <footer>
