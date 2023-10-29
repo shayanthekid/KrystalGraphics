@@ -31,6 +31,9 @@
                 Name
             </th>
             <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                Subcategory
+            </th>
+            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                 Description
             </th>
             <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
@@ -47,14 +50,25 @@
         <tr>
             <td class="px-6 py-4 whitespace-nowrap">{{ $product->id }}</td>
             <td class="px-6 py-4 whitespace-nowrap">{{ $product->title }}</td>
+            <td class="px-6 py-4 whitespace-nowrap">{{ $product->subcategory->name }}</td>
             <td class="px-6 py-4 whitespace-nowrap">{{ $product->description }}</td>
             <td class="px-6 py-4 whitespace-nowrap flex">
                 <!-- Loop through product images and display them in a row -->
-               @foreach ($product->images as $image)
+   @foreach ($product->images as $image)
     @php
     $imageUrl = str_replace('public', 'storage', $image->filename);
+    $isImage = strpos($imageUrl, '/image/') !== false;
+    $isVideo = strpos($imageUrl, '/video/') !== false;
     @endphp
-    <img src="{{ asset($imageUrl) }}" alt="{{ $product->title }}" class="w-16 h-16 object-cover mx-2">
+
+    @if ($isImage)
+        <img src="{{ asset($imageUrl) }}" alt="{{ $product->title }}" class="w-16 h-16 object-cover mx-2">
+    @elseif ($isVideo)
+        <video width="200" height="200" controls>
+            <source src="{{ asset($imageUrl) }}" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    @endif
 @endforeach
             </td>
             <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
@@ -86,20 +100,27 @@
                     'X-CSRF-TOKEN': '{{ csrf_token() }}', // Include the CSRF token
                 },
             })
-            .then(response => {
-                if (response.ok) {
-                    // Product deleted successfully, you can handle this as needed (e.g., remove the row from the table)
-                    // Reload the page or update the UI to reflect the changes
-                    location.reload();
-                } else {
-                    // Handle the case where the delete request fails (e.g., show an error message)
-                    console.error('Failed to delete product');
-                
-                }
-            })
-            .catch(error => {
-                console.error('Error:', error);
-            });
+         .then(response => {
+    return response.text().then(text => {
+        return {
+            status: response.status,
+            statusText: response.statusText,
+            body: text
+        };
+    });
+})
+.then(result => {
+    if (result.status >= 200 && result.status < 300) {
+            alert("Successfully deleted!"); // Display a popup to the user
+            location.reload();
+    } else {
+        console.error(`Failed to delete product: ${result.body}`);
+         alert(`Failed to delete product: ${result.body}`);
+    }
+})
+.catch(error => {
+    console.error('Error:', error);
+});
         });
     });
 </script>

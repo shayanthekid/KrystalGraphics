@@ -100,13 +100,13 @@
     <label for="subcategory_id" class="block text-gray-700 text-sm font-bold mb-2">Subcategory</label>
     <select id="subcategory_id" name="subcategory_id" class="w-full py-2 px-3 border border-gray-300 rounded-md" required>
         <option value="1">Silk Screen Printing</option>
-        <option value="2">Option 2</option>
-        <option value="3">Option 3</option>
-        <option value="4">Option 4</option>
-        <option value="5">Option 5</option>
-        <option value="6">Option 6</option>
-        <option value="7">Option 7</option>
-        <option value="8">Option 8</option>
+        <option value="2">Embroidery</option>
+        <option value="3">Packaging</option>
+        <option value="4">Mylar Bags</option>
+        <option value="5">Glass Jars</option>
+        <option value="6">Labels/Stickers</option>
+        <option value="7">Equipment</option>
+        <option value="8">Portfolio</option>
     </select>
 </div>
     <div class="mb-4">

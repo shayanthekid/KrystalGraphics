@@ -5,6 +5,9 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Product;
 use App\Models\ProductImage;
+use Log;
+use Illuminate\Support\Facades\Storage;
+
 
 class ProductController extends Controller
 {
@@ -43,7 +46,7 @@ public function addProduct(Request $request)
 
 public function getAllProducts()
 {
-    $products = Product::all();
+       $products = Product::with('subcategory')->get();
     return response()->json($products);
 }
 

@@ -7,23 +7,27 @@
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex flex-col md:flex-row -mx-4">
             <div class="md:flex-1 px-4 overflow-hidden" >
-                <div x-data="carousel" class="h-[460px] rounded-lg mb-4 relative ">
-                
-                    <div x-ref="slider" class="flex transition-transform duration-300 ease-in-out w-full h-64 relative anim-carousel">
-            <!-- Images will be dynamically added here -->
-  <template x-for="(media, index) in mediaItems" :key="index">
-    
-    <div class="w-full h-96 flex-shrink-0" x-show="media.type == 'image'">
-        <img :src="media.url" :alt="media.title" class="object-contain object-center w-full h-full">
-    </div>
-    <div class="w-full h-96 flex-shrink-0" x-show="media.type == 'video'">
-        <video controls="" :src="media.url" class="object-contain object-center w-full h-full"></video>
-    </div>
-      
+     <div x-data="carousel" class="h-[460px] rounded-lg mb-4 relative ">
+    <div x-ref="slider" class="flex transition-transform duration-300 ease-in-out w-full h-64 relative anim-carousel">
+        <!-- Loop through each media item -->
+    <template x-for="(media, index) in mediaItems" :key="index">
+            <!-- Display image -->
+            <div x-show="media.type === 'video'" class="w-full h-96 flex-shrink-0">
+                <img :src="media.url" :alt="media.title" class="object-contain object-center w-full h-full">
+            </div>
 
-</template>
+            <!-- Display video -->
+            <div x-show="media.type === 'image'" class="w-full h-96 flex-shrink-0">
+                <video width="200" height="200" controls>
+                    <source :src="media.url" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+        </template>
+     {{-- <button @click="console.log(mediaItems[1].type)">Log mediaItems</button> --}}
 
-        </div>
+
+    </div>
 
                     <!-- Navigation Buttons -->
                     <div class="absolute inset-y-0 left-0 flex items-center">
@@ -128,7 +132,33 @@ tl4.to('.anim-button',
             @endforeach --}}
 <script>
 
-  const productImages = @json($product->images);
+//   const productImages = @json($product->images);
+
+//     // Function to determine media type based on the URL
+//     function getMediaType(url) {
+//         if (url.includes('/image/')) {
+//             return 'image';
+//         } else if (url.includes('/video/')) {
+//             return 'video';
+//         }
+//         // Add more cases if needed
+//         return 'unknown'; // Default to 'unknown' if the URL doesn't match image or video patterns
+//     }
+
+//     const mediaItems = productImages.map(image => {
+//         const type = getMediaType(image.filename);
+//         const url = '{{ asset('') }}' + image.filename.replace('public/', 'storage/');
+
+//         return {
+//             type,
+//             url,
+//             title: image.title,
+//         };
+//     });
+
+    // Pictures
+   function carousel() {
+    const productImages = @json($product->images);
 
     // Function to determine media type based on the URL
     function getMediaType(url) {
@@ -152,35 +182,27 @@ tl4.to('.anim-button',
         };
     });
 
-    // Pictures
-    function carousel() {
-        return {
-            images: mediaItems,
-            currentIndex: 0,
-            slider: null,
-
-            init() {
-                this.slider = this.$refs.slider;
-              
-            },
-
-
-            next() {
-                this.currentIndex = (this.currentIndex + 1) % this.images.length;
-                this.slideToCurrentIndex();
-            },
-
-            prev() {
-                this.currentIndex = (this.currentIndex - 1 + this.images.length) % this.images.length;
-                this.slideToCurrentIndex();
-            },
-
-            slideToCurrentIndex() {
-                const translateX = -this.currentIndex * 100;
-                this.slider.style.transform = `translateX(${translateX}%)`;
-            }
-        };
-    }
+    return {
+        mediaItems, // add this line
+        currentIndex: 0,
+        slider: null,
+        init() {
+            this.slider = this.$refs.slider;
+        },
+        next() {
+            this.currentIndex = (this.currentIndex + 1) % this.mediaItems.length; // change this.images to this.mediaItems
+            this.slideToCurrentIndex();
+        },
+        prev() {
+            this.currentIndex = (this.currentIndex - 1 + this.mediaItems.length) % this.mediaItems.length; // change this.images to this.mediaItems
+            this.slideToCurrentIndex();
+        },
+        slideToCurrentIndex() {
+            const translateX = -this.currentIndex * 100;
+            this.slider.style.transform = `translateX(${translateX}%)`;
+        }
+    };
+}
 </script>
 
 
