@@ -22,7 +22,24 @@
 
 
 </head>
+<style>
+    #loading-animation {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.9); /* White background with slight transparency */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+</style>
 <body>
+    <div id="loading-animation">
+    <img src="{{ asset('images/homepage/loading.gif') }}" alt="Loading...">
+</div>
 <!-- dfdf-->
        <header class="top-0 left-0 w-full">
     <div class="lg:hidden">
@@ -50,6 +67,14 @@
             isOpen: false,
         }));
     });
+</script>
+<script>
+    window.addEventListener("load", function() {
+    const loadingAnimation = document.getElementById("loading-animation");
+    if (loadingAnimation) {
+        loadingAnimation.style.display = "none";
+    }
+});
 </script>
 </body>
 </html>
