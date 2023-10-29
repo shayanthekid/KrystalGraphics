@@ -79,27 +79,7 @@ public function getProduct($productId)
     return view('components.product', ['product' => $product]);
 }
 
-public function updateProduct(Request $request, $productId)
-{
-    $product = Product::find($productId);
 
-    if (!$product) {
-        return response()->json(['message' => 'Product not found'], 404);
-    }
-
-    $this->validate($request, [
-        'name' => 'required|string|max:255',
-        'description' => 'required|string|max:855',
-        'subcategory_id' => 'required|exists:subcategories,id',
-    ]);
-
-    $product->title = $request->name;
-    $product->description = $request->description;
-    $product->subcategory_id = $request->subcategory_id;
-    $product->save();
-
-    return response()->json(['message' => 'Product updated successfully']);
-}
 
 public function deleteProduct($productId)
 {
@@ -141,6 +121,89 @@ public function deleteProduct($productId)
     }
 }
 
+//update functions
+
+public function updateProduct(Request $request, $productId)
+{
+    $product = Product::find($productId);
+
+    if (!$product) {
+        return response()->json(['message' => 'Product not found'], 404);
+    }
+
+    $this->validate($request, [
+        'name' => 'required|string|max:255',
+        'description' => 'required|string|max:855',
+    ]);
+
+    $product->title = $request->name;
+    $product->description = $request->description;
+    $product->save();
+
+    return response()->json(['message' => 'Product updated successfully']);
+}
+
+public function deleteImage($imageId) {
+    $image = ProductImage::find($imageId);
+
+    if (!$image) {
+        return response()->json(['success' => false, 'message' => 'Image not found'], 404);
+    }
+
+    // Delete the image file from storage
+    if (Storage::exists($image->filename) && Storage::delete($image->filename)) {
+        $image->delete(); // Delete the record from the database
+        return response()->json(['success' => true, 'message' => 'Image deleted successfully']);
+    }
+
+    return response()->json(['success' => false, 'message' => 'Failed to delete image']);
+}
+
+public function deleteVideo($videoId) {
+    // The logic would be similar to deleteImage, just tailored for videos.
+    $video = ProductImage::find($videoId);
+
+    if (!$video) {
+        return response()->json(['success' => false, 'message' => 'Video not found'], 404);
+    }
+
+    // Delete the video file from storage
+    if (Storage::exists($video->filename) && Storage::delete($video->filename)) {
+        $video->delete(); // Delete the record from the database
+        return response()->json(['success' => true, 'message' => 'Video deleted successfully']);
+    }
+
+    return response()->json(['success' => false, 'message' => 'Failed to delete video']);
+}
+
+public function addImagesToProduct(Request $request, $productId) {
+    $product = Product::find($productId);
+
+    if (!$product) {
+        return response()->json(['message' => 'Product not found'], 404);
+    }
+
+    $this->validate($request, [
+        'files.*' => 'file', // Validate both images and videos
+    ]);
+
+    $media = [];
+
+    foreach ($request->file('files') as $file) {
+        $type = strpos($file->getMimeType(), 'video') === 0 ? 'video' : 'image';
+        $path = $file->store('public/products/' . $type);
+
+        $media[] = [
+            'product_id' => $product->id,
+            'filename' => $path,
+            'type' => $type, // Set the file type ('image' or 'video')
+        ];
+    }
+
+    ProductImage::insert($media);
+
+    return response()->json(['message' => 'Images/Video added successfully']);
+}
 
 }
 

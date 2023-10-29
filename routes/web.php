@@ -176,15 +176,30 @@ Route::prefix('/admin/products')->group(function () {
 
  Route::post('/addProduct', 'App\Http\Controllers\ProductController@addProduct')->name('admin.products.uploadproduct');
  Route::get('/getproductscat/{subcategoryId}', 'App\Http\Controllers\ProductController@getProductsBySubcategory')->name('admin.products.getProductsBySubcategory');
-//  Route::get('/products/allWithImages', 'App\Http\Controllers\ProductController@getAllProductsWithImages')
-//     ->name('adminprod.getallprod');
- // Add a route for updating a product
-    Route::put('/updateProduct/{productId}', 'App\Http\Controllers\ProductController@updateProduct')
-        ->name('admin.products.updateProduct');
 
-    // Add a route for deleting a product
 Route::delete('/deleteProduct/{productId}', 'App\Http\Controllers\ProductController@deleteProduct')
     ->name('admin.products.deleteProduct');
+
+
+  Route::put('/updateProduct/{productId}', 'App\Http\Controllers\ProductController@updateProduct')
+        ->name('admin.products.updateProduct');
+    
+    // Route for deleting a product
+    Route::delete('/deleteProduct/{productId}', 'App\Http\Controllers\ProductController@deleteProduct')
+        ->name('admin.products.deleteProduct');
+    
+    // Route for deleting an image
+    Route::delete('/deleteImage/{imageId}', 'App\Http\Controllers\ProductController@deleteImage')
+        ->name('admin.products.deleteImage');
+    
+    // Route for deleting a video
+    Route::delete('/deleteVideo/{videoId}', 'App\Http\Controllers\ProductController@deleteVideo')
+        ->name('admin.products.deleteVideo');
+    
+    // Route for adding images or videos to a product
+    Route::post('/addImagesToProduct/{productId}', 'App\Http\Controllers\ProductController@addImagesToProduct')
+        ->name('admin.products.addImagesToProduct');
+
 });
 
 Route::get('/products/{id}', 'App\Http\Controllers\ProductController@getProduct')->name('product.show');
