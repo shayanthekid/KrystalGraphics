@@ -20,8 +20,23 @@
        
 <div class="container mx-auto mt-8">
         <h1 class="text-2xl font-semibold mb-4">View Products</h1>
+ <div x-data="{ subcategoryId: '' }">
 
-<table class="min-w-full divide-y divide-gray-200">
+        <label for="subcategoryFilter" class="block text-sm font-medium text-gray-700">Filter by Subcategory:</label>
+        <select id="subcategoryFilter" x-on:change="subcategoryId = $event.target.value" class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+            <option value="">All Subcategories</option>
+        <option value="1">Silk Screen Printing</option>
+        <option value="2">Embroidery</option>
+        <option value="3">Packaging</option>
+        <option value="4">Mylar Bags</option>
+        <option value="5">Glass Jars</option>
+        <option value="6">Labels/Stickers</option>
+        <option value="7">Equipment</option>
+        <option value="8">Portfolio</option>
+    </select>
+
+
+    <table class="min-w-full divide-y divide-gray-200">
     <thead>
         <tr>
             <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
@@ -46,7 +61,7 @@
     </thead>
    <tbody>
         @foreach ($products as $product)
-       <tr x-data="{ isEditing: false }" data-product-id="{{ $product->id }}">
+            <tr x-data="{ isEditing: false }" x-show="!subcategoryId || subcategoryId == '{{ $product->subcategory->id }}'" data-product-id="{{ $product->id }}">
             <td class="px-6 py-4 whitespace-nowrap">{{ $product->id }}</td>
 
             <!-- Name (editable) -->
@@ -102,6 +117,9 @@
         @endforeach
     </tbody>
 </table>
+</div>
+
+
 
 </div>
 
