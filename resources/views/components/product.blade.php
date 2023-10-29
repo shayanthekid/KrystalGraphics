@@ -10,20 +10,21 @@
      <div x-data="carousel" class="h-[460px] rounded-lg mb-4 relative ">
     <div x-ref="slider" class="flex transition-transform duration-300 ease-in-out w-full h-64 relative anim-carousel">
         <!-- Loop through each media item -->
-    <template x-for="(media, index) in mediaItems" :key="index">
-            <!-- Display image -->
-            <div x-show="media.type === 'video'" class="w-full h-96 flex-shrink-0">
+    <template x-for="(media, index) in mediaItems.filter(item => item.type === 'image')" :key="index">
+            <div class="w-full h-96 flex-shrink-0">
                 <img :src="media.url" :alt="media.title" class="object-contain object-center w-full h-full">
             </div>
-
-            <!-- Display video -->
-            <div x-show="media.type === 'image'" class="w-full h-96 flex-shrink-0">
-                <video width="200" height="200" controls>
-                    <source :src="media.url" type="video/mp4">
-                    Your browser does not support the video tag.
-                </video>
-            </div>
         </template>
+        
+        <!-- Loop for Videos -->
+      <template x-for="(media, index) in mediaItems.filter(item => item.type === 'video')" :key="index">
+    <div class="w-full h-96 flex-shrink-0 relative">
+        <video class="object-cover object-center absolute top-0 left-0 w-full h-full" controls>
+            <source :src="media.url" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+</template>
      {{-- <button @click="console.log(mediaItems[1].type)">Log mediaItems</button> --}}
 
 
