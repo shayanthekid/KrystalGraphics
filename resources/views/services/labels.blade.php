@@ -9,7 +9,7 @@ use App\View\Components\ProductCarousel;
 <div class="bg-[#ED1F24] py-16">
     <div class="container mx-auto flex justify-center items-center h-full">
         <div class="text-center text-white">
-            <h1 class="text-4xl font-semibold font-montserrat lg:text-6xl hero-text">Stickers</h1>
+            <h1 class="text-4xl font-semibold font-montserrat lg:text-6xl hero-text">Labels / Decals</h1>
             <p class="mt-4 font-montserrat text-lg font-light lg:text-xl p-4 hero-para">
  Revolutionize your sticker game with our cutting-edge printing services. At Kristal Graphics, we go beyond the ordinary to offer a range of distinctive sticker options, including holographic, silver, white BOPP, clear, and special die-cut shapes. Whether you're looking to add a touch of magic with holographic stickers or sleek elegance with silver, our precise printing technology brings your designs to life in exquisite detail. Stand out from the crowd and let your creativity shine with stickers that make a statement, whether for branding, events, or personal expression. Choose us to elevate your sticker experience, and let your imagination run wild with our premium printing solutions.            </p>
    

@@ -9,7 +9,7 @@ use App\View\Components\ProductCarousel;
 <div class="bg-[#ED1F24] py-16">
     <div class="container mx-auto flex justify-center items-center h-full">
         <div class="text-center text-white">
-            <h1 class="text-4xl font-semibold font-montserrat lg:text-6xl hero-text">Glass Jars</h1>
+            <h1 class="text-4xl font-semibold font-montserrat lg:text-6xl hero-text">Glass Jars / Tubes</h1>
             <p class="mt-4 font-montserrat text-lg font-light lg:text-xl p-4 hero-para">
 Elevate glass jar packaging with our premium printing services. We specialize in creating visually appealing and durable designs for various product
             </p>

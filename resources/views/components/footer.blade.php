@@ -68,8 +68,8 @@
               <a class="my-3 block text-sm text-white font-roboto" href="{{ route('silk-screen-printing') }}" class="hover:text-gray-500">Silk Screen Printing</a>
                <a class="my-3 block text-sm text-white font-roboto" href="{{ route('embroidery') }}" class="hover:text-gray-500">Embroidery</a>
                 <a class="my-3 block text-sm text-white font-roboto" href="{{ route('mylar') }}" class="hover:text-gray-500">Mylar Bags</a>
-             <a class="my-3 block text-sm text-white font-roboto" href="{{ route('glass') }}" class="hover:text-gray-500">Glass Jars</a>
-               <a class="my-3 block text-sm text-white font-roboto" href="{{ route('labels') }}" class="hover:text-gray-500">Labels/Stickers</a>
+             <a class="my-3 block text-sm text-white font-roboto" href="{{ route('glass') }}" class="hover:text-gray-500">Glass Jars / Tubes</a>
+               <a class="my-3 block text-sm text-white font-roboto" href="{{ route('labels') }}" class="hover:text-gray-500">Labels/Decals</a>
                <a class="my-3 block text-sm text-white font-roboto" href="{{ route('packaging') }}" class="hover:text-gray-500">Packaging</a>
               <a class="my-3 block text-sm text-white font-roboto" href="https://www.promoplace.com/33620/" class="hover:text-gray-500">Promotion Items</a>
               <a class="my-3 block text-sm text-white font-roboto" href="https://bullseyeb2b.com/" class="hover:text-gray-500">Mailing Services</a>

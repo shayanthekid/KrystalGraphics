@@ -95,7 +95,7 @@
             <div class="flex justify-between items-center">
                 <a href="{{ route('glass') }}" class=" font-roboto flex items-center no-underline">
              
-                <span class="mr-2">Glass Jars</span>
+                <span class="mr-2">Glass Jars / Tubes</span>
                               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
         <path fill-rule="evenodd" d="M11.293 7.293a1 1 0 0 0 0-1.414l-4-4a1 1 0 0 0-1.414 1.414L9.586 8l-3.707 3.707a1 1 0 1 0 1.414 1.414l4-4a1 1 0 0 0 0-1.414z"></path>
     </svg>
@@ -107,7 +107,7 @@
             <div class="flex justify-between items-center">
                 <a href="{{ route('labels') }}" class=" font-roboto flex items-center no-underline">
                   
-                <span class="mr-2">Labels/ Stickers</span>
+                <span class="mr-2">Labels / Decals</span>
                                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
         <path fill-rule="evenodd" d="M11.293 7.293a1 1 0 0 0 0-1.414l-4-4a1 1 0 0 0-1.414 1.414L9.586 8l-3.707 3.707a1 1 0 1 0 1.414 1.414l4-4a1 1 0 0 0 0-1.414z"></path>
     </svg>

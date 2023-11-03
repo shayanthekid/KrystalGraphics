@@ -192,6 +192,7 @@ tl4.to('.anim-button',
     const mediaItems = productImages.map(image => {
         const type = getMediaType(image.filename);
         const url = '{{ asset('') }}' + image.filename.replace('public/', 'storage/');
+        // const url = '{{ asset('') }}' + image.filename.replace('public/', '/public/storage/');
 
         return {
             type,

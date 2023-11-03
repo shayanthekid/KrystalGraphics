@@ -72,12 +72,12 @@
     </li>
     <li>
         <a href="{{ route('glass') }}" class="{{ Route::currentRouteName() === 'glass' ? 'active-link' : 'nonactive' }}">
-            Glass Jars
+            Glass Jars / Tubes
         </a>
     </li>
     <li>
         <a href="{{ route('labels') }}" class="{{ Route::currentRouteName() === 'labels' ? 'active-link' : 'nonactive' }}">
-            Labels/ Stickers
+            Labels / Decals
         </a>
     </li>
     <li>
