@@ -2,22 +2,21 @@
 
 @section('content')
 <style>
-#content {
+.content {
     overflow: hidden;
     position: relative;
 }
 
 .transition2 {
-    transform: scale(1.6);
-    /* Only apply transition to the transform property, not transform-origin */
+    transform: scale(2);
     transition: transform .4s ease-in-out;
 }
 
-#content img {
-    /* Remove transition from transform-origin */
+.content img {
     transition: transform .4s ease-in-out;
 }
- </style>
+</style>
+
 
 <div class="bg-gray-100 py-8">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -27,11 +26,11 @@
     <div x-ref="slider" class="flex transition-transform duration-300 ease-in-out w-full h-64 relative anim-carousel">
         <!-- Loop through each media item -->
     <template x-for="(media, index) in mediaItems.filter(item => item.type === 'image')" :key="index">
-            <div class="w-full h-96 flex-shrink-0" id="content">
-                <img :src="media.url" :alt="media.title" class="object-contain object-center w-full h-full">
-            </div>
-      
-        </template>
+    <div class="w-full h-96 flex-shrink-0 content">
+        <img :src="media.url" :alt="media.title" class="object-contain object-center w-full h-full">
+    </div>
+</template>
+
         
         <!-- Loop for Videos -->
       <template x-for="(media, index) in mediaItems.filter(item => item.type === 'video')" :key="index">
@@ -225,47 +224,45 @@ tl4.to('.anim-button',
 </script>
 <script>
 $(document).ready(function(){
-    // Function to set the transform origin based on position
     function setTransformOrigin(elem, posX, posY) {
         var originX = posX / elem.width() * 100;
         var originY = posY / elem.height() * 100;
-        elem.find('img').css({
+        elem.css({
             'transform-origin': `${originX}% ${originY}%`
         });
     }
 
-    // Mouse events for desktop
-    $('#content').mousemove(function(e) {
-        var magnifyOffset = $(this).offset();
-        var mouseX = e.pageX - magnifyOffset.left;
-        var mouseY = e.pageY - magnifyOffset.top;
-        setTransformOrigin($(this), mouseX, mouseY);
-    }).hover(function() {
-        $(this).find('img').addClass('transition2');
-    }, function() {
-        $(this).find('img').removeClass('transition2').css({
-            'transform-origin': 'center center'
+    $('.content').each(function() {
+        $(this).mousemove(function(e) {
+            var magnifyOffset = $(this).offset();
+            var mouseX = e.pageX - magnifyOffset.left;
+            var mouseY = e.pageY - magnifyOffset.top;
+            setTransformOrigin($(this).find('img'), mouseX, mouseY);
+        }).hover(function() {
+            $(this).find('img').addClass('transition2');
+        }, function() {
+            $(this).find('img').removeClass('transition2').css({
+                'transform-origin': 'center center'
+            });
         });
-    });
 
-    // Touch events for mobile
-    $('#content').on('touchmove', function(e) {
-        // Prevent the default scroll behavior
-        e.preventDefault();
-
-        var touch = e.originalEvent.touches[0] || e.originalEvent.changedTouches[0];
-        var magnifyOffset = $(this).offset();
-        var touchX = touch.pageX - magnifyOffset.left;
-        var touchY = touch.pageY - magnifyOffset.top;
-        setTransformOrigin($(this), touchX, touchY);
-    }).on('touchstart', function() {
-        $(this).find('img').addClass('transition2');
-    }).on('touchend', function() {
-        $(this).find('img').removeClass('transition2').css({
-            'transform-origin': 'center center'
+        $(this).on('touchmove', function(e) {
+            e.preventDefault();
+            var touch = e.originalEvent.touches[0] || e.originalEvent.changedTouches[0];
+            var magnifyOffset = $(this).offset();
+            var touchX = touch.pageX - magnifyOffset.left;
+            var touchY = touch.pageY - magnifyOffset.top;
+            setTransformOrigin($(this).find('img'), touchX, touchY);
+        }).on('touchstart', function() {
+            $(this).find('img').addClass('transition2');
+        }).on('touchend', function() {
+            $(this).find('img').removeClass('transition2').css({
+                'transform-origin': 'center center'
+            });
         });
     });
 });
 </script>
+
 
 @endsection

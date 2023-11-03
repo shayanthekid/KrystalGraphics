@@ -145,7 +145,8 @@ t1.fromTo('.animate-section-4',
                 // Get the first image filename from the product
                 const firstImageFilename = product.images[0].filename;
                 const updatedImageURL = firstImageFilename.replace('public/', 'storage/')
-
+                // const updatedImageURL = firstImageFilename.replace('public/', '/public/storage//')
+    
                 // Create a new product card
                 const productCard = document.createElement('div');
                 productCard.className = 'w-full flex items-center justify-center';

@@ -81,9 +81,9 @@
                     Unit 14
                     Canoga Park, CA 91303<br>
                     USA
-                <span class="text-teal-600 text-xs p-1"></span></a><a class="my-3 block text-white" href="/#">Phone: 818-342-7822
+                <span class="text-teal-600 text-xs p-1"></span></a><a class="my-3 block text-white" href="/#">Phone: 818-342-7822 <br> Fax: 818-884-7046
                    
-                <span class="text-red-500 text-xs p-1">Fax: 818-884-7046</span></a>
+             </a>
         </div>
     </div>
 </div>
