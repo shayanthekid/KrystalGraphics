@@ -1,7 +1,23 @@
 @extends('layouts.app') <!-- Use your layout file here -->
 
 @section('content')
+<style>
+#content {
+    overflow: hidden;
+    position: relative;
+}
 
+.transition2 {
+    transform: scale(1.6);
+    /* Only apply transition to the transform property, not transform-origin */
+    transition: transform .4s ease-in-out;
+}
+
+#content img {
+    /* Remove transition from transform-origin */
+    transition: transform .4s ease-in-out;
+}
+ </style>
 
 <div class="bg-gray-100 py-8">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -11,9 +27,10 @@
     <div x-ref="slider" class="flex transition-transform duration-300 ease-in-out w-full h-64 relative anim-carousel">
         <!-- Loop through each media item -->
     <template x-for="(media, index) in mediaItems.filter(item => item.type === 'image')" :key="index">
-            <div class="w-full h-96 flex-shrink-0">
+            <div class="w-full h-96 flex-shrink-0" id="content">
                 <img :src="media.url" :alt="media.title" class="object-contain object-center w-full h-full">
             </div>
+      
         </template>
         
         <!-- Loop for Videos -->
@@ -205,6 +222,38 @@ tl4.to('.anim-button',
     };
 }
 </script>
+<script>
+$(document).ready(function(){
+    $('#content').mousemove(function(e) {
+        var $container = $(this);
+        var magnifyOffset = $container.offset();
+        var mouseX = e.pageX - magnifyOffset.left;
+        var mouseY = e.pageY - magnifyOffset.top;
 
+        // Ensure the coordinates are within the bounds of the container
+        if (mouseX < 0) { mouseX = 0; }
+        if (mouseY < 0) { mouseY = 0; }
+        if (mouseX > $container.width()) { mouseX = $container.width(); }
+        if (mouseY > $container.height()) { mouseY = $container.height(); }
+
+        // Set the origin of the transform to the mouse coordinates without transition
+        var originX = mouseX / $container.width() * 100;
+        var originY = mouseY / $container.height() * 100;
+        $container.find('img').css({
+            'transform-origin': `${originX}% ${originY}%`,
+            'transition-property': 'transform', // Only transition transform property
+        });
+    });
+
+    $('#content').hover(function() {
+        $(this).find('img').addClass('transition2');
+    }, function() {
+        $(this).find('img').removeClass('transition2').css({
+            'transform-origin': 'center center',
+            'transition-property': 'transform' // Reset transition property
+        });
+    });
+});
+</script>
 
 @endsection

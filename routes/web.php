@@ -105,7 +105,13 @@ Route::get('/bag', function () {
         return view('services.packagingproducts.bag');
     })->name('packaging.bag');
 
+Route::get('/euro', function () {
+        return view('services.packagingproducts.euro');
+    })->name('packaging.euro');
 
+    Route::get('/music', function () {
+        return view('services.packagingproducts.music');
+    })->name('packaging.music');
 });
 
 

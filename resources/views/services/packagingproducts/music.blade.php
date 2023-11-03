@@ -1,37 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
- <style>
-    /* .transition2 {
-    -webkit-transform: scale(1.6); 
-    -moz-transform: scale(1.6);
-    -o-transform: scale(1.6);
-    transform: scale(1.6);
-}
-#content {
-	-webkit-transition: all .4s ease-in-out;
-	-moz-transition: all .4s ease-in-out;
-	-o-transition: all .4s ease-in-out;
-	-ms-transition: all .4s ease-in-out;
-} */
-
-#content {
-    overflow: hidden;
-    position: relative;
-}
-
-.transition2 {
-    transform: scale(1.6);
-    /* Only apply transition to the transform property, not transform-origin */
-    transition: transform .4s ease-in-out;
-}
-
-#content img {
-    /* Remove transition from transform-origin */
-    transition: transform .4s ease-in-out;
-}
- </style>
-
+ 
 <div class="bg-gray-100 py-8">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex flex-col md:flex-row -mx-4">
@@ -41,12 +11,9 @@
                     <div x-ref="slider" class="flex transition-transform duration-300 ease-in-out w-full h-64 relative anim-carousel">
             <!-- Images will be dynamically added here -->
             <template x-for="(image, index) in images" :key="index">
-                {{-- <div class="w-full h-96 flex-shrink-0" id="content">
+                <div class="w-full h-96 flex-shrink-0">
                     <img :src="image" :alt="'Image ' + (index + 1)"  class="object-contain object-center w-full h-full ">
-                </div> --}}
-                <div class="w-full h-96 flex-shrink-0" id="content">
-    <img :src="image" :alt="'Image ' + (index + 1)" class="object-contain object-center w-full h-full">
-</div>
+                </div>
             </template>
         </div>
 
@@ -73,12 +40,11 @@
 
             <div class="md:flex-1 px-4">
                 {{-- Title --}}
-                <h2 class="text-2xl font-bold mb-2 hero-text" style="opacity: 0">Bags</h2>
+                <h2 class="text-2xl font-bold mb-2 hero-text" style="opacity: 0">Music Box</h2>
                 {{-- Description --}}
                 <p class="text-gray-600 text-sm mt-2 hero-para" style="opacity: 0">
              
-Embroidery on bags adds a touch of elegance and personalization to your accessories. Using high-quality threads and precise stitching, we create intricate and durable designs that make your bags stand out. Whether it's for a corporate gift, promotional item, or personal use, embroidery adds a unique and professional touch. Our embroidery services offer a wide array of color choices and customization options, ensuring your bags become a stylish and memorable statement piece, reflecting your brand or individual style with sophistication and lasting quality. 
-
+ Elevate your brand's packaging with our premium paper box printing services. We specialize in transforming paper boxes into beautiful, branded containers. With precision printing technology, your designs, logos, and messages come to life, enhancing your product presentation and strengthening your brand identity. Whether for retail, gifting, or promotions, our top-notch printing services add an elegant touch to every unboxing experience
 
                     </p>
                 
@@ -151,10 +117,14 @@ tl4.to('.anim-button',
     // Pictures
     function carousel() {
         return {
-            images: [
-            '{{ asset('images/services/embroidery/bag.png') }}',
-           // Add more image URLs as needed
-        ],
+               images: [
+           '{{ asset('images/services/packaging/boxes/box1.png') }}',
+       
+           '{{ asset('images/services/packaging/boxes/box3.png') }}',
+           '{{ asset('images/services/packaging/rigidbox.png') }}',
+      
+         
+             ],
             currentIndex: 0,
             slider: null,
 
@@ -182,48 +152,6 @@ tl4.to('.anim-button',
     }
 </script>
 
-{{-- <script>
-    $(document).ready(function(){
-    $('#content').hover(function() {
-        $("#content").addClass('transition2');
-    
-    }, function() {
-        $("#content").removeClass('transition2');
-    });
-});
-</script> --}}
-<script>
-$(document).ready(function(){
-    $('#content').mousemove(function(e) {
-        var $container = $(this);
-        var magnifyOffset = $container.offset();
-        var mouseX = e.pageX - magnifyOffset.left;
-        var mouseY = e.pageY - magnifyOffset.top;
 
-        // Ensure the coordinates are within the bounds of the container
-        if (mouseX < 0) { mouseX = 0; }
-        if (mouseY < 0) { mouseY = 0; }
-        if (mouseX > $container.width()) { mouseX = $container.width(); }
-        if (mouseY > $container.height()) { mouseY = $container.height(); }
-
-        // Set the origin of the transform to the mouse coordinates without transition
-        var originX = mouseX / $container.width() * 100;
-        var originY = mouseY / $container.height() * 100;
-        $container.find('img').css({
-            'transform-origin': `${originX}% ${originY}%`,
-            'transition-property': 'transform', // Only transition transform property
-        });
-    });
-
-    $('#content').hover(function() {
-        $(this).find('img').addClass('transition2');
-    }, function() {
-        $(this).find('img').removeClass('transition2').css({
-            'transform-origin': 'center center',
-            'transition-property': 'transform' // Reset transition property
-        });
-    });
-});
-</script>
 
 @endsection

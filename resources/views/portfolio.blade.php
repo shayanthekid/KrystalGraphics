@@ -49,6 +49,27 @@
   height: 100%;
 }
 
+.flipbook2 {
+  height: 100%;
+  transition: margin-left 0.25s ease-out;
+  width: 100%;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  
+}
+.flipbook2 .page {
+  height: 100%;
+  width: 100%;
+}
+.flipbook2 .page img {
+  max-width: 100%;
+  height: 100%;
+}
+
   .no-scrollbar::-webkit-scrollbar {
         display: none;
     }
@@ -229,7 +250,10 @@ Copy (NA)                </p>
   </div>
 </div> --}}
 <!-- component -->
-<
+
+<!--there will be a invisble character here -->
+ㅤ
+
 
 <script>
 
