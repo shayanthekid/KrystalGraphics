@@ -50,7 +50,171 @@ We understand that every client has unique needs and requirements, and we work c
 
 {{-- Our Team --}}
 
+
 <div id="team" class="section relative pt-20 pb-8 md:pt-16 bg-white ">
+    <div class="container xl:max-w-6xl mx-auto px-4">
+        <!-- section header -->
+        <header class="text-center mx-auto mb-12">
+            <h2 class="text-2xl leading-normal mb-2 font-bold text-black ">
+                <span class="font-light">Our</span> Team
+            </h2>
+            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 100 60" style="margin: 0 auto;height: 35px;" xml:space="preserve">
+                <circle cx="50.1" cy="30.4" r="5" class="stroke-primary" style="fill: transparent;stroke-width: 2;stroke-miterlimit: 10;"></circle>
+                <line x1="55.1" y1="30.4" x2="100" y2="30.4" class="stroke-primary" style="stroke-width: 2;stroke-miterlimit: 10;"></line>
+                <line x1="45.1" y1="30.4" x2="0" y2="30.4" class="stroke-primary" style="stroke-width: 2;stroke-miterlimit: 10;"></line>
+            </svg>
+        </header>
+        <!-- end section header -->
+        <!-- row -->
+        <div class="flex flex-wrap flex-row -mx-4 justify-center">
+            <div class="flex-shrink max-w-full px-4 w-2/3 sm:w-1/2 md:w-5/12 lg:w-1/4 xl:px-6">
+                <div class="relative overflow-hidden bg-white  hover-grayscale-0 wow fadeInUp team-anim" data-wow-duration="1s" style="visibility: visible; animation-duration: 1s; animation-name: fadeInUp;">
+                    <!-- team block -->
+                    <div class="relative overflow-hidden px-6">
+                        <img src="images/about/guy2.png" class="max-w-full h-auto mx-auto rounded-full bg-gray-50 grayscale hover:grayscale-0" alt="title image">
+                    </div>
+                    <div class="pt-6 text-center">
+                        <p class="text-lg leading-normal font-bold mb-1">Juzer</p>
+                        <!-- social icon -->
+                      
+                    </div>
+                </div>
+                <!-- end team block -->
+            </div>
+            <div class="flex-shrink max-w-full px-4 w-2/3 sm:w-1/2 md:w-5/12 lg:w-1/4 xl:px-6">
+                <!-- team block -->
+                <div class="relative overflow-hidden bg-white  mb-12 hover-grayscale-0 wow fadeInUp team-anim" data-wow-duration="1s" data-wow-delay=".1s" style="visibility: visible; animation-duration: 1s; animation-delay: 0.1s; animation-name: fadeInUp;">
+                    <div class="relative overflow-hidden px-6">
+                        <img src="images/about/guy1.png" class="w-44 h-auto mx-auto rounded-full bg-gray-50 grayscale hover:grayscale-0 " alt="title image">
+                    </div>
+                    <div class="pt-6 text-center">
+                        <p class="text-lg leading-normal font-bold mb-1">Munna Mansoor</p>
+                        <p class="text-gray-500 leading-relaxed font-light"></p>
+                        <!-- social icon -->
+                    
+                    </div>
+                </div>
+                <!-- end team block -->
+            </div>
+            <div class="flex-shrink max-w-full px-4 w-2/3 sm:w-1/2 md:w-5/12 lg:w-1/4 xl:px-6">
+                <!-- team block -->
+                <div class="relative overflow-hidden bg-white  mb-12 hover-grayscale-0 wow fadeInUp team-anim" data-wow-duration="1s" data-wow-delay=".3s" style="visibility: visible; animation-duration: 1s; animation-delay: 0.3s; animation-name: fadeInUp;">
+                    <div class="relative overflow-hidden px-6">
+                        <img src="images/about/girl1.png" class="max-w-full h-auto mx-auto rounded-full bg-gray-50 grayscale hover:grayscale-0" alt="title image">
+                    </div>
+                    <div class="pt-6 text-center">
+                        <p class="text-lg leading-normal font-bold mb-1">Tasneem Murtaza Mansoor</p>
+                        <!-- social icon -->
+                  
+                    </div>
+                </div>
+                <!-- end team block -->
+            </div>
+             <div class="flex-shrink max-w-full px-4 w-2/3 sm:w-1/2 md:w-5/12 lg:w-1/4 xl:px-6">
+                <!-- team block -->
+                <div class="relative overflow-hidden bg-white  mb-12 hover-grayscale-0 wow fadeInUp team-anim" data-wow-duration="1s" data-wow-delay=".3s" style="visibility: visible; animation-duration: 1s; animation-delay: 0.3s; animation-name: fadeInUp;">
+                    <div class="relative overflow-hidden px-6">
+                        <img src="images/about/girl2.png" class="w-36 h-auto mx-auto rounded-full bg-gray-50 grayscale hover:grayscale-0" alt="title image">
+                    </div>
+                    <div class="pt-6 text-center">
+                        <p class="text-lg leading-normal font-bold mb-1">Courtney Meherin </p>
+                        <p class="text-gray-500 leading-relaxed font-light">Office Manager</p>
+                       <!-- social icon -->
+                  
+                    </div>
+                </div>
+                <!-- end team block -->
+            </div>
+             <div class="flex-shrink max-w-full px-4 w-2/3 sm:w-1/2 md:w-5/12 lg:w-1/4 xl:px-6">
+                <!-- team block -->
+                <div class="relative overflow-hidden bg-white  mb-12 hover-grayscale-0 wow fadeInUp team-anim" data-wow-duration="1s" data-wow-delay=".3s" style="visibility: visible; animation-duration: 1s; animation-delay: 0.3s; animation-name: fadeInUp;">
+                    <div class="relative overflow-hidden px-6">
+                        <img src="images/about/girl3.png" class="w-56 h-auto mx-auto rounded-full bg-gray-50 grayscale hover:grayscale-0" alt="title image">
+                    </div>
+                    <div class="pt-6 text-center">
+                        <p class="text-lg leading-normal font-bold mb-1">Ana </p>
+                      <!-- social icon -->
+                  
+                    </div>
+                </div>
+                <!-- end team block -->
+            </div>
+                 <div class="flex-shrink max-w-full px-4 w-2/3 sm:w-1/2 md:w-5/12 lg:w-1/4 xl:px-6">
+                <!-- team block -->
+                <div class="relative overflow-hidden bg-white  mb-12 hover-grayscale-0 wow fadeInUp team-anim" data-wow-duration="1s" data-wow-delay=".3s" style="visibility: visible; animation-duration: 1s; animation-delay: 0.3s; animation-name: fadeInUp;">
+                    <div class="relative overflow-hidden px-6">
+                        <img src="https://tailone.tailwindtemplate.net/src/img/dummy/avatar2.png" class="w-40 h-auto mx-auto rounded-full bg-gray-50 grayscale hover:grayscale-0" alt="title image">
+                    </div>
+                    <div class="pt-6 text-center">
+                        <p class="text-lg leading-normal font-bold mb-1">Darwin DeVitis</p>
+                     <p class="text-gray-500 leading-relaxed font-light">Graphic Design / Prepress and Print Specialist</p>
+
+                      <!-- social icon -->
+                  
+                    </div>
+                </div>
+                <!-- end team block -->
+            </div>
+            <div class="flex-shrink max-w-full px-4 w-2/3 sm:w-1/2 md:w-5/12 lg:w-1/4 xl:px-6 team-anim">
+                <!-- team block -->
+                    <div class="relative overflow-hidden px-6 ">
+                        <img src="https://tailone.tailwindtemplate.net/src/img/dummy/avatar3.png" class="max-w-full h-auto mx-auto rounded-full bg-gray-50 grayscale hover:grayscale-0" alt="title image">
+                    </div>
+                    <div class="pt-6 text-center">
+                        <p class="text-lg leading-normal font-bold mb-1">Page Anderson</p>
+                        <p class="text-gray-500 leading-relaxed font-light">Project Manager/ Coordinator</p>
+                        <!-- social icon -->
+                
+                    </div>
+                </div>
+                <div class="flex-shrink max-w-full px-4 w-2/3 sm:w-1/2 md:w-5/12 lg:w-1/4 xl:px-6 team-anim">
+                <!-- team block -->
+               <div class="relative overflow-hidden px-6 ">
+                        <img src="images/about/girl4.png" class="w-40  h-auto mx-auto rounded-full bg-gray-50 grayscale hover:grayscale-0" alt="title image">
+                    </div>
+                    <div class="pt-6 text-center">
+                        <p class="text-lg leading-normal font-bold mb-1">Bianca Uriarte</p>
+                        <p class="text-gray-500 leading-relaxed font-light">Labels Specialist</p>
+                        <!-- social icon -->
+                
+                    </div>
+                </div>
+               
+                 <div class="flex-shrink max-w-full px-4 w-2/3 sm:w-1/2 md:w-5/12 lg:w-1/4 xl:px-6 team-anim">
+                <!-- team block -->
+                    <div class="relative overflow-hidden px-6 ">
+                        <img src="https://tailone.tailwindtemplate.net/src/img/dummy/avatar4.png" class="w-40 h-auto mx-auto rounded-full bg-gray-50 grayscale hover:grayscale-0" alt="title image">
+                    </div>
+                    <div class="pt-6 text-center">
+                        <p class="text-lg leading-normal font-bold mb-1"> Bryan Ortega </p>
+                        <p class="text-gray-500 leading-relaxed font-light">Graphic Designer</p>
+                        <!-- social icon -->
+                
+                    </div>
+                </div>
+                 <div class="flex-shrink max-w-full px-4 w-2/3 sm:w-1/2 md:w-5/12 lg:w-1/4 xl:px-6 team-anim">
+                <!-- team block -->
+                    <div class="relative overflow-hidden px-6 ">
+                        <img src="images/about/guy3.png" class="w-40  h-auto mx-auto rounded-full bg-gray-50 grayscale hover:grayscale-0" alt="title image">
+                    </div>
+                    <div class="pt-6 text-center">
+                        <p class="text-lg leading-normal font-bold mb-1">Enrique Guerrero </p>
+                        <p class="text-gray-500 leading-relaxed font-light">Graphic Designer / Customer Service
+</p>
+                        <!-- social icon -->
+                
+                    </div>
+                </div>
+                <!-- end team block -->
+            </div>
+        </div>
+        <!-- end row -->
+    </div>
+
+
+
+
+{{-- <div id="team" class="section relative pt-20 pb-8 md:pt-16 bg-white ">
     <div class="container xl:max-w-6xl mx-auto px-4">
         <!-- section header -->
         <header class="text-center mx-auto mb-12">
@@ -206,7 +370,7 @@ We understand that every client has unique needs and requirements, and we work c
             </div>
         </div>
         <!-- end row -->
-    </div>
+    </div> --}}
 </div>
 
 
