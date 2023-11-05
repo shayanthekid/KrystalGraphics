@@ -73,9 +73,33 @@
                     <!-- Images will be dynamically added here -->
                    
                     <template x-for="(image, index) in images" :key="index">
-                        <div class="w-full h-96 flex-shrink-0">
+                       
+                        <template x-if="mediaTypes[index] === 'image'">
+<div class="w-full h-96 flex-shrink-0">
                             <img :src="image" :alt="'Image ' + (index + 1)" class="object-contain object-center w-full h-full">
-                        </div>
+                        </div>        
+                    
+                    </template>
+                       
+                        
+                   
+                    </template>
+         
+                    <template x-for="(image, index) in images" :key="index">
+                       
+                        <template x-if="mediaTypes[index] === 'video'">
+                            
+            <div class="w-full h-96 flex-shrink-0 relative">
+        <video class="object-cover object-center absolute top-0 left-0 w-full h-full" controls>
+            <source :src="image" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>    
+                    
+
+                    </template>
+                       
+                        
                    
                     </template>
                 
@@ -141,13 +165,37 @@
            
             <div class="relative overflow-hidden rounded-lg">
                
-                <div x-ref="slider" class="flex transition-transform duration-300 ease-in-out">
+             <div x-ref="slider" class="flex transition-transform duration-300 ease-in-out">
                     <!-- Images will be dynamically added here -->
                    
                     <template x-for="(image, index) in images" :key="index">
-                        <div class="w-full h-96 flex-shrink-0">
+                       
+                        <template x-if="mediaTypes[index] === 'image'">
+<div class="w-full h-96 flex-shrink-0">
                             <img :src="image" :alt="'Image ' + (index + 1)" class="object-contain object-center w-full h-full">
-                        </div>
+                        </div>        
+                    
+                    </template>
+                       
+                        
+                   
+                    </template>
+         
+                    <template x-for="(image, index) in images" :key="index">
+                       
+                        <template x-if="mediaTypes[index] === 'video'">
+                            
+            <div class="w-full h-96 flex-shrink-0 relative">
+        <video class="object-cover object-center absolute top-0 left-0 w-full h-full" controls>
+            <source :src="image" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>    
+                    
+
+                    </template>
+                       
+                        
                    
                     </template>
                 
@@ -210,9 +258,33 @@
                     <!-- Images will be dynamically added here -->
                    
                     <template x-for="(image, index) in images" :key="index">
-                        <div class="w-full h-96 flex-shrink-0">
+                       
+                        <template x-if="mediaTypes[index] === 'image'">
+<div class="w-full h-96 flex-shrink-0">
                             <img :src="image" :alt="'Image ' + (index + 1)" class="object-contain object-center w-full h-full">
-                        </div>
+                        </div>        
+                    
+                    </template>
+                       
+                        
+                   
+                    </template>
+         
+                    <template x-for="(image, index) in images" :key="index">
+                       
+                        <template x-if="mediaTypes[index] === 'video'">
+                            
+            <div class="w-full h-96 flex-shrink-0 relative">
+        <video class="object-cover object-center absolute top-0 left-0 w-full h-full" controls>
+            <source :src="image" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>    
+                    
+
+                    </template>
+                       
+                        
                    
                     </template>
                 
@@ -1178,10 +1250,7 @@
 
 <script>
 function createCarousel(productIndex) {
-
-
-
-     function getMediaType(url) {
+       function getMediaType(url) {
         if (url.includes('/image/')) {
             return 'image';
         } else if (url.includes('/video/')) {
@@ -1190,10 +1259,9 @@ function createCarousel(productIndex) {
         // Add more cases if needed
         return 'unknown'; // Default to 'unknown' if the URL doesn't match image or video patterns
     }
-    
-
     return {
         images: [],
+        mediaTypes: [], // Add this array to keep track of media types
         currentIndex: 0,
         slider: null,
 
@@ -1213,8 +1281,12 @@ function createCarousel(productIndex) {
                         data[index].images.forEach(image => {
                             // Replace 'public' with 'storage' in the image's filename
                             let imageUrl = image.filename.replace('public', 'storage');
+                          const type=   getMediaType(imageUrl);
+                          
                             // Push the modified image URL to the images array
                             this.images.push(imageUrl);
+
+                            this.mediaTypes.push(type);
                         });
 
                         // Update the carousel with the new images
