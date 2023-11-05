@@ -122,6 +122,10 @@
 
     <!-- Submit Button -->
 <button @click="editimages('{{ $product->id }}', 'add-media-form-{{ $product->id }}')" class="bg-blue-600 hover:bg-blue-700 text-white p-2 rounded">Add Image/Video</button>
+<progress id="upload-progress-bar-{{ $product->id }}" class="mt-4 bg-gray-100 h-2 rounded-md" value="0" max="100"></progress>
+
+
+
 </form>
                 </div>
      
@@ -279,44 +283,49 @@
 function editimages(productId, formId) {
     const form = document.getElementById(formId);
     const formData = new FormData(form);
+ const progressBarId = 'upload-progress-bar-' + productId;
+    const progressBar = document.getElementById(progressBarId) || createProgressBar(productId);
 
-    // Make an AJAX POST request to the add images route with the product ID and form data
-    fetch(`/admin/products/addImagesToProduct/${productId}`, {
-        method: 'POST',
+    // Use jQuery's ajax method to handle the file upload and progress bar
+    $.ajax({
+        url: `/admin/products/addImagesToProduct/${productId}`,
+        type: 'POST',
+        data: formData,
+        processData: false,
+        contentType: false,
         headers: {
-            'X-CSRF-TOKEN': '{{ csrf_token() }}', // Include the CSRF token
+            'X-CSRF-TOKEN': '{{ csrf_token() }}' // Set CSRF token header
         },
-        body: formData // Send the form data
-    })
-    .then(response => {
-        if (!response.ok) {
-            // Instead of throwing an Error, we handle it directly
-            response.text().then(text => {
-                try {
-                    // Attempt to parse it as JSON
-                    const data = JSON.parse(text);
-                    alert(data.message || 'Error: The server did not send a JSON response.');
-                } catch (e) {
-                    // If it's not JSON, it's probably an HTML response or plain text
-                    alert('Server Error: ' + text);
-                }
-            });
-        } else {
-            return response.json(); // Parse the JSON response
+        xhr: function () {
+            const xhr = $.ajaxSettings.xhr();
+            xhr.upload.onprogress = function(event) {
+        if (event.lengthComputable) {
+            const percentage = (event.loaded / event.total) * 100;
+            // Update the progress bar value
+            progressBar.value = percentage;
+            console.log('Upload progress: ', percentage + '%');
         }
-    })
-    .then(data => {
-        if (data && data.message) {
-            alert(data.message); // Display the server's response message
+    }
+            return xhr;
+        },
+        success: function(response) {
+            alert(response.message); // Display the server's response message
             location.reload(); // Reload the page to reflect the changes
+        },
+        error: function(xhr, status, error) {
+            alert('Server Error: ' + error);
         }
-    })
-    .catch(error => {
-        // This will handle network errors or other exceptions not related to the server's response
-        alert(error.message);
-        console.log(error.message);
     });
 }
 
+// Helper function to create a progress bar if it doesn't exist
+function createProgressBar(productId) {
+    const progressBar = document.createElement('progress');
+    progressBar.id = 'upload-progress-bar-' + productId;
+    progressBar.max = 100;
+    progressBar.value = 0;
+    document.body.appendChild(progressBar); // Append where you want it to be
+    return progressBar;
+}
 
 </script>

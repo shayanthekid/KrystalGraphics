@@ -65,7 +65,7 @@
     
     <div class="col-span-2 md:col-span-1 ">
        
-        <div x-data="carousel" class="relative bg-[#FCFCFC] w-full max-w-screen-lg mx-auto">
+        <div x-data="createCarousel(0)" x-init="init()" class="relative bg-[#FCFCFC] w-full max-w-screen-lg mx-auto">
            
             <div class="relative overflow-hidden rounded-lg">
                
@@ -137,7 +137,7 @@
     
     <div class="col-span-2 md:col-span-1 ">
        
-        <div x-data="carousel3" class="relative bg-[#FCFCFC] w-full max-w-screen-lg mx-auto">
+        <div x-data="createCarousel(1)" x-init="init()" class="relative bg-[#FCFCFC] w-full max-w-screen-lg mx-auto">
            
             <div class="relative overflow-hidden rounded-lg">
                
@@ -202,7 +202,7 @@
     
     <div class="col-span-2 md:col-span-1 ">
        
-        <div x-data="carousel2" class="relative bg-[#FCFCFC] w-full max-w-screen-lg mx-auto">
+        <div x-data="createCarousel(2)" x-init="init()" class="relative bg-[#FCFCFC] w-full max-w-screen-lg mx-auto">
            
             <div class="relative overflow-hidden rounded-lg">
                
@@ -276,7 +276,7 @@
     
     <div class="col-span-2 md:col-span-1 ">
        
-        <div x-data="carousel4" class="relative bg-[#FCFCFC] w-full max-w-screen-lg mx-auto">
+        <div x-data="createCarousel(3)" x-init="init()" class="relative bg-[#FCFCFC] w-full max-w-screen-lg mx-auto">
            
             <div class="relative overflow-hidden rounded-lg">
                
@@ -341,7 +341,7 @@
     
     <div class="col-span-2 md:col-span-1 ">
        
-        <div x-data="carousel5" class="relative bg-[#FCFCFC] w-full max-w-screen-lg mx-auto">
+        <div x-data="createCarousel(4)" x-init="init()" class="relative bg-[#FCFCFC] w-full max-w-screen-lg mx-auto">
            
             <div class="relative overflow-hidden rounded-lg">
                
@@ -409,7 +409,7 @@
     
     <div class="col-span-2 md:col-span-1 ">
        
-        <div x-data="carousel6" class="relative bg-[#FCFCFC] w-full max-w-screen-lg mx-auto">
+        <div x-data="createCarousel(5)" x-init="init()" class="relative bg-[#FCFCFC] w-full max-w-screen-lg mx-auto">
            
             <div class="relative overflow-hidden rounded-lg">
                
@@ -483,7 +483,7 @@
     
     <div class="col-span-2 md:col-span-1 ">
        
-        <div x-data="carousel7" class="relative bg-[#FCFCFC] w-full max-w-screen-lg mx-auto">
+        <div x-data="createCarousel(6)" x-init="init()" class="relative bg-[#FCFCFC] w-full max-w-screen-lg mx-auto">
            
             <div class="relative overflow-hidden rounded-lg">
                
@@ -560,7 +560,7 @@
     
     <div class="col-span-2 md:col-span-1 ">
        
-        <div x-data="carousel8" class="relative bg-[#FCFCFC] w-full max-w-screen-lg mx-auto">
+        <div x-data="createCarousel(7)" x-init="init()" class="relative bg-[#FCFCFC] w-full max-w-screen-lg mx-auto">
            
             <div class="relative overflow-hidden rounded-lg">
                
@@ -633,7 +633,7 @@
     
     <div class="col-span-2 md:col-span-1 ">
        
-        <div x-data="carousel9" class="relative bg-[#FCFCFC] w-full max-w-screen-lg mx-auto">
+        <div x-data="createCarousel(8)" x-init="init()"class="relative bg-[#FCFCFC] w-full max-w-screen-lg mx-auto">
            
             <div class="relative overflow-hidden rounded-lg">
                
@@ -1176,75 +1176,83 @@
 /* Push the scrollbar down */
 </style>
 
-
 <script>
-    function carousel() {
-        return {
-             images: [
-           '{{ asset('images/equipment/screen/screen1.jpg') }}',
-            '{{ asset('images/equipment/screen/screen2.jpg') }}'
-             ],
-            currentIndex: 0,
-            slider: null,
-
-            init() {
-                this.slider = this.$refs.slider;
-              
-            },
+function createCarousel(productIndex) {
 
 
-            next() {
-                this.currentIndex = (this.currentIndex + 1) % this.images.length;
-                this.slideToCurrentIndex();
-            },
 
-            prev() {
-                this.currentIndex = (this.currentIndex - 1 + this.images.length) % this.images.length;
-                this.slideToCurrentIndex();
-            },
-
-            slideToCurrentIndex() {
-                const translateX = -this.currentIndex * 100;
-                this.slider.style.transform = `translateX(${translateX}%)`;
-            }
-        };
+     function getMediaType(url) {
+        if (url.includes('/image/')) {
+            return 'image';
+        } else if (url.includes('/video/')) {
+            return 'video';
+        }
+        // Add more cases if needed
+        return 'unknown'; // Default to 'unknown' if the URL doesn't match image or video patterns
     }
-</script>
-<script>
-    //digital ENV
-    function carousel2() {
-        return {
-             images: [
-            '{{ asset('images/equipment/digital/digital.jpg') }}',
-            '{{ asset('images/equipment/digital/digital3.jpg') }}',
-            '{{ asset('images/equipment/digital/digital4.jpg') }}',
-        
-             ],
-            currentIndex: 0,
-            slider: null,
+    
 
-            init() {
-                this.slider = this.$refs.slider;
-              
-            },
+    return {
+        images: [],
+        currentIndex: 0,
+        slider: null,
 
+        init() {
+            this.slider = this.$refs.slider;
+            this.fetchEquipmentImages(productIndex); // Fetch equipment images for a specific product index
+        },
 
-            next() {
-                this.currentIndex = (this.currentIndex + 1) % this.images.length;
-                this.slideToCurrentIndex();
-            },
+        fetchEquipmentImages(index) {
+            // Use fetch API to perform an AJAX call
+            fetch('/products/equipment')
+                .then(response => response.json())
+                .then(data => {
+                    // Check if the specified product exists and has images
+                    if (data.length > index && data[index].images.length > 0) {
+                        // Loop through each image of the specified product
+                        data[index].images.forEach(image => {
+                            // Replace 'public' with 'storage' in the image's filename
+                            let imageUrl = image.filename.replace('public', 'storage');
+                            // Push the modified image URL to the images array
+                            this.images.push(imageUrl);
+                        });
 
-            prev() {
-                this.currentIndex = (this.currentIndex - 1 + this.images.length) % this.images.length;
-                this.slideToCurrentIndex();
-            },
+                        // Update the carousel with the new images
+                        this.slideToCurrentIndex();
+                    }
+                })
+                .catch(error => console.error(`Error fetching equipment images for product ${index}:`, error));
+        },
 
-            slideToCurrentIndex() {
-                const translateX = -this.currentIndex * 100;
-                this.slider.style.transform = `translateX(${translateX}%)`;
-            }
-        };
-    }
+        next() {
+            this.currentIndex = (this.currentIndex + 1) % this.images.length;
+            this.slideToCurrentIndex();
+        },
+
+        prev() {
+            this.currentIndex = (this.currentIndex - 1 + this.images.length) % this.images.length;
+            this.slideToCurrentIndex();
+        },
+
+        slideToCurrentIndex() {
+            const translateX = -this.currentIndex * 100;
+            this.slider.style.transform = `translateX(${translateX}%)`;
+        }
+    };
+}
+
+// Usage for carousel 0 to 9
+const carousel0 = createCarousel(0);
+const carousel1 = createCarousel(1);
+const carousel2 = createCarousel(2);
+const carousel3 = createCarousel(3);
+const carousel4 = createCarousel(4);
+const carousel5 = createCarousel(5);
+const carousel6 = createCarousel(6);
+const carousel7 = createCarousel(7);
+const carousel8 = createCarousel(8);
+const carousel9 = createCarousel(9);
+
 </script>
 <script>
     //digital printing

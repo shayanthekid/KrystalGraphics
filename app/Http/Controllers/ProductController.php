@@ -210,6 +210,16 @@ public function addImagesToProduct(Request $request, $productId) {
         return response()->json(['message' => 'Failed to add images/video'], 500);
     }
 }
+public function getEquipmentProducts()
+{
+    // Assuming '7' is the ID for the 'equipment' subcategory
+    $equipmentSubcategoryId = 7;
+    $equipmentProducts = Product::with('images')
+                                ->where('subcategory_id', $equipmentSubcategoryId)
+                                ->get();
+
+    return response()->json($equipmentProducts);
+}
 
 
 }

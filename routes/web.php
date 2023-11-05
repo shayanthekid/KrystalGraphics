@@ -207,6 +207,6 @@ Route::delete('/deleteProduct/{productId}', 'App\Http\Controllers\ProductControl
         ->name('admin.products.addImagesToProduct');
 
 });
-
+Route::get('/products/equipment', 'App\Http\Controllers\ProductController@getEquipmentProducts');
 Route::get('/products/{id}', 'App\Http\Controllers\ProductController@getProduct')->name('product.show');
 
