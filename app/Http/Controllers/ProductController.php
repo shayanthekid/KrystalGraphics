@@ -177,33 +177,40 @@ public function deleteVideo($videoId) {
 }
 
 public function addImagesToProduct(Request $request, $productId) {
-    $product = Product::find($productId);
+    try {
+        $product = Product::find($productId);
 
-    if (!$product) {
-        return response()->json(['message' => 'Product not found'], 404);
+        if (!$product) {
+            Log::error('Product not found with ID: ' . $productId);
+            return response()->json(['message' => 'Product not found'], 404);
+        }
+
+        $this->validate($request, [
+            'files.*' => 'file', // Validate both images and videos
+        ]);
+
+        $media = [];
+
+        foreach ($request->file('files') as $file) {
+            $type = strpos($file->getMimeType(), 'video') === 0 ? 'video' : 'image';
+            $path = $file->store('public/products/' . $type);
+
+            $media[] = [
+                'product_id' => $product->id,
+                'filename' => $path,
+                'type' => $type, // Set the file type ('image' or 'video')
+            ];
+        }
+
+        ProductImage::insert($media);
+
+        return response()->json(['message' => 'Images/Video added successfully']);
+    } catch (\Exception $e) {
+        Log::error('Error adding images/videos to product: ' . $e->getMessage());
+        return response()->json(['message' => 'Failed to add images/video'], 500);
     }
-
-    $this->validate($request, [
-        'files.*' => 'file', // Validate both images and videos
-    ]);
-
-    $media = [];
-
-    foreach ($request->file('files') as $file) {
-        $type = strpos($file->getMimeType(), 'video') === 0 ? 'video' : 'image';
-        $path = $file->store('public/products/' . $type);
-
-        $media[] = [
-            'product_id' => $product->id,
-            'filename' => $path,
-            'type' => $type, // Set the file type ('image' or 'video')
-        ];
-    }
-
-    ProductImage::insert($media);
-
-    return response()->json(['message' => 'Images/Video added successfully']);
 }
+
 
 }
 

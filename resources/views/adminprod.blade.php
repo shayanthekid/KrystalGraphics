@@ -35,7 +35,7 @@
     </select>
 
 
-    <table class="min-w-full divide-y divide-gray-200 mb-8">
+    <table class="min-w-full divide-y divide-gray-200 mb-8 table-fixed">
     <thead>
         <tr>
             <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
@@ -60,7 +60,7 @@
     </thead>
    <tbody>
         @foreach ($products as $product)
-            <tr x-data="{ isEditing: false }" x-show="!subcategoryId || subcategoryId == '{{ $product->subcategory->id }}'" data-product-id="{{ $product->id }}">
+            <tr x-data="{ isEditing: false, EditImage: false }" x-show="!subcategoryId || subcategoryId == '{{ $product->subcategory->id }}'" data-product-id="{{ $product->id }}">
             <td class="px-6 py-4 whitespace-nowrap">{{ $product->id }}</td>
 
             <!-- Name (editable) -->
@@ -73,10 +73,11 @@
             <td class="px-6 py-4 whitespace-nowrap">{{ $product->subcategory->name }}</td>
 
             <!-- Description (editable) -->
-            <td class="px-6 py-4 whitespace-nowrap">
-                <span x-show="!isEditing">{{ $product->description }}</span>
-                <textarea x-show="isEditing" class="border p-1">{{ $product->description }}</textarea>
-            </td>
+          <td class="px-6 py-4 whitespace-nowrap">
+    <span x-show="!isEditing" class="inline-block max-w-xs overflow-hidden text-ellipsis whitespace-normal">{{ $product->description }}</span>
+    <textarea x-show="isEditing" class="border p-1 max-w-xs">{{ $product->description }}</textarea>
+</td>
+
 
             <!-- Images and Videos (with add & delete options) -->
             <td class="px-6 py-4 whitespace-nowrap flex">
@@ -103,8 +104,27 @@
 
                 <div x-show="isEditing">
                     <!-- Provide option to add new media -->
-                    <button class="bg-blue-600 hover:bg-blue-700 text-white p-2 rounded">Add Image/Video</button>
+                    <button x-show="!EditImage" @click="EditImage = true" class="bg-blue-600 hover:bg-blue-700 text-white p-2 rounded">Add Image/Video</button>
+
+                 
+<form x-show="EditImage" id="add-media-form-{{ $product->id }}" enctype="multipart/form-data">
+    <!-- Images Field -->
+    <div class="mb-4">
+        <label for="images" class="block text-sm font-medium text-gray-700 mb-2">Choose Images:</label>
+        <input type="file" id="images" name="files[]" accept="image/*" multiple class="mt-1 p-2 w-full border rounded-md focus:outline-none focus:shadow-outline-blue focus:border-blue-300">
+    </div>
+
+    <!-- Videos Field -->
+    <div class="mb-4">
+        <label for="videos" class="block text-sm font-medium text-gray-700 mb-2">Choose Videos:</label>
+        <input type="file" id="videos" name="files[]" accept="video/*" multiple class="mt-1 p-2 w-full border rounded-md focus:outline-none focus:shadow-outline-blue focus:border-blue-300">
+    </div>
+
+    <!-- Submit Button -->
+<button @click="editimages('{{ $product->id }}', 'add-media-form-{{ $product->id }}')" class="bg-blue-600 hover:bg-blue-700 text-white p-2 rounded">Add Image/Video</button>
+</form>
                 </div>
+     
             </td>
 
             <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
@@ -187,7 +207,7 @@
                     alert('Image deleted successfully!');
                     location.reload(); // Reload to reflect the change
                 } else {
-                    alert('Failed to delete image.');
+                 alert('Failed to delete image. ' + (data.message || ''));
                 }
             });
         }
@@ -251,4 +271,52 @@
     alert('An error occurred while updating the product.');
 });
     }
+</script>
+
+<script>
+
+
+function editimages(productId, formId) {
+    const form = document.getElementById(formId);
+    const formData = new FormData(form);
+
+    // Make an AJAX POST request to the add images route with the product ID and form data
+    fetch(`/admin/products/addImagesToProduct/${productId}`, {
+        method: 'POST',
+        headers: {
+            'X-CSRF-TOKEN': '{{ csrf_token() }}', // Include the CSRF token
+        },
+        body: formData // Send the form data
+    })
+    .then(response => {
+        if (!response.ok) {
+            // Instead of throwing an Error, we handle it directly
+            response.text().then(text => {
+                try {
+                    // Attempt to parse it as JSON
+                    const data = JSON.parse(text);
+                    alert(data.message || 'Error: The server did not send a JSON response.');
+                } catch (e) {
+                    // If it's not JSON, it's probably an HTML response or plain text
+                    alert('Server Error: ' + text);
+                }
+            });
+        } else {
+            return response.json(); // Parse the JSON response
+        }
+    })
+    .then(data => {
+        if (data && data.message) {
+            alert(data.message); // Display the server's response message
+            location.reload(); // Reload the page to reflect the changes
+        }
+    })
+    .catch(error => {
+        // This will handle network errors or other exceptions not related to the server's response
+        alert(error.message);
+        console.log(error.message);
+    });
+}
+
+
 </script>
