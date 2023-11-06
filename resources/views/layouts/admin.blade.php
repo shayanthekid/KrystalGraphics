@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Kristal Graphics</title>
+    <title>Kristal Graphics: Admin</title>
 
     <link rel="stylesheet" href="../../css/app.css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -22,34 +22,43 @@
 
 
 </head>
-<style>
-    #loading-animation {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(255, 255, 255, 0.9); /* White background with slight transparency */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 9999;
-}
-</style>
+
 <body>
-    <div id="loading-animation">
-    <img src="{{ asset('images/homepage/loading.gif') }}" alt="Loading...">
-</div>
+    
 <!-- dfdf-->
        <header class="top-0 left-0 w-full">
-    <div class="lg:hidden">
-        <!-- This navigation will be displayed on smaller screens (mobile view) -->
-        <x-navigation />
+
+<nav class="bg-white py-4 px-8 flex flex-wrap justify-between items-center">
+    <!-- Logo -->
+    <div class="w-1/3">
+        <img src="{{ asset('images/logos/logo2.png') }}" alt="Logo" class="w-24">
     </div>
-    <div class="hidden lg:block">
-        <!-- This "desknav" will be displayed on larger screens (not mobile view) -->
-        <x-desknav />
+
+    <!-- Main Navigation Links -->
+  <ul class="flex w-1/3 justify-center space-x-6 font-montserrat font-medium">
+    <li><a href="{{ route('admin') }}" class="{{ Route::currentRouteName() === 'admin' ? 'active-link' : 'nonactive' }} ">Create Banners, Subcategories</a></li>
+    <li><a href="{{ route('adminproducts') }}" class="{{ Route::currentRouteName() === 'adminproducts' ? 'active-link' : 'nonactive' }}">View Subcategories</a></li>
+ </ul>
+
+         
+    <!-- Contact Links -->
+    <div class="w-1/3 flex justify-end space-x-4 font-montserrat font-medium">
+   <form method="POST" action="{{ route('logout') }}">
+                    @csrf
+<button type="submit" class="py-2 px-4 text-white bg-red-500 hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-300 focus:ring-opacity-50">
+    Logout
+</button>
+                </form>        
     </div>
+
+   
+
+   
+   
+</nav>
+
+
+
 </header>
 
         <main class=""> <!-- Add padding to the top -->
@@ -59,7 +68,7 @@
             
         </main>
     
-    <x-footer />
+
 
   <script>
     document.addEventListener('alpine:init', () => {
@@ -68,13 +77,6 @@
         }));
     });
 </script>
-<script>
-    window.addEventListener("load", function() {
-    const loadingAnimation = document.getElementById("loading-animation");
-    if (loadingAnimation) {
-        loadingAnimation.style.display = "none";
-    }
-});
-</script>
+
 </body>
 </html>

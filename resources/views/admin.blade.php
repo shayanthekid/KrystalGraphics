@@ -1,25 +1,8 @@
-<!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+@extends('layouts.admin')
 
-    <title>Kristal Graphics Admin</title>
+@section('content')
 
-<link rel="stylesheet" href="{{ asset('css/app.css') }}">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Roboto&display=swap" rel="stylesheet">
- 
-</head>
-<body>
 
-<main class="bg-gray-100 font-sans leading-normal tracking-normal p-8">
-
-   <form method="POST" action="{{ route('logout') }}">
-    @csrf
-    <button type="submit">Logout</button>
-</form>
     <!-- Create Banner Section -->
     <div class="container mx-auto bg-white rounded-lg p-6 shadow-md mb-8">
         <h1 class="text-3xl font-semibold mb-6 border-b pb-2">Create Banner</h1>
@@ -142,9 +125,6 @@
 
 
 
-    <footer>
-  
-    </footer>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 <script>
     const imagePreview = document.getElementById('image-preview');
@@ -257,5 +237,5 @@
         });
     });
 </script>
-</body>
-</html>
+
+@endsection
