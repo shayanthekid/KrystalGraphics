@@ -25,7 +25,7 @@ use App\View\Components\ProductCarousel;
 
 <div class="py-16 bg-white">
     <div class="container mx-auto">
-        <h2 class="text-2xl font-bold mb-8 ml-2 text-center">Our Colorful Imprints</h2>
+        <h2 class="text-2xl font-bold mb-8 ml-2 text-center">Products</h2>
 
         <div class="grid sm:grid-cols-1 md:grid-cols-4 justify-center gap-x-4 gap-y-8 animate-section-4" id="product-carousel">
             <!-- JavaScript will populate products here -->

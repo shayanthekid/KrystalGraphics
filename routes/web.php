@@ -168,8 +168,7 @@ Route::get('/stickers', function () {
 
 
 
-Route::get('/admin', 'App\Http\Controllers\AdminController@index')->name('admin');
-Route::get('/admin/getallproducts', 'App\Http\Controllers\AdminController@getallproducts')->name('adminproducts');
+
 
 Route::prefix('/admin/banners')->group(function () {
     Route::post('/create', 'App\Http\Controllers\BannerController@store')->name('admin.banners.store');
@@ -210,3 +209,14 @@ Route::delete('/deleteProduct/{productId}', 'App\Http\Controllers\ProductControl
 Route::get('/products/equipment', 'App\Http\Controllers\ProductController@getEquipmentProducts');
 Route::get('/products/{id}', 'App\Http\Controllers\ProductController@getProduct')->name('product.show');
 
+
+ 
+
+Route::post('/login', 'App\Http\Controllers\UserController@customLogin')->name('login.custom');
+Route::post('/logout', 'App\Http\Controllers\UserController@logout')->name('logout');
+Route::get('/login', function () {return view('login');})->name('login');
+Route::middleware(['auth'])->group(function () {
+    // Protected routes
+Route::get('/admin', 'App\Http\Controllers\AdminController@index')->name('admin');
+Route::get('/admin/getallproducts', 'App\Http\Controllers\AdminController@getallproducts')->name('adminproducts');
+});

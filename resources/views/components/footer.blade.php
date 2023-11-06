@@ -107,7 +107,7 @@
                 </svg>
             </a>
         </div>
-         <div class="my-5 text-white">© Copyright 2020. All Rights Reserved.</div>
+         <div class="my-5 text-white">© Copyright Kristal Graphics. All Rights Reserved.</div>
 
     </div>
 </div>

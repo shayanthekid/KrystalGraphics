@@ -4,9 +4,9 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Krystal Graphics Admin</title>
+    <title>Kristal Graphics Admin</title>
 
-    <link rel="stylesheet" href="../../css/app.css">
+<link rel="stylesheet" href="{{ asset('css/app.css') }}">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Roboto&display=swap" rel="stylesheet">
@@ -16,6 +16,10 @@
 
 <main class="bg-gray-100 font-sans leading-normal tracking-normal p-8">
 
+   <form method="POST" action="{{ route('logout') }}">
+    @csrf
+    <button type="submit">Logout</button>
+</form>
     <!-- Create Banner Section -->
     <div class="container mx-auto bg-white rounded-lg p-6 shadow-md mb-8">
         <h1 class="text-3xl font-semibold mb-6 border-b pb-2">Create Banner</h1>
@@ -95,14 +99,14 @@
 
         <!-- Subcategory Field -->
         <div class="mb-4">
-            <label for="subcategory_id" class="block text-sm font-medium text-gray-700 mb-2">Subcategory:</label>
+            <label for="subcategory_id" class="block text-sm font-medium text-gray-700 mb-2">Category:</label>
             <select id="subcategory_id" name="subcategory_id" class="mt-1 p-2 w-full border rounded-md focus:outline-none focus:shadow-outline-blue focus:border-blue-300">
                 <option value="1">Silk Screen Printing</option>
                 <option value="2">Embroidery</option>      
                 <option value="3">Packaging</option>
                 <option value="4">Mylar Bags</option>
-                <option value="5">Glass Jars</option>
-                <option value="6">Labels/Stickers</option>
+                <option value="5">Glass Jars / Tubes</option>
+                <option value="6">Labels / Decals</option>
                 <option value="7">Equipment</option>
                 <option value="8">Portfolio</option>
                 <!-- ...other options... -->
