@@ -1,6 +1,18 @@
 @extends('layouts.app')
 
 @section('content')
+<style>
+    ul.custom-bullet-list {
+        list-style-type: disc; /* This ensures bullet points are discs */
+        list-style-position: inside; /* This positions the bullets inside the content flow */
+        padding-left: 20px; /* This adds some space on the left for the bullets */
+    }
+
+    ul.custom-bullet-list li {
+        margin-bottom: 5px; /* This adds a small space between list items */
+    }
+</style>
+
   <!-- Hero Section -->
    <div class="bg-[#FCFCFC] py-16">
     <div class="container mx-auto flex justify-center items-center h-full">
@@ -20,7 +32,7 @@
     
 {{-- Tabs --}}
 
-<div x-data="tabs()" class="mb-4 items">
+{{-- <div x-data="tabs()" class="mb-4 items">
     
     <div class="overflow-x-auto whitespace-nowrap  e scrollbar-red pb-2">
         <template x-for="(tab, index) in tabsData" :key="index">
@@ -133,960 +145,83 @@
            
 </div>
 
-            <div x-show="activeTab === 1" class="mt-4">
-                <!-- Content for Digital Printing -->
-                      <div class="container grid grid-cols-1 md:grid-cols-2 scrollbar-hide">
-    <!-- First Column -->
-    
-    
-    <div class="bg-[#FCFCFC] col-span-2 md:col-span-1 px-4 py-16 md:w-full">
-       
-      
-       
-          <ul class="list-disc list-inside">
-    <li> Xerox Color Press 1000i</li>
-    <li>Konica 6085 (Sheet Size 13x28)</li>
-    <li>Konica 1085</li>
-    <li>Xerox B/W</li>
-</ul>
-        
-     
-
-
 
     
     </div>
+</div> --}}
 
-    <!-- Second Column -->
-    
-    <div class="col-span-2 md:col-span-1 ">
-       
-        <div x-data="createCarousel(1)" x-init="init()" class="relative bg-[#FCFCFC] w-full max-w-screen-lg mx-auto">
-           
-            <div class="relative overflow-hidden rounded-lg">
-               
-             <div x-ref="slider" class="flex transition-transform duration-300 ease-in-out">
-                    <!-- Images will be dynamically added here -->
-                   
-                    <template x-for="(image, index) in images" :key="index">
-                       
-                        <template x-if="mediaTypes[index] === 'image'">
-<div class="w-full h-96 flex-shrink-0">
-                            <img :src="image" :alt="'Image ' + (index + 1)" class="object-contain object-center w-full h-full">
-                        </div>        
-                    
-                    </template>
-                       
-                        
-                   
-                    </template>
-         
-                    <template x-for="(image, index) in images" :key="index">
-                       
-                        <template x-if="mediaTypes[index] === 'video'">
-                            
-            <div class="w-full h-96 flex-shrink-0 relative">
-        <video class="object-cover object-center absolute top-0 left-0 w-full h-full" controls>
-            <source :src="image" type="video/mp4">
-            Your browser does not support the video tag.
-        </video>
-    </div>    
-                    
-
-                    </template>
-                       
-                        
-                   
-                    </template>
-                
-                </div>
-            
-            </div>
-
-            <!-- Navigation Buttons -->
-          
-            <div class="absolute inset-y-0 left-0 flex items-center">
-                <button @click="prev()" class="px-4 py-2 bg-gray-900 text-white hover:bg-gray-700 transform -translate-y-1/2 bg-black rounded-full w-8 h-8 flex items-center justify-center cursor-pointer z-5">
-                    &lt;
+<div x-data="tabs()" x-init="init()" class="mb-4 items">
+        <!-- Tabs -->
+        <div class="overflow-x-auto whitespace-nowrap scrollbar-red pb-2">
+            <template x-for="(tab, index) in tabsData" :key="index">
+                <button @click="activateTab(index)" 
+                        :class="{ 'bg-black text-white': activeTab === index, 'hover:bg-gray-200': activeTab !== index }" 
+                        class="px-4 py-2 rounded-lg text-black" 
+                        x-text="tab.title">
                 </button>
-            
-            </div>
-            
-            <div class="absolute inset-y-0 right-0 flex items-center">
-                <button @click="next()" class="px-4 py-2 bg-gray-900 text-white hover:bg-gray-700 transform -translate-y-1/2 bg-black rounded-full w-8 h-8 flex items-center justify-center cursor-pointer z-5">
-                    &gt;
-                </button>
-           
-            </div>
+            </template>
         </div>
+
+
+
+
+        <!-- Content for each Tab -->
+        <template x-for="(tab, index) in tabsData" :key="index">
+            <div x-show="activeTab === index" class="mt-4">
+                 <!-- Product Description -->
+                <div class="container grid grid-cols-1 md:grid-cols-2 scrollbar-hide">
+                    <div class="bg-[#FCFCFC] col-span-2 md:col-span-1 px-4 py-16 md:w-full">
+        <ul  class="custom-bullet-list" x-html="tab.description.split(',').map(item => '<li>' + item.trim() + '</li>').join('')"></ul>
+                    </div>
+                       <!-- Carousel for current tab -->
+                    <div class="col-span-2 md:col-span-1">
+                        <div x-data="tab.carousel" x-init="init()" class="relative bg-[#FCFCFC] w-full max-w-screen-lg mx-auto">
+                            <!-- Carousel content here -->
+                            <!-- ... Carousel HTML structure as before ... -->
+                            <div class="relative overflow-hidden rounded-lg">
+                        <div x-ref="slider" class="flex transition-transform duration-300 ease-in-out">
+                            <!-- Images for the carousel -->
+
+                  
+
+                            <template x-for="(image, index) in images" :key="index">
+                                <template x-if="mediaTypes[index] === 'image'">
+                                    <div class="w-full h-96 flex-shrink-0">
+                                        <img :src="image" :alt="'Image ' + (index + 1)" class="object-contain object-center w-full h-full">
+                                    </div>
+                                </template>
+                               
+                            </template>
+                            <template x-for="(image, index) in images" :key="index">
+
+                             <template x-if="mediaTypes[index] === 'video'">
+                                    <div class="w-full h-96 flex-shrink-0 relative">
+                                        <video class="object-cover object-center absolute top-0 left-0 w-full h-full" controls>
+                                            <source :src="image" type="video/mp4">
+                                            Your browser does not support the video tag.
+                                        </video>
+                                    </div>
+                                </template>
+                            </template>
+
+
+                        </div>
+                    </div>
+
+                    <!-- Navigation Buttons -->
+                    <div class="absolute inset-y-0 left-0 flex items-center">
+                        <button @click="prev()" class="px-4 py-2 bg-gray-900 text-white hover:bg-gray-700 transform -translate-y-1/2 bg-black rounded-full w-8 h-8 flex items-center justify-center cursor-pointer z-5"> &lt; </button>
+                    </div>
+                    <div class="absolute inset-y-0 right-0 flex items-center">
+                        <button @click="next()" class="px-4 py-2 bg-gray-900 text-white hover:bg-gray-700 transform -translate-y-1/2 bg-black rounded-full w-8 h-8 flex items-center justify-center cursor-pointer z-5"> &gt; </button>
+                    </div>
+                        </div>
+                    </div>
+            
+            </div>
+        </template>
     </div>
 
-</div>
-            </div>
-
-            <div x-show="activeTab === 2" class="mt-4">
-                <!-- Content for Digital Env -->
-                   <div class="container grid grid-cols-1 md:grid-cols-2 scrollbar-hide">
-    <!-- First Column -->
-    
-    
-    <div class="bg-[#FCFCFC] col-span-2 md:col-span-1 px-4 py-16 md:w-full">
-       
-      
-       
-          <ul class="list-disc list-inside">
-    <li> I-jet - Digital Envelopes sizes up to 9x12</li>
-    
-</ul>
-        
-     
-
-
-
-    
-    </div>
-
-    <!-- Second Column -->
-    
-    <div class="col-span-2 md:col-span-1 ">
-       
-        <div x-data="createCarousel(2)" x-init="init()" class="relative bg-[#FCFCFC] w-full max-w-screen-lg mx-auto">
-           
-            <div class="relative overflow-hidden rounded-lg">
-               
-                <div x-ref="slider" class="flex transition-transform duration-300 ease-in-out">
-                    <!-- Images will be dynamically added here -->
-                   
-                    <template x-for="(image, index) in images" :key="index">
-                       
-                        <template x-if="mediaTypes[index] === 'image'">
-<div class="w-full h-96 flex-shrink-0">
-                            <img :src="image" :alt="'Image ' + (index + 1)" class="object-contain object-center w-full h-full">
-                        </div>        
-                    
-                    </template>
-                       
-                        
-                   
-                    </template>
-         
-                    <template x-for="(image, index) in images" :key="index">
-                       
-                        <template x-if="mediaTypes[index] === 'video'">
-                            
-            <div class="w-full h-96 flex-shrink-0 relative">
-        <video class="object-cover object-center absolute top-0 left-0 w-full h-full" controls>
-            <source :src="image" type="video/mp4">
-            Your browser does not support the video tag.
-        </video>
-    </div>    
-                    
-
-                    </template>
-                       
-                        
-                   
-                    </template>
-                
-                </div>
-            
-            </div>
-
-            <!-- Navigation Buttons -->
-          
-            <div class="absolute inset-y-0 left-0 flex items-center">
-                <button @click="prev()" class="px-4 py-2 bg-gray-900 text-white hover:bg-gray-700 transform -translate-y-1/2 bg-black rounded-full w-8 h-8 flex items-center justify-center cursor-pointer z-5">
-                    &lt;
-                </button>
-            
-            </div>
-            
-            <div class="absolute inset-y-0 right-0 flex items-center">
-                <button @click="next()" class="px-4 py-2 bg-gray-900 text-white hover:bg-gray-700 transform -translate-y-1/2 bg-black rounded-full w-8 h-8 flex items-center justify-center cursor-pointer z-5">
-                    &gt;
-                </button>
-           
-            </div>
-        </div>
-    </div>
-
-</div>
-            </div>
-
-            <div x-show="activeTab === 3" class="mt-4">
-                <!-- Content for Presses -->
-                       <div class="container grid grid-cols-1 md:grid-cols-2 scrollbar-hide">
-    <!-- First Column -->
-    
-    
-    <div class="bg-[#FCFCFC] col-span-2 md:col-span-1 px-4 py-16 md:w-full">
-       
-      
-       
-          <ul class="list-disc list-inside">
-    <li> 6 color Komori LS640 - 28 x 40</li>
-    <li>Hamada 12 x 18</li>
-    <li> AB Dick Mini Press </li>
-    <li>Jeti Titan (122” x 79”) </li>
-
-
-
-   
-
-
-    
-</ul>
-        
-     
-
-
-
-    
-    </div>
-
-    <!-- Second Column -->
-    
-    <div class="col-span-2 md:col-span-1 ">
-       
-        <div x-data="createCarousel(3)" x-init="init()" class="relative bg-[#FCFCFC] w-full max-w-screen-lg mx-auto">
-           
-            <div class="relative overflow-hidden rounded-lg">
-               
-               <div x-ref="slider" class="flex transition-transform duration-300 ease-in-out">
-                    <!-- Images will be dynamically added here -->
-                   
-                    <template x-for="(image, index) in images" :key="index">
-                       
-                        <template x-if="mediaTypes[index] === 'image'">
-<div class="w-full h-96 flex-shrink-0">
-                            <img :src="image" :alt="'Image ' + (index + 1)" class="object-contain object-center w-full h-full">
-                        </div>        
-                    
-                    </template>
-                       
-                        
-                   
-                    </template>
-         
-                    <template x-for="(image, index) in images" :key="index">
-                       
-                        <template x-if="mediaTypes[index] === 'video'">
-                            
-            <div class="w-full h-96 flex-shrink-0 relative">
-        <video class="object-cover object-center absolute top-0 left-0 w-full h-full" controls>
-            <source :src="image" type="video/mp4">
-            Your browser does not support the video tag.
-        </video>
-    </div>    
-                    
-
-                    </template>
-                       
-                        
-                   
-                    </template>
-                
-                </div>
-            
-            </div>
-
-            <!-- Navigation Buttons -->
-          
-            <div class="absolute inset-y-0 left-0 flex items-center">
-                <button @click="prev()" class="px-4 py-2 bg-gray-900 text-white hover:bg-gray-700 transform -translate-y-1/2 bg-black rounded-full w-8 h-8 flex items-center justify-center cursor-pointer z-5">
-                    &lt;
-                </button>
-            
-            </div>
-            
-            <div class="absolute inset-y-0 right-0 flex items-center">
-                <button @click="next()" class="px-4 py-2 bg-gray-900 text-white hover:bg-gray-700 transform -translate-y-1/2 bg-black rounded-full w-8 h-8 flex items-center justify-center cursor-pointer z-5">
-                    &gt;
-                </button>
-           
-            </div>
-        </div>
-    </div>
-
-</div>
-            </div>
-
-            <div x-show="activeTab === 4" class="mt-4">
-                <!-- Content for UV Coasters -->
-<div class="container grid grid-cols-1 md:grid-cols-2 scrollbar-hide">
-    <!-- First Column -->
-    
-    
-    <div class="bg-[#FCFCFC] col-span-2 md:col-span-1 px-4 py-16 md:w-full">
-       
-      
-       
-          <ul class="list-disc list-inside">
-    <li> 2 Sakurai Screen Coaters (28” x 40”)</li>
- 
-</ul>
-        
-     
-
-
-
-    
-    </div>
-
-    <!-- Second Column -->
-    
-    <div class="col-span-2 md:col-span-1 ">
-       
-        <div x-data="createCarousel(4)" x-init="init()" class="relative bg-[#FCFCFC] w-full max-w-screen-lg mx-auto">
-           
-            <div class="relative overflow-hidden rounded-lg">
-               
-             <div x-ref="slider" class="flex transition-transform duration-300 ease-in-out">
-                    <!-- Images will be dynamically added here -->
-                   
-                    <template x-for="(image, index) in images" :key="index">
-                       
-                        <template x-if="mediaTypes[index] === 'image'">
-<div class="w-full h-96 flex-shrink-0">
-                            <img :src="image" :alt="'Image ' + (index + 1)" class="object-contain object-center w-full h-full">
-                        </div>        
-                    
-                    </template>
-                       
-                        
-                   
-                    </template>
-         
-                    <template x-for="(image, index) in images" :key="index">
-                       
-                        <template x-if="mediaTypes[index] === 'video'">
-                            
-            <div class="w-full h-96 flex-shrink-0 relative">
-        <video class="object-cover object-center absolute top-0 left-0 w-full h-full" controls>
-            <source :src="image" type="video/mp4">
-            Your browser does not support the video tag.
-        </video>
-    </div>    
-                    
-
-                    </template>
-                       
-                        
-                   
-                    </template>
-                
-                </div>
-            
-            </div>
-
-            <!-- Navigation Buttons -->
-          
-            <div class="absolute inset-y-0 left-0 flex items-center">
-                <button @click="prev()" class="px-4 py-2 bg-gray-900 text-white hover:bg-gray-700 transform -translate-y-1/2 bg-black rounded-full w-8 h-8 flex items-center justify-center cursor-pointer z-5">
-                    &lt;
-                </button>
-            
-            </div>
-            
-            <div class="absolute inset-y-0 right-0 flex items-center">
-                <button @click="next()" class="px-4 py-2 bg-gray-900 text-white hover:bg-gray-700 transform -translate-y-1/2 bg-black rounded-full w-8 h-8 flex items-center justify-center cursor-pointer z-5">
-                    &gt;
-                </button>
-           
-            </div>
-        </div>
-    </div>
-
-</div>
-            </div>
-
-            <div x-show="activeTab === 5" class="mt-4">
-                <!-- Content for Foil Stamping -->
-            <div class="container grid grid-cols-1 md:grid-cols-2 scrollbar-hide">
-    <!-- First Column -->
-    
-    
-    <div class="bg-[#FCFCFC] col-span-2 md:col-span-1 px-4 py-16 md:w-full">
-       
-      
-       
-          <ul class="list-disc list-inside">
-    <li>  Bobst BMA Automatic Foiler (28” x 40”)</li>
-    <li>  Kluge (14” x 20”)</li>
-
-
-
-</ul>
-        
-     
-
-
-
-    
-    </div>
-
-    <!-- Second Column -->
-    
-    <div class="col-span-2 md:col-span-1 ">
-       
-        <div x-data="createCarousel(5)" x-init="init()" class="relative bg-[#FCFCFC] w-full max-w-screen-lg mx-auto">
-           
-            <div class="relative overflow-hidden rounded-lg">
-               
-               <div x-ref="slider" class="flex transition-transform duration-300 ease-in-out">
-                    <!-- Images will be dynamically added here -->
-                   
-                    <template x-for="(image, index) in images" :key="index">
-                       
-                        <template x-if="mediaTypes[index] === 'image'">
-<div class="w-full h-96 flex-shrink-0">
-                            <img :src="image" :alt="'Image ' + (index + 1)" class="object-contain object-center w-full h-full">
-                        </div>        
-                    
-                    </template>
-                       
-                        
-                   
-                    </template>
-         
-                    <template x-for="(image, index) in images" :key="index">
-                       
-                        <template x-if="mediaTypes[index] === 'video'">
-                            
-            <div class="w-full h-96 flex-shrink-0 relative">
-        <video class="object-cover object-center absolute top-0 left-0 w-full h-full" controls>
-            <source :src="image" type="video/mp4">
-            Your browser does not support the video tag.
-        </video>
-    </div>    
-                    
-
-                    </template>
-                       
-                        
-                   
-                    </template>
-                
-                </div>
-            
-            </div>
-
-            <!-- Navigation Buttons -->
-          
-            <div class="absolute inset-y-0 left-0 flex items-center">
-                <button @click="prev()" class="px-4 py-2 bg-gray-900 text-white hover:bg-gray-700 transform -translate-y-1/2 bg-black rounded-full w-8 h-8 flex items-center justify-center cursor-pointer z-5">
-                    &lt;
-                </button>
-            
-            </div>
-            
-            <div class="absolute inset-y-0 right-0 flex items-center">
-                <button @click="next()" class="px-4 py-2 bg-gray-900 text-white hover:bg-gray-700 transform -translate-y-1/2 bg-black rounded-full w-8 h-8 flex items-center justify-center cursor-pointer z-5">
-                    &gt;
-                </button>
-           
-            </div>
-        </div>
-    </div>
-
-</div>
-            </div>
-
-            <div x-show="activeTab === 6" class="mt-4">
-                <!-- Content for Die Cutters -->
-          <div class="container grid grid-cols-1 md:grid-cols-2 scrollbar-hide">
-    <!-- First Column -->
-    
-    
-    <div class="bg-[#FCFCFC] col-span-2 md:col-span-1 px-4 py-16 md:w-full">
-       
-      
-       
-          <ul class="list-disc list-inside">
-    <li>  Bobst 102SE (28” x 40”)</li>
-    <li> Thompson (33” x 47”)</li>
-    <li>Kluge (14” x 20”)</li>
-    <li>Windmill</li>
-
-
-
-
-
-
-
-</ul>
-        
-     
-
-
-
-    
-    </div>
-
-    <!-- Second Column -->
-    
-    <div class="col-span-2 md:col-span-1 ">
-       
-        <div x-data="createCarousel(6)" x-init="init()" class="relative bg-[#FCFCFC] w-full max-w-screen-lg mx-auto">
-           
-            <div class="relative overflow-hidden rounded-lg">
-               
-               <div x-ref="slider" class="flex transition-transform duration-300 ease-in-out">
-                    <!-- Images will be dynamically added here -->
-                   
-                    <template x-for="(image, index) in images" :key="index">
-                       
-                        <template x-if="mediaTypes[index] === 'image'">
-<div class="w-full h-96 flex-shrink-0">
-                            <img :src="image" :alt="'Image ' + (index + 1)" class="object-contain object-center w-full h-full">
-                        </div>        
-                    
-                    </template>
-                       
-                        
-                   
-                    </template>
-         
-                    <template x-for="(image, index) in images" :key="index">
-                       
-                        <template x-if="mediaTypes[index] === 'video'">
-                            
-            <div class="w-full h-96 flex-shrink-0 relative">
-        <video class="object-cover object-center absolute top-0 left-0 w-full h-full" controls>
-            <source :src="image" type="video/mp4">
-            Your browser does not support the video tag.
-        </video>
-    </div>    
-                    
-
-                    </template>
-                       
-                        
-                   
-                    </template>
-                
-                </div>
-            
-            </div>
-
-            <!-- Navigation Buttons -->
-          
-            <div class="absolute inset-y-0 left-0 flex items-center">
-                <button @click="prev()" class="px-4 py-2 bg-gray-900 text-white hover:bg-gray-700 transform -translate-y-1/2 bg-black rounded-full w-8 h-8 flex items-center justify-center cursor-pointer z-5">
-                    &lt;
-                </button>
-            
-            </div>
-            
-            <div class="absolute inset-y-0 right-0 flex items-center">
-                <button @click="next()" class="px-4 py-2 bg-gray-900 text-white hover:bg-gray-700 transform -translate-y-1/2 bg-black rounded-full w-8 h-8 flex items-center justify-center cursor-pointer z-5">
-                    &gt;
-                </button>
-           
-            </div>
-        </div>
-    </div>
-
-</div>
-            </div>
-
-            <div x-show="activeTab === 7" class="mt-4">
-                <!-- Content for Gluers -->
-                     <!-- Content for Die Cutters -->
-          <div class="container grid grid-cols-1 md:grid-cols-2 scrollbar-hide">
-    <!-- First Column -->
-    
-    
-    <div class="bg-[#FCFCFC] col-span-2 md:col-span-1 px-4 py-16 md:w-full">
-       
-      
-       
-          <ul class="list-disc list-inside">
-    <li> Bobst Domino 90</li>
-    <li> Lyra Vega</li>
-    <li>Hot Melt Glue available</li>
-
-
-
-
-
-
-
-
-
-
-</ul>
-        
-     
-
-
-
-    
-    </div>
-
-    <!-- Second Column -->
-    
-    <div class="col-span-2 md:col-span-1 ">
-       
-        <div x-data="createCarousel(7)" x-init="init()" class="relative bg-[#FCFCFC] w-full max-w-screen-lg mx-auto">
-           
-            <div class="relative overflow-hidden rounded-lg">
-               
-               <div x-ref="slider" class="flex transition-transform duration-300 ease-in-out">
-                    <!-- Images will be dynamically added here -->
-                   
-                    <template x-for="(image, index) in images" :key="index">
-                       
-                        <template x-if="mediaTypes[index] === 'image'">
-<div class="w-full h-96 flex-shrink-0">
-                            <img :src="image" :alt="'Image ' + (index + 1)" class="object-contain object-center w-full h-full">
-                        </div>        
-                    
-                    </template>
-                       
-                        
-                   
-                    </template>
-         
-                    <template x-for="(image, index) in images" :key="index">
-                       
-                        <template x-if="mediaTypes[index] === 'video'">
-                            
-            <div class="w-full h-96 flex-shrink-0 relative">
-        <video class="object-cover object-center absolute top-0 left-0 w-full h-full" controls>
-            <source :src="image" type="video/mp4">
-            Your browser does not support the video tag.
-        </video>
-    </div>    
-                    
-
-                    </template>
-                       
-                        
-                   
-                    </template>
-                
-                </div>
-            
-            </div>
-
-            <!-- Navigation Buttons -->
-          
-            <div class="absolute inset-y-0 left-0 flex items-center">
-                <button @click="prev()" class="px-4 py-2 bg-gray-900 text-white hover:bg-gray-700 transform -translate-y-1/2 bg-black rounded-full w-8 h-8 flex items-center justify-center cursor-pointer z-5">
-                    &lt;
-                </button>
-            
-            </div>
-            
-            <div class="absolute inset-y-0 right-0 flex items-center">
-                <button @click="next()" class="px-4 py-2 bg-gray-900 text-white hover:bg-gray-700 transform -translate-y-1/2 bg-black rounded-full w-8 h-8 flex items-center justify-center cursor-pointer z-5">
-                    &gt;
-                </button>
-           
-            </div>
-        </div>
-    </div>
-
-</div>
-            </div>
-
-            <div x-show="activeTab === 8" class="mt-4">
-                <!-- Content for Cutter -->
-                     <!-- Content for Die Cutters -->
-          <div class="container grid grid-cols-1 md:grid-cols-2 scrollbar-hide">
-    <!-- First Column -->
-    
-    
-    <div class="bg-[#FCFCFC] col-span-2 md:col-span-1 px-4 py-16 md:w-full">
-       
-      
-       
-          <ul class="list-disc list-inside">
-    <li> ITO Guillotine (54”)</li>
-  
-
-
-
-
-
-
-
-</ul>
-        
-     
-
-
-
-    
-    </div>
-
-    <!-- Second Column -->
-    
-    <div class="col-span-2 md:col-span-1 ">
-       
-        <div x-data="createCarousel(8)" x-init="init()"class="relative bg-[#FCFCFC] w-full max-w-screen-lg mx-auto">
-           
-            <div class="relative overflow-hidden rounded-lg">
-               
-            <div x-ref="slider" class="flex transition-transform duration-300 ease-in-out">
-                    <!-- Images will be dynamically added here -->
-                   
-                    <template x-for="(image, index) in images" :key="index">
-                       
-                        <template x-if="mediaTypes[index] === 'image'">
-<div class="w-full h-96 flex-shrink-0">
-                            <img :src="image" :alt="'Image ' + (index + 1)" class="object-contain object-center w-full h-full">
-                        </div>        
-                    
-                    </template>
-                       
-                        
-                   
-                    </template>
-         
-                    <template x-for="(image, index) in images" :key="index">
-                       
-                        <template x-if="mediaTypes[index] === 'video'">
-                            
-            <div class="w-full h-96 flex-shrink-0 relative">
-        <video class="object-cover object-center absolute top-0 left-0 w-full h-full" controls>
-            <source :src="image" type="video/mp4">
-            Your browser does not support the video tag.
-        </video>
-    </div>    
-                    
-
-                    </template>
-                       
-                        
-                   
-                    </template>
-                
-                </div>
-            
-            </div>
-
-            <!-- Navigation Buttons -->
-          
-            <div class="absolute inset-y-0 left-0 flex items-center">
-                <button @click="prev()" class="px-4 py-2 bg-gray-900 text-white hover:bg-gray-700 transform -translate-y-1/2 bg-black rounded-full w-8 h-8 flex items-center justify-center cursor-pointer z-5">
-                    &lt;
-                </button>
-            
-            </div>
-            
-            <div class="absolute inset-y-0 right-0 flex items-center">
-                <button @click="next()" class="px-4 py-2 bg-gray-900 text-white hover:bg-gray-700 transform -translate-y-1/2 bg-black rounded-full w-8 h-8 flex items-center justify-center cursor-pointer z-5">
-                    &gt;
-                </button>
-           
-            </div>
-        </div>
-    </div>
-
-</div>
-            </div>
-
-  <div x-show="activeTab === 9" class="mt-4">
-                <!-- Content for Cutter -->
-                     <!-- Content for Die Cutters -->
-          <div class="container grid grid-cols-1 md:grid-cols-2 scrollbar-hide">
-    <!-- First Column -->
-    
-    
-    <div class="bg-[#FCFCFC] col-span-2 md:col-span-1 px-4 py-16 md:w-full">
-       
-      
-       
-          <ul class="list-disc list-inside">
-    <li> Potdevin</li>
-    <li> DuraPro Multi 540A</li>
-  
-
-
-
-
-
-
-
-</ul>
-        
-     
-
-
-
-    
-    </div>
-
-    <!-- Second Column -->
-    
-    <div class="col-span-2 md:col-span-1 ">
-       
-        <div x-data="carousel9" class="relative bg-[#FCFCFC] w-full max-w-screen-lg mx-auto">
-           
-            <div class="relative overflow-hidden rounded-lg">
-               
-                <div x-ref="slider" class="flex transition-transform duration-300 ease-in-out">
-                    <!-- Images will be dynamically added here -->
-                   
-                    <template x-for="(image, index) in images" :key="index">
-                       
-                        <template x-if="mediaTypes[index] === 'image'">
-<div class="w-full h-96 flex-shrink-0">
-                            <img :src="image" :alt="'Image ' + (index + 1)" class="object-contain object-center w-full h-full">
-                        </div>        
-                    
-                    </template>
-                       
-                        
-                   
-                    </template>
-         
-                    <template x-for="(image, index) in images" :key="index">
-                       
-                        <template x-if="mediaTypes[index] === 'video'">
-                            
-            <div class="w-full h-96 flex-shrink-0 relative">
-        <video class="object-cover object-center absolute top-0 left-0 w-full h-full" controls>
-            <source :src="image" type="video/mp4">
-            Your browser does not support the video tag.
-        </video>
-    </div>    
-                    
-
-                    </template>
-                       
-                        
-                   
-                    </template>
-                
-                </div>
-            
-            </div>
-
-            <!-- Navigation Buttons -->
-          
-            <div class="absolute inset-y-0 left-0 flex items-center">
-                <button @click="prev()" class="px-4 py-2 bg-gray-900 text-white hover:bg-gray-700 transform -translate-y-1/2 bg-black rounded-full w-8 h-8 flex items-center justify-center cursor-pointer z-5">
-                    &lt;
-                </button>
-            
-            </div>
-            
-            <div class="absolute inset-y-0 right-0 flex items-center">
-                <button @click="next()" class="px-4 py-2 bg-gray-900 text-white hover:bg-gray-700 transform -translate-y-1/2 bg-black rounded-full w-8 h-8 flex items-center justify-center cursor-pointer z-5">
-                    &gt;
-                </button>
-           
-            </div>
-        </div>
-    </div>
-
-</div>
-            </div>
-           
-          
-            
-  <div x-show="activeTab === 10" class="mt-4">
-                <!-- Content for Cutter -->
-                     <!-- Content for Die Cutters -->
-          <div class="container grid grid-cols-1 md:grid-cols-2 scrollbar-hide">
-    <!-- First Column -->
-    
-    
-    <div class="bg-[#FCFCFC] col-span-2 md:col-span-1 px-4 py-16 md:w-full">
-       
-      
-       
-          <ul class="list-disc list-inside">
-    <li> Kongsberg CAD (119” x 65”)</li>
-
-  
-
-
-
-
-
-
-
-</ul>
-        
-     
-
-
-
-    
-    </div>
-
-    <!-- Second Column -->
-    
-    <div class="col-span-2 md:col-span-1 ">
-       
-        <div x-data="carousel9" class="relative bg-[#FCFCFC] w-full max-w-screen-lg mx-auto">
-           
-            <div class="relative overflow-hidden rounded-lg">
-               
-               <div x-ref="slider" class="flex transition-transform duration-300 ease-in-out">
-                    <!-- Images will be dynamically added here -->
-                   
-                    <template x-for="(image, index) in images" :key="index">
-                       
-                        <template x-if="mediaTypes[index] === 'image'">
-<div class="w-full h-96 flex-shrink-0">
-                            <img :src="image" :alt="'Image ' + (index + 1)" class="object-contain object-center w-full h-full">
-                        </div>        
-                    
-                    </template>
-                       
-                        
-                   
-                    </template>
-         
-                    <template x-for="(image, index) in images" :key="index">
-                       
-                        <template x-if="mediaTypes[index] === 'video'">
-                            
-            <div class="w-full h-96 flex-shrink-0 relative">
-        <video class="object-cover object-center absolute top-0 left-0 w-full h-full" controls>
-            <source :src="image" type="video/mp4">
-            Your browser does not support the video tag.
-        </video>
-    </div>    
-                    
-
-                    </template>
-                       
-                        
-                   
-                    </template>
-                
-                </div>
-            
-            </div>
-
-            <!-- Navigation Buttons -->
-          
-            <div class="absolute inset-y-0 left-0 flex items-center">
-                <button @click="prev()" class="px-4 py-2 bg-gray-900 text-white hover:bg-gray-700 transform -translate-y-1/2 bg-black rounded-full w-8 h-8 flex items-center justify-center cursor-pointer z-5">
-                    &lt;
-                </button>
-            
-            </div>
-            
-            <div class="absolute inset-y-0 right-0 flex items-center">
-                <button @click="next()" class="px-4 py-2 bg-gray-900 text-white hover:bg-gray-700 transform -translate-y-1/2 bg-black rounded-full w-8 h-8 flex items-center justify-center cursor-pointer z-5">
-                    &gt;
-                </button>
-           
-            </div>
-        </div>
-    </div>
-
-</div>
-            </div>
-    
-    </div>
 
 <table cellpadding="0" cellspacing="0" style="margin:15px auto; padding:0;">
 				<tbody><tr style="background-color:#000; color:#fff; font-weight:700;">
@@ -1385,22 +520,88 @@
 
 </div>
 
-
 <script>
+
+    function tabs() {
+        return {
+            tabsData: [],
+            activeTab: 0,
+            equipments: [],
+
+            fetchData: async function() {
+                try {
+                    const response = await fetch('/products/equipment');
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok');
+                    }
+                    const data = await response.json();
+                    this.tabsData = data.map((item, index) => {
+                        return { 
+                            title: item.title, 
+                            description: item.description,
+                            carousel: createCarousel(index, item.images)
+                        };
+                    });
+                } catch (error) {
+                    console.error('Fetch error:', error);
+                }
+            },
+
+            activateTab(tabIndex) {
+                this.activeTab = tabIndex;
+            },
+
+            init() {
+                this.fetchData();
+            }
+        };
+    }
+
+    function createCarousel(productIndex, imagesData) {
+        function getMediaType(url) {
+            if (url.includes('/image/')) {
+                return 'image';
+            } else if (url.includes('/video/')) {
+                return 'video';
+            }
+            return 'unknown';
+        }
+
+        return {
+            images: imagesData.map(image => image.filename.replace('public', 'storage')),
+            mediaTypes: imagesData.map(image => getMediaType(image.filename)),
+            currentIndex: 0,
+            slider: null,
+
+            init() {
+                this.slider = this.$refs.slider;
+            },
+
+            next() {
+                this.currentIndex = (this.currentIndex + 1) % this.images.length;
+                this.slideToCurrentIndex();
+            },
+
+            prev() {
+                this.currentIndex = (this.currentIndex - 1 + this.images.length) % this.images.length;
+                this.slideToCurrentIndex();
+            },
+
+            slideToCurrentIndex() {
+                const translateX = -this.currentIndex * 100;
+                this.slider.style.transform = `translateX(${translateX}%)`;
+            }
+        };
+    }
+</script>
+
+
+{{-- <script>
     function tabs() {
         return {
             tabsData: [
                 { title: 'Screen Printing' },
-                { title: 'Digital Printing' },
-                { title: 'Digital Env' },
-                { title: 'Presses' },
-                { title: 'UV Coaters' },
-                { title: 'Foil Stamping' },
-                { title: 'Die Cutters' },
-                { title: 'Gluers' },
-                { title: 'Cutter' },
-                { title: 'Laminators' },
-                { title: 'Design' },
+             
             ],
             activeTab: 0,
 
@@ -1409,7 +610,42 @@
             },
         };
     }
-</script>
+</script> --}}
+
+{{-- <script>
+    function tabs() {
+        return {
+            tabsData: [],
+            activeTab: 0,
+
+            // Function to fetch data and fill tabs
+            fetchData: async function() {
+                try {
+                    const response = await fetch('/products/equipment');
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok');
+                    }
+                    const data = await response.json();
+
+                    // Map through the data and update tabData
+                    this.tabsData = data.map(item => ({ title: item.title }));
+                } catch (error) {
+                    console.error('Fetch error:', error);
+                }
+            },
+
+            activateTab(tabIndex) {
+                this.activeTab = tabIndex;
+            },
+
+            // Initialize the component
+            init() {
+                this.fetchData();
+            }
+        };
+    }
+</script> --}}
+
 
 
 <style>
@@ -1440,7 +676,7 @@
 /* Push the scrollbar down */
 </style>
 
-<script>
+{{-- <script>
 function createCarousel(productIndex) {
        function getMediaType(url) {
         if (url.includes('/image/')) {
@@ -1517,7 +753,7 @@ const carousel7 = createCarousel(7);
 const carousel8 = createCarousel(8);
 const carousel9 = createCarousel(9);
 
-</script>
+</script> --}}
 <script>
     //digital printing
     function carousel3() {
