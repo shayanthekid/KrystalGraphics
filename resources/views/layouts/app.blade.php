@@ -22,7 +22,7 @@
 
 
 </head>
-<style>
+{{-- <style>
     #loading-animation {
     position: fixed;
     top: 0;
@@ -35,11 +35,11 @@
     align-items: center;
     z-index: 9999;
 }
-</style>
+</style> --}}
 <body>
-    <div id="loading-animation">
+    {{-- <div id="loading-animation">
     <img src="{{ asset('images/homepage/loading.gif') }}" alt="Loading...">
-</div>
+</div> --}}
 <!-- dfdf-->
        <header class="top-0 left-0 w-full">
     <div class="lg:hidden">
@@ -68,13 +68,13 @@
         }));
     });
 </script>
-<script>
+{{-- <script>
     window.addEventListener("load", function() {
     const loadingAnimation = document.getElementById("loading-animation");
     if (loadingAnimation) {
         loadingAnimation.style.display = "none";
     }
 });
-</script>
+</script> --}}
 </body>
 </html>

@@ -86,7 +86,7 @@
         <div class="text-center text-black">
             <h1 class="text-4xl font-semibold font-montserrat lg:text-6xl hero-text" style="opacity: 0">Portfolio</h1>
             <p class="mt-4 font-montserrat text-lg font-light lg:text-xl p-4 hero-para" style="opacity: 0">
-Flip through some of our work! (Copy NA)              
+Check out our projects            
             </p>
    
 
@@ -95,58 +95,28 @@ Flip through some of our work! (Copy NA)
 </div>
 
 
-<div class="lg:hidden">
-        <div class="wrapper no-scrollbar overflow-hidden">
-      <div class="aspect no-scrollbar">
-        <div class="aspect-inner no-scrollbar justify-center">
-          <div class="flipbook2 no-scrollbar" id="flipbook2">
-            <div class="page"><img src="{{ asset('images/portfolio/KGPCover.png') }}" draggable="false" alt="" /></div>
-            <div class="page "><img src="{{ asset('images/portfolio/1.jpg') }}" draggable="false" alt="" /></div>
-            <div class="page"><img src="{{ asset('images/portfolio/2.jpg') }}" draggable="false" alt="" /></div>
-            <div class="page"><img src="{{ asset('images/portfolio/3.jpg') }}" draggable="false" alt="" /></div>
-            <div class="page"><img src="{{ asset('images/portfolio/4.jpg') }}" draggable="false" alt="" /></div>
-            <div class="page"><img src="{{ asset('images/portfolio/5.jpg') }}" draggable="false" alt="" /></div>
-            <div class="page"><img src="{{ asset('images/portfolio/7.jpg') }}" draggable="false" alt="" /></div>
-            <div class="page"><img src="{{ asset('images/portfolio/8.jpg') }}" draggable="false" alt="" /></div>
-            <div class="page"><img src="{{ asset('images/portfolio/12.jpg') }}" draggable="false" alt="" /></div>
-            <div class="page"><img src="{{ asset('images/portfolio/13.jpg') }}" draggable="false" alt="" /></div>
-            <div class="page"><img src="{{ asset('images/portfolio/16.jpg') }}" draggable="false" alt="" /></div>
-            <div class="page"><img src="{{ asset('images/portfolio/18.jpg') }}" draggable="false" alt="" /></div>
-          </div>
-        </div>
-      </div>
-    </div>
-    </div>
-    <div class="hidden lg:block">
-     <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; align-items: center;">
-        <div class="container mx-auto flex justify-center lg:justify-start items-center h-full">
+
+    <div >
+<div class="grid sm:grid-cols-1 md:grid-cols-2 gap-5 items-center">
+        <div class="container mx-auto flex justify-center lg:justify-start items-center h-full ">
             <div class="text-center lg:text-left text-white px-20">
                 <h1 class="text-4xl font-semibold font-montserrat lg:text-5xl lg:py-10 hero-text" style="opacity: 0;">
  Flip through the pages!
 </h1>
-                <p class="mt-4 font-montserrat text-lg font-light lg:text-lg p-4 lg:p-0 hero-para " style="opacity: 0">
-Copy (NA)                </p>
-                <a href="{{ route('contact') }}" class="mt-14 inline-block px-6 py-3 text-black bg-white rounded-lg shadow-lg hover:shadow-xl transition duration-300 lg:text-left font-roboto hero-button" style="opacity: 0">Contact Us</a>
+                
             </div>
         </div>
   <div>
     <div class="wrapper no-scrollbar overflow-hidden">
       <div class="aspect no-scrollbar">
         <div class="aspect-inner no-scrollbar justify-center">
+       
           <div class="flipbook no-scrollbar" id="flipbook">
-            <div class="page"><img src="{{ asset('images/portfolio/KGPCover.png') }}" draggable="false" alt="" /></div>
-            <div class="page "><img src="{{ asset('images/portfolio/1.jpg') }}" draggable="false" alt="" /></div>
-            <div class="page"><img src="{{ asset('images/portfolio/2.jpg') }}" draggable="false" alt="" /></div>
-            <div class="page"><img src="{{ asset('images/portfolio/3.jpg') }}" draggable="false" alt="" /></div>
-            <div class="page"><img src="{{ asset('images/portfolio/4.jpg') }}" draggable="false" alt="" /></div>
-            <div class="page"><img src="{{ asset('images/portfolio/5.jpg') }}" draggable="false" alt="" /></div>
-            <div class="page"><img src="{{ asset('images/portfolio/7.jpg') }}" draggable="false" alt="" /></div>
-            <div class="page"><img src="{{ asset('images/portfolio/8.jpg') }}" draggable="false" alt="" /></div>
-            <div class="page"><img src="{{ asset('images/portfolio/12.jpg') }}" draggable="false" alt="" /></div>
-            <div class="page"><img src="{{ asset('images/portfolio/13.jpg') }}" draggable="false" alt="" /></div>
-            <div class="page"><img src="{{ asset('images/portfolio/16.jpg') }}" draggable="false" alt="" /></div>
-            <div class="page"><img src="{{ asset('images/portfolio/18.jpg') }}" draggable="false" alt="" /></div>
-          </div>
+    <!-- Static first image -->
+
+    <!-- Dynamic images will be inserted here -->
+</div>
+
         </div>
       </div>
     </div>
@@ -158,102 +128,55 @@ Copy (NA)                </p>
 
 
 
-{{-- 
-
-    <img
-      class="h-auto max-w-full rounded-lg"
-      src="{{ asset('images/portfolio/4.jpg') }}"
-      alt=""
-    />
-    <img
-      class="h-auto max-w-full rounded-lg"
-      src="{{ asset('images/portfolio/5.jpg') }}"
-      alt=""
-    />
-    <img
-      class="h-auto max-w-full rounded-lg"
-      src="{{ asset('images/portfolio/6.jpg') }}"
-      alt=""
-    />
-    <img
-      class="h-auto max-w-full rounded-lg"
-      src="{{ asset('images/portfolio/7.jpg') }}"
-      alt=""
-    />
-    <img
-      class="h-auto max-w-full rounded-lg"
-      src="{{ asset('images/portfolio/8.jpg') }}"
-      alt=""
-    />
-    <img
-      class="h-auto max-w-full rounded-lg"
-      src="{{ asset('images/portfolio/9.jpg') }}"
-      alt=""
-    />
-    <img
-      class="h-auto max-w-full rounded-lg"
-      src="{{ asset('images/portfolio/10.jpg') }}"
-      alt=""
-    />
-    <img
-      class="h-auto max-w-full rounded-lg"
-      src="{{ asset('images/portfolio/11.jpg') }}"
-      alt=""
-    />
-    <img
-      class="h-auto max-w-full rounded-lg"
-      src="{{ asset('images/portfolio/12.jpg') }}"
-      alt=""
-    />
-    <img
-      class="h-auto max-w-full rounded-lg"
-      src="{{ asset('images/portfolio/13.jpg') }}"
-      alt=""
-    />
-    <img
-      class="h-auto max-w-full rounded-lg"
-      src="{{ asset('images/portfolio/14.jpg') }}"
-      alt=""
-    />
-    <img
-      class="h-auto max-w-full rounded-lg"
-      src="{{ asset('images/portfolio/15.jpg') }}"
-      alt=""
-    />
-    <img
-      class="h-auto max-w-full rounded-lg"
-      src="{{ asset('images/portfolio/16.jpg') }}"
-      alt=""
-    />
-    <img
-      class="h-auto max-w-full rounded-lg"
-      src="{{ asset('images/portfolio/17.jpg') }}"
-      alt=""
-    />
-    <img
-      class="h-auto max-w-full rounded-lg"
-      src="{{ asset('images/portfolio/18.jpg') }}"
-      alt=""
-    />
-    <img
-      class="h-auto max-w-full rounded-lg"
-      src="{{ asset('images/portfolio/19.jpg') }}"
-      alt=""
-    />
-    <img
-      class="h-auto max-w-full rounded-lg"
-      src="{{ asset('images/portfolio/20.jpg') }}"
-      alt=""
-    />
-  </div>
-    </div>
-  </div>
-</div> --}}
-<!-- component -->
-
 <!--there will be a invisble character here -->
 ㅤ
 
+<script>
+    function loadPortfolioImages() {
+        fetch('/products/equipment')
+            .then(response => response.json())
+            .then(data => {
+                const flipbook = document.getElementById('flipbook');
+
+                // Clear existing content in the flipbook
+                flipbook.innerHTML = '';
+
+                // Manually add the static first page
+                const staticPageDiv = document.createElement('div');
+                staticPageDiv.className = 'page';
+                const staticImg = document.createElement('img');
+                staticImg.src = "{{ asset('images/portfolio/KGPCover.png') }}"; // Update the path if necessary
+                staticImg.draggable = false;
+                staticImg.alt = '';
+                staticPageDiv.appendChild(staticImg);
+                flipbook.appendChild(staticPageDiv);
+
+                // Append dynamic images
+                data.forEach(item => {
+                    item.images.forEach(imageData => {
+                        const pageDiv = document.createElement('div');
+                        pageDiv.className = 'page';
+
+                        const img = document.createElement('img');
+                        img.src = imageData.filename.replace('public', 'storage');
+                        img.draggable = false;
+                        img.alt = imageData.type;
+
+                        pageDiv.appendChild(img);
+                        flipbook.appendChild(pageDiv);
+                    });
+                });
+
+                // Reinitialize flipbook
+                $(flipbook).turn('destroy').turn({
+                    autoCenter: true
+                });
+            })
+            .catch(error => console.error('Error fetching portfolio images:', error));
+    }
+
+    loadPortfolioImages();
+</script>
 
 <script>
 
@@ -268,15 +191,7 @@ $(flipbookEL).turn({
 });
 
 
- var flipbookEL2 = document.getElementById('flipbook2');
-window.addEventListener('resize', function (e) {
-  flipbookEL2.style.width = '';
-  flipbookEL2.style.height = '';
-  $(flipbookEL2).turn('size', flipbookEL2.clientWidth, flipbookEL2.clientHeight);
-});
-$(flipbookEL2).turn({
-    autoCenter: true
-});
+ 
 
 </script>
 

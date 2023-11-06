@@ -207,6 +207,7 @@ Route::delete('/deleteProduct/{productId}', 'App\Http\Controllers\ProductControl
 
 });
 Route::get('/products/equipment', 'App\Http\Controllers\ProductController@getEquipmentProducts');
+Route::get('/products/portfolio', 'App\Http\Controllers\ProductController@getPortfolio');
 Route::get('/products/{id}', 'App\Http\Controllers\ProductController@getProduct')->name('product.show');
 
 

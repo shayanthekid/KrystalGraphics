@@ -221,6 +221,16 @@ public function getEquipmentProducts()
     return response()->json($equipmentProducts);
 }
 
+public function getPortfolio()
+{
+    // Assuming '7' is the ID for the 'equipment' subcategory
+    $portfolioSubcategoryId = 8;
+    $Portfolio = Product::with('images')
+                                ->where('subcategory_id', $portfolioSubcategoryId)
+                                ->get();
+
+    return response()->json($Portfolio);
+}
 
 }
 
