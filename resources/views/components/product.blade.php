@@ -74,17 +74,24 @@
                 <p class="text-gray-600 text-sm mt-2 hero-para" style="opacity: 0">
              
 {{ $product->description }}
+{{-- {{ $product->subcategory->imgsrc }} --}}
 
                     </p>
                 
               
-                <div class="mb-4">
-          
-                    <div class="flex items-center mt-8 gap-5">
-                                 <a href="#" class="inline-block px-6 py-3 text-white bg-black rounded-full shadow-md hover:bg-opacity-80 transition duration-300 anim-button" style="opacity: 0">Download Brochure</a>
-            <a href="{{ route('contact') }}" class="inline-block px-6 py-3 text-black bg-white rounded-full shadow-md hover:bg-gray-200 transition duration-300 anim-button" style="opacity: 0">Contact Us</a>   
-                    </div>
-                </div>
+        <div class="flex items-center mt-8 gap-5">
+    <!-- Download Brochure Link -->
+    @if ($product->subcategory && $product->subcategory->imgsrc)
+        <a href="{{ asset($product->subcategory->imgsrc) }}" class="inline-block px-6 py-3 text-white bg-black rounded-full shadow-md hover:bg-opacity-80 transition duration-300 anim-button">Download Brochure</a>
+    @else
+        <button onclick="showBrochureAlert()" class="inline-block px-6 py-3 text-white bg-black rounded-full shadow-md hover:bg-opacity-80 transition duration-300 anim-button">Download Brochure</button>
+    @endif
+
+    <!-- Contact Us Link -->
+    <a href="{{ route('contact') }}" class="inline-block px-6 py-3 text-black bg-white rounded-full shadow-md hover:bg-gray-200 transition duration-300 anim-button">Contact Us</a>
+</div>
+
+
             </div>
         </div>
     </div>
@@ -263,6 +270,11 @@ $(document).ready(function(){
     });
 });
 </script>
-
+<script>
+    function showBrochureAlert() {
+        console.log("fgfg");
+        alert('Brochure Not Available');
+    }
+</script>
 
 @endsection

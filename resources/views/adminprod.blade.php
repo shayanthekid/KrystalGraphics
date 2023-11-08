@@ -2,6 +2,141 @@
 @extends('layouts.admin')
 
 @section('content')
+<style>
+    .table-fixed {
+    table-layout: fixed;
+    width: 100%;
+}
+
+.px-6 {
+    padding-left: 1.5rem; /* 24px */
+    padding-right: 1.5rem; /* 24px */
+}
+
+.py-3 {
+    padding-top: 0.75rem; /* 12px */
+    padding-bottom: 0.75rem; /* 12px */
+}
+
+.text-left {
+    text-align: left;
+}
+
+.text-xs {
+    font-size: 0.75rem; /* 12px */
+}
+
+.font-medium {
+    font-weight: 500;
+}
+
+.text-gray-500 {
+    color: #6b7280;
+}
+
+.uppercase {
+    text-transform: uppercase;
+}
+
+.tracking-wider {
+    letter-spacing: 0.05em;
+}
+
+.whitespace-nowrap {
+    white-space: nowrap;
+}
+
+.text-sm {
+    font-size: 0.875rem; /* 14px */
+}
+
+.font-medium {
+    font-weight: 500;
+}
+
+.text-red-600 {
+    color: #dc2626;
+}
+
+.hover:underline {
+    text-decoration: underline;
+}
+
+.ml-2 {
+    margin-left: 0.5rem; /* 8px */
+}
+
+.bg-red-600 {
+    background-color: #dc2626;
+}
+
+.hover:bg-red-700 {
+    background-color: #b91c1c; /* On hover */
+}
+
+.text-white {
+    color: #ffffff;
+}
+
+.rounded-full {
+    border-radius: 9999px;
+}
+
+.p-1 {
+    padding: 0.25rem; /* 4px */
+}
+
+.bg-blue-600 {
+    background-color: #2563eb;
+}
+
+.hover:bg-blue-700 {
+    background-color: #1d4ed8; /* On hover */
+}
+
+.p-2 {
+    padding: 0.5rem; /* 8px */
+}
+
+.rounded {
+    border-radius: 0.25rem; /* 4px */
+}
+
+.focus:outline-none {
+    outline: 2px solid transparent;
+    outline-offset: 2px;
+}
+
+.focus:ring-2 {
+    box-shadow: 0 0 0 2px #bfdbfe;
+}
+
+.focus:ring-blue-300 {
+    box-shadow: 0 0 0 2px #93c5fd;
+}
+
+.focus:ring-opacity-50 {
+    opacity: 0.5;
+}
+
+.object-cover {
+    object-fit: cover;
+}
+
+.mx-2 {
+    margin-left: 0.5rem; /* 8px */
+    margin-right: 0.5rem; /* 8px */
+}
+
+.w-16 {
+    width: 4rem; /* 64px */
+}
+
+.h-16 {
+    height: 4rem; /* 64px */
+}
+
+</style>
 
        
 <div class="container mx-auto mt-8">
@@ -21,7 +156,8 @@
     </select>
 
 
-    <table class="min-w-full divide-y divide-gray-200 mb-8 table-fixed">
+    <table class="min-w-full divide-y divide-gray-200 mb-8 table-fixed border border-gray-300" style=" table-layout: fixed;
+    width: 100%">
     <thead>
         <tr>
             <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
@@ -44,10 +180,10 @@
             </th>
         </tr>
     </thead>
-   <tbody>
+   <tbody class="border-2">
         @foreach ($products as $product)
-            <tr x-data="{ isEditing: false, EditImage: false }" x-show="!subcategoryId || subcategoryId == '{{ $product->subcategory->id }}'" data-product-id="{{ $product->id }}">
-            <td class="px-6 py-4 whitespace-nowrap">{{ $product->id }}</td>
+            <tr style="border-width: 2px;" class="border-2" x-data="{ isEditing: false, EditImage: false }" x-show="!subcategoryId || subcategoryId == '{{ $product->subcategory->id }}'" data-product-id="{{ $product->id }}">
+            <td class="px-6 py-4 whitespace-nowrap ">{{ $product->id }}</td>
 
             <!-- Name (editable) -->
             <td class="px-6 py-4 whitespace-nowrap">
@@ -93,7 +229,9 @@
                     <button x-show="!EditImage" @click="EditImage = true" class="bg-blue-600 hover:bg-blue-700 text-white p-2 rounded">Add Image/Video</button>
 
                  
-<form x-show="EditImage" id="add-media-form-{{ $product->id }}" enctype="multipart/form-data">
+<form x-show="EditImage" method="POST" action="{{ route('admin.products.addImagesToProduct', ['productId' => $product->id]) }}" id="add-media-form-{{ $product->id }}" enctype="multipart/form-data">
+            {{ csrf_field() }}
+
     <!-- Images Field -->
     <div class="mb-4">
         <label for="images" class="block text-sm font-medium text-gray-700 mb-2">Choose Images:</label>
@@ -107,10 +245,12 @@
     </div>
 
     <!-- Submit Button -->
-<button @click="editimages('{{ $product->id }}', 'add-media-form-{{ $product->id }}')" class="bg-blue-600 hover:bg-blue-700 text-white p-2 rounded">Add Image/Video</button>
-<progress id="upload-progress-bar-{{ $product->id }}" class="mt-4 bg-gray-100 h-2 rounded-md" value="0" max="100"></progress>
+<button type="submit"  class="bg-blue-600 hover:bg-blue-700 text-white p-2 rounded">Add Image/Video</button>
 
-
+<div id="progress-container" class="mt-4 bg-gray-100 h-2 rounded-md">
+            <div id="progress-bar" class="w-0 h-2 bg-blue-500 rounded-md progress-bar"></div>
+        </div>
+            <div id="status-message" class="text-green-600 mt-2 status-message"></div>
 
 </form>
                 </div>
@@ -262,55 +402,82 @@
 </script>
 
 <script>
+    const maxFileSize = 40 * 1024 * 1024; // 40MB in bytes
 
+   document.addEventListener('DOMContentLoaded', function () {
+    document.querySelectorAll('form').forEach(function (form) {
+        form.addEventListener('submit', function (event) {
+            event.preventDefault();
 
-function editimages(productId, formId) {
-    const form = document.getElementById(formId);
-    const formData = new FormData(form);
- const progressBarId = 'upload-progress-bar-' + productId;
-    const progressBar = document.getElementById(progressBarId) || createProgressBar(productId);
+            const formData = new FormData(this);
+            const progressBar = form.querySelector('.progress-bar');
+            const statusMessage = form.querySelector('.status-message');
+            let isFileTooLarge = false;
 
-    // Use jQuery's ajax method to handle the file upload and progress bar
-    $.ajax({
-        url: `/admin/products/addImagesToProduct/${productId}`,
-        type: 'POST',
-        data: formData,
-        processData: false,
-        contentType: false,
-        headers: {
-            'X-CSRF-TOKEN': '{{ csrf_token() }}' // Set CSRF token header
-        },
-        xhr: function () {
-            const xhr = $.ajaxSettings.xhr();
-            xhr.upload.onprogress = function(event) {
-        if (event.lengthComputable) {
-            const percentage = (event.loaded / event.total) * 100;
-            // Update the progress bar value
-            progressBar.value = percentage;
-            console.log('Upload progress: ', percentage + '%');
-        }
-    }
-            return xhr;
-        },
-        success: function(response) {
-            alert(response.message); // Display the server's response message
-            location.reload(); // Reload the page to reflect the changes
-        },
-        error: function(xhr, status, error) {
-            alert('Server Error: ' + error);
-        }
+            // Check file sizes
+            formData.getAll('files[]').forEach(function (file) {
+                if (file.size > maxFileSize) {
+                    isFileTooLarge = true;
+                }
+            });
+
+            if (isFileTooLarge) {
+                alert('File size exceeds the maximum limit (40MB).');
+                return;
+            }
+
+            $.ajax({
+                url: form.action,
+                type: 'POST',
+                data: formData,
+                processData: false,
+                contentType: false,
+                xhr: function () {
+                    const xhr = new window.XMLHttpRequest();
+                    xhr.upload.addEventListener('progress', function (e) {
+                        if (e.lengthComputable) {
+                            const uploadPercentage = (e.loaded / e.total) * 100;
+                            progressBar.style.width = uploadPercentage + '%';
+                        }
+                    }, false);
+
+                    xhr.addEventListener('load', function () {
+                        if (xhr.status >= 200 && xhr.status < 300) {
+                            // Handle success
+                            if (statusMessage) {
+                                statusMessage.textContent = "Product added successfully, please reload page";
+                                statusMessage.classList.remove('text-red-600');
+                                statusMessage.classList.add('text-green-600');
+                            }
+                        } else {
+                            // Handle error
+                            if (statusMessage) {
+                                statusMessage.textContent = "Error: " + xhr.statusText;
+                                statusMessage.classList.remove('text-green-600');
+                                statusMessage.classList.add('text-red-600');
+                            }
+                        }
+                    });
+
+                    return xhr;
+                },
+                success: function (response) {
+                    form.reset();
+                    progressBar.style.width = '0%'; // Reset progress bar
+                },
+                error: function (xhr, status, error) {
+                    // Handle error
+                    if (statusMessage) {
+                        statusMessage.textContent = "Error: " + error;
+                        statusMessage.classList.remove('text-green-600');
+                        statusMessage.classList.add('text-red-600');
+                    }
+                },
+            });
+        });
     });
-}
+});
 
-// Helper function to create a progress bar if it doesn't exist
-function createProgressBar(productId) {
-    const progressBar = document.createElement('progress');
-    progressBar.id = 'upload-progress-bar-' + productId;
-    progressBar.max = 100;
-    progressBar.value = 0;
-    document.body.appendChild(progressBar); // Append where you want it to be
-    return progressBar;
-}
 
 </script>
 @endsection

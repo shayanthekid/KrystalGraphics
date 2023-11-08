@@ -36,20 +36,20 @@
 
     <!-- Main Navigation Links -->
   <ul class="flex w-1/3 justify-center space-x-6 font-montserrat font-medium">
-    <li><a href="{{ route('admin') }}" class="{{ Route::currentRouteName() === 'admin' ? 'active-link' : 'nonactive' }} ">Create Banners, Subcategories</a></li>
-    <li><a href="{{ route('adminproducts') }}" class="{{ Route::currentRouteName() === 'adminproducts' ? 'active-link' : 'nonactive' }}">View Subcategories</a></li>
+    <li><a href="{{ route('admin') }}" class="{{ Route::currentRouteName() === 'admin' ? 'active-link' : 'nonactive' }} ">Create </a></li>
+    <li><a href="{{ route('adminproducts') }}" class="{{ Route::currentRouteName() === 'adminproducts' ? 'active-link' : 'nonactive' }}">View </a></li>
  </ul>
 
          
-    <!-- Contact Links -->
-    <div class="w-1/3 flex justify-end space-x-4 font-montserrat font-medium">
-   <form method="POST" action="{{ route('logout') }}">
-                    @csrf
-<button type="submit" class="py-2 px-4 text-white bg-red-500 hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-300 focus:ring-opacity-50">
-    Logout
-</button>
-                </form>        
-    </div>
+   <div class="w-1/3 flex justify-end space-x-4 font-montserrat font-medium">
+    <!-- CSRF token for AJAX request -->
+    <input type="hidden" id="csrf_token" value="{{ csrf_token() }}">
+
+    <button onclick="logout()" type="button" class="py-2 px-4 text-white bg-red-500 hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-300 focus:ring-opacity-50">
+        Logout
+    </button>
+</div>
+
 
    
 
@@ -77,6 +77,32 @@
         }));
     });
 </script>
+
+<script>
+    function logout() {
+        const csrfToken = document.getElementById('csrf_token').value;
+        
+        fetch("{{ route('logout') }}", {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'X-CSRF-TOKEN': csrfToken
+            },
+            credentials: 'same-origin'  // Required for cookies, including session CSRF token
+        })
+        .then(response => {
+            // Redirect to login page or handle as needed
+            if (response.ok) {
+                window.location.href = "{{ route('login') }}";
+            } else {
+                // Handle error
+                console.error('Logout failed');
+            }
+        })
+        .catch(error => console.error('Error:', error));
+    }
+</script>
+
 
 </body>
 </html>

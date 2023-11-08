@@ -209,6 +209,8 @@ Route::delete('/deleteProduct/{productId}', 'App\Http\Controllers\ProductControl
 Route::get('/products/equipment', 'App\Http\Controllers\ProductController@getEquipmentProducts');
 Route::get('/products/portfolio', 'App\Http\Controllers\ProductController@getPortfolio');
 Route::get('/products/{id}', 'App\Http\Controllers\ProductController@getProduct')->name('product.show');
+Route::get('/subcategories', 'App\Http\Controllers\SubcategoryController@getAllSubcategories')->name('subcategories.index');
+Route::post('/uploadbroschure', 'App\Http\Controllers\SubcategoryController@uploadBrochure')->name('uploadbroschure');
 
 
  
@@ -221,3 +223,4 @@ Route::middleware(['auth'])->group(function () {
 Route::get('/admin', 'App\Http\Controllers\AdminController@index')->name('admin');
 Route::get('/admin/getallproducts', 'App\Http\Controllers\AdminController@getallproducts')->name('adminproducts');
 });
+

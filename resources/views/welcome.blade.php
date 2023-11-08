@@ -254,7 +254,7 @@ Check Out Our <span style="color: #ffff;">Monthly Promotions </span>
 </div>
 
 
-
+{{-- 
 <script>
     function carousel() {
         return {
@@ -287,8 +287,8 @@ Check Out Our <span style="color: #ffff;">Monthly Promotions </span>
             }
         };
     }
-</script>
-{{-- <script>
+</script> --}}
+<script>
     function carousel() {
         return {
              images: [],
@@ -301,15 +301,17 @@ Check Out Our <span style="color: #ffff;">Monthly Promotions </span>
             },
 
             fetchImages() {
-                fetch('{{ route("admin.banners.json") }}')
-                    .then(response => response.json())
-                    .then(data => {
-                        this.images = data.banners.map(banner => banner.image_path);
-                    })
-                    .catch(error => {
-                        console.error('Failed to fetch images:', error);
-                    });
-            },
+    fetch('{{ route("admin.banners.json") }}')
+        .then(response => response.json())
+        .then(data => {
+            this.images = data.banners.map(banner => {
+                return banner.image_path.replace('storage/', 'public/storage/');
+            });
+        })
+        .catch(error => {
+            console.error('Failed to fetch images:', error);
+        });
+},
 
 
             next() {
@@ -328,7 +330,7 @@ Check Out Our <span style="color: #ffff;">Monthly Promotions </span>
             }
         };
     }
-</script> --}}
+</script>
 <script>
     let defaultTransform2 = 0;
 

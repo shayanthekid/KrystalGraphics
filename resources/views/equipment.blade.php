@@ -132,8 +132,8 @@
         </template>
     </div>
 
-
-<table cellpadding="0" cellspacing="0" style="margin:15px auto; padding:0;">
+<div class="mt-32">
+<table cellpadding="0" cellspacing="0" style="margin:15px auto; padding:0;" >
 				<tbody><tr style="background-color:#000; color:#fff; font-weight:700;">
 					<td>Type</td>
 					<td>Name</td>
@@ -426,7 +426,7 @@
 				</tr>
 			</tbody></table>
 
-
+</div>
 
 </div>
 

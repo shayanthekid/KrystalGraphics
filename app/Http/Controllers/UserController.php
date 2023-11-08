@@ -50,7 +50,7 @@ public function logout(Request $request)
     $request->session()->regenerateToken();
 
     // Redirect to the login page or wherever you want with a success message
-    return redirect('/login')->with('success', 'You have been successfully logged out.');
+    return redirect()->route('login')->with('success', 'You have been successfully logged out.');
 }
 
 }

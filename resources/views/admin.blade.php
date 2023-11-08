@@ -4,7 +4,7 @@
 
 
     <!-- Create Banner Section -->
-    <div class="container mx-auto bg-white rounded-lg p-6 shadow-md mb-8">
+    <div class="container mx-auto bg-white rounded-lg p-6 shadow-md mb-8" style="padding: 1.5rem;">
         <h1 class="text-3xl font-semibold mb-6 border-b pb-2">Create Banner</h1>
 
         <!-- Banner Creation Form -->
@@ -49,9 +49,12 @@
                 @foreach ($banners as $banner)
                     <tr>
                         <td class="px-6 py-4 whitespace-nowrap">{{ $banner->title }}</td>
-                        <td class="px-6 py-4 whitespace-nowrap">
-                            <img src="{{ asset($banner->image_path) }}" alt="{{ $banner->title }}" class="w-16 h-16 object-cover">
-                        </td>
+                          <td class="px-6 py-4 whitespace-nowrap">
+            <?php
+            $imagePath = str_replace('storage/', 'public/storage/', $banner->image_path);
+            ?>
+            <img src="{{ asset($imagePath) }}" alt="{{ $banner->title }}" class="w-16 h-16 object-cover">
+        </td>
                         <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
                             <button class="text-red-600 hover:underline delete-banner" data-id="{{ $banner->id }}">Delete</button>
                         </td>
@@ -124,6 +127,27 @@
 </div>
 
 
+<div class="container mx-auto bg-white rounded-lg p-6 shadow-md mb-8">
+    <h1 class="text-3xl font-semibold mb-6 border-b pb-2">Upload Broschure</h1>
+
+    <form method="POST" action="{{route('uploadbroschure')}}" enctype="multipart/form-data">
+        {{ csrf_field() }}
+
+       <!-- Dropdown for Subcategories -->
+    <select id="subcategorySelect" name="subcategory_id" class="mb-4 p-2 border rounded">
+        <!-- Options will be populated by AJAX -->
+    </select>
+
+    <!-- File Upload Input -->
+    <input type="file" name="brochure" accept="application/pdf" class="mb-4 p-2 border rounded">
+
+    <!-- Submit Button -->
+    <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+        Upload Brochure
+    </button>
+    </form>
+</div>
+
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 <script>
@@ -164,6 +188,7 @@
     $('form').submit(function (event) {
         event.preventDefault();
 
+        const form = this;
         const formData = new FormData(this);
 
         let isFileTooLarge = false;
@@ -199,6 +224,9 @@
             success: function (response) {
                 // Display a success message to the user
                 $("#status-message").text("Product added successfully").removeClass('text-red-600').addClass('text-green-600');
+                form.reset();
+                progressBar.style.width = '0%'; // Reset progress bar
+
             },
             error: function (xhr, status, error) {
                 // Display an error message to the user
@@ -235,6 +263,23 @@
                 console.error('Error:', error);
             });
         });
+    });
+</script>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        fetch('/subcategories')
+            .then(response => response.json())
+            .then(data => {
+                const select = document.getElementById('subcategorySelect');
+                data.forEach(subcategory => {
+                    const option = document.createElement('option');
+                    option.value = subcategory.id;
+                    option.textContent = subcategory.name;
+                    select.appendChild(option);
+                });
+            })
+            .catch(error => console.error('Error:', error));
     });
 </script>
 

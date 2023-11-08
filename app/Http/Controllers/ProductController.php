@@ -68,7 +68,7 @@ public function getProductsBySubcategory($subcategoryId)
 public function getProduct($productId)
 {
     // Retrieve the product by its ID
-    $product = Product::with('images')->find($productId);
+    $product = Product::with('images', 'subcategory')->find($productId);
 
     if (!$product) {
         // You can handle the case where the product is not found, for example, return a 404 error.
