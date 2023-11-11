@@ -211,6 +211,7 @@ Route::get('/products/portfolio', 'App\Http\Controllers\ProductController@getPor
 Route::get('/products/{id}', 'App\Http\Controllers\ProductController@getProduct')->name('product.show');
 Route::get('/subcategories', 'App\Http\Controllers\SubcategoryController@getAllSubcategories')->name('subcategories.index');
 Route::post('/uploadbroschure', 'App\Http\Controllers\SubcategoryController@uploadBrochure')->name('uploadbroschure');
+Route::delete('/subcategory/{id}','App\Http\Controllers\SubcategoryController@deleteSubcategory')->name('deletebrochure');
 
 
  
@@ -221,6 +222,7 @@ Route::get('/login', function () {return view('login');})->name('login');
 Route::middleware(['auth'])->group(function () {
     // Protected routes
 Route::get('/admin', 'App\Http\Controllers\AdminController@index')->name('admin');
+Route::get('admin/adminbrochure', 'App\Http\Controllers\AdminController@index')->name('adminbrochure');
 Route::get('/admin/getallproducts', 'App\Http\Controllers\AdminController@getallproducts')->name('adminproducts');
 });
 

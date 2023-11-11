@@ -68,7 +68,7 @@
 <div class="container mx-auto bg-white rounded-lg p-6 shadow-md mb-8">
     <h1 class="text-3xl font-semibold mb-6 border-b pb-2">Upload Product</h1>
 
-    <form method="POST" action="{{ route('admin.products.uploadproduct') }}" enctype="multipart/form-data">
+    <form id="uploadProductForm" method="POST" action="{{ route('admin.products.uploadproduct') }}" enctype="multipart/form-data">
         {{ csrf_field() }}
 
         <!-- Name Field -->
@@ -128,9 +128,9 @@
 
 
 <div class="container mx-auto bg-white rounded-lg p-6 shadow-md mb-8">
-    <h1 class="text-3xl font-semibold mb-6 border-b pb-2">Upload Broschure</h1>
+    <h1 class="text-3xl font-semibold mb-6 border-b pb-2">Upload Brochure</h1>
 
-    <form method="POST" action="{{route('uploadbroschure')}}" enctype="multipart/form-data">
+    <form method="POST"  id="uploadBrochureForm" action="{{route('uploadbroschure')}}" enctype="multipart/form-data">
         {{ csrf_field() }}
 
        <!-- Dropdown for Subcategories -->
@@ -142,10 +142,35 @@
     <input type="file" name="brochure" accept="application/pdf" class="mb-4 p-2 border rounded">
 
     <!-- Submit Button -->
+ 
     <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
         Upload Brochure
     </button>
+
+
+  <div id="brochureProgressBarContainer" class="mt-4 bg-gray-100 h-2 rounded-md">
+    <div id="brochureProgressBar" class="w-0 h-2 bg-blue-500 rounded-md"></div>
+</div>
+<div id="brochureStatusMessage" class="text-sm mt-2"></div>
+
     </form>
+
+ <table id="brochureTable" class="w-full text-left border-collapse">
+      {{ csrf_field() }}
+        <thead>
+            <tr>
+                <th class="p-3 border-b">Subcategory</th>
+                <th class="p-3 border-b">Brochure</th>
+                <th class="p-3 border-b">Action</th>
+                {{-- <th class="p-3 border-b">Action</th> --}}
+                
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Rows will be populated by AJAX -->
+        </tbody>
+    </table>
+
 </div>
 
 
@@ -185,7 +210,7 @@
         }
     });
 
-    $('form').submit(function (event) {
+    $('#uploadProductForm').submit(function (event) {
         event.preventDefault();
 
         const form = this;
@@ -267,20 +292,117 @@
 </script>
 
 <script>
-    document.addEventListener('DOMContentLoaded', function () {
-        fetch('/subcategories')
-            .then(response => response.json())
-            .then(data => {
-                const select = document.getElementById('subcategorySelect');
-                data.forEach(subcategory => {
-                    const option = document.createElement('option');
-                    option.value = subcategory.id;
-                    option.textContent = subcategory.name;
-                    select.appendChild(option);
-                });
+   document.addEventListener('DOMContentLoaded', function () {
+    fetch('/subcategories')
+        .then(response => response.json())
+        .then(data => {
+            const select = document.getElementById('subcategorySelect');
+            const tableBody = document.getElementById('brochureTable').querySelector('tbody');
+
+            data.forEach(subcategory => {
+                // Populate the dropdown
+                const option = document.createElement('option');
+                option.value = subcategory.id;
+                option.textContent = subcategory.name;
+                select.appendChild(option);
+
+                // Check if imgsrc is not empty
+                if (subcategory.imgsrc) {
+                      const brochureUrl = subcategory.imgsrc.replace('storage', 'public/storage');
+//  row.insertCell(1).innerHTML = `<a href="${brochureUrl}" target="_blank">View Brochure</a>`;
+                    // Populate the table
+                    const row = tableBody.insertRow();
+                    row.insertCell(0).textContent = subcategory.name;
+                    row.insertCell(1).innerHTML = `<a href="${brochureUrl}" target="_blank">View Brochure</a>`;
+                      // Add delete button
+                    const deleteCell = row.insertCell(2);
+                    const deleteButton = document.createElement('button');
+                    deleteButton.textContent = 'Delete';
+deleteButton.classList.add("bg-red-500", "hover:bg-blue-700", "text-white", "font-bold", "py-2", "px-4", "rounded");
+                    deleteButton.onclick = function() { deleteBrochure(subcategory.id); }; // Adjust the delete function as needed
+                    deleteCell.appendChild(deleteButton);
+
+                }
+            });
+        })
+        .catch(error => console.error('Error:', error));
+});
+
+
+function deleteBrochure(subcategoryId) {
+    // Implement the deletion logic here
+    console.log("Delete brochure with ID:", subcategoryId);
+    // You might want to make an AJAX call to your server to handle the deletion
+//  if (!confirm("Are you sure you want to delete this subcategory?")) {
+//         return;
+//     }
+
+
+        // Make an AJAX DELETE request to the delete route with the banner ID
+            fetch(`/subcategory/${subcategoryId}`, {
+                method: 'DELETE',
+                headers: {
+                    'X-CSRF-TOKEN': '{{ csrf_token() }}', // Include the CSRF token
+                },
             })
-            .catch(error => console.error('Error:', error));
-    });
+            .then(response => {
+                if (response.ok) {
+                    // Banner deleted successfully, you can handle this as needed (e.g., remove the row from the table)
+                    // Reload the page or update the UI to reflect the changes
+                    alert("Brochure deleted");
+                    location.reload();
+                } else {
+                    // Handle the case where the delete request fails (e.g., show an error message)
+                    console.error('Failed to delete brochure');
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+
+
+}
+
 </script>
 
+
+<script>
+    $('#uploadBrochureForm').submit(function (event) {
+      event.preventDefault();
+    const formData = new FormData(this);
+
+    $('#brochureStatusMessage').text('').removeClass('text-red-600 text-green-600'); // Reset message
+
+    $.ajax({
+        url: this.action,
+        type: 'POST',
+        data: formData,
+        processData: false,
+        contentType: false,
+        xhr: function () {
+            const xhr = new window.XMLHttpRequest();
+            xhr.upload.addEventListener('progress', function (e) {
+                if (e.lengthComputable) {
+                    const uploadPercentage = (e.loaded / e.total) * 100;
+                    $('#brochureProgressBar').css('width', uploadPercentage + '%');
+                }
+            }, false);
+            return xhr;
+        },
+       success: function (response) {
+            // Display a success message
+            $('#brochureStatusMessage').text("Brochure uploaded successfully, please reload page").addClass('text-green-600');
+            // Reset the form and progress bar
+            $('#uploadBrochureForm')[0].reset();
+            $('#brochureProgressBar').css('width', '0%');
+        },
+        error: function (xhr, status, error) {
+            // Display an error message
+            $('#brochureStatusMessage').text("Error: " + error).addClass('text-red-600');
+            // Reset the progress bar
+            $('#brochureProgressBar').css('width', '0%');
+        },
+    });
+});
+</script>
 @endsection

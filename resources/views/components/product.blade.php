@@ -81,6 +81,17 @@
               
         <div class="flex items-center mt-8 gap-5">
     <!-- Download Brochure Link -->
+            {{-- Live code --}}
+ {{-- @if ($product->subcategory && $product->subcategory->imgsrc)
+@php
+                    $brochureurl = str_replace('storage', 'public/storage', $product->subcategory->imgsrc);
+                   
+                    @endphp
+
+    
+        <a href="{{ asset($brochureurl) }}" class="inline-block px-6 py-3 text-white bg-black rounded-full shadow-md hover:bg-opacity-80 transition duration-300 anim-button">Download Brochure</a>
+    @else --}}
+
     @if ($product->subcategory && $product->subcategory->imgsrc)
         <a href="{{ asset($product->subcategory->imgsrc) }}" class="inline-block px-6 py-3 text-white bg-black rounded-full shadow-md hover:bg-opacity-80 transition duration-300 anim-button">Download Brochure</a>
     @else

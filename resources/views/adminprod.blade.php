@@ -187,7 +187,7 @@
 
             <!-- Name (editable) -->
             <td class="px-6 py-4 whitespace-nowrap">
-                <span x-show="!isEditing">{{ $product->title }}</span>
+                <span x-show="!isEditing" class="inline-block max-w-xs overflow-hidden text-ellipsis whitespace-normal"> {{ $product->title }}</span>
                 <input x-show="isEditing" type="text" value="{{ $product->title }}" class="border p-1">
             </td>
 
@@ -197,21 +197,39 @@
             <!-- Description (editable) -->
           <td class="px-6 py-4 whitespace-nowrap">
     <span x-show="!isEditing" class="inline-block max-w-xs overflow-hidden text-ellipsis whitespace-normal">{{ $product->description }}</span>
-    <textarea x-show="isEditing" class="border p-1 max-w-xs">{{ $product->description }}</textarea>
+    <textarea x-show="isEditing" class="inline-block max-w-full h-64 overflow-hidden text-ellipsis whitespace-normal">{{ $product->description }}</textarea>
 </td>
 
 
             <!-- Images and Videos (with add & delete options) -->
-            <td class="px-6 py-4 whitespace-nowrap flex">
+            <td class="px-6 py-4 whitespace-nowrap flex flex-wrap gap-2 justify-around">
                 @foreach ($product->images as $image)
-                <div class="relative">
+                <div class="relative group">
                     @php
                     $imageUrl = str_replace('public', 'storage', $image->filename);
                     $isImage = strpos($imageUrl, '/image/') !== false;
                     $isVideo = strpos($imageUrl, '/video/') !== false;
                     @endphp
+   <!-- Image Display -->
+        @if ($isImage)
+            <img src="{{ asset($imageUrl) }}" alt="{{ $product->title }}" class="w-32 h-32 object-cover rounded-lg transition-all duration-300 ease-in-out group-hover:opacity-75">
+            <button x-show="isEditing" @click="deleteImage('{{ $image->id }}')" class="absolute top-0 right-0 bg-red-600 hover:bg-red-700 text-white rounded-full p-1">&times;</button>
 
-                    @if ($isImage)
+            @elseif ($isVideo)
+            <!-- Video Display -->
+            <video width="128" height="128" controls class="rounded-lg transition-all duration-300 ease-in-out group-hover:opacity-75">
+                <source src="{{ asset($imageUrl) }}" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <button x-show="isEditing" @click="deleteVideo('{{ $image->id }}')" class="absolute top-0 right-0 bg-red-600 hover:bg-red-700 text-white rounded-full p-1">&times;</button>
+
+        @endif
+
+        {{-- <!-- Delete Button -->
+        <button x-show="isEditing" @click="deleteMedia('{{ $image->id }}', '{{ $isImage ? 'Image' : 'Video' }}')" ">
+            &times;
+        </button> --}}
+                    {{-- @if ($isImage)
                         <img src="{{ asset($imageUrl) }}" alt="{{ $product->title }}" class="w-16 h-16 object-cover mx-2">
                         <button x-show="isEditing" @click="deleteImage('{{ $image->id }}')" class="absolute top-0 right-0 bg-red-600 hover:bg-red-700 text-white rounded-full p-1">X</button>
                     @elseif ($isVideo)
@@ -220,7 +238,7 @@
                             Your browser does not support the video tag.
                         </video>
                         <button x-show="isEditing" @click="deleteVideo('{{ $image->id }}')" class="absolute top-0 right-0 bg-red-600 hover:bg-red-700 text-white rounded-full p-1">X</button>
-                    @endif
+                    @endif --}}
                 </div>
                 @endforeach
 
