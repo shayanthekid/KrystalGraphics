@@ -175,6 +175,9 @@
             <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                 Images
             </th>
+             <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                Cover Image
+            </th>
             <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                 Actions
             </th>
@@ -275,6 +278,41 @@
      
             </td>
 
+
+
+     
+ <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
+           
+
+ @php
+    $hasCoverImage = false;
+    foreach ($product->images as $image) {
+        if (!empty($image->coversrc)) {
+            $hasCoverImage = true;
+            break; // Stop the loop once a cover image is found
+        }
+    }
+@endphp
+
+@if ($hasCoverImage)
+    @foreach ($product->images as $image)
+        @if (!empty($image->coversrc))
+            @php
+                $imageUrl = str_replace('public', 'storage', $image->coversrc);
+            @endphp
+            <img src="{{ asset($imageUrl) }}" alt="{{ $product->title }}" class="w-32 h-32 object-cover rounded-lg transition-all duration-300 ease-in-out group-hover:opacity-75">
+        @endif
+    @endforeach
+@else
+    <!-- Button to add cover image -->
+    <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+        Add Cover Image
+    </button>
+@endif
+
+
+
+</td>
             <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
                 <button x-show="!isEditing" @click="isEditing = true" class="text-blue-600 hover:underline ml-2">Update</button>
                 <button x-show="isEditing" @click="saveChanges('{{ $product->id }}')" class="text-green-600 hover:underline ml-2">Save</button>

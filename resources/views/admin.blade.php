@@ -104,6 +104,11 @@
             <label for="images" class="block text-sm font-medium text-gray-700 mb-2">Choose Images:</label>
             <input type="file" id="images" name="files[]" accept="image/*" multiple class="mt-1 p-2 w-full border rounded-md focus:outline-none focus:shadow-outline-blue focus:border-blue-300">
         </div>
+        <!-- Cover Image Field -->
+<div class="mb-4">
+    <label for="cover_image" class="block text-sm font-medium text-gray-700 mb-2">Choose a Cover Image:</label>
+    <input type="file" id="cover_image" name="cover_image" accept="image/*" class="mt-1 p-2 w-full border rounded-md focus:outline-none focus:shadow-outline-blue focus:border-blue-300">
+</div>
 
         <!-- Videos Field -->
         <div class="mb-4">

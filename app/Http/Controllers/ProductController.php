@@ -13,11 +13,13 @@ class ProductController extends Controller
 {
 public function addProduct(Request $request)
 {
+    try {
     $this->validate($request, [
         'name' => 'required|string|max:255',
         'description' => 'required|string|max:855',
         'subcategory_id' => 'required|exists:subcategories,id',
         'files.*' => 'file', // Validate both images and videos
+        'cover_image' => 'file|image', // Validation for cover image
     ]);
 
     $product = Product::create([
@@ -28,6 +30,8 @@ public function addProduct(Request $request)
 
     $media = [];
 
+     
+
     foreach ($request->file('files') as $file) {
         $type = strpos($file->getMimeType(), 'video') === 0 ? 'video' : 'image';
         $path = $file->store('public/products/' . $type);
@@ -36,12 +40,33 @@ public function addProduct(Request $request)
             'product_id' => $product->id,
             'filename' => $path,
             'type' => $type, // Set the file type ('image' or 'video')
+            'coversrc' => '',
         ];
     }
 
-    ProductImage::insert($media);
+  if ($request->hasFile('cover_image')) {
+    $coverPath = $request->file('cover_image')->store('public/products/cover');
+    $media[] = [
+        'product_id' => $product->id,
+        'filename' => $coverPath,
+        'type' => 'image',
+        'coversrc' => $coverPath,
+    ];
+}
 
-    return response()->json(['message' => 'Product added successfully']);
+    ProductImage::insert($media);
+      return response()->json(['message' => 'Product added successfully']);
+
+   } catch (\Illuminate\Database\QueryException $e) {
+        Log::error('Database error in addProduct: ' . $e->getMessage());
+        return response()->json(['error' => 'Database error: ' . $e->getMessage()], 500);
+    } catch (\Illuminate\Validation\ValidationException $e) {
+        Log::error('Validation error in addProduct: ' . json_encode($e->errors()));
+        return response()->json(['error' => 'Validation error: ' . $e->errors()], 422);
+    } catch (\Exception $e) {
+        Log::error('Server error in addProduct: ' . $e->getMessage());
+        return response()->json(['error' => 'Server error: ' . $e->getMessage()], 500);
+    }
 }
 
 public function getAllProducts()
