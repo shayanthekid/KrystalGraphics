@@ -197,6 +197,10 @@ Route::delete('/deleteProduct/{productId}', 'App\Http\Controllers\ProductControl
     Route::delete('/deleteImage/{imageId}', 'App\Http\Controllers\ProductController@deleteImage')
         ->name('admin.products.deleteImage');
     
+     // Route for deleting  cover image
+    Route::delete('/deleteCoverImage/{imageId}', 'App\Http\Controllers\ProductController@deleteCoverImage')
+        ->name('admin.products.deleteCoverImage');    
+
     // Route for deleting a video
     Route::delete('/deleteVideo/{videoId}', 'App\Http\Controllers\ProductController@deleteVideo')
         ->name('admin.products.deleteVideo');

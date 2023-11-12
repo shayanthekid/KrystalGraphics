@@ -300,8 +300,11 @@
             @php
                 $imageUrl = str_replace('public', 'storage', $image->coversrc);
             @endphp
+            <div class="relative group">
             <img src="{{ asset($imageUrl) }}" alt="{{ $product->title }}" class="w-32 h-32 object-cover rounded-lg transition-all duration-300 ease-in-out group-hover:opacity-75">
-        @endif
+            <button x-show="isEditing" @click="deleteCoverImage('{{ $image->id }}')" class="absolute top-0 right-0 bg-red-600 hover:bg-red-700 text-white rounded-full p-1">&times;</button>
+            </div>
+            @endif
     @endforeach
 @else
     <!-- Button to add cover image -->
@@ -396,6 +399,29 @@
             });
         }
     }
+
+function deleteCoverImage(imageId) {
+   
+    if (confirm('Are you sure you want to delete this image?')) {
+            // Make an AJAX DELETE request to your backend to delete the image
+            fetch(`/admin/products/deleteCoverImage/${imageId}`, {
+                method: 'DELETE',
+                headers: {
+                    'X-CSRF-TOKEN': '{{ csrf_token() }}', // Include the CSRF token
+                },
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    alert('Image deleted successfully!');
+                    location.reload(); // Reload to reflect the change
+                } else {
+                 alert('Failed to delete image. ' + (data.message || ''));
+                }
+            });
+        }
+    }
+
 
     function deleteVideo(videoId) {
         if (confirm('Are you sure you want to delete this video?')) {

@@ -184,6 +184,23 @@ public function deleteImage($imageId) {
     return response()->json(['success' => false, 'message' => 'Failed to delete image']);
 }
 
+public function deleteCoverImage($imageId) {
+    $image = ProductImage::find($imageId);
+
+    if (!$image) {
+        return response()->json(['success' => false, 'message' => 'Image not found'], 404);
+    }
+
+    // Delete the image file from storage
+    if (Storage::exists($image->coversrc) && Storage::delete($image->coversrc)) {
+        $image->delete(); // Delete the record from the database
+        return response()->json(['success' => true, 'message' => 'Image deleted successfully']);
+    }
+
+    return response()->json(['success' => false, 'message' => 'Failed to delete image']);
+}
+
+
 public function deleteVideo($videoId) {
     // The logic would be similar to deleteImage, just tailored for videos.
     $video = ProductImage::find($videoId);
