@@ -118,14 +118,21 @@ t1.fromTo('.animate-section-2',
 
             // Loop through each product in your data
             data.forEach(product => {
-                // Get the first image filename from the product
-                const firstImageFilename = product.images[0].filename;
-                const updatedImageURL = firstImageFilename.replace('public/', 'storage/')
-                // const updatedImageURL = firstImageFilename.replace('public/', '/public/storage//')
-    
+                // Initialize image URL
+                let imageURL;
+
+                // Find the first image with a non-empty coversrc, if any
+                const coverImage = product.images.find(img => img.coversrc);
+                if (coverImage) {
+                    imageURL = coverImage.coversrc.replace('public/', 'storage/');
+                } else {
+                    // Fallback to the first image if no coversrc is found
+                    imageURL = product.images[0].filename.replace('public/', 'storage/');
+                }
+
                 // Create a new product card
                 const productCard = document.createElement('div');
-                productCard.className = 'w-full flex items-center justify-center ml-24';
+                productCard.className = 'w-full flex items-center justify-center';
 
                 // Create a link for the product
                 const productLink = document.createElement('a');
@@ -135,15 +142,15 @@ t1.fromTo('.animate-section-2',
                 const productImage = document.createElement('div');
                 productImage.className = 'bg-gray-100 rounded-lg shadow-lg w-44 h-48 flex justify-center items-center';
                 const img = document.createElement('img');
-                img.src = updatedImageURL; // Use the first image filename
+                img.src = imageURL; // Use coversrc or the first image filename
                 img.alt = product.title;
                 img.className = 'w-full h-full object-cover rounded-lg';
                 productImage.appendChild(img);
 
                 // Create the product title
                 const productTitle = document.createElement('h3');
-  productTitle.className = 'text-lg font-semibold mt-4 mr-32  ';
-                  productTitle.textContent = product.title;
+                productTitle.className = 'text-lg font-semibold mt-4 text-center';
+                productTitle.textContent = product.title;
 
                 // Append all elements to the product card
                 productLink.appendChild(productImage);
@@ -152,7 +159,6 @@ t1.fromTo('.animate-section-2',
 
                 // Append the product card to the product carousel
                 productCarousel.appendChild(productCard);
-                console.log(productCarousel);
             });
         })
         .catch(error => {
