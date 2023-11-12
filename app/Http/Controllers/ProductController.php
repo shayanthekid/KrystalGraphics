@@ -194,10 +194,10 @@ public function deleteCoverImage($imageId) {
     // Delete the image file from storage
     if (Storage::exists($image->coversrc) && Storage::delete($image->coversrc)) {
         $image->delete(); // Delete the record from the database
-        return response()->json(['success' => true, 'message' => 'Image deleted successfully']);
+        return response()->json(['success' => true, 'message' => 'Cover Image deleted successfully']);
     }
 
-    return response()->json(['success' => false, 'message' => 'Failed to delete image']);
+    return response()->json(['success' => false, 'message' => 'Failed to Cover delete image']);
 }
 
 
@@ -252,6 +252,41 @@ public function addImagesToProduct(Request $request, $productId) {
         return response()->json(['message' => 'Failed to add images/video'], 500);
     }
 }
+
+
+public function addCoverImageToProduct(Request $request, $productId) {
+    try {
+        $product = Product::find($productId);
+
+        if (!$product) {
+            Log::error('Product not found with ID: ' . $productId);
+            return response()->json(['message' => 'Product not found'], 404);
+        }
+
+        $this->validate($request, [
+            'cover_image' => 'required|file|image', // Validate the cover image
+        ]);
+
+        $file = $request->file('cover_image');
+        $path = $file->store('public/products/cover');
+
+        $coverImage = new ProductImage([
+            'product_id' => $product->id,
+            'filename' => $path,
+            'type' => 'image', // Assuming the cover image is always an image
+            'coversrc' => $path,
+        ]);
+
+        $coverImage->save();
+
+        return response()->json(['message' => 'Cover image added successfully']);
+    } catch (\Exception $e) {
+        Log::error('Error adding cover image to product: ' . $e->getMessage());
+        return response()->json(['message' => 'Failed to add cover image'], 500);
+    }
+}
+
+
 public function getEquipmentProducts()
 {
     // Assuming '7' is the ID for the 'equipment' subcategory

@@ -209,6 +209,10 @@ Route::delete('/deleteProduct/{productId}', 'App\Http\Controllers\ProductControl
     Route::post('/addImagesToProduct/{productId}', 'App\Http\Controllers\ProductController@addImagesToProduct')
         ->name('admin.products.addImagesToProduct');
 
+        // Route for adding a cover image
+    Route::post('/addCoverImage/{productId}', 'App\Http\Controllers\ProductController@addCoverImageToProduct')
+        ->name('admin.products.addCoverImageToProduct');
+
 });
 Route::get('/products/equipment', 'App\Http\Controllers\ProductController@getEquipmentProducts');
 Route::get('/products/portfolio', 'App\Http\Controllers\ProductController@getPortfolio');

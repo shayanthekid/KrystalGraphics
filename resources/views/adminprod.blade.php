@@ -308,9 +308,14 @@
     @endforeach
 @else
     <!-- Button to add cover image -->
-    <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
-        Add Cover Image
-    </button>
+  <button onclick="addCoverImage({{ $product->id }})" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+    Add Cover Image
+</button>
+
+<!-- Input for cover image (hidden) -->
+<input type="file" id="cover_image_input_{{ $product->id }}" style="display: none;" onchange="document.getElementById('cover_image_label_{{ $product->id }}').innerHTML = this.files[0].name">
+<label id="cover_image_label_{{ $product->id }}"></label>
+
 @endif
 
 
@@ -560,6 +565,40 @@ function deleteCoverImage(imageId) {
     });
 });
 
+
+</script>
+
+
+<script>
+function addCoverImage(productId) {
+    // Trigger file input
+    document.getElementById('cover_image_input_' + productId).click();
+
+    document.getElementById('cover_image_input_' + productId).onchange = function() {
+        if (confirm('Are you sure you want to upload this cover image?')) {
+            let fileInput = document.getElementById('cover_image_input_' + productId);
+            let formData = new FormData();
+            formData.append('cover_image', fileInput.files[0]);
+
+            fetch(`/admin/products/addCoverImage/${productId}`, {
+                method: 'POST',
+                headers: {
+                    'X-CSRF-TOKEN': '{{ csrf_token() }}', // Include the CSRF token
+                },
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.message) {
+                    alert(data.message);
+                    location.reload(); // Reload to reflect the change
+                } else {
+                    alert('Failed to upload cover image.');
+                }
+            });
+        }
+    };
+}
 
 </script>
 @endsection
