@@ -32,7 +32,7 @@ public function sendEmail(Request $request)
     $email = new ContactUsMail($data); // Pass the data to the constructor
 
     // Send the email using the Mailable class
-    Mail::to(config('mail.admin_email'))->send($email);
+    Mail::to('sajidfayazhaniff@gmail.com')->send($email);
 
     // Redirect back with a success message
     return redirect()->route('contact')->with('success', 'Your message has been sent successfully!');
